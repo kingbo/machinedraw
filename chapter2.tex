@@ -1,0 +1,231 @@
+\chapter{图样绘制项目}
+\begin{itemize}
+\item 教学目的：
+\begin{enumerate}
+\item 使学生掌握制图工具的使用
+\item 使学生掌握制图国家标准的应用
+\item 使学生熟练掌握图样绘制方法和过程
+\item 学生完成指定图样绘制
+\end{enumerate}
+\item 教学内容：
+\begin{enumerate}
+\item 平面图样的绘图步骤
+\item 几何作图方法
+\item 制图的基本标准
+\item 制作工具和仪器的使用
+\end{enumerate}
+\item 教学重点 、难点：
+\begin{enumerate}
+\item 平面图样的绘图步骤
+\item 几何作图方法
+\end{enumerate}
+\item 教学方法、手段：
+\begin{enumerate}
+\item 实例分析、多媒体
+\end{enumerate}
+\item 课时分配：
+17课时
+\item 作业：完成指定图样绘制
+\end{itemize}
+
+\section{平面图形的绘图步骤和方法}
+
+\begin{enumerate}
+\item 平面图形尺寸分析
+\begin{enumerate}
+\item 尺寸基准：标注尺寸的起点。
+\item 定形尺寸：确定平面图形中各线段开关大小的尺寸。
+\item 定位尺寸：确定平面图形中各线段之间相对位置的尺寸。
+\end{enumerate}
+\item 平面图形的线段分析
+\begin{enumerate}
+\item 已知线段：具备定形和定位两种尺寸的线段。
+\item 中间线段：只有定形尺寸，但定位尺寸需要根据一个连接关系才能确定的线段。
+\item 连接线段：只有定形尺寸，没有定位尺寸的线段。
+\end{enumerate}
+\item 平面图形的绘图步骤和方法
+\begin{enumerate}
+\item 分析图形尺寸，确定图幅和绘图比例
+\item 绘制图框和标题栏
+\item 确定基准线和主要定位线的位置并绘出
+\item 画出已知线段
+\item 画出中间线段
+\item 画出连接线段
+\item 画出尺寸界线及尺寸线
+\item 检查并清理多余线条
+\item 加深图形，标注尺寸、注写文字
+\end{enumerate}
+\end{enumerate}
+
+\section{几何作图}
+
+\begin{enumerate}
+\item 圆弧连接：
+
+用已知半径的圆弧将已知线段（直线或圆弧）光滑连接起来的画图方法。
+\item 圆弧连接的关键:
+
+准确地找出连接圆弧的圆心和连接点（切点）。
+\item 圆弧连接方法
+\begin{enumerate}
+\item 直线圆弧连接
+
+\begin{tikzpicture}
+\draw (0cm,0cm)node[left]{A}--(3cm,0cm)node[right]{B}(0cm,0cm)--(3cm,3cm)node[right]{C};
+\path[draw,red,name path=aidline1] (0cm,1cm)--(3cm,1cm);
+\coordinate (A) at ($(0cm,0cm)!1cm!-90:(3cm,3cm)$);
+\path [draw,red,name path=aidline2] (A)--++({atan2(3,3)}:3cm);
+\path[name intersections={of= aidline1 and aidline2,by=C}];
+\fill[red](C)node[above]{O}circle(2pt);
+\draw[blue,line width=0.7mm] let \p1=($(0cm,0cm)!(C)!(3cm,0cm)$),
+\p2=($(0cm,0cm)!(C)!(3cm,3cm)$) ,\p3=(C)
+in (\p2)arc({atan2(\x2-\x3,\y2-\y3)}:{360+atan2(\x1-\x3,\y1-\y3)}:1cm);
+\draw[|-|,line width=0.5mm,xshift=5cm](0cm,2cm)--(1cm,2cm)node[midway,above]{$R$};
+\end{tikzpicture}
+
+作图步骤：
+\begin{enumerate}
+\item 作$AB$的平行线，距离为$R$
+\item 作$AC$的平行线，距离为$R$,交点$O$
+\item 以$O$点为圆心，$R$为半径作连接圆弧
+\end{enumerate}
+\item 圆弧外连接
+
+\tikzset{
+>=latex,
+center lines/.style={dash pattern=on 20pt off 3pt on 2pt off 3pt},
+importance lines/.style={line width=1pt}
+}
+\begin{tikzpicture}[scale=0.5]
+\draw[|-|,line width=0.5mm](0cm,0cm)--(2cm,0cm)node[midway,above]{$R$};
+\begin{scope}[yshift=-3cm]
+\draw[center lines](-2.1cm,0cm)--(2.1cm,0cm)(0cm,-2.1cm)--(0cm,2.1cm);
+\draw[center lines,xshift=4cm](-1.1cm,0cm)--(1.1cm,0cm)(0cm,-1.1cm)--(0cm,1.1cm);
+\draw[name path=aidcircle1](0cm,0cm)node[above]{$O1$}circle(2cm);
+\draw[name path=aidcircle2](4cm,0cm)node[left]{$O2$}circle(1cm);
+\path[draw,name path=aidarc1](50:4cm)arc(50:30:4cm);
+\path[draw,name path=aidarc2]($(100:3cm)+(4cm,0cm)$)arc(100:135:3cm);
+\path[name intersections={of=aidarc1 and aidarc2,by=A}];
+\path[draw,name path=aidline1](0cm,0cm)--(A)node[above]{O};
+\path[draw,name path=aidline2](4cm,0cm)--(A);
+\path[name intersections={of=aidcircle1 and aidline1,by=B}];
+\path[name intersections={of=aidcircle2 and aidline2,by=C}];
+\draw[blue,line width=0.7mm] let \p1=(A),\p2=(B),\p3=(C) in
+(\p3)arc({atan2(\x3-\x1,\y3-\y1)}:{atan2(\x2-\x1,\y2-\y1)}:2cm);
+\end{scope}
+\end{tikzpicture}
+
+作图步骤：
+\begin{enumerate}
+\item 以$O1$为圆心$R1+R$为半径作圆弧；
+\item 以$O2$为圆心$R2+R$为半径作圆弧，交于点$O$；
+\item 以$O$为圆心$R$为半径作连接圆弧。
+\end{enumerate}
+
+\item 圆弧内连接
+
+\tikzset{
+>=latex,
+center lines/.style={dash pattern=on 20pt off 3pt on 2pt off 3pt},
+importance lines/.style={line width=1pt}
+}
+\begin{tikzpicture}[scale=0.5]
+\draw[|-|,line width=0.5mm](0cm,0cm)--(5cm,0cm)node[midway,above]{$R$};
+\begin{scope}[yshift=-3cm]
+\draw[center lines](-2.1cm,0cm)--(2.1cm,0cm)(0cm,-2.1cm)--(0cm,2.1cm);
+\draw[center lines,xshift=4cm](-1.1cm,0cm)--(1.1cm,0cm)(0cm,-1.1cm)--(0cm,1.1cm);
+\draw[name path=aidcircle1](0cm,0cm)node[right]{$O1$}(-2cm,0cm)arc(180:-30:2cm);
+\draw[name path=aidcircle2](4cm,0cm)node[left]{$O2$}(3cm,0cm)arc(180:-45:1cm);
+\path[draw,name path=aidarc1](-45:3cm)arc(-45:-80:3cm);
+\path[draw,name path=aidarc2]($(-120:4cm)+(4cm,0cm)$)arc(-120:-145:4cm);
+\path[name intersections={of=aidarc1 and aidarc2,by=A}];
+\path[draw,name path=aidline1]($(A)!1.8!(0cm,0cm)$)--(A)node[below]{O};
+\path[draw,name path=aidline2]($(A)!1.4!(4cm,0cm)$)--(A);
+\path[name intersections={of=aidcircle1 and aidline1,by=B}];
+\path[name intersections={of=aidcircle2 and aidline2,by=C}];
+\fill[red](B)circle(2pt);
+\fill[red](C)circle(2pt);
+\draw[blue,line width=0.7mm] let \p1=(A),\p2=(B),\p3=(C) in
+(\p3)arc({atan2(\x3-\x1,\y3-\y1)}:{atan2(\x2-\x1,\y2-\y1)}:5cm);
+\end{scope}
+\end{tikzpicture}
+
+作图步骤：
+\begin{enumerate}
+\item 以$O1$为圆心$R-R1$为半径作圆弧；
+\item 以$O2$为圆心$R-R2$为半径作圆弧，交于点$O$；
+\item 以$O$为圆心$R$为半径作连接圆弧。
+\end{enumerate}
+\item 圆弧内外连接
+
+\tikzset{
+>=latex,
+center lines/.style={dash pattern=on 20pt off 3pt on 2pt off 3pt},
+importance lines/.style={line width=1pt}
+}
+\begin{tikzpicture}[scale=0.5]
+\draw[|-|,line width=0.5mm](0cm,0cm)--(4cm,0cm)node[midway,above]{$R$};
+\begin{scope}[yshift=-5cm]
+\draw[center lines](-2.1cm,0cm)--(2.1cm,0cm)(0cm,-2.1cm)--(0cm,2.1cm);
+\draw[center lines,xshift=4cm](-1.1cm,0cm)--(1.1cm,0cm)(0cm,-1.1cm)--(0cm,1.1cm);
+\draw[name path=aidcircle1](0cm,0cm)node[right]{$O1$}(-2cm,0cm)arc(180:-30:2cm);
+\draw[name path=aidcircle2](4cm,0cm)node[right]{$O2$}(3cm,0cm)arc(180:360:1cm);
+\path[draw,name path=aidarc1](20:6cm)arc(20:40:6cm);
+\path[draw,name path=aidarc2]($(50:3cm)+(4cm,0cm)$)arc(50:80:3cm);
+\path[name intersections={of=aidarc1 and aidarc2,by=A}];
+\fill[red](A)circle(2pt);
+\path[draw,name path=aidline1](0cm,0cm)--(A)node[below]{O};
+\path[draw,name path=aidline2]($(A)!1.4!(4cm,0cm)$)--(A);
+\path[name intersections={of=aidcircle1 and aidline1,by=B}];
+\path[name intersections={of=aidcircle2 and aidline2,by=C}];
+\fill[red](B)circle(2pt);
+\fill[red](C)circle(2pt);
+\draw[blue,line width=0.7mm] let \p1=(A),\p2=(B),\p3=(C) in
+(\p3)arc({atan2(\x3-\x1,\y3-\y1)}:{atan2(\x2-\x1,\y2-\y1)}:4cm);
+\end{scope}
+\end{tikzpicture}
+
+作图步骤：
+\begin{enumerate}
+\item 以$O1$为圆心$R+R1$为半径作圆弧；
+\item 以$O2$为圆心$R-R2$为半径作圆弧，交于点$O$；
+\item 以$O$为圆心$R$为半径作连接圆弧。
+\end{enumerate}
+\item 用圆弧连接一直线和一圆弧
+
+\tikzset{
+>=latex,
+center lines/.style={dash pattern=on 20pt off 3pt on 2pt off 3pt},
+importance lines/.style={line width=1pt}
+}
+\begin{tikzpicture}[scale=0.5]
+\draw[|-|,line width=0.5mm](0cm,0cm)--(2cm,0cm)node[midway,above]{$R$};
+\begin{scope}[yshift=-5cm]
+\draw[center lines](-2.1cm,0cm)--(2.1cm,0cm)(0cm,-2.1cm)--(0cm,2.1cm);
+\draw[name path=aidcircle1](0cm,0cm)node[right]{$O1$}circle(2cm);
+\draw[name path=aidline1](4cm,-2cm)node[left]{A}--++(45:5cm)coordinate(A)node[right]{B};
+\coordinate (B) at ($(4cm,-2cm)!2cm!90:(A)$);
+\path[draw,name path=aidline2](B)--++(45:5cm);
+\path[draw,name path=aidarc1](15:4cm)arc(15:0:4cm);
+\path[name intersections={of=aidline2 and aidarc1,by=D}];
+\fill[red](D)circle(2pt);
+\path[draw,name path=aidline3](0cm,0cm)--(D);
+\coordinate(E)at($(4cm,-2cm)!(D)!(A)$);
+\fill[red](E)circle(2pt);
+\path[name intersections={of=aidcircle1 and aidline3,by=F}];
+\fill[red](F)circle(2pt);
+\draw[blue,line width=0.7mm] let \p1=(D),\p2=(E),\p3=(F) in
+(\p2)arc({atan2(\x2-\x1,\y2-\y1)}:{atan2(\x3-\x1,\y3-\y1)}:2cm);
+\end{scope}
+\end{tikzpicture}
+
+作图步骤：
+\begin{enumerate}
+\item 以$O1$为圆心$R+R1$为半径作圆弧；
+\item 作$AB$直线的平行线，距离为$R$，交于点$O$；
+\item 以$O$为圆心$R$为半径作连接圆弧。
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+
+\endinput
