@@ -387,5 +387,14 @@ importance lines/.style={line width=1pt}
 本任务以完成\ref{fig:renwu2}所示法兰盘图形为目标，旨在让读者掌握用AutoCAD的图层来管理各种图线，并学会构造线、圆、多边形和图形阵列编辑命令的使用技巧。并让读者认识和理解图样抄画的步骤和顺序，形成图样绘制的基本职业习惯。
 
 \subsection{图层设置与管理}
+图\ref{fig:renwu2}所示的法兰盘图形一共包含了两种图线，一种是实线，一种是中心线。为了便于对不同类型的图线对象进行管理，我们需要应用AutoCAD的图层管理器来实现。所谓图层就是将属性相同的对象绘制在一张类似于透明的纸上，将不同属性的对象绘制在不同的透明的纸上，以便实现图形对象的分类管理，最后将所有的透明的纸叠加在一起就构成了整个图形。要实现图\ref{fig:renwu2}所示图形中实线和中心线两种图形对象的分层管理，需要用到AutoCAD中的layer命令来进行图层设置。
+
+在命令行中输入Layer命令以执行【图层特性管理器】对话框，如图\ref{fig:tuchenguanliqi}所示。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.8]{Autocad_layer.png}
+\caption{【图层特性管理器】对话框}\label{fig:tuchenguanliqi}
+\end{figure}
 \subsection{绘制图样}
 \endinput
