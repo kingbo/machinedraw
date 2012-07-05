@@ -393,10 +393,33 @@ importance lines/.style={line width=1pt}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=0.8]{Autocad_layer.png}
+\includegraphics[scale=0.5]{Autocad_layer.png}
 \caption{【图层特性管理器】对话框}\label{fig:tuchenguanliqi}
 \end{figure}
 
-单击新建图层按钮\includegraphics[scale=0.5]{xinjiantuchen.png},新建一
+单击新建图层按钮\includegraphics[scale=0.5]{xinjiantuchen.png},新建一个实线图层和一个中心线图层。如图\ref{fig:xinjiantuchen}所示。
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.5]{xinjiantuchen1.png}
+\caption{【新建图层】}\label{fig:xinjiantuchen}
+\end{figure}
+
+为了区别各个图层的对象，通常需要设置各个图层的颜色。此例中将实线图层的颜色设置为红色，将中心线图层设置为蓝色。具体设置方法是：单击要改变颜色的图层的颜色图标(即颜色框+颜色名)，会弹出如图\ref{fig:colorset}所示的【选择颜色】对话框，选择想要的颜色即可完成设置。
+
+\begin{figure}[htbp]
+\centering
+\begin{floatrow}
+\ffigbox{\caption{【选择颜色】对话框}\label{fig:colorset}}{
+\includegraphics[scale=0.5]{colorset.png}
+}
+\ffigbox{\caption{【线宽】对话框}\label{fig:xiankuanset}}{
+\includegraphics[scale=0.5]{linewidthset.png}
+}
+\end{floatrow}
+\end{figure}
+现在设置实线层的线宽，单击实线层中的线宽图标，弹出如图\ref{fig:xiankuanset}所示的【线宽】对话框，选择0.5mm的线宽作为实线层的线宽，单击确定即可。
+
+接下来，按照规定将中心线图层的线型设置为ACAD\_ ISO04W100图线。具体设置方法为：单击中心线图层中的线型名，弹出如图所示的【选择线型】对话框。此时还没我所需要的线型，需要单击对话框中的【加载】按钮，弹出如图所示的【加载或重载线型】对话框，选择ACAD\_ ISO04W100图线，并确定，以完成线型加载。最后在【选择线型】对话框中选中新加载的ACAD\_ ISO04W100图线，再一次单击确定，完成线型的设置。
+
 \subsection{绘制图样}
 \endinput
