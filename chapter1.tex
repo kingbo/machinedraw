@@ -419,7 +419,33 @@ importance lines/.style={line width=1pt}
 \end{figure}
 现在设置实线层的线宽，单击实线层中的线宽图标，弹出如图\ref{fig:xiankuanset}所示的【线宽】对话框，选择0.5mm的线宽作为实线层的线宽，单击确定即可。
 
-接下来，按照规定将中心线图层的线型设置为ACAD\_ ISO04W100图线。具体设置方法为：单击中心线图层中的线型名，弹出如图所示的【选择线型】对话框。此时还没我所需要的线型，需要单击对话框中的【加载】按钮，弹出如图所示的【加载或重载线型】对话框，选择ACAD\_ ISO04W100图线，并确定，以完成线型加载。最后在【选择线型】对话框中选中新加载的ACAD\_ ISO04W100图线，再一次单击确定，完成线型的设置。
+接下来，按照规定将中心线图层的线型设置为ACAD\_ ISO04W100图线。具体设置方法为：单击中心线图层中的线型名，弹出如图\ref{fig:selectlinetype}所示的【选择线型】对话框。此时还没我所需要的线型，需要单击对话框中的【加载】按钮，弹出如图\ref{fig:linetypeload}所示的【加载或重载线型】对话框，选择ACAD\_ ISO04W100图线，并确定，以完成线型加载。最后在【选择线型】对话框中选中新加载的ACAD\_ ISO04W100图线，再一次单击确定，完成线型的设置。
+\begin{figure}[htbp]
+\centering
+\begin{floatrow}
+\ffigbox{\caption{【选择线型】对话框}\label{fig:selectlinetype}}{
+\includegraphics[scale=0.5]{AutoCAD_linetype.png}
+}
+\ffigbox{\caption{【加载或重载线型】对话框}\label{fig:linetypeload}}{
+\includegraphics[scale=0.5]{linetype_load.png}
+}
+\end{floatrow}
+\end{figure}
 
+通过以上几个步骤，法兰盘的相关线型和图层就已经定义好了，可以开始绘制图形了。但在开始之前，我们需要先将中心线图层设置为当前图层。设置方法是：在【图层特性管理器】中选择中心线图层，再单击\includegraphics[scale=0.6]{setlayercurrent.png}图标，即可将中心线层置为当前层。
 \subsection{绘制图样}
+法兰盘图形的绘制要点关键在于中心线的绘制，因此首先需要绘制中心线，以便于定位。我们先用xline 命令绘制形的中心线，在命令行中输入xline并回车。
+
+\noindent
+命令: XLINE 指定点或 [水平(H)/垂直(V)/角度(A)/二等分(B)/偏移(O)]: 32,32
+指定通过点: $@1<0$\\
+指定通过点: $@1<30$\\
+指定通过点: $@1<90$\\
+指定通过点: $@1<150$\\
+指定通过点:\\
+\indent
+
+通过完成上述操作便完成中心线的绘制。细心的读者可能已经发现了，这次所绘制的线并不仅仅只有一毫米长，而是无限长。用xline绘制的线称为构造线，通常用于绘制辅助线或者参考线。下面我们对命令中的其它选项进行解释：
+
+
 \endinput
