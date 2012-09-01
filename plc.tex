@@ -1,0 +1,25 @@
+\documentclass[12pt,twoside]{book}
+\input{format/packages}
+\includeonly{plc/chapter1}
+%\includeonly{chapter2}
+%\includeonly{chapter4}
+\begin{document}
+\begin{CJK}{UTF8}{song}
+\input {format/format}
+\title{PLC技术讲议}
+\author{金波}
+\date{2012年}
+\maketitle
+\CJKtilde
+\frontmatter
+\tableofcontents
+\mainmatter
+%\graphicspath{{cad/pdf/}{cad/png/}}
+\include{plc/chapter1}
+
+%\backmatter
+%\printindex
+
+\newpage
+\end{CJK}
+\end{document}
