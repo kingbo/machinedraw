@@ -1,11 +1,11 @@
 \documentclass[12pt,twoside]{book}
-\input{packages}
-\includeonly{chapter1}
+\input{format/packages}
+\includeonly{cad/chapter1}
 %\includeonly{chapter2}
 %\includeonly{chapter4}
 \begin{document}
 \begin{CJK}{UTF8}{song}
-\input {format}
+\input {format/format}
 \title{工程制图与CAD讲议}
 \author{金波}
 \date{2011年}
@@ -14,11 +14,11 @@
 \frontmatter
 \tableofcontents
 \mainmatter
-\graphicspath{{pdf/}{png/}}
-\include{chapter1}
-\include{chapter2}
-\include{chapter3}
-\include{chapter4}
+\graphicspath{{cad/pdf/}{cad/png/}}
+\include{cad/chapter1}
+\include{cad/chapter2}
+\include{cad/chapter3}
+\include{cad/chapter4}
 %\backmatter
 %\printindex
 
