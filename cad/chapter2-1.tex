@@ -28,8 +28,8 @@
 \subfloat[]{\label{fig:dianrong4}\includegraphics[scale=0.5]{dianrong4.png}}
 \caption{电容元件绘制}
 \end{figure}
-
 \noindent
+
 命令:line\\
 指定第一点:\\
 指定下一点或 [放弃(U)]: @6$<90$\\
@@ -65,7 +65,7 @@
 \indent
 最后，删除中心线，完成电容元件的绘制，其结果如图\ref{fig:dianrong4}所示。
 
-由于电器元件通常都需要重复使用，为了提高我们的绘图速度，需要将绘制的电气元件定义为块并写入文件中，才能够实现其重复利用的目的。下面我们将通过电容块的定义来说明块的定义过程。当我们输入block命令后，会出现图所示的块定义窗体。我们在窗体中命名块的名称为电容，点击拾取点并选择电容元件的最左点来完成基点的定义，点击选择对象并选整个电容图形来完成对象的定义，最后点击确定。
+由于电器元件通常都需要重复使用，为提高绘图速度，我们需要将绘制的电气元件定义为块并写入文件中，才能够实现其重复利用的目的。下面我们将通过电容块的定义来说明块的定义过程。当我们输入block命令后，会出现图\ref{fig:kuaidingyi}所示的块定义窗体。我们在窗体中命名块的名称为电容，点击拾取点并选择电容元件的最左点来完成基点的定义，点击选择对象并选整个电容图形来完成对象的定义，最后点击确定。
 
 \noindent
 命令: block 指定插入基点:\\
@@ -73,9 +73,69 @@
 选择对象:\\
 
 \indent
-完成块定义后，还需要通过块写命令wblock将定义的块写入dwg文件中才能够实现随时调用和重复利用。
-\subsection{接地元件}
+完成块定义后，还需要通过块写命令wblock将定义的块写入dwg文件中才能够实现随时调用和重复利用。输入wblock命令后，会出现图\ref{fig:kuaixie}所示对话框，选择块并选择好块文件保存的路径即可完成块写操作。当块写为文件后就可以在新的CAD文件中调用，真正实现一处定义多处使用，提高绘图效率。
 
+\noindent
+\begin{figure}[htbp]
+\centering
+\begin{floatrow}
+\ffigbox{\caption{块定义}\label{fig:kuaidingyi}}{
+\includegraphics[scale=0.4]{kuaidingyi.png}
+}
+\ffigbox{\caption{块写}\label{fig:kuaixie}}{
+\includegraphics[scale=0.35]{kuaixie.png}
+}
+\end{floatrow}
+\end{figure}
+\indent
+
+\subsection{接地元件}
+接地元件的绘制比较简单，先绘制一根做为基础，接下来通过偏移得到另外两根，通过缩放将偏移得两的线调整为相应的长度即可,并最长的一根上绘制连接线，然后将其定义为块并写入文件，如图\ref{fig:jiedi}所示。
+
+\noindent
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:jiedicicu}\includegraphics[scale=0.6]{jiedicicun.png}}\hspace{30pt}
+\subfloat[]{\label{fig:jiedi1}\includegraphics[scale=1]{suofang.png}}\hspace{30pt}
+\subfloat[]{\label{fig:jiedi}\includegraphics[scale=1]{jiedixian.png}}
+\caption{接地元件绘制}
+\end{figure}
+
+\noindent
+命令: line \\
+指定第一点:\\
+指定下一点或 [放弃(U)]: $@6<0$\\
+指定下一点或 [放弃(U)]:\\
+命令: offset\\
+当前设置: 删除源=否  图层=源  OFFSETGAPTYPE=0\\
+指定偏移距离或 [通过(T)/删除(E)/图层(L)] $<$通过$>$:  3\\
+选择要偏移的对象，或 [退出(E)/放弃(U)]$<$退出$>$:\\
+指定要偏移的那一侧上的点，或 [退出(E)/多个(M)/放弃(U)]$<$退出$>$:\\
+选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:\\
+指定要偏移的那一侧上的点，或 [退出(E)/多个(M)/放弃(U)]$<$退出$>$:\\
+选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:\\
+令: scale\\
+选择对象: 找到 1 个\\
+选择对象:\\
+指定基点: mid\\
+于\\
+指定比例因子或 [复制(C)/参照(R)]: r\\
+指定参照长度 $<$1.0000$>$: 10\\
+指定新的长度或 [点(P)] $<$1.0000$>$:  5\\
+令: scale\\
+选择对象: 找到 1 个\\
+选择对象:\\
+指定基点: mid\\
+于\\
+指定比例因子或 [复制(C)/参照(R)]: r\\
+指定参照长度 $<$10.0000$>$: 10\\
+指定新的长度或 [点(P)]$ <5.0000>$:  2\\
+命令: line \\
+指定第一点: mid\\
+于\\
+指定下一点或 [放弃(U)]: $@10<90$\\
+指定下一点或 [放弃(U)]:\\
+\indent
 \subsection{电阻元件}
 
 \subsection{电灯元件}
@@ -85,5 +145,4 @@
 \subsection{三极管元件}
 
 \section{触摸延时开关电路图}
-
 \endinput
