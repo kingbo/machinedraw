@@ -137,10 +137,99 @@
 指定下一点或 [放弃(U)]:\\
 \indent
 \subsection{电阻元件}
+电阻元件的绘制方法是：先绘制一个长10宽4的矩形，然后再绘制两根长10的直线，具体尺寸和结果如图\ref{fig:dianzucicu}和\ref{fig:dianzu}所示。
+
+\noindent
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:dianzucicu}\includegraphics[scale=0.4]{dianzucichun.png}}\hspace{30pt}
+\subfloat[]{\label{fig:dianzu}\includegraphics[scale=0.5]{dianzu.png}}
+\caption{电阻元件绘制}
+\end{figure}
+
+\noindent
+命令: rectang\\
+指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)/宽度(W)]:0，0\\
+指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @10,4\\
+命令:line 指定第一点: mid\\
+于\\
+指定下一点或 [放弃(U)]:$ @10<180$\\
+指定下一点或 [放弃(U)]:\\
+命令: mirror\\
+选择对象: 找到 1 个\\
+选择对象:  指定镜像线的第一点: mid\\
+于 指定镜像线的第二点: mid\\
+于\\
+要删除源对象吗？[是(Y)/否(N)] $<N>:$\\
 
 \subsection{电灯元件}
+电灯元件的绘制过程：先绘制圆，接下来将其等分为8等分，然后绘制两条相交直线，最后绘制电源连接线即可。电灯元件的具体尺寸和结果如图所示。
 
+\noindent
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:diandengcicu}\includegraphics[scale=0.3]{diandeng.png}}\hspace{30pt}
+\subfloat[]{\label{fig:diandeng1}\includegraphics[scale=0.3]{diandeng1.png}}\hspace{30pt}
+\subfloat[]{\label{fig:diandeng2}\includegraphics[scale=0.3]{diandeng2.png}}\hspace{30pt}
+\subfloat[]{\label{fig:diandeng3}\includegraphics[scale=0.4]{diandeng3.png}}
+\caption{电灯元件绘制}
+\end{figure}
+
+\noindent
+命令: circle\\
+ 指定圆的圆心或 [三点(3P)/两点(2P)/切点、切点、半径(T)]:
+指定圆的半径或 [直径(D)]: 6\\
+命令: divide\\
+选择要定数等分的对象:\\
+输入线段数目或 [块(B)]: 8\\
+命令: line 指定第一点: node\\
+于\\
+指定下一点或 [放弃(U)]: node\\
+于\\
+指定下一点或 [放弃(U)]:\\
+命令:  LINE 指定第一点: node\\
+于\\
+指定下一点或 [放弃(U)]: node\\
+于\\
+命令: line\\
+指定第一点: node\\
+于\\
+指定下一点或 [放弃(U)]: $@10<0$\\
+指定下一点或 [放弃(U)]:\\
+命令: mirror\\
+选择对象: 找到 1 个\\
+选择对象:  指定镜像线的第一点: node\\
+于\\
+指定镜像线的第二点: node\\
+于\\
+要删除源对象吗？[是(Y)/否(N)] $<N>:$
 \subsection{二极管元件}
+
+命令:polygon 输入侧面数$ <4>$:3
+指定正多边形的中心点或 [边(E)]: e
+指定边的第一个端点:0，0
+指定边的第二个端点: $@6<270$
+命令: line \\
+指定第一点: mid\\
+于\\
+指定下一点或 [放弃(U)]: $@10<180$\\
+指定下一点或 [放弃(U)]:\\
+命令: line \\
+指定第一点:end\\
+于\\
+指定下一点或 [放弃(U)]:end\\
+于\\
+指定下一点或 [放弃(U)]:$ @5<90$\\
+指定下一点或 [闭合(C)/放弃(U)]:\\
+命令:  LINE \\
+指定第一点:end\\
+于\\
+指定下一点或 [放弃(U)]: $@5<-90$\\
+指定下一点或 [放弃(U)]:\\
+命令: line\\
+指定第一点:end\\
+指定下一点或 [放弃(U)]: $@10<0$\\
+指定下一点或 [放弃(U)]:\\
 
 \subsection{三极管元件}
 
