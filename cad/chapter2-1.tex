@@ -163,7 +163,7 @@
 要删除源对象吗？[是(Y)/否(N)] $<N>:$\\
 
 \subsection{电灯元件}
-电灯元件的绘制过程：先绘制圆，接下来将其等分为8等分，然后绘制两条相交直线，最后绘制电源连接线即可。电灯元件的具体尺寸和结果如图所示。
+电灯元件的绘制过程：先绘制圆，接下来将其等分为8等分，然后绘制两条相交直线，最后绘制电源连接线即可。电灯元件的具体尺寸和结果如图\ref{fig:diandengcicu}和\ref{fig:diandeng3}所示。
 
 \noindent
 \begin{figure}[htbp]
@@ -204,7 +204,17 @@
 于\\
 要删除源对象吗？[是(Y)/否(N)] $<N>:$
 \subsection{二极管元件}
+二极元件绘制过程：先绘制等边三角形，再绘制截止线，最后绘制电线。具体尺寸和结果如图所示。
 
+\noindent
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:erjiguancicu}\includegraphics[scale=0.6]{erjiguancicu.png}}\hspace{30pt}
+\subfloat[]{\label{fig:erjiguan}\includegraphics[scale=1]{erjiguan1.png}}
+\caption{二极管元件绘制}
+\end{figure}
+
+\noindent
 命令:polygon 输入侧面数$ <4>$:3
 指定正多边形的中心点或 [边(E)]: e
 指定边的第一个端点:0，0
