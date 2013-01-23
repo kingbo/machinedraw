@@ -49,11 +49,21 @@
 \noindent
 \begin{figure}
 \centering
-\includegraphics[scale=0.6]{onlydianjiyuanjian.png}
+\includegraphics[scale=0.5]{onlydianjiyuanjian.png}
 \caption{电路元件图}\label{fig:onlydianziyujian}
 \end{figure}
 \subsection{绘制线路}
 最后，我们根据电路的特点，新建图层并绘水平或垂直连接线即可完成电路图，其过程与图形的绘相同因此就不在一一叙述了。最终结果如图\ref{fig:zhumodianlu}所示。
 
 \zhishi{insert命令解析}
+insert命令用于将块或图形插入当前图形中。 其主要选项的含义如下：
+\begin{itemize}
+\item 基点(B):将块临时放置到当前所在的图形中，并允许在将块参考拖动到位时为其指定新基点。这不会影响为块参照定义的实际基点。 
+\item 比例(s):为 X、Y 和 Z 轴设定比例因子。Z 轴比例是指定比例因子绝对值。
+\item X:设定 X 比例因子。
+\item Y:设定 Y 比例因子。
+\item Z:设定 Z 比例因子。
+\item 旋转(R)：设定块插入的旋转角度。
+\end{itemize}
+
 \endinput
