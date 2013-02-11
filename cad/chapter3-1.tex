@@ -1,4 +1,54 @@
 \section{V型块三视图}
+{\bfseries 知识目标}
+\begin{itemize}
+\item 掌握三视图形成
+\item 掌握三视图绘图规律和对应关系
+\item 掌握平面体三视图的规律
+\end{itemize}
+
+{\bfseries 技能目标}
+\begin{itemize}
+\item 能够应用三视图对应关系，使用AutoCAD绘制平面体的三视图
+\end{itemize}
+
+本任务以完成图\ref{fig:Vxingkuai}所示的V型块三视图任务来实现掌握平面体的三视图绘制方法和规律的目的，掌握三视图形成原理和对应关系，掌握应用AutoCAD进行三视图绘制的方法和技巧。通过完成该任务，读者最终能够实现应用三视图对应关系，掌握应用AutoCAD绘制平面体三视图的技能。
+\noindent
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\draw[line width=0.7mm](0,0)--(30:50mm)coordinate(a1)--++(0,30mm)coordinate(a2);
+\draw[line width=0.7mm](0,0)--(150:20mm)coordinate(a3)--++(0,30mm)coordinate(a4);
+\draw[line width=0.7mm](0,0)--(0,30mm)--(a4);
+\draw[line width=0.7mm](a2)--++(150:20mm)coordinate(a5);
+\draw[line width=0.7mm](a2)--++(30:-10mm)coordinate(a6);
+\draw[line width=0.7mm](a5)--++(30:-10mm)coordinate(a7);
+\draw[line width=0.7mm](a6)--(a7);
+\draw[line width=0.7mm](0,30mm)--++(30:10mm)coordinate(a8);
+\draw[line width=0.7mm](a4)--++(30:10mm)coordinate(a9);
+\draw[line width=0.7mm](a8)--(a9);
+\draw[line width=0.7mm]($(0,0)!.4!(30:50mm)$)++(0,10mm)coordinate(b1)--++(30:10mm)coordinate(b2);
+\draw[line width=0.7mm](b1)--++(0,10mm)coordinate(b3)(b2)--++(0,10mm)coordinate(b4);
+\draw[line width=0.7mm](a9)--(b3)(a6)--(b4);
+\draw[line width=0.7mm](b4)--++(150:20mm)coordinate(b5);
+\draw[line width=0.7mm](b5)--(a7);
+\draw[line width=0.7mm](b5)--++(0,-10mm)--(b2);
+\draw[line width=0.4mm](0,0)--++(30:-10mm)coordinate(c1)(a3)--++(30:-10mm)coordinate(c2);
+\draw[<->,line width=0.4mm](c1)++(30:2mm)--++(150:20mm)node[midway,sloped,above]{20};
+\draw[line width=0.4mm](b1)--++(30:-10mm)coordinate(c3);
+\draw[<->,line width=0.4mm](c3)++(30:2mm)--++(0,-10mm)node[midway,sloped,above]{10};
+\draw[line width=0.4mm](b4)--++(30:10mm)coordinate(c4);
+\draw[<->,line width=0.4mm](c4)++(30:-2mm)--++(0,-20mm)node[midway,sloped,above]{20};
+\draw[line width=0.4mm](a1)--++(30:10mm)coordinate(c5)(a2)--++(30:10mm);
+\draw[<->,line width=0.4mm](c5)--++(0,30mm)node[midway,sloped,above]{30};
+\draw[line width=0.4mm](b3)--++(0,7mm)coordinate(c6)(b4)--++(0,7mm);
+\draw[<->,line width=0.4mm](c6)++(0,-2mm)--++(30:10mm)node[midway,above]{10};
+\draw[line width=0.4mm](a9)--++(0,7mm)coordinate(c7)(a7)--++(0,7mm);
+\draw[<->,line width=0.4mm](c7)++(0,-2mm)--++(30:30mm)node[midway,above]{30};
+\draw[line width=0.4mm](a4)--++(0,17mm)coordinate(c8)(a5)--++(0,17mm);
+\draw[<->,line width=0.4mm](c8)++(0,-2mm)--++(30:50mm)node[midway,above]{50};
+\end{tikzpicture}
+\caption{V型块}\label{fig:Vxingkuai}
+\end{figure}
 \begin{enumerate}
 \item 投影的概念
 \item 正投影的基本特性
