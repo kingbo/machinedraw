@@ -11,7 +11,7 @@
 \item 能够应用三视图对应关系，使用AutoCAD绘制平面体的三视图
 \end{itemize}
 
-本任务以完成图\ref{fig:Vxingkuai}所示的V型块三视图任务来实现掌握平面体的三视图绘制方法和规律的目的，掌握三视图形成原理和对应关系，掌握应用AutoCAD进行三视图绘制的方法和技巧。通过完成该任务，读者最终能够实现应用三视图对应关系，掌握应用AutoCAD绘制平面体三视图的技能。
+图\ref{fig:Vxingkuai}所示的V型块是广泛应用于工业生产中的机械零件的简化形式。V型块在工业生产中主要用于安放轴类零件，以便于找准和划出中心线。本任务以绘制V型块三视图为目标，实现让读者了解并掌握平面体三视图绘制方法和规律的目的，掌握三视图形成原理和对应关系，掌握应用AutoCAD进行三视图绘制的方法和技巧。通过完成该任务，读者最终能够实现应用三视图对应关系，掌握应用AutoCAD绘制平面体三视图的技能。
 \noindent
 \begin{figure}[htbp]
 \centering
@@ -48,6 +48,39 @@
 \draw[<->,line width=0.4mm](c8)++(0,-2mm)--++(30:50mm)node[midway,above]{50};
 \end{tikzpicture}
 \caption{V型块}\label{fig:Vxingkuai}
+\end{figure}
+
+\subsection{绘制长方体的三视图}
+通过观察图\ref{fig:Vxingkuai}所示的V型块，我们可以看出该物体是由在一个长方体上面开出了一个V字型的沟槽。本着化繁为简，易于理解的目的，我们暂时先忽略V型块上的V字型沟槽的存在，将其简化为一个长方体，并完成长方体的三视图，然后在此基础上再完成V字型沟槽的三视图，二者合一即可形成最终的V型块三视图。在开始绘制长方体的三视图前，我们需要了解投影、投影法、正投影、视图和三视图等概念的含义。
+\subsubsection{投影}
+物体在阳光或灯光下所生的具有影子就称为投影。由于影子只显示了物体的外部轮廓，不能够体现物体内外细节，不具备工程实际价值。在工程实际中，采用不同的线型将物体的内外空间几何元素加以抽像，使之能够具体地反映物体的内外细节，从而形成比较完备的、实用的投影法。投影法主要分为中心投影法和平行投影法两类。
+\subsubsection{平行投影法}
+中心投影法的所有投影线都不是平行的，主要用于绘制效果比较逼真的建筑或产品立体图，故在此不作讲解，有兴趣的读者可查阅相关书籍深入学习。
+
+图\ref{pingxingtouyin}所示即为平行投影法，从图中可以看出，平行投影法是将光源置于无穷远处，使所有的投影线之间为平行关系的一种投影方法。若投影线与投影面垂直称为正投影法；若投影线与投影面倾斜的称之为斜投影法。平行投影法中，正投影法主要应用于工程图样的绘，斜投影主要用于绘制立体图形。
+\begin{figure}[htbp]
+\centering
+\subfloat[斜投影法]{\label{fig:xietouyinfa}
+\begin{tikzpicture}
+\draw(0,0)--(30mm,0)--++(30:30mm)--++(-30mm,0)--cycle;
+\begin{scope}[xshift=10mm]
+\draw[line width=0.4mm](0,0)++(30:10mm)coordinate(a1)--++(10mm,0) coordinate(a2)--++(30:10mm) coordinate(a3)--++(-10mm,0) coordinate(a4)--cycle;
+\draw(a1)--++(75:30mm)coordinate(b1) (a2)--++(75:30mm)coordinate(b2) (a3)--++(75:30mm)coordinate(b3) (a4)--++(75:30mm)coordinate(b4);
+\draw[line width=0.4mm]($(a1)!.8!(b1)$)--($(a2)!.8!(b2)$)--($(a3)!.8!(b3)$)--($(a4)!.8!(b4)$)--cycle;
+\end{scope}
+\end{tikzpicture}
+}
+\subfloat[正投影法]{\label{fig:zhentouyinfa}
+\begin{tikzpicture}
+\draw(0,0)--(30mm,0)--++(30:30mm)--++(-30mm,0)--cycle;
+\begin{scope}[xshift=10mm]
+\draw[line width=0.4mm](0,0)++(30:10mm)coordinate(a1)--++(10mm,0) coordinate(a2)--++(30:10mm) coordinate(a3)--++(-10mm,0) coordinate(a4)--cycle;
+\draw(a1)--++(0,30mm)coordinate(b1) (a2)--++(0,30mm)coordinate(b2) (a3)--++(0,30mm)coordinate(b3) (a4)--++(0,30mm)coordinate(b4);
+\draw[line width=0.4mm]($(a1)!.8!(b1)$)--($(a2)!.8!(b2)$)--($(a3)!.8!(b3)$)--($(a4)!.8!(b4)$)--cycle;
+\end{scope}
+\end{tikzpicture}
+}
+\caption{平行投影法}\label{pingxingtouyin}
 \end{figure}
 \begin{enumerate}
 \item 投影的概念
