@@ -82,20 +82,34 @@
 }
 \caption{平行投影法}\label{pingxingtouyin}
 \end{figure}
-\begin{enumerate}
-\item 投影的概念
-\item 正投影的基本特性
-\begin{enumerate}
-\item 真实性
 
-当直线、平面与投影面平行时，投影反映实长和实形
-\item 积聚性
+\subsubsection{三视图的形成}
+根据《工程制图》国家标准，将位于观察者和投影面之间的物体，按照正投影法向投影面进行投影所得的图形称之为视图。从图中，我们可以看出同一个视图可表示不同的物体，因此工程实际中仅用一个视图很难将物体的大小形状完整清晰的表达出来。通常情况下，需要将物体向多个投影面进行投影才能够完整地表达出物体上下、左右、前后各部分的形状和大小。实际中，经常将物体向三个方向进行投影，形成三个视图，称为三视图。
 
-当直线、平面与投影垂直时，投影积聚成点和直线
-\item 类似性
-
-当直线、平面与投影面倾斜时，直线的投影仍是直线，但比实长短；平面的投影为一个与它既不全等也不相似的类似多边形。
-\end{enumerate}
-\end{enumerate}
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\draw[line width=0.4mm](0,0)coordinate(a1)--(0,5mm)coordinate(a2)--++(30:5mm) coordinate(a3)--++(0,5mm)coordinate(a4)--++(30:5mm) coordinate(a5)--++(0,-10mm)coordinate(a6)--cycle;
+\draw[line width=0.4mm](a1)--++(150:10mm)coordinate(a7)--++(0,10mm) coordinate(a8)--++(-30:5mm)coordinate(a9)--++(0,-5mm) coordinate(a10)--(a2);
+\draw[line width=0.4mm](a10)--++(30:5mm)--++(0,5mm)(a3)--++(150:5mm)(a4)--++(150:5mm)--++(30:-5mm)(a5)--++(150:10mm)--++(30:-10mm);
+\draw[line width=0.4mm](a7)++(150:12mm)coordinate(b1)--++(0,5mm)coordinate(b2)--++(30:5mm) coordinate(b3)--++(0,5mm)coordinate(b4)--++(30:5mm) coordinate(b5)--++(0,-10mm)coordinate(b6)--cycle;
+\begin{scope}
+\clip (a8)rectangle($(a8)+(-2mm,2mm)$);
+\draw(a6)--(b6);
+\end{scope}
+\draw[line width=0.4mm](b1)--++(150:10mm)coordinate(b7)--++(0,10mm)--++(-30:5mm)--(b2);
+\draw[line width=0.4mm](b5)--++(150:10mm)--++(30:-10mm) (b4)--++(150:5mm)coordinate(b8)--++(30:-5mm)(b8)--(b3);
+\draw[line width=0.4mm](b7)++(150:15mm)coordinate(c1)--++(0,5mm)coordinate(c2)--++(30:5mm) coordinate(c3)--++(0,5mm)coordinate(c4)--++(30:5mm) coordinate(c5)--++(0,-10mm)coordinate(c6)--cycle;
+\draw[line width=0.4mm](c2)--++(0,5mm)coordinate(c7)--(c4);
+\begin{scope}
+\clip ($(b7)+(0,10mm)$) coordinate(c8)rectangle($(c8)+(-2mm,2mm)$);
+\draw(b6)--(c6);
+\end{scope}
+\draw(a1)--(c1)(a2)--(c2)(a4)--(c4)(a5)--(c5)(a9)--(c7);
+\begin{scope}
+\draw($(c1)+(30:-10mm)+(0,-3mm)$)--++(0,30mm)--++(30:30mm)--++(0,-30mm)--cycle;
+\end{scope}
+\end{tikzpicture}
+\end{figure}
 
 \endinput
