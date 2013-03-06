@@ -255,8 +255,8 @@
 \begin{figure}[htbp]
 \centering
 \begin{floatrow}
-\ffigbox{\caption{长方体主视图}\label{fig:cubezhushitu}}{\includegraphics{cubezhushitu.png}}
-\ffigbox{\caption{绘制三视图辅助线}\label{fig:cubeaidline}}{
+\ffigbox{\caption{长方体主视图绘制}\label{fig:cubezhushitu}}{\includegraphics{cubezhushitu.png}}
+\ffigbox{\caption{三视图辅助线绘制}\label{fig:cubeaidline}}{
 \includegraphics[scale=0.5]{cubeaidline.png}}
 \end{floatrow}
 \end{figure}
@@ -321,7 +321,7 @@
 \begin{figure}[htbp]
 \centering
 \begin{floatrow}
-\ffigbox{\caption{长方体俯视图}\label{fig:cubefushitu}}{\includegraphics{cubefushitu.png}}
+\ffigbox{\caption{长方体俯视图绘制}\label{fig:cubefushitu}}{\includegraphics{cubefushitu.png}}
 \ffigbox{\caption{长方体三视图}\label{fig:cubethreeview}}{
 \includegraphics[scale=0.7]{cubethreeview.png}}
 \end{floatrow}
@@ -351,7 +351,7 @@
 
 \subsection{V型块三视图}
 我们现在长方体三视图的基础上绘制出V形槽的三视图即完成了V型块的三视图绘制。
-第一步：为了方便主视图中的V形槽的绘制，我们先选择中心线图层在主视图中绘制一条中心线，然后再选择实线图层，绘制出V型槽的主视图，结果如图所示。
+第一步：为了方便主视图中的V形槽的绘制，我们先选择中心线图层在主视图中绘制一条中心线，然后再选择实线图层，绘制出V型槽的主视图，结果如图\ref{fig:Vxingzhushitu}所示。
 \begin{lstlisting}
 %命令: line 指定第一点: mid%
 %于%
@@ -390,5 +390,52 @@
 %[栏选(F)/窗交(C)/投影(P)/边(E)/删除(R)/放弃(U)]:%
 \end{lstlisting}
 
-第二步：选择辅助线图层，以主视图的V型槽为基础，绘制长对正的辅助线；然后选择实线图层，绘制出V型槽的俯视图，结果如图所示。
+\begin{figure}[htbp]
+\centering
+\begin{floatrow}
+\ffigbox{\caption{V沟槽主视图绘制}\label{fig:Vxingzhushitu}}{\includegraphics[scale=0.9]{Vxingzhushitu.png}}
+\ffigbox{\caption{V型沟槽俯视图绘制}\label{fig:Vxingfushitu}}{
+\includegraphics[scale=0.8]{Vxingfushitu.png}}
+\end{floatrow}
+\end{figure}
+第二步：选择实线图层，以主视图的V型槽为基础，应用对象捕捉功能，绘制出V型槽的俯视图，结果如图\ref{fig:Vxingfushitu}所示。
+\begin{lstlisting}
+%命令: line% 
+%指定第一点:%
+%指定下一点或 [放弃(U)]: per%
+%到%
+%指定下一点或 [放弃(U)]:%
+%命令: LINE %
+%指定第一点:%
+%指定下一点或 [放弃(U)]: per%
+%到%
+%指定下一点或 [放弃(U)]:%
+%指定下一点或 [放弃(U)]: per%
+%到%
+%指定下一点或 [放弃(U)]:%
+%命令: LINE %
+%指定第一点:%
+%指定下一点或 [放弃(U)]: per%
+%到%
+%指定下一点或 [放弃(U)]:%
+\end{lstlisting}
+
+第三步：由于V型沟槽为通槽，在绘制长方体三视图时其宽度方向已经满足对应关系，故只需要以主视图为基础，就可以绘出其左视图。从立体图中可以看出，从左侧向W投影平面投影时，V型沟槽被遮挡，需要用虚线表示。因此我们选择虚线图层，利用对象捕捉，即可完成其左视图。完成该步骤后，V型块的三视图如图\ref{fig:Vxingthreeview}所示。
+\begin{figure}[htpb]
+\centering
+\includegraphics[scale=0.7]{Vxingthreeview.png}
+\caption{V型块三视图}\label{fig:Vxingthreeview}
+\end{figure}
+\begin{lstlisting}
+%命令: line 
+%指定第一点:
+%指定下一点或 [放弃(U)]: per
+%到
+%指定下一点或 [放弃(U)]:
+%命令: line 
+%指定第一点:
+%指定下一点或 [放弃(U)]: per
+%到
+%指定下一点或 [放弃(U)]:
+\end{lstlisting}
 \endinput
