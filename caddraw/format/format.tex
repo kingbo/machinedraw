@@ -1,0 +1,71 @@
+\renewcommand{\contentsname}{目\quad 录}
+
+\titlecontents{chapter}[1em]{\vspace{.5\baselineskip}\bfseries}
+{第\CJKnumber{\thecontentslabel}章\quad}{}
+{\hspace{.5em}\titlerule*[10pt]{$\cdot$}\contentspage}
+\renewcommand{\chaptername}{第\,\CJKnumber{\thechapter}\,章}
+\titleformat{\chapter}[hang]{\centering\huge\bfseries}{\chaptername}{1em}{}
+\titlespacing{\chapter}{0pt}{*0}{*4}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\fancyhead[ER]{\leftmark}
+\fancyhead[OL]{\rightmark}
+\fancyhead[EL,OR]{$\cdot$\ \thepage\ $\cdot$}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+\setlength{\floatsep}{5pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{2pt plus 1pt minus 1pt}
+\setlength{\belowcaptionskip}{2pt plus 1pt minus 2pt}
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+%\setlength{\parskip}{1.5ex plus 0.3ex minus 0.2ex}
+
+\lstset{
+%numbers=left,
+numberstyle=\tiny,
+keywordstyle=\color{blue!70}, commentstyle=\color{red!50!green!50!blue!50},
+frame=shadowbox,
+rulesepcolor=\color{red!20!green!20!blue!20},
+extendedchars=false,
+postbreak=\space,
+breakindent=5pt,
+breaklines=true,
+escapechar=\|,
+xleftmargin=2em,xrightmargin=2em,aboveskip=1em,
+basicstyle=\footnotesize
+}
+
+\newcommand{\gorectangle}[1]{
+\tikz\node[text=white,font=\sffamily\bfseries,inner sep=0.3mm,draw,rounded corners,fill=black]{\small #1};}
+\newcounter{procedurecounter}
+\newenvironment{procedure}{
+\begin{list}{\gorectangle{Step\,\arabic{procedurecounter}}}{
+\setlength{\parsep}{\parskip}
+\setlength{\itemsep}{0ex plus 0.1ex}
+\setlength{\labelwidth}{4em}
+\setlength{\labelsep}{0.2em}
+\setlength{\leftmargin}{6.2em}
+\usecounter{procedurecounter}
+\setcounter{procedurecounter}{0}}}
+{\end{list}}
+
+\newcounter{tipscounter}
+\newenvironment{tips}{
+\begin{list}{\gorectangle{提示\,\arabic{tipscounter}}}{
+\setlength{\parsep}{\parskip}
+\setlength{\itemsep}{0ex plus 0.1ex}
+\setlength{\labelwidth}{4em}
+\setlength{\labelsep}{0.2em}
+\setlength{\leftmargin}{6.2em}
+\usecounter{tipscounter}
+\setcounter{tipscounter}{0}}}
+{\end{list}}
+\endinput
