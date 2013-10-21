@@ -124,7 +124,12 @@ AutoCAD启动后，其界面如图\ref{fig:cadui}所示。
 \subfloat[]{\label{fig:offsetresult}\includegraphics[scale=0.5]{offsetresult.png}}
 \caption{偏移过程}
 \end{figure}
-\item 在完成偏移操作后，其结果如图\ref{fig:offsetresult}所示，现在需要用【修剪】命令修剪掉不需要的线段，以完成图形绘制。
+\item 在完成偏移操作后，其结果如图\ref{fig:offsetresult}所示，现在需要用【修剪】命令修剪掉不需要的线段，以完成图形绘制。【修剪】命令的启动方法有：
+\begin{itemize}
+\item 解盘输入TRIM或TR。
+\item 点击【修改】菜单中的【修剪】项。
+\item 点击【修改】工具栏中的【修剪】图标\includegraphics[scale=0.6]{trimtool.png}。
+\end{itemize}
 \begin{lstlisting}
 |命令: TRIM|
 |当前设置:投影=UCS，边=无|
@@ -198,8 +203,8 @@ AutoCAD启动后，其界面如图\ref{fig:cadui}所示。
 \showremarks
 \begin{figure}[htbp]
 \centering
-\subfloat[]{\label{fig:revnodeselecta}\includegraphics[scale=1.2]{revnodeselect1.png}}\hspace{30pt}
-\subfloat[]{\label{fig:revnodeselectb}\includegraphics[scale=1.2]{revnodeselect2.png}}
+\subfloat[]{\label{fig:revnodeselecta}\includegraphics[scale=0.7]{revnodeselect1.png}}\hspace{30pt}
+\subfloat[]{\label{fig:revnodeselectb}\includegraphics[scale=0.7]{revnodeselect2.png}}
 \caption{旋转中心定义}
 \end{figure}
 \item 将视图切换为【东南等轴测】，并将【视觉样式】设置为【灰度】即可得到图\ref{fig:beimodel}所示的调压阀杯零件三维模型效果。
@@ -222,7 +227,7 @@ AutoCAD启动后，其界面如图\ref{fig:cadui}所示。
 \end{procedure}
 \begin{figure}
 \centering
-\includegraphics[scale=0.5]{beimodel.pdf}
+\includegraphics[scale=0.4]{beimodel.pdf}
 \caption{杯零件三维模型}\label{fig:beimodel}
 \end{figure}
 
