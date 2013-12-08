@@ -4,12 +4,12 @@
 根据第\ref{chap:bei}章的杯零件和第\ref{chap:dianpian}章的垫片零件建模的经验，大致有两种技术路线图可以用于端盖零件的三维建模，即主视图技术路线图和左视图路线图。
 
 \subsection{主视图技术路线}
-图\ref{fig:tiaoyafaduangaifront}所示的端盖主视图可由5个不同直径圆柱和6个直径为$\diameter 9$的圆柱组成。然后利用圆柱之间的并、差、交集关系来实现模型的构建。其整个建模过程中需要利用辅助点或线来帮助圆的定位。
+图\ref{fig:tiaoyafaduangaifront}所示的端盖主视图可由5个不同直径圆柱和6个直径为$\diameter 9$的圆柱组成。然后利用圆柱之间的并、差、交集关系来实现模型的构建,最后用【圆角】命令实现左视图中的三个圆角。其整个建模过程中需要利用辅助点或线来帮助圆的定位。
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=0.5]{tiaoyafaduangaifront.pdf}
 \caption{端盖主视图}\label{fig:tiaoyafaduangaifront}
 \end{figure}
 \subsection{左视图技术路线}
-
+图所示为端盖左视图，根据以前的经验，可以先绘制出对称中心线上半部分或下半部分中填充剖面线部分的轮廓外形，然后利用旋转建模的方法就可以得到端盖的三维模型。
 \endinput
