@@ -1,0 +1,47 @@
+\documentclass[10pt,twoside]{book}
+\usepackage{beamerarticle}
+\usepackage{CJKutf8,CJKnumb}
+\usepackage{amsmath,amssymb,amsthm,amscd}
+\usepackage{wasysym}
+\usepackage{gensymb}
+\usepackage{titlesec}
+\usepackage[paperwidth=185mm,paperheight=260mm,text={148mm,210mm},
+			left=21mm,vmarginratio=1:1]{geometry}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{asymptote}
+\usepackage[utf8]{inputenc}
+\usepackage[unicode={true}]{hyperref}
+\usepackage{manfnt}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{supertabular}
+\usepackage{lscape}
+\setjobnamebeamerversion{control.beamer}
+\usetikzlibrary{positioning,calc}
+\usetikzlibrary{shapes,snakes}
+\tikzset{
+>=stealth,
+nonterminal/.style={rectangle,minimum size=6mm,draw=black,font=\ttfamily},
+circleterminal/.style={circle,minimum size=1mm,draw=black}
+}
+\begin{document}
+\titleformat{\chapter}[hang]{\centering\huge\bfseries}{\chaptername}{1em}{}
+\setlength{\floatsep}{5pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{2pt plus 1pt minus 1pt}
+\setlength{\belowcaptionskip}{2pt plus 1pt minus 2pt}
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\begin{CJK}{UTF8}{song}
+\title{\huge 《计算机控制原理与应用》授课教案}
+\author{\large 任\ 课\ 教\ 师：\underline{金波\qquad\qquad\qquad\quad}\\ 授\ 课\ 班\ 级：\underline{12电气控制及自动化}\\ 课程总学时：\underline{72\qquad\qquad\qquad\qquad}\\ 课\ 改\ 类\ 型：\underline{理论课\qquad\qquad\qquad}}
+\date{二零一四年三月}
+\maketitle
+\include{content/chapter1}
+\include{content/chapter2-1}
+\include{content/chapter2-2}
+\end{CJK}
+\end{document}

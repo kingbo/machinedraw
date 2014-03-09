@@ -1,0 +1,48 @@
+\documentclass[14pt,CJKutf8]{beamer}
+\usepackage{CJKutf8,CJKnumb}
+\usepackage{amsmath,amssymb,amsthm,amscd}
+%\usepackage{asymptote}
+\usepackage{wasysym}
+\usepackage{gensymb}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{epstopdf}
+\usepackage[utf8]{inputenc}
+\usepackage{manfnt}
+\usetikzlibrary{positioning,calc}
+\usetikzlibrary{shapes,snakes}
+\tikzset{
+>=stealth,
+nonterminal/.style={rectangle,minimum size=6mm,draw=black,font=\ttfamily},
+circleterminal/.style={circle,minimum size=1mm,draw=black}
+}
+\mode<presentation>
+{
+  \usetheme{PaloAlto}
+}
+%\includeonlylecture{yinlun}
+%\includeonly{content/chapter2-1}
+%\includeonly{content/chapter2-2}
+%\includeonlylecture{wulimoxing}
+\begin{document}
+
+\begin{CJK}{UTF8}{song}
+\title{PLC控制技术}
+\author{金波 \inst{1}}
+\institute[西藏职业技术学院]{
+\inst{1}
+教务处\\ 西藏职业技术学院 }
+\date{\today}
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}[allowframebreaks]{主要内容}
+  \tableofcontents
+\end{frame}
+\include{content/chapter1}
+\include{content/chapter2}
+\include{content/chapter3}
+\include{content/chapter4}
+\end{CJK}
+\end{document}
