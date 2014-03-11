@@ -313,3 +313,33 @@
 \end{tikzpicture}
 \end{block}
 \end{frame}
+\begin{frame}
+\begin{block}{最终结果}
+\begin{tikzpicture}
+[node distance=8mm,>=stealth]
+\node(start1)[circleterminal,label=above left:\tiny +,label=below left:-]{};
+\draw(start1.north west)--(start1.south east);
+\draw(start1.north east)--(start1.south west);
+\draw[<-](start1.west)--++(-10mm,0)node[midway,above]{\tiny $V_1(s)$};
+\node(L)[nonterminal,right=of start1]{\tiny $\frac{1}{L}$};
+\draw[->](start1.east)--(L.west);
+\node(start2)[circleterminal,label=above left:\tiny +,label=below left:-,right=of L]{};
+\draw(start2.north west)--(start2.south east);
+\draw(start2.north east)--(start2.south west);
+\draw[->](L.east)--(start2.west);
+\node(S)[nonterminal,right=of start2]{\tiny $\frac{1}{s}$};
+\draw[->](start2.east)--(S.west);
+\node(C)[nonterminal,right=of S]{\tiny $\frac{1}{C}$};
+\draw[->](S.east)--(C.west);
+\node(fback)[nonterminal,below=of S]{\tiny $\frac{R}{L}$};
+\draw($(S.east)!.5!(C.west)$)coordinate(a)node[above]{\tiny $I(s)$}|-(fback.east);
+\draw[->](fback.west)-|(start2.south);
+\filldraw(a)circle(2pt);
+\node(S1)[nonterminal,right=of C]{\tiny $\frac{1}{s}$};
+\draw[->](C.east)--(S1.west);
+\draw[->](S1.east)--++(12mm,0)coordinate(b);
+\draw[->]($(S1.east)!.7!(b)$)coordinate(c)node[above]{\tiny $V_2(s)$}--++(0,-25mm)-|(start1.south);
+\filldraw(c)circle(2pt);
+\end{tikzpicture}
+\end{block}
+\end{frame}
