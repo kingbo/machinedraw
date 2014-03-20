@@ -15,35 +15,32 @@
 \endfoot
 \hline
 \endlastfoot
-\centering{授课单元}&\multicolumn{3}{m{60mm}|}{\centering 具有报警功能的电动机单向连续运行控制}&\centering{授课日期}&2014年03月12日 \\
+\centering{授课单元}&\multicolumn{3}{m{60mm}|}{\centering 电动机正反转间歇运行控制}&\centering{授课日期}&2014年03月12日 \\
 \hline
 \centering 授课地点 & \multicolumn{3}{m{60mm}|}{B4-209}&\centering 授课学时 & 2 \\
 \hline
 & \multicolumn{2}{m{40mm}|}{能力目标} & \multicolumn{2}{m{40mm}|}{知识目标}&素质目标 \\
 \cline{2-6}
 \centering 教学目标&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
-\item 能够运用置位和复位指令实现具有报警功能的电动机单向连续运转控制
-\item 能够运用STEP7软件编写简单的PLC控制程序
+\item 能够运用互锁 PLC 程序实现电动机的星三角形启动运转控制
+\item 能够运用定时器实现电动机的灭弧控制
 \item 能够根据控制要求进行系统I/O分配
-\item 能够运用定时器进行延时控制
 \end{enumerate}} &\multicolumn{2}{m{40mm}|}{\begin{enumerate}
-\item 掌握置位指令的用法
-\item 掌握复位指令的用法
-\item 掌握定时器指令的用法
-\item 掌握SLT指令程序输入法
+\item 掌握接触器的灭弧控制时间
+\item 掌握程序流程图的绘制方法
 \end{enumerate}} & {能够进行故障分析，以培养问题分析能力}\\
 \hline
 \centering 能力训练任务或案例 &\multicolumn{5}{m{108mm}|}{\begin{enumerate}
-\item 编制I/o分配表
-\item 设计电动机PLC控制程序
+\item 编制电动机星三角形启动控制I/o分配表
+\item 设计电动机星三角形启动的PLC控制程序
 \item PLC控制接线
 \item PLC控制程序输入
 \item PLC控制检验
 \end{enumerate}}\\
 \hline
-\centering 教学重点 & \multicolumn{5}{m{108mm}|}{报警定时控制程序的设计}\\
+\centering 教学重点 & \multicolumn{5}{m{108mm}|}{正反转互锁控制程序的设计}\\
 \hline
-\centering 教学难点与解决办法 &\multicolumn{5}{m{108mm}|}{难点：具有定时功能的PLC程序编写。解决方法：通过指令演示使学生了解并掌握时间指令的基本结构}\\
+\centering 教学难点与解决办法 &\multicolumn{5}{m{108mm}|}{难点：具有灭弧功能的时间延时PLC程序编写。解决方法：通过演示使学生了解并掌握接触器的灭弧时间}\\
 \hline
 \centering 德育内容 &\multicolumn{5}{m{108mm}|}{无}\\
 \hline
@@ -79,26 +76,26 @@
 \endlastfoot
 \multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\\hline
 引入&\begin{enumerate}
-\item 具有报警功能的电动机单向连续运转控制
+\item 交流电动机星三角形启动控制
 \end{enumerate} &\begin{enumerate}
 \item 介绍项目情景
 \item 讲述控制要求
-\item 布置编制I/O分配表任务
+\item 布置编制I/O分配表和程序流程图任务
 \end{enumerate} &\begin{enumerate}
 \item 学生记录控制要求
 \item 学生领取项目任务
 \end{enumerate} &5 \\\hline
 设计&
 \begin{enumerate}
-\item 编制电动控制I/O分配表
+\item 编制电动控制I/O分配表和程序流程图
 \end{enumerate} &\begin{enumerate}
-\item 了解学生编制I/O分配表的情况
+\item 了解学生编制I/O分配表和程序流程图的情况
 \end{enumerate} &\begin{enumerate}
-\item 学生编制I/O分配表
-\item 学生展示编制的I/O分配表
+\item 学生编制I/O分配表和程序流程图
+\item 学生展示编制的I/O分配表和程序流程图
 \end{enumerate} &10 \\\hline
 设计&\begin{enumerate}
-\item 设计具有报警功能的电机单向连续运行的PLC控制程序
+\item 设计具有星三角形启动功能的电动机PLC控制程序
 \end{enumerate}
 &\begin{enumerate}
 \item 指导学生进行PLC控制程序设计
@@ -135,10 +132,12 @@
 \item 学生根据验证情况修改PLC控制程序
 \end{enumerate}&15 \\\hline
 \centering 本次课总结(评价)&\begin{enumerate}
-\item 总结起保停PLC程序的基本结构 
-\end{enumerate}&总结定时器指令的用法  &学生倾听记录 &5 \\\hline
+\item 电器灭弧控制 
+\end{enumerate}&讲解电器灭弧控制的要示和作用  &学生倾听记录 &5 \\\hline
 \centering 学生学习笔记或工单等检查情况&\multicolumn{4}{m{165mm}|}{\quad}\\\hline
-\centering 课后作业&\multicolumn{4}{m{165mm}|}{}\\\hline
+\centering 课后作业&\multicolumn{4}{m{165mm}|}{\begin{enumerate}
+\item 用PLC实现具有星三角形起动功能的电动机控制程序
+\end{enumerate}}\\\hline
 \centering 教学体会&\multicolumn{4}{m{165mm}|}{\quad}\\
 \end{longtable}
 
@@ -148,19 +147,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%板书设计%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\lecture{计算机控制系统简介}{yinlun}
 \begin{center}
 {\huge 板书设计}
 \end{center}
 }
 
-\mode<presentation>{ \section{具有报警功能的电动机单向连续运行控制} }
-\begin{frame}[containsverbatim]{报警功能的电动机单向连续运行控制}
+\mode<presentation>{ \section{交流电动机星三角形启动控制} }
+\begin{frame}[containsverbatim]{交流电动机星三角形启动控制}
 \begin{block}{控制要求}
 \begin{itemize}
-\item 按下SB1按钮，三相电动机单向连续正转。
+\item 按下SB1按钮，三相电动机主接触器和星形联接接通，电机开始正转。
+\item 电机星形启动30s后断开，并延时5s后转为三角形连接开始正常运行。
 \item 按下SB2按钮，三相电动机停止转动。
-\item 当电动机过载时，过载保护器FR断开，三相电动机停止运转，蜂鸣器和闪光灯接通20秒。
+\item 当电动机过载时，过载保护器FR断开，三相电动机停止运转。
 \end{itemize}
 \end{block}
 \end{frame}
@@ -184,24 +184,19 @@
 \cline{1-2}\cline{4-5}
 代号 & 功能 & 输入 & 代号 & 功能 & 输出 \\ 
 \hline 
-SB1 & 启动按钮 & I0.0 & KM & 接触器 & Q0.0 \\ 
+SB1 & 启动按钮 & I0.0 & KM1 & 主接触器 & Q0.0 \\ 
 \hline 
-SB2 & 停止按钮 & I0.1 & HA & 蜂鸣器 & Q0.1 \\ 
+SB2 & 停止按钮 & I0.1 & KM2 & 星形接触器& Q0.1 \\ 
 \hline 
-FR & 过载保护 & I0.2 &  HL & 闪光灯 & Q0.2 \\ 
+FR & 过载保护 & I0.2 &KM3  & 三角形接触器 &Q0.2  \\ 
 \hline
 \end{tabular} 
 \end{small}
 \end{block}
 \end{frame}
 \begin{frame}{总结}
-\begin{block}{定时器}
-\begin{itemize}
-\item T37-T63、T101-T225为接通/关断延时100ms时间定时器
-\item T33-T36、T97-T100为接通/关断延时10ms时间定时器
-\item 由于PLC型号之间的差异，需以手册为准
-\end{itemize}
-
+\begin{block}{接触器灭弧}
+由于接触器在断开后需要一定的时间来完成电路灭弧，如果不给一定的时间，直接接通切换，容易引起短路。因此在设计切换时需要利用时间延时器进行延时。延时时间过长或过短都将对电动机不利。通过需要根据电动机的启动电流大小 ，所用接器型号、通过实验调整、选定合适的数值。
 \end{block}
 \end{frame}
 \endinput
