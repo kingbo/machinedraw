@@ -153,46 +153,46 @@
 \draw(0,0)to[generic,l^=$R$,o-*](3,0)to[C,l=$C$](3,-2)to[short,*-o](0,-2)to[open,o-,l=$v_{1}(t)$](0,0)(3,0)to[short,-o](5,0)to[open,-o,l=$v_{o}(t)$](5,-2)to[short](3,-2);
 \end{circuitikz}
  \end{frame}
- \begin{frame}[containsverbatim]{电气元件的基本关系}
- 电阻：
- \[R=\frac{v_{r}(t)}{i(t)}\]
- 电容：
- \[v_{c}(t)=\frac{1}{C}\int{i(t)}dt\]
- 电感：
- \[v_{L}(t)=\frac{di(t)}{dt}\]
+ \begin{frame}{电气元件的基本关系}
+\uncover<+->{ 电阻：
+ \[R=\frac{v_{r}(t)}{i(t)}\]}
+\uncover<+->{ 电容：
+ \[v_{c}(t)=\frac{1}{C}\int{i(t)}dt\]}
+ \uncover<+->{电感：
+ \[v_{L}(t)=\frac{di(t)}{dt}\]}
  \end{frame}
  \begin{frame}
- \[v_{1}(t)=Ri(t)+v_{o}(t)\]
- 由：
- \[i(t)=C\frac{dv_{0}(t)}{dt}\]
-得：
-\[v_{1}(t)=RC\frac{dv_{o}(t)}{dt}+v_{o}\]
-整理得：
-\[\frac{dv_{o}(t)}{dt}+\frac{1}{RC}v_{o}=\frac{1}{RC}v_{1}(t)\]
+\uncover<+->{ \[v_{1}(t)=Ri(t)+v_{o}(t)\]}
+ \uncover<+->{由：
+ \[i(t)=C\frac{dv_{0}(t)}{dt}\]}
+\uncover<+->{得：
+\[v_{1}(t)=RC\frac{dv_{o}(t)}{dt}+v_{o}\]}
+\uncover<+->{整理得：
+\[\frac{dv_{o}(t)}{dt}+\frac{1}{RC}v_{o}=\frac{1}{RC}v_{1}(t)\]}
  \end{frame}
  \begin{frame}
- \begin{circuitikz}[american]
+\uncover<+->{ \begin{circuitikz}[american]
  \draw(0,0)to[generic,l^=$R$,o-](2,0)to[L,l^=$L$](4,0)to[C,l=$C$,*-*](4,-2)to[short,-o](0,-2)to[open,l=$v_{1}(t)$](0,0)(4,0)to[short,-o](6,0)to[open,l=$v_{o}(t)$,-o](6,-2)to[short](4,-2);
- \end{circuitikz}
- \[v_{1}(t)=v_{R}(t)+v_{L}(t)+v_{o}(t)\]
-\[v_{1}(t)=RC\frac{v_{o}(t)}{dt}+LC\frac{d^{2}v_{o}(t)}{dt^{2}}+v_{o}(t)\]
+ \end{circuitikz}}
+ \uncover<+->{\[v_{1}(t)=v_{R}(t)+v_{L}(t)+v_{o}(t)\]}
+\uncover<+->{\[v_{1}(t)=RC\frac{v_{o}(t)}{dt}+LC\frac{d^{2}v_{o}(t)}{dt^{2}}+v_{o}(t)\]}
  \end{frame}
  \begin{frame}
  \includegraphics[scale=0.8]{tanhuangzuni.png}
  \end{frame}
  \begin{frame}{机械系统}
  平移系统：
- \[ma=\Sigma F\]
- \[a=\frac{d^{2}y(t)}{d^{2}t}\]
- \[F_s =-ky(t)\]
- \[f_b=-c\frac{dy(t)}{dt)}\]
+ \uncover<+->{\[ma=\Sigma F\]}
+ \uncover<+->{\[a=\frac{d^{2}y(t)}{d^{2}t}\]}
+\uncover<+->{ \[F_s =-ky(t)\]}
+\uncover<+->{ \[f_b=-c\frac{dy(t)}{dt)}\]}
  \end{frame}
  \begin{frame}{机械系统}
- 转动系统:
- \[J\alpha =\Sigma T\]
-\[
- \alpha =\frac{d\omega (t)}{dt}=\frac{d^{2}\theta (t)}{dt^2}\]
- \[F_b=-c\omega(t)=-c\frac{d\theta(t)}{dt}\]
+ \uncover<+->{转动系统:
+ \[J\alpha =\Sigma T\]}
+\uncover<+->{\[
+ \alpha =\frac{d\omega (t)}{dt}=\frac{d^{2}\theta (t)}{dt^2}\]}
+\uncover<+->{ \[F_b=-c\omega(t)=-c\frac{d\theta(t)}{dt}\]}
  \end{frame}
  
 \endinput
