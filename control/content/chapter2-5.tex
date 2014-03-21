@@ -133,6 +133,52 @@
 \mode<presentation>{ \section{传递函数与信号流图}
  \subsection{信号流图的定义}}
  \begin{frame}{信号流图}
+ \uncover<+->{\begin{block}{方框图模型}
+ \begin{tikzpicture}
+ [node distance=10mm,>=stealth]
+ \node(start)[circleterminal,label=above left:\tiny +,label=below left:-]{};
+ \draw(start.north east)--(start.south west)(start.south east)--(start.north west);
+ \draw[<-](start.west)--++(-10mm,0)node[above,midway]{\tiny R(s)};
+ \node(GC)[nonterminal,right=of start]{\tiny $G_c(s)$};
+ \draw[->](start.east)--(GC.west)node[above,midway]{\tiny $E(s)$};
+ \node(GP)[nonterminal,right=of GC]{\tiny $G_p(s)$};
+ \draw[->](GC.east)--(GP.west)node[above,midway]{\tiny $M(s)$};
+ \draw[->](GP.east)--++(5mm,0)coordinate(a)--++(5mm,0)node[above,midway]{\tiny $C(s)$};
+ \filldraw(a)circle(2pt);
+ \node(H)[nonterminal,below=of GC]{\tiny $H(s)$};
+ \draw[->](a)|-(H.east);
+ \draw[->](H.west)-|(start.south);
+ \end{tikzpicture}
+ \end{block}}
+ \uncover<+->{
+ \begin{block}{信号流图模型}
+ \begin{tikzpicture}
+ [node distance=10mm,>=stealth]
+ \node(RS)[circlenode,label=above:\tiny $R(s)$]{};
+ \node(a)[noshapenode,right=of RS,label=above:\tiny 1]{};
+ \draw[->](RS)--(a);
+ \node(ES)[circlenode,right=of a,label=above:\tiny $E(s)$]{};
+ \draw(a.west)--(ES);
+\node(GC)[noshapenode,right=of ES,label=above:\tiny $G_c(s)$]{};
+\draw[->](ES)--(GC);
+ \node(MS)[circlenode,right=of GC,label=above:\tiny $M(s)$]{};
+ \draw(GC)--(MS);
+\node(GP)[noshapenode,right=of MS,label=above:\tiny $G_p(s)$]{};
+\draw[->](MS)--(GP);
+ \node(CS1)[circlenode,right=of GP,label=above:\tiny $C(s)$]{};
+ \draw(GP)--(CS1);
+ \node(b)[noshapenode,right=of CS1,label=above:\tiny 1]{};
+ \draw[->](CS1)--(b);
+ \node(CS2)[circlenode,right=of b,label=above:\tiny $C(s)$]{};
+ \draw(b)--(CS2);
+ \node(H)[noshapenode,below=of MS,label=above:\tiny $H(s)$]{};
+ \draw[->](CS1)to[bend left=25](H);
+ \draw(ES)to[bend right=25](H);
+ \end{tikzpicture}
+ \end{block}
+ }
+ \end{frame}
+ \begin{frame}{信号流图}
  \uncover<+->{\begin{block}{信息流图的组成}
  \begin{itemize}
  \item<+-> 节点：表示变量或信号
@@ -172,18 +218,13 @@
  \begin{itemize}
  \item<+-> 通路增益：是中通路中各支路传输的乘积。
  \item<+-> 回路：起点和终点在同一节点。
+ \item<+-> 回路增益：是回路中的各支路传输的乘积。
+ \item<+-> 不接触回路：两个回路没有共同节点。
  \end{itemize}
  \end{block}
- \begin{block}{并联}
- sys1=tf(num1,den1)
- 
- sys2=tf(num2,den2)
- 
- sys=parallel(sys1,sys2)
- \end{block}
  \end{frame}
- \begin{frame}
- \begin{block}{反馈连接}
+ \begin{frame}{信号流图化简}
+ \begin{block}{串联支路合并}
 sysg=[numg,deng]
 
 sysh=[numh,denh]
