@@ -132,13 +132,22 @@
 }
 \mode<presentation>{ \section{传递函数与信号流图}
  \subsection{信号流图的定义}}
- \begin{frame}
+ \begin{frame}{信号流图}
  \uncover<+->{\begin{block}{信息流图的组成}
  \begin{itemize}
  \item<+-> 节点：表示变量或信号
  \item<+-> 支路：连接两个接点的有向线段
  \end{itemize}
  \end{block}}
+ \uncover<+->{\begin{block}{支路的特点}
+ \begin{itemize}
+ \item<+-> 联接有因果关系的节点，相当于乘法器
+ \item<+-> 有方向性，信号只能沿箭头单向传递
+ \item<+-> 有加权性
+ \end{itemize}
+ \end{block}  }
+ \end{frame}
+ \begin{frame}{信号流图} 
  \uncover<+->{\begin{block}{信号流图的特点}
  \begin{itemize}
  \item<+-> 是系统代数方程的图形表示
@@ -147,21 +156,23 @@
  \end{itemize}
  \end{block}}
  \end{frame}
- \begin{frame}
- \begin{block}{简化的特点}
+ \begin{frame}{信号流图}
+ \uncover<+->{\begin{block}{信号流图术语}
  \begin{itemize}
- \item 传递函数具有唯一性
- \item 方框图不唯一
+ \item<+-> 输入节点：表示独立变量，仅有输入支路
+ \item<+-> 输出节点：表示因变量，仅有输出支路
+ \item<+-> 混合节点：既有输入支路也有输出支路
+ \item<+-> 通路：表示一个沿支路箭头方向，穿过各个相连支路的线路。
+ \item<+-> 前向通路：输入节点和输出节点之间的通路，遇到或穿过任何节点不多于一次。
  \end{itemize}
- \end{block}
+ \end{block}}
  \end{frame}
- \begin{frame}{用MatLab进行方框图化简}
- \begin{block}{串联}
- sys1=tf(num1,den1)
- 
- sys2=tf(num2,den2)
- 
- sys=series(sys1,sys2)
+ \begin{frame}{信号流图}
+ \begin{block}{信号流图术语}
+ \begin{itemize}
+ \item<+-> 通路增益：是中通路中各支路传输的乘积。
+ \item<+-> 回路：起点和终点在同一节点。
+ \end{itemize}
  \end{block}
  \begin{block}{并联}
  sys1=tf(num1,den1)
