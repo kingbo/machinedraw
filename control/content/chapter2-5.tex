@@ -224,11 +224,94 @@
  \end{block}
  \end{frame}
  \begin{frame}{信号流图化简}
- \begin{block}{串联支路合并}
-sysg=[numg,deng]
-
-sysh=[numh,denh]
-
-sys=feedback(sysg,sysh)
+ \uncover<+->{\begin{block}{串联支路合并}
+ 串联相乘
+ \begin{tikzpicture}
+ [node distance=10mm,>=stealth]
+ \node(x1)[circlenode,label=below:\tiny $x_1$]{};
+ \node(a)[noshapenode,right=of x1,label=above:\tiny $a$]{};
+ \draw[->](x1)--(a);
+ \node(x2)[circlenode,right=of a,label=below:\tiny $x_2$]{};
+ \draw(a)--(x2);
+ \node(b)[noshapenode,right=of x2,label=above:\tiny $b$]{};
+ \draw[->](x2)--(b);
+ \node(x3)[circlenode,right=of b,label=below:\tiny $x_3$]{};
+ \draw(b)--(x3);
+ \node(c)[noshapenode,right=of x3]{\tiny $=$};
+ \node(x4)[circlenode,right=of c,label=below:\tiny $x_1$]{};
+ \node(d)[noshapenode,right=of x4,label=above:\tiny $ab$]{};
+ \draw[->](x4)--(d);
+ \node(x5)[circlenode,right=of d,label=below:\tiny $x_3$]{};
+ \draw(d)--(x5);
+ \end{tikzpicture}
+ \end{block}}
+ \uncover<+->{
+ \begin{block}{并联支路合并}
+ 并联相加
+ 
+ \begin{tikzpicture}
+ [node distance=10mm,>=stealth]
+ \node(x1)[circlenode,label=left:\tiny $x_1$]{};
+ \node(x3)[noshapenode,right=of x1]{};
+ \node(x2)[circlenode,right=of x3,label=right:\tiny $x_2$]{};
+ \node(a)[noshapenode,above=7mm of x3,label=above:\tiny $a$]{};
+ \node(b)[noshapenode,below=7mm of x3,label=below:\tiny $b$]{};
+ \draw[->](x1)to[bend left=30](a);
+ \draw(a)to[bend left=30](x2);
+ \draw[->](x1)to[bend right=30](b);
+ \draw(b)to[bend right=30](x2);
+ \node(c)[noshapenode,right= of x2]{\tiny $=$};
+ \node(x4)[circlenode,right=7mm of c,label=below:\tiny $x_1$]{};
+ \node(d)[noshapenode,right=of x4,label=above:\tiny $a+b$]{};
+ \draw[->](x4)--(d);
+ \node(x5)[circlenode,right=of d,label=below:\tiny $x_2$]{};
+ \draw(d)--(x5);
+ \end{tikzpicture}
+ \end{block}} 
+ \end{frame}
+ \begin{frame}{信号流图简化}
+ \begin{block}{环路的消除}
+ \begin{tikzpicture}
+ [node distance=10mm,>=stealth]
+  \node(x1)[circlenode,label=below:\tiny $x_1$]{};
+ \node(a)[noshapenode,right=of x1,label=above:\tiny $a$]{};
+ \draw[->](x1)--(a);
+ \node(x2)[circlenode,right=of a,label=below:\tiny $x_2$]{};
+ \draw(a)--(x2);
+ \node(b)[noshapenode,right=of x2,label=above:\tiny $b$]{};
+ \draw[->](x2)--(b);
+ \node(x3)[circlenode,right=of b,label=below:\tiny $x_3$]{};
+ \draw(b)--(x3);
+ \node(e)[noshapenode,below=7mm of b,label=above:\tiny $c$]{};
+ \draw[->](x3)to[bend left=25](e);
+ \draw(x2)to[bend right=25](e);
+ \node(c)[noshapenode,right=of x3]{\tiny $=$};
+ \node(x4)[circlenode,right=of c,label=below:\tiny $x_1$]{};
+ \node(d)[noshapenode,right=of x4,label=above:\tiny $ab$]{};
+ \draw[->](x4)--(d);
+ \node(x5)[circlenode,right=of d,label=below:\tiny $x_3$]{};
+ \draw(d)--(x5);
+ \node(f)[noshapenode,below=of x5,label=above:\tiny $bc$]{};
+ \draw[->](x5)to[bend left=90](f);
+ \draw(f)to[bend left=90](x5);
+ \end{tikzpicture}
+ \begin{tikzpicture}
+ [node distance=10mm,>=stealth]
+ \node(x1)[circlenode,label=below:\tiny $x_1$]{};
+ \node(a)[noshapenode,right=of x1,label=above:\tiny $\frac{ab}{1-bc}$]{};
+ \draw[->](x1)--(a);
+ \node(x3)[circlenode,right=of a,label=below:\tiny $x_3$]{};
+ \draw(a)--(x3);
+ \node(b)[noshapenode,left=of x1]{\tiny $=$};
+ \end{tikzpicture}
+ \end{block}
+ \end{frame}
+ \begin{frame}{梅逊增益公式}
+ \begin{block}{}
+ \[P(s)=\frac{Y(s)}{X(s)}=\frac{\sum_{i=1}^n P_i(s)\Delta_i(s)}{\Delta(s)}\]
+ $P_i(s)$为第$i$条前向通路的增益；
+ \[\Delta=1-\sum_jL_j+\sum_{m,n}L_mL_n-\sum_{p,q,r}L_pL_qL_r+\cdots\]
+ $L$为回路；\\
+ $\Delta_i(s)$为第$i$条前向通路行列式的余因子，其值为消去与第$i$条通路相接触的回路后的行列式。
  \end{block}
  \end{frame}
