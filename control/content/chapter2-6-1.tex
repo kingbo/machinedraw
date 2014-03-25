@@ -122,188 +122,48 @@
 {\huge 板书设计}
 \end{center}
 }
-\mode<presentation>{ \section{传递函数与信号流图}
- \subsection{信号流图的定义}}
- \begin{frame}{信号流图}
- \uncover<+->{\begin{block}{方框图模型}
- \begin{tikzpicture}
- [node distance=10mm,>=stealth]
- \node(start)[circleterminal,label=above left:\tiny +,label=below left:-]{};
- \draw(start.north east)--(start.south west)(start.south east)--(start.north west);
- \draw[<-](start.west)--++(-10mm,0)node[above,midway]{\tiny R(s)};
- \node(GC)[nonterminal,right=of start]{\tiny $G_c(s)$};
- \draw[->](start.east)--(GC.west)node[above,midway]{\tiny $E(s)$};
- \node(GP)[nonterminal,right=of GC]{\tiny $G_p(s)$};
- \draw[->](GC.east)--(GP.west)node[above,midway]{\tiny $M(s)$};
- \draw[->](GP.east)--++(5mm,0)coordinate(a)--++(5mm,0)node[above,midway]{\tiny $C(s)$};
- \filldraw(a)circle(2pt);
- \node(H)[nonterminal,below=of GC]{\tiny $H(s)$};
- \draw[->](a)|-(H.east);
- \draw[->](H.west)-|(start.south);
- \end{tikzpicture}
- \end{block}}
- \uncover<+->{
- \begin{block}{信号流图模型}
- \begin{tikzpicture}
- [node distance=10mm,>=stealth]
- \node(RS)[circlenode,label=above:\tiny $R(s)$]{};
- \node(a)[noshapenode,right=of RS,label=above:\tiny 1]{};
- \draw[->](RS)--(a);
- \node(ES)[circlenode,right=of a,label=above:\tiny $E(s)$]{};
- \draw(a.west)--(ES);
-\node(GC)[noshapenode,right=of ES,label=above:\tiny $G_c(s)$]{};
-\draw[->](ES)--(GC);
- \node(MS)[circlenode,right=of GC,label=above:\tiny $M(s)$]{};
- \draw(GC)--(MS);
-\node(GP)[noshapenode,right=of MS,label=above:\tiny $G_p(s)$]{};
-\draw[->](MS)--(GP);
- \node(CS1)[circlenode,right=of GP,label=above:\tiny $C(s)$]{};
- \draw(GP)--(CS1);
- \node(b)[noshapenode,right=of CS1,label=above:\tiny 1]{};
- \draw[->](CS1)--(b);
- \node(CS2)[circlenode,right=of b,label=above:\tiny $C(s)$]{};
- \draw(b)--(CS2);
- \node(H)[noshapenode,below=of MS,label=above:\tiny $H(s)$]{};
- \draw[->](CS1)to[bend left=25](H);
- \draw(ES)to[bend right=25](H);
- \end{tikzpicture}
- \end{block}
- }
- \end{frame}
- \begin{frame}{信号流图}
- \uncover<+->{\begin{block}{信息流图的组成}
- \begin{itemize}
- \item<+-> 节点：表示变量或信号
- \item<+-> 支路：连接两个接点的有向线段
- \end{itemize}
- \end{block}}
- \uncover<+->{\begin{block}{支路的特点}
- \begin{itemize}
- \item<+-> 联接有因果关系的节点，相当于乘法器
- \item<+-> 有方向性，信号只能沿箭头单向传递
- \item<+-> 有加权性
- \end{itemize}
- \end{block}  }
- \end{frame}
- \begin{frame}{信号流图} 
- \uncover<+->{\begin{block}{信号流图的特点}
- \begin{itemize}
- \item<+-> 是系统代数方程的图形表示
- \item<+-> 不是唯一的
- \item<+-> 便于用梅逊增益公式求解系统传递函数
- \end{itemize}
- \end{block}}
- \end{frame}
- \begin{frame}{信号流图}
- \uncover<+->{\begin{block}{信号流图术语}
- \begin{itemize}
- \item<+-> 输入节点：表示独立变量，仅有输入支路
- \item<+-> 输出节点：表示因变量，仅有输出支路
- \item<+-> 混合节点：既有输入支路也有输出支路
- \item<+-> 通路：表示一个沿支路箭头方向，穿过各个相连支路的线路。
- \item<+-> 前向通路：输入节点和输出节点之间的通路，遇到或穿过任何节点不多于一次。
- \end{itemize}
- \end{block}}
- \end{frame}
- \begin{frame}{信号流图}
- \begin{block}{信号流图术语}
- \begin{itemize}
- \item<+-> 通路增益：是中通路中各支路传输的乘积。
- \item<+-> 回路：起点和终点在同一节点。
- \item<+-> 回路增益：是回路中的各支路传输的乘积。
- \item<+-> 不接触回路：两个回路没有共同节点。
- \end{itemize}
- \end{block}
- \end{frame}
- \begin{frame}{信号流图化简}
- \uncover<+->{\begin{block}{串联支路合并}
- 串联相乘
- \begin{tikzpicture}
- [node distance=10mm,>=stealth]
- \node(x1)[circlenode,label=below:\tiny $x_1$]{};
- \node(a)[noshapenode,right=of x1,label=above:\tiny $a$]{};
- \draw[->](x1)--(a);
- \node(x2)[circlenode,right=of a,label=below:\tiny $x_2$]{};
- \draw(a)--(x2);
- \node(b)[noshapenode,right=of x2,label=above:\tiny $b$]{};
- \draw[->](x2)--(b);
- \node(x3)[circlenode,right=of b,label=below:\tiny $x_3$]{};
- \draw(b)--(x3);
- \node(c)[noshapenode,right=of x3]{\tiny $=$};
- \node(x4)[circlenode,right=of c,label=below:\tiny $x_1$]{};
- \node(d)[noshapenode,right=of x4,label=above:\tiny $ab$]{};
- \draw[->](x4)--(d);
- \node(x5)[circlenode,right=of d,label=below:\tiny $x_3$]{};
- \draw(d)--(x5);
- \end{tikzpicture}
- \end{block}}
- \uncover<+->{
- \begin{block}{并联支路合并}
- 并联相加
- 
- \begin{tikzpicture}
- [node distance=10mm,>=stealth]
- \node(x1)[circlenode,label=left:\tiny $x_1$]{};
- \node(x3)[noshapenode,right=of x1]{};
- \node(x2)[circlenode,right=of x3,label=right:\tiny $x_2$]{};
- \node(a)[noshapenode,above=7mm of x3,label=above:\tiny $a$]{};
- \node(b)[noshapenode,below=7mm of x3,label=below:\tiny $b$]{};
- \draw[->](x1)to[bend left=30](a);
- \draw(a)to[bend left=30](x2);
- \draw[->](x1)to[bend right=30](b);
- \draw(b)to[bend right=30](x2);
- \node(c)[noshapenode,right= of x2]{\tiny $=$};
- \node(x4)[circlenode,right=7mm of c,label=below:\tiny $x_1$]{};
- \node(d)[noshapenode,right=of x4,label=above:\tiny $a+b$]{};
- \draw[->](x4)--(d);
- \node(x5)[circlenode,right=of d,label=below:\tiny $x_2$]{};
- \draw(d)--(x5);
- \end{tikzpicture}
- \end{block}} 
- \end{frame}
- \begin{frame}{信号流图简化}
- \begin{block}{环路的消除}
- \begin{tikzpicture}
- [node distance=10mm,>=stealth]
-  \node(x1)[circlenode,label=below:\tiny $x_1$]{};
- \node(a)[noshapenode,right=of x1,label=above:\tiny $a$]{};
- \draw[->](x1)--(a);
- \node(x2)[circlenode,right=of a,label=below:\tiny $x_2$]{};
- \draw(a)--(x2);
- \node(b)[noshapenode,right=of x2,label=above:\tiny $b$]{};
- \draw[->](x2)--(b);
- \node(x3)[circlenode,right=of b,label=below:\tiny $x_3$]{};
- \draw(b)--(x3);
- \node(e)[noshapenode,below=7mm of b,label=above:\tiny $c$]{};
- \draw[->](x3)to[bend left=25](e);
- \draw(x2)to[bend right=25](e);
- \node(c)[noshapenode,right=of x3]{\tiny $=$};
- \node(x4)[circlenode,right=of c,label=below:\tiny $x_1$]{};
- \node(d)[noshapenode,right=of x4,label=above:\tiny $ab$]{};
- \draw[->](x4)--(d);
- \node(x5)[circlenode,right=of d,label=below:\tiny $x_3$]{};
- \draw(d)--(x5);
- \node(f)[noshapenode,below=of x5,label=above:\tiny $bc$]{};
- \draw[->](x5)to[bend left=90](f);
- \draw(f)to[bend left=90](x5);
- \end{tikzpicture}
- \begin{tikzpicture}
- [node distance=10mm,>=stealth]
- \node(x1)[circlenode,label=below:\tiny $x_1$]{};
- \node(a)[noshapenode,right=of x1,label=above:\tiny $\frac{ab}{1-bc}$]{};
- \draw[->](x1)--(a);
- \node(x3)[circlenode,right=of a,label=below:\tiny $x_3$]{};
- \draw(a)--(x3);
- \node(b)[noshapenode,left=of x1]{\tiny $=$};
- \end{tikzpicture}
- \end{block}
- \end{frame}
- \begin{frame}{梅逊增益公式}
+\mode<presentation>{ \section{控制系统的时域分析}
+ \subsection{一阶系统的动态响应}}
+ \begin{frame}{脉冲响应}
  \begin{block}{}
- \[P(s)=\frac{Y(s)}{X(s)}=\frac{\sum_{i=1}^n P_i(s)\Delta_i(s)}{\Delta(s)}\]
- $P_i(s)$为第$i$条前向通路的增益；
- \[\Delta=1-\sum_jL_j+\sum_{m,n}L_mL_n-\sum_{p,q,r}L_pL_qL_r+\cdots\]
- $L$为回路；\\
- $\Delta_i(s)$为第$i$条前向通路行列式的余因子，其值为消去与第$i$条通路相接触的回路后的行列式。
+ \begin{itemize}
+ \item<+-> 线性定常系统的传递函数为：$G(s)$
+ \[r(t)=L^{-1}[R(s)]\]
+ \item<+-> 则系统输出为：
+ \[C(s)=G(s)R(s)\]
+ \end{itemize}
  \end{block}
  \end{frame}
+ 
+ \begin{frame}
+ \begin{block}{}
+ \begin{itemize}
+ \item<+-> 输入为单位脉冲函数$\delta(t)$,输出记为$g(t)$,则：
+ \[L[\delta]=1\]
+ \[C(s)=G(s)\cdot 1\]
+ \item<+-> 得：
+ \[c(t)=g(t)\]
+\end{itemize}  
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{}
+\begin{itemize}
+\item<+-> 系统传递函数等于单位脉冲函数$g(t)$的拉氏变换，即：
+\[G(s)=L[g(t)]\]
+\item<+-> 单位脉冲函数$g(t)$是传递函数$G(s)$拉氏逆变换，即：
+\[g(t)=L^{-1}[G(s)]\]
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{}
+推广：
+\begin{eqnarray*}
+c(t)&=&L^{-1}[C(s)]\\
+&=&L^{-1}[G(s)R(s)]
+\end{eqnarray*}
+
+\end{block}
+\end{frame}

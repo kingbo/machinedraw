@@ -25,7 +25,9 @@
 \tikzset{
 >=stealth,
 nonterminal/.style={rectangle,minimum size=6mm,draw=black,font=\ttfamily},
-circleterminal/.style={circle,minimum size=1mm,draw=black}
+circleterminal/.style={circle,minimum size=1mm,draw=black},
+circlenode/.style={circle,inner sep =0pt,minimum size=3pt,draw=black,fill=black},
+noshapenode/.style={circle,inner sep =0pt,minimum size=0pt}
 }
 \begin{document}
 \titleformat{\chapter}[hang]{\centering\huge\bfseries}{\chaptername}{1em}{}
@@ -45,5 +47,6 @@ circleterminal/.style={circle,minimum size=1mm,draw=black}
 \include{content/chapter2-2}
 \include{content/chapter2-3}
 \include{content/chapter2-5}
+\include{content/chapter2-6-1}
 \end{CJK}
 \end{document}
