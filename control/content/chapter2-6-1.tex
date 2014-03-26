@@ -162,8 +162,48 @@
 推广：
 \begin{eqnarray*}
 c(t)&=&L^{-1}[C(s)]\\
-&=&L^{-1}[G(s)R(s)]
+&=&L^{-1}[G(s)R(s)]\\
+&=&\int^{\infty}_{0}g(t-\tau)r(\tau)d\tau \\
+&=&\int^{\infty}_{0}r(t-\tau)g(\tau)d\tau
 \end{eqnarray*}
-
+\end{block}
+\end{frame}
+\begin{frame}{阶跃响应}
+\begin{block}{}
+\begin{eqnarray*}
+L[u(t)]=\frac{1}{s}\\
+C(s)=G(s)R(s)=G(s)\frac{1}{s}=H(s)\\
+h(t)=L^{-1}[C(s)]=L^{-1}[H(s)]=L^{-1}[\frac{G(s)}{s}]\\
+h(t)=L^{-1}[\frac{G(s)}{s}]=\int^t_0g(t)dt
+\end{eqnarray*}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{}
+\begin{eqnarray*}
+G(s)=sH(s)\\
+g(t)=L^{-1}[G(s)]=L^{-1}[sH(s)]=\frac{dh(t)}{dt}
+\end{eqnarray*}
+\end{block}
+\end{frame}
+\begin{frame}{时域性能指标}
+\begin{block}{具有误差振荡的单位阶跃响应}
+\includegraphics[scale=0.8]{danweijiyao}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{}
+\begin{itemize}
+\item<+-> 延迟时间$t_d$：达到终值一半所需要的时间
+\item<+-> 上升时间$t_r$:从终值的10\%到90\%所需要的时间
+\item<+-> 峰值时间$t_p$:终值达到超调量的第一个峰值的时间
+\item<+-> 最大超调量$M_p$:
+\[M_p\%=\frac{c(t_p)-c(\infty)}{c(\infty)}\%\]
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{具有单调变化的单位阶跃响应}
+\includegraphics[scale=1.2]{onejieyaoimpulse}
 \end{block}
 \end{frame}
