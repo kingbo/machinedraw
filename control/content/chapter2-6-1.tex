@@ -207,3 +207,49 @@ g(t)=L^{-1}[G(s)]=L^{-1}[sH(s)]=\frac{dh(t)}{dt}
 \includegraphics[scale=1.2]{onejieyaoimpulse}
 \end{block}
 \end{frame}
+\begin{frame}{一阶系统的动态响应}
+\begin{block}{一阶系统的数学模型}
+\[\Phi(s)=\frac{V_2(s)}{V_1(s)}=\frac{1}{RCs+1}=\frac{1}{Ts+1}\]
+其中：$T=RC$
+\end{block}
+\end{frame}
+\begin{frame}{一阶系统的动态响应}
+\begin{block}{一阶系统的单位阶跃响应}
+\begin{eqnarray*}
+r(t)=u(t)\\
+R(s)=\frac{1}{s}\\
+C(s)=\Phi(s)R(s)=\frac{1}{Ts+1}\cdot\frac{1}{s}\\
+C(s)=\frac{1}{s(Ts+1)}=\frac{1}{s}-\frac{T}{Ts+1}\\
+c(t)=L^{-1}[C(s)]=1-e^{-\frac{t}{T}},t\geq 0
+\end{eqnarray*}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{系统特性}
+\begin{itemize}
+\item<+-> $T$为时间常数，反映系统的惯性
+\item<+-> $T$越小，系统惯性越小，系统响应越快
+\item<+-> $t_s=0.3T$
+\item<+-> $t_d=0.69T$
+\item<+-> $t_r=2.20T$
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}{一阶系统的单位斜坡响应}
+\begin{block}{}
+\begin{eqnarray*}
+C(s)=\Phi(s)R(s)=\frac{1}{Ts+1}\cdot\frac{1}{s^2}\\
+C(s)=\frac{1}{s^2(Ts+1)}=\frac{1}{s^2}-\frac{T}{s}+
+\frac{T^2}{Ts+1}\\
+c(t)=L^{-1}[C(s)]=(t-T)+Te^{-\frac{t}{T}},t\geq 0
+\end{eqnarray*}
+\end{block}
+\end{frame}
+\begin{frame}{一阶系统的单脉冲响应}
+\begin{block}{}
+\begin{eqnarray*}
+C(s)=\Phi(s)R(s)=\frac{1}{Ts+1}\\
+c(t)=L^{-1}[C(s)]=\frac{1}{T}e^{-\frac{t}{T}},t\geq 0
+\end{eqnarray*}
+\end{block}
+\end{frame}
