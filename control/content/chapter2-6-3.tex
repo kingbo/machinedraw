@@ -271,4 +271,34 @@ C(s)=\frac{\omega_n^2}{s(s+\omega_n)^2}\\
 \end{itemize}
 \end{block}
 \end{frame}
+\begin{frame}{典型二阶系统的动态性能指标}
+\begin{block}{}
+\begin{itemize}
+\item<+-> 延迟时间$t_d$:
+\[t_d=\frac{0.7\zeta+1}{\omega_n}\]
+\item<+-> 上升时间$t_r$:
+\[t_r=\frac{1}{\omega_n}\arctan(1-\frac{\sqrt{1-\zeta^2}}{\zeta}=\frac{\pi-\varphi}{\omega_n}\]
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{}
+\begin{itemize}
+\item<+-> 峰值时间$t_p$:
+\[t_p=\frac{\pi}{\omega_d}=\frac{\pi}{\omega_n\sqrt{1-\zeta^2}}\]
+\item<+-> 最大超调量$M_p$:
+\[M_p\%=e^{-\frac{\zeta\pi}{\sqrt{1-\zeta^2}}}\%\]
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{}
+\begin{itemize}
+\item<+-> 5\%调整时间：
+\[t_s\approx\frac{1}{\zeta\omega_n}\ln(0.05\sqrt{1-\zeta^2})\]
+\item<+-> 2\%调整时间：
+\[t_s\approx\frac{1}{\zeta\omega_n}\ln(0.02\sqrt{1-\zeta^2})\]
+\end{itemize}
+\end{block}
+\end{frame}
 \endinput
