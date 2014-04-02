@@ -1,0 +1,253 @@
+%%%%%%%%%%%%%%教案头%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<article>{
+
+\begin{longtable}{|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{28mm}|}
+\caption*{\huge 教案头}\\
+\hline
+\endfirsthead
+\multicolumn{6}{l}{(续表)}\\
+\hline
+\endhead
+\hline
+\multicolumn{6}{l}{\itshape 接下一页表格.......}\\ [2ex]
+\endfoot
+\hline
+\endlastfoot
+\centering{授课单元}&\multicolumn{3}{m{60mm}|}{\centering 2.6.5高阶系统分析2.6.6稳态误差分析}&\centering{授课日期}&2014年04月18日 \\
+\hline
+\centering 授课地点 & \multicolumn{3}{m{60mm}|}{B6-204}&\centering 授课学时 & 2 \\
+\hline
+& \multicolumn{2}{m{40mm}|}{能力目标} & \multicolumn{2}{m{40mm}|}{知识目标}&素质目标 \\
+\cline{2-6}
+\centering 教学目标&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item 能够分析系统的稳态误差
+\end{enumerate} }&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item 了解高附系统的分析方法
+\item 掌握系统的稳态误差分析
+\end{enumerate}} & {\qquad}\\
+\hline
+\centering 能力训练任务或案例 &\multicolumn{5}{m{108mm}|}{ }\\
+\hline
+\centering 教学重点 & \multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 系统的稳态误差分析
+\end{enumerate}}\\
+\hline
+\centering 教学难点与解决办法 &\multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 难点：系统的稳态误差分析
+\item 解决方法：数学推理加实例讲解
+\end{enumerate}}\\
+\hline
+\centering 德育内容 &\multicolumn{5}{m{108mm}|}{无}\\
+\hline
+ &教材 & \multicolumn{4}{m{88mm}|}{计算机控制原理与应用}\\
+\cline{2-6}& 教学资源 &\multicolumn{4}{m{88mm}|}{PPT}\\
+\cline{2-6}\centering 使用的教学材料& 主要教学仪器设备和工具等 &\multicolumn{4}{m{88mm}|}{投影机、MATLAB}\\
+\cline{2-6}& 主要耗材 &\multicolumn{4}{m{88mm}|}{无}\\
+\hline
+\centering 教学模式 &\multicolumn{2}{m{40mm}|}{知识讲授}&\centering 教学手段 &\multicolumn{2}{m{48mm}|}{多媒体教学}\\
+\hline
+\centering 学生成果与过程考核方式 &\multicolumn{5}{m{108mm}|}{无}
+\end{longtable}
+\clearpage
+
+%%%%%%%%%%%%%%%教学实施过程%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{landscape}
+
+\begin{longtable}{|m{10mm}|m{50mm}|m{50mm}|m{50mm}|m{15mm}|}
+\caption*{\huge 教学组织与实施}\\
+\hline
+\endfirsthead
+\multicolumn{5}{l}{\small 接上页}\\
+\hline
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\
+\hline
+\endhead
+
+\multicolumn{5}{r}{\small 接下页}\\
+\endfoot
+\hline
+\endlastfoot
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\\hline
+讲解&\begin{enumerate}
+\item 高阶系统的单位阶跃响应
+\end{enumerate} &\begin{enumerate}
+\item 讲解高阶系统的单位阶跃响应
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &30 \\\hline
+讲解&\begin{enumerate}
+\item 高阶系统分析
+\end{enumerate}
+ &\begin{enumerate}
+\item 讲解高阶系统分析方法
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &15 \\\hline
+讲解&\begin{enumerate}
+\item 稳态误差分析
+\end{enumerate}
+&\begin{enumerate}
+\item 讲解系统稳态分析
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &20 \\\hline
+讲解&\begin{enumerate}
+\item 稳态误差分析实例
+\end{enumerate}
+ &\begin{enumerate}
+\item 讲解稳态误差分析实例
+\end{enumerate} &\begin{enumerate}
+\item 学生记录笔记
+\end{enumerate} &20 \\\hline
+
+\centering 本次课总结(评价)&总结本课程内容 &进行知识总结 &学生倾听 &5 \\\hline
+\centering 学生学习笔记或工单等检查情况&\multicolumn{4}{m{165mm}|}{\quad}\\\hline
+\centering 课后作业&\multicolumn{4}{m{165mm}|}{2-19，2-20，2-21}\\\hline
+\centering 教学体会&\multicolumn{4}{m{165mm}|}{\quad}\\
+\end{longtable}
+
+\end{landscape}
+\clearpage
+%%%%%%%%%%%%%%%%%%%%板书设计%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+{\huge 板书设计}
+\end{center}
+}
+\mode<presentation>{ \section{高阶系统分析}
+ \subsection{高阶系统分析}}
+ \begin{frame}{高阶系统的单位阶跃响应}
+ \begin{block}{高阶闭环传递函数}
+ \begin{eqnarray*}
+ \Phi(s)&=&\frac{C(s)}{R(s)}=\frac{B(s)}{A(s)}\\
+ &=&\frac{b_0s^m+b_1s^{m-1}+\cdots +b_{m-1}s+b_m}{s^n+a_1s^{n-1}+\cdots +a_{n-1}s+a_n}
+ \end{eqnarray*}
+ 其中：$B(s)$为分子多项式，$A(s)$为分母多项式
+ \end{block}
+ \end{frame}
+ 
+ \begin{frame}
+ \begin{block}{极点、零点形式}
+ \begin{eqnarray*}
+ \Phi(s)&=&\frac{C(s)}{R(s)}=\frac{B(s)}{A(s)}\\
+&=&\frac{K\prod_{i=1}^m(s-z_i)}{\prod_{j=1}^{n_1}(s-p_j)\prod_{i=1}^{n_2}(s^2+2\zeta_l\omega_ls+\omega_l^2)}
+\end{eqnarray*}  
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{单位阶跃输出部分展开式}
+\begin{eqnarray*}
+C(s)=\frac{K\prod_{i=1}^m(s-z_i)}{s[\prod_{j=1}^{n_1}(s-p_j)\prod_{i=1}^{n_2}(s^2+2\zeta_l\omega_ls+\omega_l^2)]}\\
+=\frac{a_0}{s}+\sum_{j=1}^{n_1}\frac{a_j}{s-p_j}+\sum_{l=1}^{n_2}\frac{\beta_ls+r_l}{(s-p_{1l})(s-p_{2l})}
+\end{eqnarray*}
+其中：$a_0,a_j,\beta_l,r_l$为待定系数
+\end{block}
+\end{frame}
+\begin{frame}
+待定系统求法:
+\[a_0=[sC(s)]\mid_{s=0}\]
+\[a_j=[(s-p_j)C(s)]\mid_{s=p_j},j=1,2,\cdots ,n\]
+\[\beta_ls+r_l \]
+\[=[(s-p_{1l})(s-P_{2l}C(s)]\mid_{s=p_{1l}(or s=p_{2l})},\]
+\[l=1,2,\cdots ,n\]
+\end{frame}
+\begin{frame}
+\begin{block}{拉氏变换}
+\begin{eqnarray*}
+c(t)&=&L^{-1}[C(s)]\\
+&=&a_0+\sum_{j=1}^{n_1}a_je^{p_jt}+\\
+&&\sum_{l=1}^{n_1}\beta_le^{-\zeta_l\omega_lt}\cos\omega_l\sqrt{1-\zeta^2_l}t+\\
+&&\sum_{l=1}^{n_2}\frac{r_l-\beta_l\zeta_l\omega_l}{\omega_l\sqrt{1-\zeta_l^2}}e^{-\zeta_l\omega_lt}\sin\omega_l\sqrt{1-\zeta_l^2}t
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}{高阶系统分析}
+\begin{block}{}
+\begin{itemize}
+\item<+-> 位于左半s平面，系统稳定
+\item<+-> 若系统稳定：离虚轴越远，则指数项衰减走越快、
+\item<+-> 实际中，常用根轨迹法、频率法等
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}{稳态误差分析}
+\begin{block}{系统开环传递函数}
+\begin{eqnarray*}
+G_o(s)=\frac{K(1+\tau_1s)(1+\tau_2s)\cdots(1+\tau_ms}{s^q(1+T_1s)(1+T_2s)\cdots(1+T_{n-q}s)}
+\end{eqnarray*}
+其中：$K$为开环增益；\\
+$\tau_1,\tau_2,\cdots,\tau_m$和$T_1,T_2,\cdots,T_n$为时间常数;\\
+$q$为开环系统在$s$平面坐标原点上重极点数
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{稳态误差}
+\begin{itemize}
+\item<+-> 闭环传递函数为：
+\[\Phi(s)=\frac{C(s)}{R(s)}=\frac{G(s)}{1+H(s)G(s)}\]
+\item<+-> 则开环为：
+\[G_o(s)=G(s)H(s)\]
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{}
+\begin{itemize}
+\item<+-> 误差信息$e(t)$为：
+\[e(t)=r(t)-b(t)\]
+\item<+-> 拉氏变换为：
+\[E(s)=R(s)-B(s)=R(s)-H(s)C(s)\]
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{误差传递函数为}
+\begin{eqnarray*}
+\Phi_E(s)&=&\frac{E(s)}{R(s)}=\frac{1}{1+H(s)G(s)}\\
+E(s)&=&\Phi_E(s)R(s)\\
+&=&\frac{1}{1+H(s)G(s)}R(s)\\
+&=&\frac{1}{1+G_o(s)}R(s)
+\end{eqnarray*}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{系统稳态误差}
+\begin{eqnarray*}
+e_{ss}&=&\lim_{s\rightarrow \infty}e(t)=\lim_{s\rightarrow 0}sE(s)\\
+&=&\lim_{s\rightarrow 0}\frac{sR(s)}{1+H(s)R(s)}\\
+&=&\lim_{s\rightarrow 0}\frac{sR(s)}{1+G_o(s)}
+\end{eqnarray*}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{阶跃输入的稳态误差}
+\begin{eqnarray*}
+e_{ss}(step)&=&\lim\limits_{s\rightarrow 0}\frac{s}{1+G_o(s)}\frac{R_0}{s}\\
+&=&\lim\limits_{s\rightarrow 0}\frac{R_0}{1+G_o(s)}\\
+&=&\lim\limits_{s\rightarrow 0}\frac{R_0}{1+K_p}\\
+K_p&=&\lim\limits_{s\rightarrow 0}G_o(s)=\lim\limits_{s\rightarrow 0}H(s)G(s)
+\end{eqnarray*}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{斜坡输入时的稳态误差}
+\begin{eqnarray*}
+e_{ss}(ramp)&=&\lim\limits_{s\rightarrow 0}\frac{s}{1+G_o(s)}\frac{R_0}{s^2}\\
+&=&\lim\limits_{s\rightarrow 0}\frac{R_0}{sG_o(s)}\\
+&=&\frac{R_0}{K_V}\\
+K_V&=&\lim\limits_{s\rightarrow 0}sG_o(s)=\lim\limits_{s\rightarrow 0}sH(s)G(s)
+\end{eqnarray*}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{抛物线输入时的稳态误差}
+\begin{eqnarray*}
+&&e_{ss}(parabolic)=\lim\limits_{s\rightarrow 0}\frac{s}{1+G_o(s)}\frac{R_0}{s^3}\\
+&=&\lim\limits_{s\rightarrow 0}\frac{R_0}{s^2G_o(s)}\\
+&=&\frac{R_0}{K_a}\\
+K_a&=&\lim\limits_{s\rightarrow 0}s^2G_o(s)=\lim\limits_{s\rightarrow 0}s^2H(s)G(s)
+\end{eqnarray*}
+\end{block}
+\end{frame}
+\endinput
