@@ -131,15 +131,19 @@
 }
 \end{floatrow}
 \end{figure}
+\subsubsection{直线命令使用技巧}
+秦奋：如果在绘制的过程中如果出现了错误或意外中结束了命令该怎么办呢？
 
+爸爸：其实在绘图过程中，我们不可能不出现操作失误。现在我就告诉你一些直线命令使用过程中的技巧。
 \begin{tips}
-\item 使用用Line命令过程中，如果由于输入坐标错误或误点鼠标而导线段绘制错误，在没有结束命令前，可以使用U选项撤消上一次绘制的线段。
-\item 在使用Line命令过程中，如果还没有绘制完图形就已经结束了命令，可以再次使用直线命令并利用捕捉端点的方式获得需继续绘制点的坐标，然后接着完成图形的绘制。开启端点捕捉的方法有：
+\item 在使用Line命令的过程中，如果由于输入坐标错误或误点鼠标而导线段绘制错误，只要没有结束命令，可以直接输入U来撤消上一次绘制的线段。
+\item 在使用Line命令过程中，如果还没有完成图形的绘制就提前结束了命令，可以再次使用直线命令，并利用端点捕捉的方式获得命令结束时所绘制端点的坐标，然后接着完成图形的绘制。开启端点捕捉的方法有：
 \begin{itemize}
-\item 绘图过程中在输入坐点时，用键盘输入：end。
+\item 绘图过程中在输入坐标点的地方用键盘输入：end。
 \item 绘图过程中按ctrl或shift键+鼠标右击弹出图\ref{fig:duixiangbuzuomen2}所示的【对象捕捉】菜单，并选择【端点】项。
 \item 在功能按钮区中将对象捕捉图标由\includegraphics[scale=0.6]{duixiangbuzuo1.png}状态设置为\includegraphics[scale=0.6]{duixiangbuzuo.png}状态，并在图标上右击弹出图\ref{fig:duixiangbuzuomen1}所示的【对象捕捉】菜单，并使【端点】项为开启状态。
 \end{itemize}
+\item 直线命令的C选项用于将最后一点与第一点连接起来并结束命令。
 \item 使用坐标和捕捉是实现AutoCAD精确绘图的关键。
 \end{tips}
 \begin{figure}[htbp]
@@ -149,8 +153,14 @@
 \ffigbox{\caption{“对象捕捉”菜单二}\label{fig:duixiangbuzuomen1}}{\includegraphics{duixiangbuzuomen1.png}}
 \end{floatrow}
 \end{figure}
+爸爸：你先来练习一下。
 
-\subsubsection{修改法}
+秦奋很快地绘制完了图形。他父亲对他的整个绘图过程很满意。
+
+\subsubsection{修剪法}
+秦奋：绘制杯零件图的特征图还有别的方法吗？
+
+爸爸：在AutoCAD中完成同样的图形绘制通常有多种不同的方法，其实绘制图\ref{fig:bettezheng}所示的图形，还可以用修剪的方法获得。这种方法的核心是先绘一些简的线或图形，然后通过编辑修改得到想要的图形。用修剪法绘制图\ref{fig:bettezheng}的步骤为：
 \begin{procedure}
 \item 绘制两条相互垂直的直线，作为基础。
 \begin{lstlisting}
@@ -166,14 +176,24 @@
 \item 在【修改】菜单中单击【偏移】项。
 \item 在【修改】工具栏中单击【偏移】图标\includegraphics[scale=0.6]{offsettool.png}。
 \end{itemize}
+启动【偏移】命令后，AutoCAD要求指定图形的偏移距离。
 \begin{lstlisting}
 |命令:OFFSET|
 |当前设置: 删除源=否  图层=源  OFFSETGAPTYPE=0|
 |指定偏移距离或 [通过(T)/删除(E)/图层(L)] $<$通过$>$:  4|
-|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:\longremark{用鼠标选择图\ref{fig:trimmotherd}中的水平线，选中后该水平线将以虚线形式表示，如图\ref{fig:offsetselect}所示。}|
-|指定要偏移的那一侧上的点，或[退出(E)/多个(M)/放弃(U)]|
-|$<$退出$>$:\longremark{将鼠标移至选中水平线的上方，并单击鼠标左键。}|
+\end{lstlisting}
+指定偏移距离后，要求选择用于偏移的对象，此时用鼠标选择图\ref{fig:trimmotherd}中的水平线，选中后该水平线将以虚线形式表示，如图\ref{fig:offsetselect}所示。
+\begin{lstlisting}
 |选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+\end{lstlisting}
+接下来，要求指定图形向哪一侧偏移，此时将鼠标移至选中水平线的上方，并单击鼠标左键，即完成一次图形的偏移操作。
+\begin{lstlisting}
+|指定要偏移的那一侧上的点，或[退出(E)/多个(M)/放弃(U)]|
+|$<$退出$>$:|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+\end{lstlisting}
+然后，再用相同的方法得到另一条水平线。
+\begin{lstlisting}
 |命令: OFFSET|
 |当前设置: 删除源=否  图层=源  OFFSETGAPTYPE=0|
 |指定偏移距离或 [通过(T)/删除(E)/图层(L)] $<4.0000>$:  11|
@@ -182,7 +202,7 @@
 |$<$退出$>$:|
 |选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
 \end{lstlisting}
-\showremarks
+
 \item 用偏移产生符合尺寸距离的垂直线。
 \begin{lstlisting}
 |命令:OFFSET|
@@ -206,20 +226,32 @@
 \subfloat[]{\label{fig:offsetresult}\includegraphics[scale=0.5]{offsetresult.png}}
 \caption{偏移过程}
 \end{figure}
-\item 在完成偏移操作后，其结果如图\ref{fig:offsetresult}所示，现在需要用【修剪】命令修剪掉不需要的线段，以完成图形绘制。【修剪】命令的启动方法有：
+\item 修剪图形。
+
+在完成偏移操作后，其结果如图\ref{fig:offsetresult}所示，需要用【修剪】命令修剪掉多余的线段，以获得需要的图形。【修剪】命令的启动方法有：
 \begin{itemize}
 \item 解盘输入TRIM或TR。
 \item 点击【修改】菜单中的【修剪】项。
 \item 点击【修改】工具栏中的【修剪】图标\includegraphics[scale=0.6]{trimtool.png}。
 \end{itemize}
+启动修剪命令后要求指定用于修剪的边，其命令提示为：
 \begin{lstlisting}
 |命令: TRIM|
 |当前设置:投影=UCS，边=无|
 |选择剪切边...|
-|选择对象或 $<$全部选择$>$:  指定对角点: 找到 6 个\longremark{以框选方式选择所有的图线用作剪切边，选择方法如图\ref{fig:trimegeselect}所示，选择结果如图\ref{fig:trimselectresult}所示。}|
+\end{lstlisting}
+此时，我们可以用框选方式选择所有的图线用作剪切边，选择方法如图\ref{fig:trimegeselect}所示，选择结果如图\ref{fig:trimselectresult}所示。其命令提示为：
+\begin{lstlisting}
+|选择对象或 $<$全部选择$>$:  指定对角点: 找到 6 个|
 |选择对象:|
+\end{lstlisting}
+结束修剪边的选择后，要求我们选择要修剪的线段或者图形。我们同样用框选方式选择要修剪的对象，选择方法如图\ref{fig:trimedselect}所示，修剪完成后，其结果如图\ref{fig:trimedresult}所示。其命令提示为：
+\begin{lstlisting}
 |选择要修剪的对象，或按住 Shift 键选择要延伸的对象，或|
-|[栏选(F)/窗交(C)/投影(P)/边(E)/删除(R)/放弃(U)]:  指定对角点:\longremark{以框选方式选择要修剪的对象，选择方法如图\ref{fig:trimedselect}所示，修剪结果如图\ref{fig:trimedresult}所示。}|
+|[栏选(F)/窗交(C)/投影(P)/边(E)/删除(R)/放弃(U)]:  指定对角点:|
+\end{lstlisting}
+再用拾取的方式将剩下的多余的线段修剪掉，得到图\ref{fig:bettezheng}所示的图形。其命令提示为：
+\begin{lstlisting}
 |选择要修剪的对象，或按住 Shift 键选择要延伸的对象，或|
 |[栏选(F)/窗交(C)/投影(P)/边(E)/删除(R)/放弃(U)]:|
 |选择要修剪的对象，或按住 Shift 键选择要延伸的对象，或|
@@ -234,12 +266,18 @@
 \subfloat[]{\label{fig:trimedresult}\includegraphics[scale=0.4]{trimedresult.png}}
 \caption{修剪过程}
 \end{figure}
-\showremarks
 \end{procedure}
+
+秦奋:偏移命令和修剪命令使用过程中有哪些技巧呢？
+
+爸爸：偏移命令和修剪命令的使用技巧有：
 \begin{tips}
 \item 【偏移】操作过程中，如果多次偏移的距离相同则可以多次选择对象并执行偏移。
-\item 【修剪】操作的关键是修剪边的选择，若要前去某线段之外的其它图线，则应选择该线段作为修剪边；若要剪去某两条线段之间的其它的图线则至少要选择该两条线段，否则不能够实现操作目的。
-\item 【修剪】操作中修剪对象的选择具有一定的顺序，般为先剪去外围不需要的图线，再剪去内部的图线，否会出现部分图线不能够剪除，只能够删除的现象。
+\item 【修剪】操作的关键是修剪边的选择，若要剪去某线段之外的其它图线，则应选择该线段作为修剪边；若要剪去某两条线段之间的其它的图线则至少要选择该两条线段，否则不能够实现操作目的。
+\item 【修剪】操作中修剪对象的选择具有一定的顺序，一般为先剪去外围不需要的图线，再剪去内部的图线，否会出现部分图线不能够剪除，只能够删除的现象。
 \end{tips}
 
+爸爸：你现在练习一下修剪法绘制图形。
+
+秦奋用修剪法
 \endinput
