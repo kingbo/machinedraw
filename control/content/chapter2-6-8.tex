@@ -1,0 +1,251 @@
+%%%%%%%%%%%%%%教案头%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<article>{
+
+\begin{longtable}{|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{28mm}|}
+\caption*{\huge 教案头}\\
+\hline
+\endfirsthead
+\multicolumn{6}{l}{(续表)}\\
+\hline
+\endhead
+\hline
+\multicolumn{6}{l}{\itshape 接下一页表格.......}\\ [2ex]
+\endfoot
+\hline
+\endlastfoot
+\centering{授课单元}&\multicolumn{3}{m{60mm}|}{\centering 2.6.8稳定性分析}&\centering{授课日期}&2014年04月25日 \\
+\hline
+\centering 授课地点 & \multicolumn{3}{m{60mm}|}{B6-204}&\centering 授课学时 & 2 \\
+\hline
+& \multicolumn{2}{m{40mm}|}{能力目标} & \multicolumn{2}{m{40mm}|}{知识目标}&素质目标 \\
+\cline{2-6}
+\centering 教学目标&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item 能够分析系统的稳定性
+\end{enumerate} }&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item 了解系统的极点、零点和稳定性的概念
+\item 掌握劳斯稳定性判据
+\end{enumerate}} & {\qquad}\\
+\hline
+\centering 能力训练任务或案例 &\multicolumn{5}{m{108mm}|}{ }\\
+\hline
+\centering 教学重点 & \multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 劳斯稳定性判据
+\end{enumerate}}\\
+\hline
+\centering 教学难点与解决办法 &\multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 难点：劳斯稳定性判据
+\item 解决方法：实例讲解
+\end{enumerate}}\\
+\hline
+\centering 德育内容 &\multicolumn{5}{m{108mm}|}{无}\\
+\hline
+ &教材 & \multicolumn{4}{m{88mm}|}{计算机控制原理与应用}\\
+\cline{2-6}& 教学资源 &\multicolumn{4}{m{88mm}|}{PPT}\\
+\cline{2-6}\centering 使用的教学材料& 主要教学仪器设备和工具等 &\multicolumn{4}{m{88mm}|}{投影机、MATLAB}\\
+\cline{2-6}& 主要耗材 &\multicolumn{4}{m{88mm}|}{无}\\
+\hline
+\centering 教学模式 &\multicolumn{2}{m{40mm}|}{知识讲授}&\centering 教学手段 &\multicolumn{2}{m{48mm}|}{多媒体教学}\\
+\hline
+\centering 学生成果与过程考核方式 &\multicolumn{5}{m{108mm}|}{无}
+\end{longtable}
+\clearpage
+
+%%%%%%%%%%%%%%%教学实施过程%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{landscape}
+
+\begin{longtable}{|m{10mm}|m{50mm}|m{50mm}|m{50mm}|m{15mm}|}
+\caption*{\huge 教学组织与实施}\\
+\hline
+\endfirsthead
+\multicolumn{5}{l}{\small 接上页}\\
+\hline
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\
+\hline
+\endhead
+
+\multicolumn{5}{r}{\small 接下页}\\
+\endfoot
+\hline
+\endlastfoot
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\\hline
+讲解&\begin{enumerate}
+\item 极点、零点和稳定性的概念
+\end{enumerate} &\begin{enumerate}
+\item 讲解极点、零点和稳定性的概念
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &15 \\\hline
+讲解&\begin{enumerate}
+\item 稳定性判定的数学理论
+\end{enumerate}
+ &\begin{enumerate}
+\item 讲解稳定性判定的数学理论
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &30 \\\hline
+讲解&\begin{enumerate}
+\item 劳斯稳定性判据
+\end{enumerate}
+&\begin{enumerate}
+\item 讲解劳斯稳定性判据
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &20 \\\hline
+讲解&\begin{enumerate}
+\item 劳斯稳定性判据的应用实例
+\end{enumerate}
+ &\begin{enumerate}
+\item 讲解劳斯稳定性判据的应用实例
+\end{enumerate} &\begin{enumerate}
+\item 学生记录笔记
+\end{enumerate} &20 \\\hline
+
+\centering 本次课总结(评价)&总结本课程内容 &进行知识总结 &学生倾听 &5 \\\hline
+\centering 学生学习笔记或工单等检查情况&\multicolumn{4}{m{165mm}|}{\quad}\\\hline
+\centering 课后作业&\multicolumn{4}{m{165mm}|}{2-28，2-29}\\\hline
+\centering 教学体会&\multicolumn{4}{m{165mm}|}{\quad}\\
+\end{longtable}
+
+\end{landscape}
+\clearpage
+%%%%%%%%%%%%%%%%%%%%板书设计%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+{\huge 板书设计}
+\end{center}
+}
+\mode<presentation>{ \section{稳定性分析}
+ \subsection{稳定性分析}}
+ \begin{frame}{极点、零点和稳定性}
+ \begin{block}{$n$阶传递函数的因子形式}
+ \begin{eqnarray*}
+ \Phi(s)&=&\frac{C(s)}{R(s)}\\
+ &=&\frac{K\prod\limits_{i=1}^m(s-z_i)}{\prod\limits_{j=1}^{n_1}(s-p_j)\prod\limits_{l=1}^{n_2}(s^2+2\zeta_l\omega_ls+\omega_l^2)}
+ \end{eqnarray*}
+ \end{block}
+ \end{frame}
+ 
+ \begin{frame}
+ \begin{block}{极点、零点的定义}
+ 设：
+ \begin{eqnarray*}
+ &&s^2+2\zeta_l\omega_l+\omega_l^2=(s-p_{1l})(s-p_{2l})\\
+ &&s_{1l,2l}=-\zeta_l\omega_l\pm j\omega_l\sqrt{1-\zeta_l^2}\\
+ &&l=1,2,\cdots ,n_2
+\end{eqnarray*}
+\begin{itemize}
+\item $z_1,z_2,\cdots,z_m$称为零点
+\item $p_{11},p_{12},\cdots,p_{1n_2},p_{21},p_{22},\cdots,p_{2n_2}$和\\
+$p_1,p_2,\cdots,p_{n_1}$称为极点
+\end{itemize}  
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{稳定性}
+\begin{itemize}
+\item 稳定系统
+$\lim\limits_{t\rightarrow \infty}g(t)=0$
+\item 不稳定系统
+$\lim\limits_{t\rightarrow \infty}g(t)=\infty$
+\item 临界稳定系统
+$\lim\limits_{t\rightarrow \infty}g(t)=P$
+\end{itemize}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{单位脉冲输出部分展开式}
+\begin{eqnarray*}
+\Phi(s)=\frac{K\prod\limits_{i=1}^m(s-z_i)}{\prod\limits_{j=1}^{n_1}(s-p_j)\prod\limits_{i=1}^{n_2}(s^2+2\zeta_l\omega_ls+\omega_l^2)}\\
+=\sum_{j=1}^{n_1}\frac{a_j}{s-p_j}+\sum_{l=1}^{n_2}\frac{\beta_ls+r_l}{(s-p_{1l})(s-p_{2l})}
+\end{eqnarray*}
+其中：$a_0,a_j,\beta_l,r_l$为待定系数
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{拉氏变换}
+\begin{eqnarray*}
+g(t)&=&L^{-1}[C(s)]=L^{-1}[\Phi(s)]\\
+&=&\sum_{j=1}^{n_1}a_je^{p_jt}+\\
+&&\sum_{l=1}^{n_1}\beta_le^{-\zeta_l\omega_lt}\cos\omega_l\sqrt{1-\zeta^2_l}t+\\
+&&\sum_{l=1}^{n_2}\frac{r_l-\beta_l\zeta_l\omega_l}{\omega_l\sqrt{1-\zeta_l^2}}e^{-\zeta_l\omega_lt}\sin\omega_l\sqrt{1-\zeta_l^2}t
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}{劳斯稳定性判据}
+\begin{block}{$n$阶线性定常系统的特征方程}
+\[a_0s^n+a_1+s^{n-1}+\cdots+a_{n-1}s+a_n=0\]
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{劳斯表}
+\begin{equation*}
+\begin{array}{cccccc}
+s^n&a_0&a_2&a_4&a_6&\cdots\\
+s^{n-1}&a_1&a_3&a_5&a_7&\cdots\\
+S^{n-2}&T_{3,1}&T_{3,2}&T_{3,3}&T_{3,4}&\cdots\\
+S^{n-3}&T_{4,1}&T_{4,2}&T_{4,3}&T_{4,4}&\cdots\\
+\cdots&\cdots&\cdots&\cdots&\cdots&\cdots\\
+s^2&T_{n-1,1}&T_{n-1,2}\\
+s^1&T_{n,1}\\
+s^0&T_{n+1,1}
+\end{array}
+\end{equation*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{}
+\begin{eqnarray*}
+T_{3,1}=-\frac{\left|\begin{array}{cc}
+a_0&a_2\\
+a_1&a_3
+\end{array}\right|}{a_1}=\frac{a_1a_2-a_0a_3}{a_1}\\
+T_{3,2}=-\frac{\left|\begin{array}{cc}
+a_0&a_4\\
+a_1&a_5
+\end{array}\right|}{a_1}=\frac{a_1a_4-a_0a_5}{a_1}\\
+T_{3,3}=-\frac{\left|\begin{array}{cc}
+a_0&a_6\\
+a_1&a_7
+\end{array}\right|}{a_1}=\frac{a_1a_6-a_0a_7}{a_1}
+\end{eqnarray*}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{}
+\begin{eqnarray*}
+T_{4,1}=-\frac{\left|\begin{array}{cc}
+a_1&a_3\\
+T_{3,1}&T_{3,2}
+\end{array}\right|}{T_{3,1}}=\frac{T_{3,1}a_3-T_{3,2}a_1}{T_{3,1}}\\
+T_{4,2}=-\frac{\left|\begin{array}{cc}
+a_1&a_5\\
+T_{3,1}&T_{3,3}
+\end{array}\right|}{T_{3,1}}=\frac{T_{3,1}a_5-a_1T_{3,3}}{T_{3,1}}\\
+\vdots
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{}
+\begin{eqnarray*}
+T_{5,1}=-\frac{\left|\begin{array}{cc}
+T_{3,1}&T_{3,2}\\
+T_{4,1}&T_{4,2}
+\end{array}\right|}{T_{4,1}}=\frac{T_{4,1}T_{3,2}-T_{3,1}T_{4,2}}{T_{4,1}}\\
+T_{5,2}=-\frac{\left|\begin{array}{cc}
+T_{3,1}&T_{3,3}\\
+T_{4,1}&T_{4,3}
+\end{array}\right|}{T_{4,1}}=\frac{T_{4,1}T_{3,3}-T_{3,1}T_{4,3}}{T_{4,1}}\\
+T_{5,3}=-\frac{\left|\begin{array}{cc}
+T_{3,1}&T_{3,4}\\
+T_{4,1}&T_{4,4}
+\end{array}\right|}{T_{4,1}}=\frac{T_{4,1}T_{3,4}-T_{3,1}T_{4,4}}{T_{4,1}}
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\endinput
