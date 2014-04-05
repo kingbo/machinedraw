@@ -1,46 +1,6 @@
 
 \section{知识链接}
-\subsection{坐标理论}
-坐标是精确定位AutoCAD对象的基础，在第\ref{sec:beilingjianleft}节中使用了$(x,y)$、$(@x,y)$ 和 $(@$距离$<$角度$)$三种形式来表示式字图形的各个牲点位置。此种形式即为Auto\-CAD 的坐标表示方式。
-\subsubsection{卡笛尔坐标系}
-卡笛尔坐标系即为直角坐标系，是用通过原点$O(0,0)$的两个相互垂直的坐标轴$X$和$Y$来表示绘图区域。图中的每一个点均表示为$(x,y)$的形式,如图\ref{fig:zuobiao1}所示。
-\begin{figure}[htbp]
-\centering
-\begin{floatrow}
-\ffigbox{\caption{坐标表示}\label{fig:zuobiao1}}{
-\begin{tikzpicture}
-\draw[help lines,step=1cm,very thin](-0.4cm,-0.4cm)grid(3.9cm,3.9cm);
-\draw[->,line width=0.7mm](-0.4cm,0)--(4cm,0)node[right]{$x$};
-\draw[->,line width=0.7mm](0,-0.4cm)--(0,4cm)node[above]{$y$};
-\draw (0,0)node[above right]{(0,0)};
-\fill (2cm,1cm)node[above right]{(2,1)}circle(2pt);
-\end{tikzpicture}}
-\ffigbox{\caption{极坐标表示}\label{fig:jizuobiao1}}{
-\begin{tikzpicture}
-\draw[help lines,very thin](-2.2cm,0)--(2.2cm,0)(0,-2.2cm)--(0,2.2cm)(45:2.2cm)--(225:2.2cm)(135:2.2cm)--(-45:2.2cm);
-\draw[help lines,very thin](0,0)circle(1cm)circle(2cm);
-\fill (45:2cm)node[right]{$(2<45\degree)$}circle(2pt);
-\end{tikzpicture}
-}
-\end{floatrow}
-\end{figure}
-\subsubsection{极坐标系}
-极坐标系是一个二维坐标系统，它用一段相对于中心点的距离和一个夹角来表示坐标区域中的点，其坐形式为$(\rho,\theta)$,如图\ref{fig:jizuobiao1}所示。其中$\rho$表示距离，永远取正值，$\theta$表示角度，取值范围为$0-360\degree$。
-\subsubsection{绝坐标和相对坐标}
-绝对坐标是以当前坐标原点为基点进行参照所获得的坐标值。如$(3,5)$，$(4<45\degree)$。
 
-相对坐标是以前面输入的坐标点为参照所获得的坐标值，表示方法是在坐标值前面加一个“＠”符号。例如，相对直角坐标表示为$(@5,4)$，相对极坐标表示为$(@5<35)$。
-
-例如，绘制一条两个端点分别为$(3,5)$和$(6,9)$的直线。调用line命令：
-
-\noindent
-命令: line 指定第一点: 3,5\\
-指定下一点或 [放弃(U)]:\\
-用绝对坐标方式输入，$(6,9)$就可以绘出直线。\\
-用相对坐标方式输入，可知$(6,9)$相对于$(3,5)$的$X$轴增量为3，$Y$轴增量为4，故输入相对坐标$(@3,4)$也可以绘出直线。
-
-\indent
-但是，从AutoCAD的实际绘图过程来看，多种坐标输入方式配合使用会使整个绘图过程更加灵活和方便，再配合目标捕捉和夹点编辑等方式，则使绘图更精确、更快捷。
 \subsection{图纸幅面及格式}
 \subsubsection{图纸幅面}
 “图形界限”中我们所设置的297$\times $210的尺寸就是国家标准中的A4图纸幅面。国家标准《技术制图》中规定幅面的尺寸是为了方便绘制、使用和保管图样。因此，在绘制图样时，应优先采用表\ref{tab:tufubiao1}中规定的尺寸，必要时允许先用规定的加长幅面，加长幅面的尺寸由基本幅面短边的成整数倍增加后得出，如图\ref{fig:tufujiachang}所示。其中粗实细部分为基本幅面。加长后幅面记作：基本幅面代号$\times $倍数。如$A3\times 3$，表示按A3图幅短边加长为297mm的3倍，即加长后图纸尺寸为$420mm\times 891mm$。
