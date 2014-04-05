@@ -1,0 +1,33 @@
+\section{视图}
+\subsection{正投影法}
+爸爸指着图纸（图\ref{fig:tiaoyafabei}）讲解到：
+图纸中，位于左边的图形是用于表达的是从前向后看所得到的杯零件的视图，通常称之为主视图。该视图清晰的表明该杯零件为典型的简单回转体零件，位于右边的则是假想将杯零件剖切后从左向右观察所得的视图，通常称之为左视图或者左全剖视图。它清楚地表达了杯零件的内部结构。
+
+秦奋：什么是视图呢？
+
+爸爸拿出第二张图解释道：要理解视图，首先让我们来了解一下投影。投影是物体在阳光或灯光下所产生的影子。工程实际中为解决影子只能够表现物体轮廓的缺点，将物体内外空间几何元素加以抽象并用不同的线型进行表示，以实现物体的内外细节的表达，从而形成的比较完备的、实用的投影方法。投影法中分类中心投影法和平行投影法两类。所有的投影线者互不平行且汇聚于点的投影法称为中心投影法。此类投影法主要用于绘制效果比较逼真的建筑或产品立体图。这张图（图\ref{pingxingtouyin}）表示的是平行投影法，从图中可以看出其所有的投影线都是相互平行的,其中投影线倾斜于投影面则为斜投影，投影线垂直于投影面则为正投影法。工程中将用正投影法绘制的物体图形称为视图。
+\begin{figure}[htbp]
+\centering
+\subfloat[斜投影法]{\label{fig:xietouyinfa}
+\begin{tikzpicture}
+\draw(0,0)--(30mm,0)--++(30:30mm)--++(-30mm,0)--cycle;
+\begin{scope}[xshift=10mm]
+\draw[line width=0.4mm](0,0)++(30:10mm)coordinate(a1)--++(10mm,0) coordinate(a2)--++(30:10mm) coordinate(a3)--++(-10mm,0) coordinate(a4)--cycle;
+\draw(a1)--++(75:30mm)coordinate(b1) (a2)--++(75:30mm)coordinate(b2) (a3)--++(75:30mm)coordinate(b3) (a4)--++(75:30mm)coordinate(b4);
+\draw[line width=0.4mm]($(a1)!.8!(b1)$)--($(a2)!.8!(b2)$)--($(a3)!.8!(b3)$)--($(a4)!.8!(b4)$)--cycle;
+\end{scope}
+\end{tikzpicture}
+}
+\subfloat[正投影法]{\label{fig:zhentouyinfa}
+\begin{tikzpicture}
+\draw(0,0)--(30mm,0)--++(30:30mm)--++(-30mm,0)--cycle;
+\begin{scope}[xshift=10mm]
+\draw[line width=0.4mm](0,0)++(30:10mm)coordinate(a1)--++(10mm,0) coordinate(a2)--++(30:10mm) coordinate(a3)--++(-10mm,0) coordinate(a4)--cycle;
+\draw(a1)--++(0,30mm)coordinate(b1) (a2)--++(0,30mm)coordinate(b2) (a3)--++(0,30mm)coordinate(b3) (a4)--++(0,30mm)coordinate(b4);
+\draw[line width=0.4mm]($(a1)!.8!(b1)$)--($(a2)!.8!(b2)$)--($(a3)!.8!(b3)$)--($(a4)!.8!(b4)$)--cycle;
+\end{scope}
+\end{tikzpicture}
+}
+\caption{平行投影法}\label{pingxingtouyin}
+\end{figure}
+\endinput

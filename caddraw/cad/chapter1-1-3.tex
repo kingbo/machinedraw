@@ -1,0 +1,38 @@
+\subsection{三视图投影规律}
+从图\ref{fig:threeviewguanxi}中，我们可以得出：主视图反映物体的上下和左右关系，即反映物体的长和高；俯视图反映物体的左右和前后关系，即反映物体的长和宽；左视图反映物体的上下和前后，即反映物体的高和宽。因此，三视图的投影规律为：
+\begin{itemize}
+\item 主、俯视图长对正；
+\item 主、左视图高平齐；
+\item 俯、左视图宽相等。
+\end{itemize}
+\begin{figure}[htbp]
+\begin{tikzpicture}
+\begin{scope}[scale=0.6]
+\draw[line width=0.4mm](0,0)coordinate(a1)--++ (20mm,0)coordinate(a2)--++ (0,20mm)coordinate(a3)--++ (-10mm,0)coordinate(a4)--++(0,-10mm)coordinate(a5)--++ (-10mm,0)coordinate(a6)--cycle;
+\draw(a4)node[above]{\tiny 上};
+\draw(a4)++(0,-20mm)node[below]{\tiny 下};
+\draw(a6)node[left]{\tiny 左};
+\draw(a2)++(0,10mm)node[right]{\tiny 右};
+\draw[line width=0.4mm](a1)++(0,-25mm)coordinate(b1)--++(0,-10mm) coordinate(b2)--++(20mm,0)coordinate(b3)--++(0,10mm) coordinate(b4)--cycle;
+\draw[line width=0.4mm](b1)++(10mm,0)node[above]{\tiny 后}--++(0,-10mm)node[below]{\tiny 前};
+\draw(a1)--(b1)(a2)--(b4);
+\draw[<->]($(a1)!.6!(b1)$)--($(a2)!.6!(b4)$)node[midway,above]{\tiny 长对正};
+\draw[line width=0.4mm](a2)++(25mm,0)coordinate(c1)--++(10mm,0)coordinate(c2)--++(0,20mm) coordinate(c3)--++(-10mm,0)coordinate(c4)--cycle;
+\draw[line width=0.4mm](c1)++(0,10mm)node[left]{\tiny后}--++(10mm,0)node[right]{\tiny前};
+\draw(a2)--(c1)(a3)--(c4);
+\draw[<->]($(a2)!.6!(c1)$)--($(a3)!.6!(c4)$)node[midway,above,sloped]{\tiny高平齐};
+\draw(b3)--++(10mm,0)coordinate(d1);
+\draw(b4)--++(10mm,0)coordinate(d2);
+\draw[<->]($(b3)!.8!(d1)$)coordinate(d3)--($(b4)!.8!(d2)$)coordinate(d4);
+\draw(c1)--++(0,-10mm)coordinate(d5);
+\draw(c2)--++(0,-10mm)coordinate(d6);
+\draw[<->]($(c1)!.8!(d5)$)coordinate(d7)--($(c2)!.8!(d6)$)coordinate(d8);
+\draw($(d4)!.4!(d3)$)coordinate(d9)--($(d7)!.4!(d8)$)coordinate(d10);
+\draw($(d9)!.5!(d10)$)--++(6mm,0)node[right]{\tiny宽相等};
+\end{scope}
+\end{tikzpicture}
+\caption{三视图投影规律}\label{fig:threeviewguanxi}
+\end{figure}
+三视图的投影规律不仅适用于物体整体之间的投影，也适用于空间中的点、线面。同时它也是画图和读图的基础规则。
+
+\clearpage

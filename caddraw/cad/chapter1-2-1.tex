@@ -1,0 +1,259 @@
+\section{旋转建模法}
+\subsection{绘制杯零件左视图}
+\subsubsection{直接绘制法}\label{sec:beilingjianleft}
+\begin{procedure}
+
+\item 启动AutoCAD软件
+
+爸爸：秦奋，我们首先要启动AutoCAD软件，你来说说有哪些启动方法。
+
+秦奋：启动AutoCAD软件的方法通常有：
+\begin{itemize}
+\item 双击桌面图标\includegraphics[scale=0.2]{cadicon.png}。
+\item 【开始】菜单【所有程序】子菜单中【Autodesk】子菜单中【AutoCAD 2013 – 简体中文 (Simplified Chinese)】子菜单中的【AutoCAD 2013 – 简体中文 (Simplified Chinese)】项。
+\end{itemize}
+秦奋一边说一边进行操作，经过稍适等待，完成了AutoCAD软件的启动，出现了如图\ref{fig:cadui}所示的软件界面。
+\noindent
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.5]{cadui.pdf}
+\caption{“AutoCAD经典”工作空间}\label{fig:cadui}
+\end{figure}
+爸爸指着软件的界面简单地介绍到：AutoCAD软件的界面同Word字处理软件的界面基本上差不多，有标题栏、菜单栏、工具栏、绘图区、状态栏。不同的是在标题栏上还有菜单浏览器和快速访问工具栏；绘图区的左下方还有坐标系，右上方有ViewCube工具，左边有绘图工具栏，右边有编辑工具栏；状态栏的上方有命令窗口；状态栏中还有按钮。
+
+秦奋一边听一边默默地记着。
+\item 将视图切换为左视图。
+
+爸爸：AutoCAD启动后其默认的视图方向是主视图方向，为了方便使用旋转法进行杯零件的三维建模，我们需要将AutoCAD的视图方向切换为左视图方向。通常实现左视图切换的方法有：
+\begin{itemize}
+\item 键盘输入-VIME或-V,选择【正交】选项中的【左视】项。
+\item 在【视图】菜单【三维视图】子菜单中单击【左视图】项。
+\item 在【视图】工具栏中单击【左视】图标\includegraphics[scale=0.6]{toptool.png}。
+\end{itemize}
+秦奋：是不是切换其它视图方向的方法也是基本一致的，只是需要将“左视”换成其它视图方向即可，如切换为俯视图方向是则将【左视】改为【俯视】，将【左视图】改为【俯视图】？
+
+爸爸：不错，能够举一反三。
+
+秦奋：为什么本例要使用左视图而不用主视图或其它视图呢？
+
+爸爸：问得不错，因为我们接下来要绘制左视图中带有阴影部分的图形的边框线，因此需要切换到左视图，以便于得到我们期望的三维模型。其实我们在建模过程中经常需要切换视图方向以利于建模。
+
+秦奋：那就是说，如果绘制的图框位于主视图，寻么就需要将视图方向切换为主视图。
+
+爸爸：嗯，不错，看来你已经理解了视图切换的意义的目的了。接下来我们就要开始绘图了。
+\item 启动【直线】命令
+
+爸爸：秦奋你观察一下左视图的边框线都有是些什么线？
+
+秦奋：都是由直线围成的。
+
+爸爸：因此我们可以用AutoCAD中的【直线】命令来完成阴影部分的边框线绘制。【直线】命令的常用启动方法有以下几种：
+\begin{itemize}
+\item 键盘输入line或L。
+\item 在【绘图】菜单中单击【直线】项。
+\item 在【绘图】工具栏中单击【直线】图标\includegraphics[scale=0.6]{linetool.png}。
+\end{itemize}
+此时秦奋的爸爸在命令窗口中输入了【直线】命令。
+\begin{lstlisting}
+|命令: LINE|
+|指定第一个点:
+\end{lstlisting}
+爸爸：秦奋，注意到绘图区和命令窗口的变化了吗？
+
+秦奋：输完命令后绘图区中的光标由带拾取框的十字光标\includegraphics[scale=0.8]{guangbiao1} 变成了十字光标\includegraphics[scale=0.6]{guangbiao2}。命令窗口中提示输入第一个点。
+
+爸爸：这种状态是AutoCAD系统提示我们需要输入直线第一个点坐标。通常有三种方式输入坐标：
+\begin{itemize}
+\item 坐标数字
+\item 光标直接输入
+\item 光标捕捉方式输入
+\end{itemize}
+
+其中坐标数字和光标捕捉方式能够获得精确的坐标位置，而光标直接输入的坐很不准确。精确绘图是AutoCAD的主要特色，因此用光标直接输入的方式应用比较少。
+\item 输入图线坐标点，实现封闭图形的绘制。
+
+秦奋的爸爸快速的完成了左视图边框的绘制。
+\begin{lstlisting}
+|指定第一个点:0,0|
+|指定下一点或 [放弃(U)]: 15<0|
+|指定下一点或 [放弃(U)]: $@4<90$|
+|指定下一点或 [闭合(C)/放弃(U)]: $@-10<0$|
+|指定下一点或 [闭合(C)/放弃(U)]: $@11<90$|
+|指定下一点或 [闭合(C)/放弃(U)]: $@-5<0$|
+|指定下一点或 [闭合(C)/放弃(U)]: c|
+\end{lstlisting}
+
+爸爸：通过上述步骤，我们完成了杯零件的主要特征绘制，其结果如图\ref{fig:bettezheng}所示。现对步骤中标注部分说明如下：
+%\showremarks
+\noindent
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.4]{beitezheng.pdf}
+\caption{杯零件三维建模基础图}\label{fig:bettezheng}
+\end{figure}
+\end{procedure}
+
+\subsubsection{坐标知识}
+秦奋：为什么四种不同的坐标数字表达形式呢，它们之间有什么区别呢。
+
+爸爸：坐标是精确定位AutoCAD对象的基础，在上面（第\ref{sec:beilingjianleft}节）的绘图过程中我们使用四种不同的坐标表示方法。它们分别是绝对直角坐标、相对直角坐标、绝对极轴坐标和相对极轴坐标。中使用了$(x,y)$、$(@x,y)$ 和 $(@$距离$<$角度$)$三种形式来表示式字图形的各个牲点位置。此种形式即为Auto\-CAD 的坐标表示方式。
+\subsubsection{卡笛尔坐标系}
+卡笛尔坐标系即为直角坐标系，是用通过原点$O(0,0)$的两个相互垂直的坐标轴$X$和$Y$来表示绘图区域。图中的每一个点均表示为$(x,y)$的形式,如图\ref{fig:zuobiao1}所示。
+\begin{figure}[htbp]
+\centering
+\begin{floatrow}
+\ffigbox{\caption{直角坐标表示}\label{fig:zuobiao1}}{
+\begin{tikzpicture}
+\draw[help lines,step=1cm,very thin](-0.4cm,-0.4cm)grid(3.9cm,3.9cm);
+\draw[->,line width=0.7mm](-0.4cm,0)--(4cm,0)node[right]{$x$};
+\draw[->,line width=0.7mm](0,-0.4cm)--(0,4cm)node[above]{$y$};
+\draw (0,0)node[above right]{(0,0)};
+\fill (2cm,1cm)node[below right]{(2,1)}circle(4pt);
+\begin{scope}[shift={(2cm,1cm)}]
+\draw[help lines,step=1cm,very thin](-0.4cm,-0.4cm)grid(3.9cm,3.9cm);
+\draw[->,line width=0.7mm](-0.4cm,0)--(4cm,0)node[right]{$x'$};
+\draw[->,line width=0.7mm](0,-0.4cm)--(0,4cm)node[above]{$y'$};
+\draw (0,0)node[above right]{$(0',0')$};
+\fill (2cm,1cm)node[above right]{(@2,1)}circle(2pt);
+\end{scope}
+\end{tikzpicture}}
+\ffigbox{\caption{极轴坐标表示}\label{fig:jizuobiao1}}{
+\begin{tikzpicture}
+\draw[help lines,very thin](-2.2cm,0)--(2.2cm,0)(0,-2.2cm)--(0,2.2cm)(45:2.2cm)--(225:2.2cm)(135:2.2cm)--(-45:2.2cm);
+\fill(0,0)node[left]{($0<0\degree$)}circle(2pt);
+\draw[help lines,very thin](0,0)circle(1cm)circle(2cm);
+\fill (45:1cm)node[above,right]{$(1<45\degree)$}circle(4pt);
+\begin{scope}[shift={(45:1cm)}]
+\draw[help lines,thin](-2.2cm,0)--(2.2cm,0)(0,-2.2cm)--(0,2.2cm)(45:2.2cm)--(225:2.2cm)(135:2.2cm)--(-45:2.2cm);
+\draw[help lines,thin](0,0)circle(1cm)circle(2cm);
+\fill (45:2cm)node[right]{$(@2<45\degree)$}circle(2pt);
+\fill(0,0)node[below,left]{($0'<0\degree$)}circle(2pt);
+\end{scope}
+\end{tikzpicture}
+}
+\end{floatrow}
+\end{figure}
+\subsubsection{极坐标系}
+极坐标系是一个二维坐标系统，它用一段相对于中心点的距离和一个夹角来表示坐标区域中的点，其坐形式为$(\rho,\theta)$,如图\ref{fig:jizuobiao1}所示。其中$\rho$表示距离，永远取正值，$\theta$表示角度，取值范围为$0-360\degree$。
+\subsubsection{绝坐标和相对坐标}
+绝对坐标是以当前坐标原点为基点进行参照所获得的坐标值。如$(3,5)$，$(4<45\degree)$。
+
+相对坐标是以前面输入的坐标点为参照所获得的坐标值，表示方法是在坐标值前面加一个“＠”符号。例如，相对直角坐标表示为$(@5,4)$，相对极坐标表示为$(@5<35)$。
+
+例如，绘制一条两个端点分别为$(3,5)$和$(6,9)$的直线。调用line命令：
+
+\noindent
+
+
+
+\begin{tips}
+\item 使用用Line命令过程中，如果由于输入坐标错误或误点鼠标而导线段绘制错误，在没有结束命令前，可以使用U选项撤消上一次绘制的线段。
+\item 在使用Line命令过程中，如果还没有绘制完图形就已经结束了命令，可以再次使用直线命令并利用捕捉端点的方式获得需继续绘制点的坐标，然后接着完成图形的绘制。开启端点捕捉的方法有：
+\begin{itemize}
+\item 绘图过程中在输入坐点时，用键盘输入：end。
+\item 绘图过程中按ctrl或shift键+鼠标右击弹出图\ref{fig:duixiangbuzuomen2}所示的【对象捕捉】菜单，并选择【端点】项。
+\item 在功能按钮区中将对象捕捉图标由\includegraphics[scale=0.6]{duixiangbuzuo1.png}状态设置为\includegraphics[scale=0.6]{duixiangbuzuo.png}状态，并在图标上右击弹出图\ref{fig:duixiangbuzuomen1}所示的【对象捕捉】菜单，并使【端点】项为开启状态。
+\end{itemize}
+\item 使用坐标和捕捉是实现AutoCAD精确绘图的关键。
+\end{tips}
+\begin{figure}[htbp]
+\centering
+\begin{floatrow}
+\ffigbox{\caption{“对象捕捉”菜单一}\label{fig:duixiangbuzuomen2}}{\includegraphics[scale=0.85]{duixiangbuzuomen2.png}}
+\ffigbox{\caption{“对象捕捉”菜单二}\label{fig:duixiangbuzuomen1}}{\includegraphics{duixiangbuzuomen1.png}}
+\end{floatrow}
+\end{figure}
+
+\subsubsection{修改法}
+\begin{procedure}
+\item 绘制两条相互垂直的直线，作为基础。
+\begin{lstlisting}
+|命令: LINE|
+|指定第一个点:0,15|
+|指定下一点或 [放弃(U)]: @0,-15|
+|指定下一点或 [放弃(U)]: $@15<0$|
+|指定下一点或 [闭合(C)/放弃(U)]: |
+\end{lstlisting}
+\item 用偏移产生符合尺寸距离的水平线。启动【偏移】命令的方法有：
+\begin{itemize}
+\item 键盘输入OFFSET或O。
+\item 在【修改】菜单中单击【偏移】项。
+\item 在【修改】工具栏中单击【偏移】图标\includegraphics[scale=0.6]{offsettool.png}。
+\end{itemize}
+\begin{lstlisting}
+|命令:OFFSET|
+|当前设置: 删除源=否  图层=源  OFFSETGAPTYPE=0|
+|指定偏移距离或 [通过(T)/删除(E)/图层(L)] $<$通过$>$:  4|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:\longremark{用鼠标选择图\ref{fig:trimmotherd}中的水平线，选中后该水平线将以虚线形式表示，如图\ref{fig:offsetselect}所示。}|
+|指定要偏移的那一侧上的点，或[退出(E)/多个(M)/放弃(U)]|
+|$<$退出$>$:\longremark{将鼠标移至选中水平线的上方，并单击鼠标左键。}|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+|命令: OFFSET|
+|当前设置: 删除源=否  图层=源  OFFSETGAPTYPE=0|
+|指定偏移距离或 [通过(T)/删除(E)/图层(L)] $<4.0000>$:  11|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+|指定要偏移的那一侧上的点，或 [退出(E)/多个(M)/放弃(U)] |
+|$<$退出$>$:|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+\end{lstlisting}
+\showremarks
+\item 用偏移产生符合尺寸距离的垂直线。
+\begin{lstlisting}
+|命令:OFFSET|
+|当前设置: 删除源=否  图层=源  OFFSETGAPTYPE=0|
+|指定偏移距离或 [通过(T)/删除(E)/图层(L)] $<11.0000>$:  5|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+|指定要偏移的那一侧上的点，或[退出(E)/多个(M)/放弃(U)]|
+|$<$退出$>$:|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+|命令: OFFSET|
+|当前设置: 删除源=否  图层=源  OFFSETGAPTYPE=0|
+|指定偏移距离或 [通过(T)/删除(E)/图层(L)] $<5.0000>$:  10|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+|指定要偏移的那一侧上的点，或 [退出(E)/多个(M)/放弃(U)] |
+|$<$退出$>$:|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+\end{lstlisting}
+\begin{figure}[htbp]
+\subfloat[]{\label{fig:trimmotherd}\includegraphics[scale=0.4]{trimmotherd1.png}}\hspace{20pt}
+\subfloat[]{\label{fig:offsetselect}\includegraphics[scale=0.4]{offsetselect.png}}\hspace{20pt}
+\subfloat[]{\label{fig:offsetresult}\includegraphics[scale=0.5]{offsetresult.png}}
+\caption{偏移过程}
+\end{figure}
+\item 在完成偏移操作后，其结果如图\ref{fig:offsetresult}所示，现在需要用【修剪】命令修剪掉不需要的线段，以完成图形绘制。【修剪】命令的启动方法有：
+\begin{itemize}
+\item 解盘输入TRIM或TR。
+\item 点击【修改】菜单中的【修剪】项。
+\item 点击【修改】工具栏中的【修剪】图标\includegraphics[scale=0.6]{trimtool.png}。
+\end{itemize}
+\begin{lstlisting}
+|命令: TRIM|
+|当前设置:投影=UCS，边=无|
+|选择剪切边...|
+|选择对象或 $<$全部选择$>$:  指定对角点: 找到 6 个\longremark{以框选方式选择所有的图线用作剪切边，选择方法如图\ref{fig:trimegeselect}所示，选择结果如图\ref{fig:trimselectresult}所示。}|
+|选择对象:|
+|选择要修剪的对象，或按住 Shift 键选择要延伸的对象，或|
+|[栏选(F)/窗交(C)/投影(P)/边(E)/删除(R)/放弃(U)]:  指定对角点:\longremark{以框选方式选择要修剪的对象，选择方法如图\ref{fig:trimedselect}所示，修剪结果如图\ref{fig:trimedresult}所示。}|
+|选择要修剪的对象，或按住 Shift 键选择要延伸的对象，或|
+|[栏选(F)/窗交(C)/投影(P)/边(E)/删除(R)/放弃(U)]:|
+|选择要修剪的对象，或按住 Shift 键选择要延伸的对象，或|
+|[栏选(F)/窗交(C)/投影(P)/边(E)/删除(R)/放弃(U)]:|
+|选择要修剪的对象，或按住 Shift 键选择要延伸的对象，或|
+|[栏选(F)/窗交(C)/投影(P)/边(E)/删除(R)/放弃(U)]:|
+\end{lstlisting}
+\begin{figure}[htbp]
+\subfloat[]{\label{fig:trimegeselect}\includegraphics[scale=0.4]{trimegeselect.png}}\hspace{20pt}
+\subfloat[]{\label{fig:trimselectresult}\includegraphics[scale=0.4]{trimselectresult.png}}\hspace{20pt}
+\subfloat[]{\label{fig:trimedselect}\includegraphics[scale=0.4]{trimedselect.png}}\hspace{20pt}
+\subfloat[]{\label{fig:trimedresult}\includegraphics[scale=0.4]{trimedresult.png}}
+\caption{修剪过程}
+\end{figure}
+\showremarks
+\end{procedure}
+\begin{tips}
+\item 【偏移】操作过程中，如果多次偏移的距离相同则可以多次选择对象并执行偏移。
+\item 【修剪】操作的关键是修剪边的选择，若要前去某线段之外的其它图线，则应选择该线段作为修剪边；若要剪去某两条线段之间的其它的图线则至少要选择该两条线段，否则不能够实现操作目的。
+\item 【修剪】操作中修剪对象的选择具有一定的顺序，般为先剪去外围不需要的图线，再剪去内部的图线，否会出现部分图线不能够剪除，只能够删除的现象。
+\end{tips}
+
+\endinput

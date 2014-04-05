@@ -1,0 +1,84 @@
+\subsection{旋转构建杯零件三维模型}
+\begin{procedure}
+\item 将图\ref{fig:bettezheng}进行面域。启动【面域】命令的方法有：
+\begin{itemize}
+\item 解盘输入region或reg。
+\item 在【绘图】菜单中单击【面域】项。
+\item 在【绘图】工具栏中单击【面域】图标\includegraphics[scale=0.6]{regiontool.png}。
+\end{itemize}
+\begin{lstlisting}
+|命令:REGION|
+|选择对象: 找到 1 个\longremark{已选择一条用以构建封闭区域的对象，被选中的线段以虚线形式表示，其结果如图\ref{fig:regionselecta}所示}|
+|选择对象: 找到 1 个，总计 2 个|
+|选择对象: 找到 1 个，总计 3 个|
+|选择对象: 找到 1 个，总计 4 个|
+|选择对象: 找到 1 个，总计 5 个|
+|选择对象: 找到 1 个，总计 6 个\longremark{已选择全部6条用以构建封闭区域的对象，构成以虚线表示的封闭框，其结果如图\ref{fig:regionselectb}所示}|
+|选择对象:|
+\end{lstlisting}
+\showremarks
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:regionselecta}\includegraphics[scale=1.2]{regionselect1.png}}\hspace{30pt}
+\subfloat[]{\label{fig:regionselectb}\includegraphics[scale=1.2]{regionselect.png}}
+\caption{面域对象选择}
+\end{figure}
+\item 实体建模中旋转命令完成杯块零件三维模型构建。实体【旋转】命令的启动方法有：
+\begin{itemize}
+\item 键盘输入revolve或rev。
+\item 在【绘图】菜单的【建模】子菜单中单击【旋转】项。
+\item 在【建模】工具栏中单击【旋转】图标\includegraphics[scale=0.6]{solidrevolve.png}。
+\end{itemize}
+\begin{lstlisting}
+|命令: REVOLVE|
+|当前线框密度:  ISOLINES=4，闭合轮廓创建模式 = 实体|
+|选择要旋转的对象或 [模式(MO)]: 找到 1 个|
+|选择要旋转的对象或 [模式(MO)]:|
+|指定轴起点或根据以下选项之一定义轴 [对象(O)/X/Y/Z]$<$对象$>$:\longremark{用捕捉方式选择端点用来定义中心线的第一个点，如图\ref{fig:revnodeselecta}所示。}|
+|指定轴端点:\longremark{用捕捉方式选择端点用来定义中心线的第二个点，如图\ref{fig:revnodeselectb}所示。}|
+|指定旋转角度或 [起点角度(ST)/反转(R)/表达式(EX)] $<360>$:|
+\end{lstlisting}
+\showremarks
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:revnodeselecta}\includegraphics[scale=0.7]{revnodeselect1.png}}\hspace{30pt}
+\subfloat[]{\label{fig:revnodeselectb}\includegraphics[scale=0.7]{revnodeselect2.png}}
+\caption{旋转中心定义}
+\end{figure}
+\item 将视图切换为【东南等轴测】，并将【视觉样式】设置为【灰度】即可得到图\ref{fig:beimodel}所示的调压阀杯零件三维模型效果。
+
+切换【东南等轴测】的方法有：
+\begin{itemize}
+\item 在【视图】菜单【三维视图】子菜单中单击【东南等轴测】项。
+\item 在【视图】工具栏中单击【东南等轴测】图标\includegraphics[scale=0.6]{estool.png}。
+\end{itemize}
+设置【视觉样式】的方法是：
+\begin{itemize}
+\item 在【视图】菜单【视觉样式】子菜单中单击【灰度】项。
+\end{itemize}
+\item 将文件保存为“杯块零件三维图.dwg”。AutoCAD保存文件的方法有：
+\begin{itemize}
+\item 键盘输入\fbox{Ctrl}+\fbox{S}。
+\item 【文件】菜单中【保存】或【另存为】项。
+\item 【工具栏】中的【保存】图标\includegraphics[scale=0.6]{savetool.png}。
+\end{itemize}
+\end{procedure}
+\begin{figure}
+\centering
+\includegraphics[scale=0.4]{beimodel.pdf}
+\caption{杯零件三维模型}\label{fig:beimodel}
+\end{figure}
+
+\begin{tips}
+\item 【面域】命令要求选择的线段必须要构成封闭线框，即要求如图\ref{fig:regionselectb}一样，所选择的线段要首尾相接，否则将不能成功面域。
+\item 图所示的几种情况都将不能够成功创建面域。
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\includegraphics{regerror1.png}}\hspace{20pt}
+\subfloat[]{\includegraphics{regerror2.png}}\hspace{20pt}
+\subfloat[]{\includegraphics[scale=0.6]{regerror3.png}}\hspace{20pt}
+\subfloat[]{\includegraphics[scale=0.6]{regerror4.png}}
+\end{figure}
+\item 实体【旋转】命令的角度决定用选定的对象旋转多少度，例如90度将产生四分之一形状的回转体。默认情况下则为360度。
+\end{tips}
+\endinput
