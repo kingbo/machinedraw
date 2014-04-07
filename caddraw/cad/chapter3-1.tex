@@ -1,15 +1,166 @@
-\section{绘图分析}
-在绘制图形前，首先让我们对端盖的零件图进行必要的分析。这一过程不仅不会耽误绘图，还能够加速我们的绘图过程，正所谓“磨刀不误砍柴功”。通过对图\ref{fig:tiaoyafaduangai}的观察，可以看出主视图清楚的地表达了端盖零件是回转体类的零件，与第\ref{chap:bei}章的杯零件和第\ref{chap:dianpian}章的垫片零件均属于同一类。但端盖零件无论是外形还内部结构均比杯和垫片块零件复杂。而这种复杂性决定了不同建模策略的复杂性，也同时决定了建模效率。因此绘图分析的根本目的是要找出其能够最准确、最简便、最快捷的建模策略，并以此来提升零件的建模效率。
+\section{旋转建模法}
+\subsection{绘制左视图特征图}
+\begin{procedure}
+\item 设置图层。
 
-根据第\ref{chap:bei}章的杯零件和第\ref{chap:dianpian}章的垫片零件建模的经验，大致有两种技术路线图可以用于端盖零件的三维建模，即主视图技术路线图和左视图路线图。
+建立“中心线”和“实线”两个图层，分别用于管理中心线和实线两类图形，并将图层设置为“中心线”层。
+\item 切换视图为左视图。
 
-\subsection{主视图技术路线}
-图\ref{fig:tiaoyafaduangaifront}所示的端盖主视图可由5个不同直径圆柱和6个直径为$\diameter 9$的圆柱组成。然后利用圆柱之间的并、差、交集关系来实现模型的构建,最后用【圆角】命令实现左视图中的三个圆角。其整个建模过程中需要利用辅助点或线来帮助圆的定位。
+【视图】菜单中【三维视图】子菜单中的【左视图】。
+
+\item 绘制左视图中心线。
+
+绘制两条相互垂直的构造线型中心作为绘图参考线
+\begin{lstlisting}
+|命令: XLINE|
+|指定点或 [水平(H)/垂直(V)/角度(A)/二等分(B)/偏移(O)]: 0,52|
+|指定通过点:$ @1<0$|
+|指定通过点:$ @1<90$|
+|指定通过点:|
+\end{lstlisting}
+偏移产生$\phi 9$圆的中心线
+\begin{lstlisting}
+|命令: OFFSET|
+|当前设置: 删除源=否  图层=源  OFFSETGAPTYPE=0|
+|指定偏移距离或 [通过(T)/删除(E)/图层(L)] $<$通过$>$:42|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+|指定要偏移的那一侧上的点，或 [退出(E)/多个(M)/放弃(U)] $<$退出$>$:|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+\end{lstlisting}
+\item 将图层切换为实线图层，并绘忽略连接圆弧的特征图，其结果如图\ref{fig:duanguaitezhengtu}所示。
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=0.5]{tiaoyafaduangaifront.pdf}
-\caption{端盖主视图}\label{fig:tiaoyafaduangaifront}
+\subfloat[]{\label{fig:duanguaitezhengtu}\includegraphics[scale=0.5]{duanguaitezhengtu.png}}\hspace{30pt}
+\subfloat[]{\label{fig:duanguaitezhengtu1}\includegraphics[scale=0.65]{duanguaitezhengtu1.png}}
+\caption{端盖左视特征图绘制过程}
 \end{figure}
-\subsection{左视图技术路线}
-图所示为端盖左视图，根据以前的经验，可以先绘制出对称中心线上半部分或下半部分中填充剖面线部分的轮廓外形，然后利用旋转建模的方法就可以得到端盖的三维模型。
+绘主特征图。
+\begin{lstlisting}
+|命令: line|
+|指定第一个点: 0,64|
+|指定下一点或 [放弃(U)]: @0,40|
+|指定下一点或 [放弃(U)]: @10,0|
+|指定下一点或 [闭合(C)/放弃(U)]: @0,-21|
+|指定下一点或 [闭合(C)/放弃(U)]: @18,0|
+|指定下一点或 [闭合(C)/放弃(U)]: @0,-10|
+|指定下一点或 [闭合(C)/放弃(U)]: @-19,0|
+|指定下一点或 [闭合(C)/放弃(U)]: @0,1|
+|指定下一点或 [闭合(C)/放弃(U)]: @-4,0|
+|指定下一点或 [闭合(C)/放弃(U)]: @0,-10|
+|指定下一点或 [闭合(C)/放弃(U)]: c|
+\end{lstlisting}
+绘制$\phi 9$孔特征图。
+\begin{lstlisting}
+|命令: rectang|
+|指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)/宽度(W)]:|
+|指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @10,4.5|
+\end{lstlisting}
+\item 绘制圆弧连接，其结果如\ref{fig:duanguaitezhengtu1}所示。
+
+绘制圆弧外连接的通常使用圆角命令。启动圆角命令的方法有：
+\begin{itemize}
+\item 键盘输入FILLET或F。
+\item 点击【修改】菜单中的【圆角】项。
+\item 点击【修改】工具栏中的【圆角】图标\includegraphics[scale=0.6]{fillet.png}。
+\end{itemize}
+启动圆角命令后，要求选择对象。但是通常第一次启动圆角命令，其半径是零。因此需要使用【半径(R)】选项先设置半径。
+\begin{lstlisting}
+|命令: fillet|
+|当前设置: 模式 = 修剪，半径 = 0.0000|
+|选择第一个对象或 [放弃(U)/多段线(P)/半径(R)/修剪(T)/多个(M)]: r| 
+\end{lstlisting}
+输入半圆角半径值。
+\begin{lstlisting}
+|指定圆角半径 $<$0.0000$>$: 3|
+\end{lstlisting}
+选择用于生成圆角的两边。
+\begin{lstlisting}
+|选择第一个对象或 [放弃(U)/多段线(P)/半径(R)/修剪(T)/多个(M)]:|
+|选择第二个对象，或按住 Shift 键选择对象以应用角点或 [半径(R)]:|
+\end{lstlisting}
+用相同的方法生成其余两个圆角。由于圆角半径是一致的，因此不需要重复设置圆角半径，只需要直接选择用于圆角的边即可。
+\begin{lstlisting}
+|命令: FILLET|
+|当前设置: 模式 = 修剪，半径 = 3.0000|
+|选择第一个对象或 [放弃(U)/多段线(P)/半径(R)/修剪(T)/多个(M)]:|
+|选择第二个对象，或按住 Shift 键选择对象以应用角点或 [半径(R)]:|
+|命令: FILLET|
+|当前设置: 模式 = 修剪，半径 = 3.0000|
+|选择第一个对象或 [放弃(U)/多段线(P)/半径(R)/修剪(T)/多个(M)]:|
+|选择第二个对象，或按住 Shift 键选择对象以应用角点或 [半径(R)]:
+\end{lstlisting}
+\item 面域特征图。
+\begin{lstlisting}
+|命令: region|
+|选择对象: 指定对角点: 找到 12 个|
+|选择对象:|
+\end{lstlisting}
+\end{procedure}
+
+\subsection{旋转法构建端盖三维模型}
+\begin{procedure}
+\item 切换西南等轴测图
+
+【视图】菜单中的【三维视图】子菜单中的【西南等轴测图】
+\item 旋转构建端盖三维模型
+旋转产生$\phi 9$圆柱体。
+\begin{lstlisting}
+|命令: revolve|
+|当前线框密度:  ISOLINES=4，闭合轮廓创建模式 = 实体|
+|选择要旋转的对象或 [模式(MO)]: MO 闭合轮廓创建模式 [实|
+|体(SO)/曲面(SU)] $<$实体$>$: SO|
+|选择要旋转的对象或 [模式(MO)]: 找到 1 个|
+|选择要旋转的对象或 [模式(MO)]:|
+|指定轴起点或根据以下选项之一定义轴 [对象(O)/X/Y/Z] $<$对象$>$:|
+|指定轴端点:|
+|指定旋转角度或 [起点角度(ST)/反转(R)/表达式(EX)] $<$360$>$:|
+\end{lstlisting}
+旋转产生端盖主特征三维模型，其结果如图\ref{fig:duangai1}所示。
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:duangai1}\includegraphics[scale=0.5]{duangai1.png}}\hspace{30pt}
+\subfloat[]{\label{fig:duangai2}\includegraphics[scale=0.5]{duangai2.png}}\hspace{30pt}
+\subfloat[]{\label{fig:duangailititu}\includegraphics[scale=0.5]{duangailititu.png}}
+\caption{端盖三维模型构建过程}
+\end{figure}
+\begin{lstlisting}
+|命令: revolve|
+|当前线框密度:  ISOLINES=4，闭合轮廓创建模式 = 实体|
+|选择要旋转的对象或 [模式(MO)]: MO 闭合轮廓创建模式 [实|
+|体(SO)/曲面(SU)] $<$实体$>$: SO|
+|选择要旋转的对象或 [模式(MO)]: 找到 1 个|
+|选择要旋转的对象或 [模式(MO)]:|
+|指定轴起点或根据以下选项之一定义轴 [对象(O)/X/Y/Z] $<$对象$>$:|
+|指定轴端点:near 到|
+|指定旋转角度或 [起点角度(ST)/反转(R)/表达式(EX)] $<$360$>$:|
+\end{lstlisting}
+\item 三维阵列$\phi 9$圆柱体，其结果如图\ref{fig:duangai2}所示。
+\begin{lstlisting}
+|命令: 3darray|
+|选择对象: 找到 1 个|
+|选择对象:|
+|输入阵列类型 [矩形(R)/环形(P)]$<$矩形$>$:p|
+|输入阵列中的项目数目: 6|
+|指定要填充的角度 (+=逆时针, -=顺时针)$ <360>$:|
+|旋转阵列对象？ [是(Y)/否(N)] $<Y>$:|
+|指定阵列的中心点:|
+|指定旋转轴上的第二点:|
+\end{lstlisting}
+\item 用差集操作完成三维建模操作。
+\begin{lstlisting}
+|命令: subtract |
+|选择要从中减去的实体、曲面和面域...|
+|选择对象: 找到 1 个|
+|选择对象:  选择要减去的实体、曲面和面域...|
+|选择对象: 找到 1 个|
+|选择对象: 找到 1 个，总计 2 个|
+|选择对象: 找到 1 个，总计 3 个|
+|选择对象: 找到 1 个，总计 4 个|
+|选择对象: 找到 1 个，总计 5 个|
+|选择对象: 找到 1 个，总计 6 个|
+|选择对象:|
+\end{lstlisting}
+\item 设置视觉样式为真实，其结果如图\ref{fig:duangailititu}所示。
+\item 将端盖模型保存为“调压阀端盖立体图.dwg”。
+\end{procedure}
 \endinput
