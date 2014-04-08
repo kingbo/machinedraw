@@ -1,0 +1,152 @@
+%%%%%%%%%%%%%%教案头%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<article>{
+
+\begin{longtable}{|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{28mm}|}
+\caption*{\huge 教案头}\\
+\hline
+\endfirsthead
+\multicolumn{6}{l}{(续表)}\\
+\hline
+\endhead
+\hline
+\multicolumn{6}{l}{\itshape 接下一页表格.......}\\ [2ex]
+\endfoot
+\hline
+\endlastfoot
+\centering{授课单元}&\multicolumn{3}{m{60mm}|}{\centering 2.7根轨迹}&\centering{授课日期}&2014年04月28日 \\
+\hline
+\centering 授课地点 & \multicolumn{3}{m{60mm}|}{B6-204}&\centering 授课学时 & 2 \\
+\hline
+& \multicolumn{2}{m{40mm}|}{能力目标} & \multicolumn{2}{m{40mm}|}{知识目标}&素质目标 \\
+\cline{2-6}
+\centering 教学目标&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item 能够分析系统的根轨迹
+\end{enumerate} }&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item 掌握根轨迹法
+\item 掌握根轨迹的绘制要点
+\end{enumerate}} & {\qquad}\\
+\hline
+\centering 能力训练任务或案例 &\multicolumn{5}{m{108mm}|}{ }\\
+\hline
+\centering 教学重点 & \multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 根轨迹的绘制
+\end{enumerate}}\\
+\hline
+\centering 教学难点与解决办法 &\multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 难点：根轨迹的绘制
+\item 解决方法：实例讲解
+\end{enumerate}}\\
+\hline
+\centering 德育内容 &\multicolumn{5}{m{108mm}|}{无}\\
+\hline
+ &教材 & \multicolumn{4}{m{88mm}|}{计算机控制原理与应用}\\
+\cline{2-6}& 教学资源 &\multicolumn{4}{m{88mm}|}{PPT}\\
+\cline{2-6}\centering 使用的教学材料& 主要教学仪器设备和工具等 &\multicolumn{4}{m{88mm}|}{投影机、MATLAB}\\
+\cline{2-6}& 主要耗材 &\multicolumn{4}{m{88mm}|}{无}\\
+\hline
+\centering 教学模式 &\multicolumn{2}{m{40mm}|}{知识讲授}&\centering 教学手段 &\multicolumn{2}{m{48mm}|}{多媒体教学}\\
+\hline
+\centering 学生成果与过程考核方式 &\multicolumn{5}{m{108mm}|}{无}
+\end{longtable}
+\clearpage
+
+%%%%%%%%%%%%%%%教学实施过程%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{landscape}
+
+\begin{longtable}{|m{10mm}|m{50mm}|m{50mm}|m{50mm}|m{15mm}|}
+\caption*{\huge 教学组织与实施}\\
+\hline
+\endfirsthead
+\multicolumn{5}{l}{\small 接上页}\\
+\hline
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\
+\hline
+\endhead
+
+\multicolumn{5}{r}{\small 接下页}\\
+\endfoot
+\hline
+\endlastfoot
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\\hline
+讲解&\begin{enumerate}
+\item 根轨迹法
+\end{enumerate} &\begin{enumerate}
+\item 讲解讲解根轨迹法的理论
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &20 \\\hline
+讲解&\begin{enumerate}
+\item 根轨迹图的绘制
+\end{enumerate}
+ &\begin{enumerate}
+\item 讲解根轨迹图的绘制方法
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &25 \\\hline
+讲解&\begin{enumerate}
+\item 用MatLab绘制根轨迹图
+\end{enumerate}
+&\begin{enumerate}
+\item 讲解用MatLab绘制根轨迹图
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &10 \\\hline
+讲解&\begin{enumerate}
+\item MatLab根轨迹图绘制实践
+\end{enumerate}
+ &\begin{enumerate}
+\item 指导学生用MatLab绘制根轨迹图
+\end{enumerate} &\begin{enumerate}
+\item 学生用MatLab绘制根轨迹图
+\end{enumerate} &30 \\\hline
+
+\centering 本次课总结(评价)&总结本课程内容 &进行知识总结 &学生倾听 &5 \\\hline
+\centering 学生学习笔记或工单等检查情况&\multicolumn{4}{m{165mm}|}{\quad}\\\hline
+\centering 课后作业&\multicolumn{4}{m{165mm}|}{2-28，2-29}\\\hline
+\centering 教学体会&\multicolumn{4}{m{165mm}|}{\quad}\\
+\end{longtable}
+
+\end{landscape}
+\clearpage
+%%%%%%%%%%%%%%%%%%%%板书设计%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+{\huge 板书设计}
+\end{center}
+}
+\mode<presentation>{ \section{根轨迹}
+ \subsection{根轨迹}}
+ \begin{frame}{根轨迹法} 
+ \begin{block}{开环传递函数展开式}
+ \begin{eqnarray*}
+ \Phi(s)&=&\frac{G(s)}{1+G(s)H(s)}=\frac{G(s)}{1+G_o(s)}\\
+ G_o(s)&=&G(s)H(s)=\frac{K\prod\limits_{i=1}^m(\tau s-1)}{\prod\limits_{j=1}^{n}(T_js-1)}
+ \end{eqnarray*}
+ \end{block}
+ \end{frame}
+ \begin{frame}
+ \begin{block}{}
+ \[=K_g\frac{\prod\limits_{i=1}^m(s-z_i)}{\prod\limits_{j=1}^{n}(s-p_j)}=K_g\frac{N_o(s)}{D_o(s)}\]
+ 令$s=0$得：
+ \[K=K_g\frac{\prod\limits_{i=1}^mz_i}{\prod\limits_{j=1}^np_j}\]
+ \end{block}
+ \end{frame}
+ 
+ \begin{frame}
+ \begin{block}{根轨迹方程}
+ \begin{eqnarray*}
+K_g\frac{\prod\limits_{i=1}^m(s-z_i)}{\prod\limits_{j=1}^n(s-p_j)}=-1
+\end{eqnarray*}
+由：
+\[-1^{\pm j(2k+1)\pi},k=0,1,2,\cdots\]
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{根轨迹方程幅角式}
+ \begin{eqnarray*}
+\left|G_o(s)\right|=\left|K_g\frac{\prod\limits_{i=1}^m(s-z_i)}{\prod\limits_{j=1}^n(s-p_j)}\right|=K_g\frac{\prod\limits_{i=1}^m\left|s-z_i\right|}{\prod\limits_{j=1}^n\left|s-p_j\right|}=1\\
+\underline{\diagup G_o(s)}=\sum\limits_{i=1}^m\underline{\diagup s-z_i}-\sum\limits_{j=1}^n\underline{\diagup s-p_j}\\
+=\pm 180^o(2k+1),k=0,1,2,\cdots
+\end{eqnarray*}
+\end{block}
+\end{frame}
