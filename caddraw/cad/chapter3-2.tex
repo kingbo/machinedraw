@@ -27,7 +27,15 @@
 【视图】菜单中【三维视图】子菜单中的【西南等轴测】。
 \item 将图层切换为实线层，并绘制圆柱体
 
-以对称中心线的交叉点为圆心，绘制$\phi 24$圆柱体
+以对称中心线的交叉点为圆心，绘制$\phi 24$圆柱体,结果如图\ref{fig:duangaisolid1}所示。
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:duangaisolid1}\includegraphics[scale=0.5]{duangaisolid1.png}}\hspace{30pt}
+\subfloat[]{\label{fig:duangaisolid2}\includegraphics[scale=0.5]{duangaisolid2.png}}
+\hspace{30pt}
+\subfloat[]{\label{fig:duangaisolid3}\includegraphics[scale=0.4]{duangaisolid3.png}}
+\caption{端盖实体建模过程1}
+\end{figure}
 \begin{lstlisting}
 |命令: cylinder|
 |指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭|
@@ -35,7 +43,7 @@
 |指定底面半径或 [直径(D)]: 12|
 |指定高度或 [两点(2P)/轴端点(A)]: 5|
 \end{lstlisting}
-以$\phi 24$圆柱体顶圆圆心为圆心绘制$\phi 44$圆柱体。
+以$\phi 24$圆柱体顶圆圆心为圆心绘制$\phi 44$圆柱体,结果如图\ref{fig:duangaisolid2}所示。
 \begin{lstlisting}
 |命令: cylinder|
 |指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭|
@@ -43,7 +51,7 @@
 |指定底面半径或 [直径(D)]$<$12.0000$>$: 22|
 |指定高度或 [两点(2P)/轴端点(A)]$<$5.0000$>$: 4|
 \end{lstlisting}
-以$\phi 44$圆柱体顶圆圆心为圆心绘制$\phi 42$圆柱体。
+以$\phi 44$圆柱体顶圆圆心为圆心绘制$\phi 42$圆柱体,结果如图\ref{fig:duangaisolid3}所示。。
 \begin{lstlisting}
 |命令: cylinder|
 |指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭|
@@ -51,7 +59,15 @@
 |指定底面半径或 [直径(D)]$<$22.0000$>$: 21|
 |指定高度或 [两点(2P)/轴端点(A)]$<$4.0000$>$: 19|
 \end{lstlisting}
-以$\phi 42$圆柱体顶圆圆心为圆心绘制$\phi 62$圆柱体。
+以$\phi 42$圆柱体顶圆圆心为圆心绘制$\phi 62$圆柱体,结果如图\ref{fig:duangaisolid4}所示。
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:duangaisolid4}\includegraphics[scale=0.4]{duangaisolid4.png}}\hspace{30pt}
+\subfloat[]{\label{fig:duangaisolid5}\includegraphics[scale=0.4]{duangaisolid5.png}}
+\hspace{30pt}
+\subfloat[]{\label{fig:duangaisolid6}\includegraphics[scale=0.3]{duangaisolid6.png}}
+\caption{端盖实体建模过程1}
+\end{figure}
 \begin{lstlisting}
 |命令: cylinder|
 |指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭|
@@ -59,7 +75,7 @@
 |指定底面半径或 [直径(D)]$<$21.0000$>$: 31|
 |指定高度或 [两点(2P)/轴端点(A)]$<$19.0000$>$: -18|
 \end{lstlisting}
-以对称中心的交点为圆心绘制$\phi 9$圆柱体。
+以对称中心的交点为圆心绘制$\phi 9$圆柱体,结果如图\ref{fig:duangaisolid5}所示。
 \begin{lstlisting}
 |命令: cylinder|
 |指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭|
@@ -67,7 +83,7 @@
 |指定底面半径或 [直径(D)]$<$31.0000$>$: 9|
 |指定高度或 [两点(2P)/轴端点(A)]$<$-18.0000$>$:10 |
 \end{lstlisting}
-以对称中心的交点为圆心绘制$\phi 104$圆柱体。
+以对称中心的交点为圆心绘制$\phi 104$圆柱体,结果如图\ref{fig:duangaisolid6}所示。
 \begin{lstlisting}
 |命令: cylinder|
 |指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭|
@@ -90,7 +106,7 @@
 |选择对象: 找到 1 个，总计 2 个|
 |选择对象:|
 \end{lstlisting}
-\item 三维阵列$\phi 9$圆柱体，其结果如图\ref{fig:duangai2}所示。
+\item 三维阵列$\phi 9$圆柱体。
 \begin{lstlisting}
 |命令: 3darray|
 |选择对象: 找到 1 个|
