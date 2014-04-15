@@ -1,0 +1,183 @@
+%%%%%%%%%%%%%%教案头%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<article>{
+
+\begin{longtable}{|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{28mm}|}
+\caption*{\huge 教案头}\\
+\hline
+\endfirsthead
+\multicolumn{6}{l}{(续表)}\\
+\hline
+\endhead
+\hline
+\multicolumn{6}{l}{\itshape 接下一页表格.......}\\ [2ex]
+\endfoot
+\hline
+\endlastfoot
+\centering{授课单元}&\multicolumn{3}{m{60mm}|}{\centering 2.8.1频率响应法2.8.2频率特性的图形表示2.8.3典型环节的对数频率特性}&\centering{授课日期}&2014年05月05日 \\
+\hline
+\centering 授课地点 & \multicolumn{3}{m{60mm}|}{B6-204}&\centering 授课学时 & 2 \\
+\hline
+& \multicolumn{2}{m{40mm}|}{能力目标} & \multicolumn{2}{m{40mm}|}{知识目标}&素质目标 \\
+\cline{2-6}
+\centering 教学目标&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item 能够分析典型环节的对数频率特性
+\end{enumerate} }&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item 掌握频率响应法的概念
+\item 掌握根典型环节的对数频率特性
+\end{enumerate}} & {\qquad}\\
+\hline
+\centering 能力训练任务或案例 &\multicolumn{5}{m{108mm}|}{ }\\
+\hline
+\centering 教学重点 & \multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 典型环节的对数频率特性
+\end{enumerate}}\\
+\hline
+\centering 教学难点与解决办法 &\multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 难点：频率响应法
+\item 解决方法：适应的数学知识补充
+\end{enumerate}}\\
+\hline
+\centering 德育内容 &\multicolumn{5}{m{108mm}|}{无}\\
+\hline
+ &教材 & \multicolumn{4}{m{88mm}|}{计算机控制原理与应用}\\
+\cline{2-6}& 教学资源 &\multicolumn{4}{m{88mm}|}{PPT}\\
+\cline{2-6}\centering 使用的教学材料& 主要教学仪器设备和工具等 &\multicolumn{4}{m{88mm}|}{投影机、MATLAB}\\
+\cline{2-6}& 主要耗材 &\multicolumn{4}{m{88mm}|}{无}\\
+\hline
+\centering 教学模式 &\multicolumn{2}{m{40mm}|}{知识讲授}&\centering 教学手段 &\multicolumn{2}{m{48mm}|}{多媒体教学}\\
+\hline
+\centering 学生成果与过程考核方式 &\multicolumn{5}{m{108mm}|}{无}
+\end{longtable}
+\clearpage
+
+%%%%%%%%%%%%%%%教学实施过程%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{landscape}
+
+\begin{longtable}{|m{10mm}|m{50mm}|m{50mm}|m{50mm}|m{15mm}|}
+\caption*{\huge 教学组织与实施}\\
+\hline
+\endfirsthead
+\multicolumn{5}{l}{\small 接上页}\\
+\hline
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\
+\hline
+\endhead
+
+\multicolumn{5}{r}{\small 接下页}\\
+\endfoot
+\hline
+\endlastfoot
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\\hline
+讲解&\begin{enumerate}
+\item 频率响应法
+\end{enumerate} &\begin{enumerate}
+\item 讲解频率响应法的理论
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &25 \\\hline
+讲解&\begin{enumerate}
+\item 频率特性的图形表示
+\end{enumerate}
+ &\begin{enumerate}
+\item 讲解频率特性的图形表示
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &20 \\\hline
+讲解&\begin{enumerate}
+\item 典型环节的对数频率特性
+\end{enumerate}
+&\begin{enumerate}
+\item 讲解典型环节的对数频率特性
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &40 \\\hline
+
+\centering 本次课总结(评价)&总结本课程内容 &进行知识总结 &学生倾听 &5 \\\hline
+\centering 学生学习笔记或工单等检查情况&\multicolumn{4}{m{165mm}|}{\quad}\\\hline
+\centering 课后作业&\multicolumn{4}{m{165mm}|}{2-28，2-29}\\\hline
+\centering 教学体会&\multicolumn{4}{m{165mm}|}{\quad}\\
+\end{longtable}
+
+\end{landscape}
+\clearpage
+%%%%%%%%%%%%%%%%%%%%板书设计%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+{\huge 板书设计}
+\end{center}
+}
+\mode<presentation>{ \section{频率响应的概念}
+ \subsection{频率响应的概念}}
+ \begin{frame}{频率响应法} 
+ \begin{block}{传递函数的频率特性表示}
+ \begin{eqnarray*}
+ G(j\omega)=G(s)|_{s=j\omega}=\frac{C(j\omega)}{R(j\omega)}
+ \end{eqnarray*}
+ \end{block}
+  \begin{block}{频率特性的直角坐标表示}
+ \begin{eqnarray*}
+ G(j\omega)=R_e(\omega)+jI_m(\omega)
+ \end{eqnarray*}
+ \end{block}
+ \end{frame}
+ \begin{frame}
+ \begin{block}{频率特性的极坐标表示}
+ \begin{eqnarray*}
+ G(j\omega)=\left|G(j\omega)\right|\underline{\diagup\varphi(\omega)}=\left|G(j\omega)\right|e^{j\varphi(\omega)}
+ \end{eqnarray*}
+ 其中：
+ \begin{eqnarray*}
+ \left|G(j\omega)\right|=\sqrt{[R_e(\omega)]^2+[I_m(\omega)]^2}\\
+ \varphi(\omega)=\arctan\left[\frac{I_m(\omega)}{R_e(\omega)}\right]
+ \end{eqnarray*}
+ \end{block}
+ \end{frame}
+ 
+ \begin{frame}
+ \begin{block}{频率特性的图形表示}
+\begin{itemize}
+\item 极坐标图
+\item 对数坐标图
+\item 对数幅相图
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{惯性环节}
+ \begin{eqnarray*}
+G(s)=\frac{a}{s+a}=\frac{1}{1+Ts}\\
+G(j\omega)=\frac{1}{1+j\omega T}=\frac{1}{\sqrt{1+(\omega T)^2}}e^{-j\varphi(\omega)}\\
+L(\omega)=20\lg \frac{1}{\sqrt{1+(T\omega)^2}}=\approx -20\lg (T\omega)
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{比例环节}
+ \begin{eqnarray*}
+G(s)=K\\
+G(j\omega)=K\\
+L(\omega)=20\lg K
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{积分环节}
+ \begin{eqnarray*}
+G(s)=\frac{1}{s}\\
+G(j\omega)=\frac{1}{j\omega}=-j\frac{1}{\omega}\\
+L(\omega)=-20\lg \omega
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{积分环节}
+ \begin{eqnarray*}
+G(s)=\frac{\omega_n^2}{s^2+2\zeta\omega_ns+\omega_n^2}=\frac{1}{1+2\zeta Ts+T^2s^2}\\
+G(j\omega)=\frac{1}{(1-T^2\omega_n^2)+j\zeta T\omega}\\
+L(\omega)=-20\lg\sqrt{(1-T^2\omega_n^2)^2+(2\zeta T\omega)^2}
+\end{eqnarray*}
+\end{block}
+\end{frame}
