@@ -1,0 +1,196 @@
+%%%%%%%%%%%%%%教案头%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<article>{
+
+\begin{longtable}{|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{28mm}|}
+\caption*{\huge 教案头}\\
+\hline
+\endfirsthead
+\multicolumn{6}{l}{(续表)}\\
+\hline
+\endhead
+\hline
+\multicolumn{6}{l}{\itshape 接下一页表格.......}\\ [2ex]
+\endfoot
+\hline
+\endlastfoot
+\centering{授课单元}&\multicolumn{3}{m{60mm}|}{\centering 2.8.4频域性能指标2.8.5开环传递函数的频率特性2.8.7用MatLab进行频域分析}&\centering{授课日期}&2014年05月09日 \\
+\hline
+\centering 授课地点 & \multicolumn{3}{m{60mm}|}{B6-204}&\centering 授课学时 & 2 \\
+\hline
+& \multicolumn{2}{m{40mm}|}{能力目标} & \multicolumn{2}{m{40mm}|}{知识目标}&素质目标 \\
+\cline{2-6}
+\centering 教学目标&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item 能够分析开环传递函数的频率特性
+\item 能够用MatLab分析系统的频率特性
+\end{enumerate} }&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item 掌握频频域性能指标的概念
+\item 掌握奈奎斯特判据
+\end{enumerate}} & {\qquad}\\
+\hline
+\centering 能力训练任务或案例 &\multicolumn{5}{m{108mm}|}{ }\\
+\hline
+\centering 教学重点 & \multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 开环传递函数的频率特性
+\item 用MatLab进行频率特性分析
+\end{enumerate}}\\
+\hline
+\centering 教学难点与解决办法 &\multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 难点：奈奎斯判据
+\item 解决方法：适当的例题演示
+\end{enumerate}}\\
+\hline
+\centering 德育内容 &\multicolumn{5}{m{108mm}|}{无}\\
+\hline
+ &教材 & \multicolumn{4}{m{88mm}|}{计算机控制原理与应用}\\
+\cline{2-6}& 教学资源 &\multicolumn{4}{m{88mm}|}{PPT}\\
+\cline{2-6}\centering 使用的教学材料& 主要教学仪器设备和工具等 &\multicolumn{4}{m{88mm}|}{投影机、MATLAB}\\
+\cline{2-6}& 主要耗材 &\multicolumn{4}{m{88mm}|}{无}\\
+\hline
+\centering 教学模式 &\multicolumn{2}{m{40mm}|}{知识讲授}&\centering 教学手段 &\multicolumn{2}{m{48mm}|}{多媒体教学}\\
+\hline
+\centering 学生成果与过程考核方式 &\multicolumn{5}{m{108mm}|}{无}
+\end{longtable}
+\clearpage
+
+%%%%%%%%%%%%%%%教学实施过程%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{landscape}
+
+\begin{longtable}{|m{10mm}|m{50mm}|m{50mm}|m{50mm}|m{15mm}|}
+\caption*{\huge 教学组织与实施}\\
+\hline
+\endfirsthead
+\multicolumn{5}{l}{\small 接上页}\\
+\hline
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\
+\hline
+\endhead
+
+\multicolumn{5}{r}{\small 接下页}\\
+\endfoot
+\hline
+\endlastfoot
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\\hline
+讲解&\begin{enumerate}
+\item 频域性能指标
+\end{enumerate} &\begin{enumerate}
+\item 讲解频域性能指标
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &15 \\\hline
+讲解&\begin{enumerate}
+\item 开环传递函数的频率特性
+\end{enumerate}
+ &\begin{enumerate}
+\item 讲解开环传递函数的频率特性
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &30 \\\hline
+讲解&\begin{enumerate}
+\item 用MatLab进行频率特性分析
+\end{enumerate}
+&\begin{enumerate}
+\item 指导学生用MatLab进行频率特性分析
+\end{enumerate} &\begin{enumerate}
+\item 学生用MatLab实践频率特性分析
+\end{enumerate} &40 \\\hline
+
+\centering 本次课总结(评价)&总结本课程内容 &进行知识总结 &学生倾听 &5 \\\hline
+\centering 学生学习笔记或工单等检查情况&\multicolumn{4}{m{165mm}|}{\quad}\\\hline
+\centering 课后作业&\multicolumn{4}{m{165mm}|}{2-28，2-29}\\\hline
+\centering 教学体会&\multicolumn{4}{m{165mm}|}{\quad}\\
+\end{longtable}
+
+\end{landscape}
+\clearpage
+%%%%%%%%%%%%%%%%%%%%板书设计%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+{\huge 板书设计}
+\end{center}
+}
+\mode<presentation>{ \section{频率响应的概念}
+ \subsection{频率响应的概念}}
+ \begin{frame}{频域性能指标} 
+ \begin{block}{带宽($\omega_b$)}
+ 定义为频率$\omega=0$到系统的幅值响应是它的零频率值的0.707时的频率区间。
+ \end{block}
+ \begin{block}{截止速率}
+当幅值减小，在超越带宽时的速率。
+ \end{block}
+ \begin{block}{谐振峰($M_r$)} 
+ 定义为系统阻尼比在$0<\zeta <0.707$时，幅值响应的最大值。
+ \end{block}
+ \end{frame}
+ \begin{frame}
+ \begin{block}{谐振频率$\omega_r$}
+定义为阻尼比在$0<\zeta <0.707$时，谐振峰对应的频率。
+ \end{block}
+ \end{frame}
+ 
+ \begin{frame}{开环传递函数的频率特性}
+ \begin{block}{开环传递函数}
+\begin{eqnarray*}
+G_o(s)&=&G(s)H(s)\\
+&=&\frac{K(1+\tau_1s)(1+\tau_2s)\cdots(1+\tau_ms)}{(1+T_1s)(1+T_2s)\cdots(1+T_ns)}
+\end{eqnarray*}
+因子式：
+\[G_o(s)=G_1(s)G_2(s)\cdots G_n(s)\]
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{开环幅频特性}
+ \begin{eqnarray*}
+G(j\omega)=|G_1(j\omega)||G_2(j\omega)|\cdots |G_n(j\omega)|
+\end{eqnarray*}
+\end{block}
+\begin{block}{开环相频特性}
+ \begin{eqnarray*}
+\varphi(\omega)=\varphi_1(\omega)+\varphi_2(\omega)+\cdots +\varphi_n(\omega)
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}{系统的相对稳定性}
+\begin{block}{增益穿越频率($\omega_g$)}
+开环传递函数幅值为1时的频率。
+ \begin{eqnarray*}
+|G_o(j\omega_g)|=1
+\end{eqnarray*}
+\end{block}
+\begin{block}{相位穿越频率($\omega_f$)}
+开环传递函数相角为$-180^0$时的频率。
+ \begin{eqnarray*}
+\varphi(\omega_f)=-180^0
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{增益裕度$G_m$}
+定义为在相位穿越频率点，计算的开环传递函数幅值的倒数
+ \begin{eqnarray*}
+G_m=\frac{1}{|G_o(j\omega_f)|}
+\end{eqnarray*}
+\end{block}
+\begin{block}{增益裕度$P_m$}
+$180^0$加开环传递数在增益穿越频率点的相角
+ \begin{eqnarray*}
+P_m=180^o+P(\omega_g)
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{系统稳定的条件}
+相位裕度和增益裕度必须是正值。
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{奈奎斯特判据1}
+单位负反馈系统，如果开环传递函数$G_o(s)$在右半$s$平面无极点，而开环传递函数的极坐标频率特性曲线$G_o(j\omega)$不包围$-1+j0$点，则系统是稳定的 。
+\end{block}
+\begin{block}{奈奎斯特判据2}
+单位负反馈系统，如果开环传递函数$G_o(s)$在右半$s$平面e有$k$个极点，而开环传递函数的极坐标频率特性曲线$G_o(j\omega)$反时针包围$-1+j0$点$k$圈，则系统是稳定的。
+\end{block}
+\end{frame}
