@@ -21,24 +21,31 @@
 \end{lstlisting}
 \begin{figure}[htbp]
 \centering
-\subfloat[]{\label{fig:fagaicenterline}\includegraphics[scale=0.35]{fagaicenterline.png}}\hspace{30pt}
-\subfloat[]{\label{fig:fagai2}\includegraphics[scale=0.35]{fagai2.png}}\hspace{30pt}
-\subfloat[]{\label{fig:fagai3}\includegraphics[scale=0.35]{fagai3.png}}
-\caption{阀盖体绘制过程}
+\subfloat[]{\label{fig:fagaicenterline}\includegraphics[scale=0.4]{fagaicenterline.png}}\hspace{30pt}
+\subfloat[]{\label{fig:fagai1}\includegraphics[scale=0.4]{fagai1.png}}\\
+\subfloat[]{\label{fig:fagai2}\includegraphics[scale=0.4]{fagai2.png}}\hspace{30pt}
+\subfloat[]{\label{fig:fagai3}\includegraphics[scale=0.4]{fagai3.png}}
+\caption{阀盖底板绘制过程}
 \end{figure}
-\item 绘制盖体
+\item 绘制阀盖底板
 
-将图层切换为实线层，并绘制$\phi 50$圆，其结果如图\ref{fig:fagai2} 所示。
+将图层切换为实线层，并绘制$\phi 50$圆，其结果如图\ref{fig:fagai1} 所示。
 \begin{lstlisting}
 |命令: CIRCLE|
 |指定圆的圆心或 [三点(3P)/两点(2P)/切点、切点、半径(T)]: 25,25|
 |指定圆的半径或 [直径(D)]:$<$19.5000$>$ 25|
 \end{lstlisting}
-绘制$\phi 5$圆，其结果如图\ref{fig:fagai3}所示。
+绘制$\phi 5$圆，其结果如图\ref{fig:fagai2}所示。
 \begin{lstlisting}
 |命令: CIRCLE|
 |指定圆的圆心或 [三点(3P)/两点(2P)/切点、切点、半径(T)]: int 于|
 |指定圆的半径或 [直径(D)]:$<$25.0000$>$ 2.5|
+\end{lstlisting}
+绘制$\phi 22$圓，其结果如图\ref{fig:fagai3}所示。
+\begin{lstlisting}
+|命令: CIRCLE|
+|指定圆的圆心或 [三点(3P)/两点(2P)/切点、切点、半径(T)]: int 于|
+|指定圆的半径或 [直径(D)]:$<$2.5000$>$ 11|
 \end{lstlisting}
 \item 绘制定位块
 
@@ -51,6 +58,13 @@
 \item 【绘图】工具栏中的【圆弧】图标\includegraphics[scale=0.6]{arc.png}
 \end{itemize}
 采用第种方法或第三种方法启动命令后要求指写圆弧的起点。由于此图知道圆弧的中心点，故输入圆心选项字母,并用鼠标指定圆心。
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:fagai4}\includegraphics[scale=0.4]{fagai4.png}}\hspace{30pt}
+\subfloat[]{\label{fig:fagai5}\includegraphics[scale=0.4]{fagai5.png}}\hspace{30pt}
+\subfloat[]{\label{fig:fagai6}\includegraphics[scale=0.4]{fagai6.png}}
+\caption{阀盖定位块绘制过程}
+\end{figure}
 \begin{lstlisting}
 |命令: ARC|
 |指定圆弧的起点或 [圆心(C)]: c 
@@ -65,13 +79,6 @@
 |指定圆弧的端点或 [角度(A)/弦长(L)]:a|
 |指定包含角: 36|
 \end{lstlisting}
-\begin{figure}[htbp]
-\centering
-\subfloat[]{\label{fig:fagai4}\includegraphics[scale=0.35]{fagai4.png}}\hspace{30pt}
-\subfloat[]{\label{fig:fagai5}\includegraphics[scale=0.35]{fagai5.png}}\hspace{30pt}
-\subfloat[]{\label{fig:fagai6}\includegraphics[scale=0.35]{fagai6.png}}
-\caption{阀盖定位块绘制过程}
-\end{figure}
 绘制$R14$圆弧,此处采用圆心、起点、端点法，其结果如图\ref{fig:fagai5}所示。
 \begin{lstlisting}
 |命令: ARC|
@@ -81,6 +88,7 @@
 |指定圆弧的端点或 [角度(A)/弦长(L)]:$@14<63$|
 \end{lstlisting}
 绘制直线连接两圆弧端点,其结果如图\ref{fig:fagai6}所示。
+
 \begin{lstlisting}
 |命令: line|
 |指定第一个点: end 于|
@@ -94,6 +102,12 @@
 \item 阵列图形
 
 阵列列$\phi 5$圆,其结果如图\ref{fig:fagai7}所示。
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:fagai7}\includegraphics[scale=0.55]{fagai7.png}}\hspace{30pt}
+\subfloat[]{\label{fig:fagai8}\includegraphics[scale=0.55]{fagai8.png}}
+\caption{阀盖主视图阵列过程}
+\end{figure}
 \begin{lstlisting}
 |命令: arraypolar|
 |选择对象: 找到 1 个|
@@ -106,12 +120,7 @@
 |选择夹点以编辑阵列或 [关联(AS)/基点(B)/项目(I)/项目间角度(A)/填|
 |充角度(F)/行(ROW)/层(L)/旋转项目(ROT)/退出(X)] $<$退出$>$:|
 \end{lstlisting}
-\begin{figure}[htbp]
-\centering
-\subfloat[]{\label{fig:fagai7}\includegraphics[scale=0.5]{fagai7.png}}\hspace{30pt}
-\subfloat[]{\label{fig:fagai8}\includegraphics[scale=0.5]{fagai8.png}}\hspace{30pt}
-\caption{阀盖主视图阵列过程}
-\end{figure}
+
 面域阀盖定位块。
 \begin{lstlisting}
 |命令: region|
