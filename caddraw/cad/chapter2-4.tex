@@ -16,12 +16,18 @@
 |指定通过点:$ @1<90$|
 |指定通过点:|
 \end{lstlisting}
-绘制$\phi 84$中心线圆。
+绘制$\phi 84$中心线圆,其结果如图\ref{fig:dianpiancenterline}所示。
 \begin{lstlisting}
 |命令: circle|
 |指定圆的圆心或 [三点(3P)/两点(2P)/切点、切点、半径(T)]:|
 |指定圆的半径或 [直径(D)]: 42|
 \end{lstlisting}
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:dianpiancenterline}\includegraphics[scale=0.5]{dianpiancenterline.png}}\hspace{30pt}
+\subfloat[]{\label{fig:dianpian1}\includegraphics[scale=0.5]{dianpian1.png}}
+\caption{垫片实体建模过程一}
+\end{figure}
 \item 切换视图为西南等轴测图。
 
 点击【视图】菜单中【三维视图】子菜单中的【西南等轴测】。
@@ -33,7 +39,7 @@
 \item 点击【绘图】菜单中【建模】子菜单中的【圆柱体】项。
 \item 点击【建模】工具栏中的【圆柱体】图标\includegraphics[scale=0.6]{cylinder.png}。
 \end{itemize}
-绘制$\phi 108$直径的圆柱体。
+绘制$\phi 108$直径的圆柱体，其结果如图\ref{fig:dianpian1}所示。
 \begin{lstlisting}
 |命令: cylinder|
 |指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭|
@@ -41,7 +47,7 @@
 |指定底面半径或 [直径(D)]: 54|
 |指定高度或 [两点(2P)/轴端点(A)]$ <2.0000>$: 2|
 \end{lstlisting}
-绘制$\phi 53$直径的圆柱体。
+绘制$\phi 53$直径的圆柱体，其结果如图\ref{fig:dianpian2}所示。
 \begin{lstlisting}
 |命令: cylinder|
 |指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭|
@@ -49,7 +55,7 @@
 |指定底面半径或 [直径(D)]$ <54.0000>$: 26.5|
 |指定高度或 [两点(2P)/轴端点(A)] $<2.0000>$:|
 \end{lstlisting}
-绘制$\phi 8$直径的圆柱体。
+绘制$\phi 8$直径的圆柱体，其结果如图\ref{fig:dianpian3}所示。
 \begin{lstlisting}
 |命令: cylinder|
 |指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭|
@@ -57,8 +63,15 @@
 |指定底面半径或 [直径(D)] $<26.5000>$: 4|
 |指定高度或 [两点(2P)/轴端点(A)]$ <2.0000>$:|
 \end{lstlisting}
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:dianpian2}\includegraphics[scale=0.6]{dianpian2.png}}\hspace{30pt}
+\subfloat[]{\label{fig:dianpian3}\includegraphics[scale=0.6]{dianpian3.png}}
+\caption{垫片实体建模过程二}
+\end{figure}
 \item 关闭“中心线”图层。
-\item 三维阵列$\diameter 8$的圆柱。
+\item 三维阵列$\diameter 8$的圆柱，其结果如图\ref{fig:dianpian4}所示。
+\newpage
 \begin{lstlisting}
 |命令: 3darray|
 |选择对象: 找到 1 个|
@@ -85,7 +98,13 @@
 |选择对象: 找到 1 个，总计 7 个|
 |选择对象:|
 \end{lstlisting}
-\item 设置视觉样式为真实，其结果如图\ref{fig:dianpiansolid}所示。设置方法为：点击【视图】菜单中【视觉样式】子菜单中的【真实】项。
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:dianpian4}\includegraphics[scale=0.6]{dianpian4.png}}\hspace{30pt}
+\subfloat[]{\label{fig:dianpian5}\includegraphics[scale=0.6]{dianpian5.png}}
+\caption{垫片实体建模过程二}
+\end{figure}
+\item 设置视觉样式为真实，其结果如图\ref{fig:dianpian5}所示。设置方法为：点击【视图】菜单中【视觉样式】子菜单中的【灰度】项。
 \item 将垫片模型保存为“调压阀垫片立体图.dwg”。
 \end{procedure}
 
