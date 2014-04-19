@@ -1,0 +1,227 @@
+\section{构建阀体三维模型}
+\subsection{绘制阀体旋转矩形}
+\begin{procedure}
+\item 设置图层。
+
+建立“中心线”和“实线”两个图层，并将当前图层设置为“中心线”图层。
+\item 切换视图方向为主视图方向。
+\item 绘制辅助定位线，其结果如图\ref{fig:faticenterline}所示。
+绘制阀体主对称中心线。
+\begin{lstlisting}
+|命令: XLINE|
+|指定点或 [水平(H)/垂直(V)/角度(A)/二等分(B)/偏移(O)]: 82,77|
+|指定通过点:$ @1<0$|
+|指定通过点:$ @1<90$|
+|指定通过点:|
+\end{lstlisting}
+偏移产生$M8$孔中心线。
+\begin{lstlisting}
+|命令: OFFSET|
+|当前设置: 删除源=否  图层=源  OFFSETGAPTYPE=0|
+|指定偏移距离或 [通过(T)/删除(E)/图层(L)]$<$通过$>$:  42|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+|指定要偏移的那一侧上的点，或 [退出(E)/多个(M)/放弃(U)] $<$退出$>$:|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+\end{lstlisting}
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:faticenterline}\includegraphics[scale=0.3]{faticenterline.png}}\hspace{30pt}
+\subfloat[]{\label{fig:fati1}\includegraphics[scale=0.4]{fati1.png}}
+\hspace{30pt}
+\subfloat[]{\label{fig:fati2}\includegraphics[scale=0.25]{fati2.png}}
+\caption{旋转矩形绘制过程一}
+\end{figure}
+\item 切换图层为实线层，绘制端面定位线。
+偏移生成左端面定位线。
+\begin{lstlisting}
+|命令: OFFSET|
+|当前设置: 删除源=否  图层=源  OFFSETGAPTYPE=0|
+|指定偏移距离或 [通过(T)/删除(E)/图层(L)]$<$42.0000$>$: 82|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+|指定要偏移的那一侧上的点，或 [退出(E)/多个(M)/放弃(U)] $<$退出$>$:|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+\end{lstlisting}
+偏移产生右端面定位线。
+\begin{lstlisting}
+|命令: OFFSET|
+|当前设置: 删除源=否  图层=源  OFFSETGAPTYPE=0|
+|指定偏移距离或 [通过(T)/删除(E)/图层(L)]$<$82.0000$>$: 48|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+|指定要偏移的那一侧上的点，或 [退出(E)/多个(M)/放弃(U)] $<$退出$>$:|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+\end{lstlisting}
+偏移产生下端面定位线。
+\begin{lstlisting}
+|命令: OFFSET|
+|当前设置: 删除源=否  图层=源  OFFSETGAPTYPE=0|
+|指定偏移距离或 [通过(T)/删除(E)/图层(L)]$<$48.0000$>$: 77|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+|指定要偏移的那一侧上的点，或 [退出(E)/多个(M)/放弃(U)] $<$退出$>$:|
+|选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
+\end{lstlisting}
+\item 绘制孔旋转矩形
+
+绘制$M42$水平螺孔旋转矩形，如图\ref{fig:fati1}所示。
+\begin{lstlisting}
+|命令:  RECTANG|
+|指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)/|
+|宽度(W)]: int 于|
+|指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @-21,21|
+\end{lstlisting}
+绘制$\phi 44$孔旋转矩形，如图\ref{fig:fati2}所示。
+\begin{lstlisting}
+|命令:  RECTANG|
+|指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)/|
+|宽度(W)]: int 于|
+|指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @-4,22|
+\end{lstlisting}
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:fati3}\includegraphics[scale=0.32]{fati3.png}}\hspace{30pt}
+\subfloat[]{\label{fig:fati4}\includegraphics[scale=0.35]{fati4.png}}
+\hspace{30pt}
+\subfloat[]{\label{fig:fati5}\includegraphics[scale=0.35]{fati5.png}}
+\caption{旋转矩形绘制过程二}
+\end{figure}
+绘制$\phi 37$孔旋转矩形，如图\ref{fig:fati3}所示。
+\begin{lstlisting}
+|命令:  RECTANG|
+|指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)/|
+|宽度(W)]: int 于|
+|指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @-10,18.5|
+\end{lstlisting}
+绘制$2X45^o$倒角孔旋转梯形，其结果如图\ref{fig:fati4}所示。
+\begin{lstlisting}
+|命令: line|
+|指定第一个点:int 于|
+|指定下一点或 [放弃(U)]:end 于|
+|指定下一点或 [放弃(U)]: @4<120|
+|指定下一点或 [闭合(C)/放弃(U)]:per 于|
+|指定下一点或 [闭合(C)/放弃(U)]:c|
+\end{lstlisting}
+面域$2X45^o$倒角孔旋转梯形。
+\begin{lstlisting}
+|命令: REGION|
+|选择对象: 找到 1 个|
+|选择对象: 找到 1 个，总计 2 个|
+|选择对象: 找到 1 个，总计 3 个|
+|选择对象: 找到 1 个，总计 4 个|
+|选择对象:|
+|已提取 1 个环。|
+|已创建 1 个面域。|
+\end{lstlisting}
+绘制$\phi 56$孔旋转矩形，如图\ref{fig:fati5}所示。
+\begin{lstlisting}
+|命令:  RECTANG|
+|指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)/|
+|宽度(W)]: int 于|
+|指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @-21,28|
+\end{lstlisting}
+绘制$\phi 56$孔旋转矩形，如图\ref{fig:fati6}所示。
+\begin{lstlisting}
+|命令:  RECTANG|
+|指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)/|
+|宽度(W)]: int 于|
+|指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @-55,25|
+\end{lstlisting}
+绘制$\phi 53$孔旋转矩形，如图\ref{fig:fati7}所示。
+\begin{lstlisting}
+|命令:  RECTANG|
+|指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)/|
+|宽度(W)]: int 于|
+|指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @-17,26.5|
+\end{lstlisting}
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:fati6}\includegraphics[scale=0.3]{fati6.png}}\hspace{30pt}
+\subfloat[]{\label{fig:fati7}\includegraphics[scale=0.3]{fati7.png}}\\
+\subfloat[]{\label{fig:fati8}\includegraphics[scale=0.3]{fati8.png}}\hspace{30pt}
+\subfloat[]{\label{fig:fati9}\includegraphics[scale=0.3]{fati9.png}}
+\caption{旋转矩形绘制过程三}
+\end{figure}
+绘制$M42$垂直螺孔旋转矩形，如图\ref{fig:fati8}所示。
+\begin{lstlisting}
+|命令:  RECTANG|
+|指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)/|
+|宽度(W)]: int 于|
+|指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @21,34|
+\end{lstlisting}
+绘制$\phi 21$孔旋转矩形，如图\ref{fig:fati9}所示。
+\begin{lstlisting}
+|命令:  RECTANG|
+|指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)/|
+|宽度(W)]: int 于|
+|指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @10.5,43|
+\end{lstlisting}
+绘制$M8$孔旋转矩形，如图\ref{fig:fati10}所示。
+\begin{lstlisting}
+|命令:  RECTANG|
+|指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)/|
+|宽度(W)]: int 于|
+|指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @14,4|
+\end{lstlisting}
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:fati10}\includegraphics[scale=0.38]{fati10.png}}\hspace{30pt}
+\subfloat[]{\label{fig:fati11}\includegraphics[scale=0.38]{fati11.png}}\\
+\subfloat[]{\label{fig:fati12}\includegraphics[scale=0.38]{fati12.png}}\hspace{30pt}
+\subfloat[]{\label{fig:fati13}\includegraphics[scale=0.35]{fati13.png}}
+\caption{旋转矩形绘制过程四}
+\end{figure}
+\item 绘制阀体旋转矩形
+
+绘制$\phi 64$水平圆柱旋转矩形，结果如图\ref{fig:fati11}所示。
+\begin{lstlisting}
+|命令:  RECTANG|
+|指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)/|
+|宽度(W)]: int 于|
+|指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @-109,32|
+\end{lstlisting}
+绘制$\phi 104$圆柱旋转矩形，结果如图\ref{fig:fati12}所示。
+\begin{lstlisting}
+|命令:  RECTANG|
+|指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)/|
+|宽度(W)]: int 于|
+|指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @21,52|
+\end{lstlisting}
+绘制$\phi 64$垂直圆柱旋转矩形，结果如图\ref{fig:fati13}所示。
+\begin{lstlisting}
+|命令:  RECTANG|
+|指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)/|
+|宽度(W)]: int 于|
+|指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @32,77|
+\end{lstlisting}
+绘制$R34$水平圆柱旋转矩形，结果如图 所示。
+\begin{lstlisting}
+|命令: RECTANG|
+|指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)|
+|/宽度(W)]: 50,77|
+|指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @64,34|
+\end{lstlisting}
+绘制$M8$螺孔倒角，其结果如图 所示。倒角命令的启动方法有：
+\begin{itemize}
+\item 键盘输入CHAMFER或CHA。
+\item 点击【修改】菜单中【倒角】项。
+\item 点击【修改】工具栏中的【倒角】图标\includegraphics[scale=0.6]{chamfer.png}
+\end{itemize}
+\begin{lstlisting}
+|命令: CHAMFER|
+|(“修剪”模式) 当前倒角距离 1 = 0.0000，距离 2 = 0.0000|
+|选择第一条直线或 [放弃(U)/多段线(P)/距离(D)/角度(A)/修剪(T)|
+|/方式(E)/多个(M)]:  d |
+|指定 第一个 倒角距离 $<$0.0000$>$: 2 |
+|指定 第二个 倒角距离 $<$2.0000$>$: 4|
+|选择第一条直线或 [放弃(U)/多段线(P)/距离(D)/角度(A)/修剪(T)|
+|/方式(E)/多个(M)]:|
+|选择第二条直线，或按住 Shift 键选择直线以应用角点或 [距离(D)|
+|/角度(A)/方法(M)]:|
+\end{lstlisting}
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:fati14}\includegraphics[scale=0.38]{fati14.png}}\hspace{30pt}
+\subfloat[]{\label{fig:fati15}\includegraphics[scale=0.38]{fati15.png}}
+\caption{旋转矩形绘制过程五}
+\end{figure}
+
+\end{procedure}
+\endinput
