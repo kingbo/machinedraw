@@ -58,7 +58,11 @@
 \caption{旋转中心定义}
 \end{figure}
 \item 将视图切换为【东南等轴测】，并将【视觉样式】设置为【灰度】即可得到图\ref{fig:beimodel}所示的调压阀杯零件三维模型效果。
-
+\begin{figure}
+\centering
+\includegraphics[scale=0.4]{beimodel.pdf}
+\caption{杯零件三维模型}\label{fig:beimodel}
+\end{figure}
 切换【东南等轴测】的方法有：
 \begin{itemize}
 \item 在【视图】菜单【三维视图】子菜单中单击【东南等轴测】项。
@@ -75,11 +79,7 @@
 \item 【工具栏】中的【保存】图标\includegraphics[scale=0.6]{savetool.png}。
 \end{itemize}
 \end{procedure}
-\begin{figure}
-\centering
-\includegraphics[scale=0.4]{beimodel.pdf}
-\caption{杯零件三维模型}\label{fig:beimodel}
-\end{figure}
+
 
 面域操作和实体旋转操作需要注意地方和技巧。
 \begin{tips}
@@ -87,10 +87,10 @@
 \item 图\ref{fig:buchengong}所示的几种情况都不能够成功创建面域。
 \begin{figure}[htbp]
 \centering
-\subfloat[]{\includegraphics{regerror1.png}}\hspace{20pt}
-\subfloat[]{\includegraphics{regerror2.png}}\hspace{20pt}
-\subfloat[]{\includegraphics[scale=0.6]{regerror3.png}}\hspace{20pt}
-\subfloat[]{\includegraphics[scale=0.6]{regerror4.png}}
+\subfloat[]{\includegraphics[scale=2]{regerror1.png}}\hspace{20pt}
+\subfloat[]{\includegraphics[scale=2]{regerror2.png}}\\
+\subfloat[]{\includegraphics[scale=1.2]{regerror3.png}}\hspace{20pt}
+\subfloat[]{\includegraphics[scale=1.2]{regerror4.png}}
 \caption{不能成功创建面域的情况}\label{fig:buchengong}
 \end{figure}
 \item 实体【旋转】命令的角度决定用选定的对象旋转多少度，例如90度将产生四分之一形状的回转体。默认情况下则为360度。
