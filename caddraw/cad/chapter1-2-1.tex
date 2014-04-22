@@ -7,7 +7,7 @@
 \end{figure}
 通过观察图\ref{fig:tiaoyafabei}所示杯零件图的左视图，我们可以得出其特征图为L型图形。
 \subsection{绘制杯零件特征图}\label{sec:beilingjiantezheng}
-在AutoCAD中，可以采取多种方法绘制杯零件特征图。下面我们以直接绘法和修剪法两种方法来实现杯零件特征图的绘制。
+在AutoCAD中，可以采取多种方法绘制杯零件特征图。下面我们以直接绘法、修剪法和集合法来实现杯零件特征图的绘制。
 \subsubsection{直接绘制法}\label{sec:beilingjianleft}
 所谓直接绘制法就是根据要绘制图形的图线构成，采用相应的AutoCAD命令完成图形绘制的方法。这种方法简单直观。图\ref{fig:tiaoyafabei}所示杯零件图的特征图均由直线构成，因而只需要用AutoCAD中的直线绘制命令即可完成。
 \begin{procedure}
@@ -256,4 +256,12 @@ AutoCAD启动后默认的视图方向是俯视图方向，而杯零件的特征�
 \item 【修剪】操作中修剪对象的选择具有一定的顺序，一般为先剪去外围不需要的图线，再剪去内部的图线，否会出现部分图线不能够剪除，只能够删除的现象。
 \end{tips}
 
+\subsubsection{集合法}
+所谓集合法就是通过绘制简单的封闭图形（如矩形、圆）；然后将利用这些封闭图形生成面域；最后利用简单图形面域之间的并集、差集和交集关系来获得图形的方法。所谓面域是具有物理特性（例如，质心）的二维封闭区域。图\ref{fig:bettezheng}所示的杯零件特征图能够看作是用一个大的矩形面域减去一个小的矩形面域。
+\begin{procedure}
+\item 绘制大矩形。
+\item 绘制小矩形。
+\item 面域矩形矩形。
+\item 进行差集操作。
+\end{procedure}
 \endinput
