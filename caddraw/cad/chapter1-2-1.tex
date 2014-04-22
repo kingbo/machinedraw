@@ -1,5 +1,5 @@
 \section{旋转建模法}
-所谓旋转建模法是通过绘制能够表征回转体特征的平面，然后用此平面绕其轴线旋转来一定角度来构物体模型的方法。为便于叙述，我们将用于表征回转体特征的平面称之为特征平面，如图\ref{fig:tezhengpinmian.png}所示。图\ref{fig:xuanzhuanfa}所示的物体是用图\ref{fig:tezhengpinmian.png}所示的特征平面旋转$360^o$构建的。
+所谓旋转建模法是通过绘制能够表征回转体特征的平面，然后用此平面绕其轴线旋转来一定角度来构建物体模型的方法。为便于叙述，我们将用于表征回转体特征的平面称之为特征平面，如图\ref{fig:tezhengpinmian.png}所示。图\ref{fig:xuanzhuanfa}所示的物体是用图\ref{fig:tezhengpinmian.png}所示的特征平面旋转$360^o$构建的。
 \begin{figure}[htbp]
 \subfloat[特征平面]{\label{fig:tezhengpinmian.png}\includegraphics[scale=0.7]{tezhengpinmian.png}}\hspace{20pt}
 \subfloat[回转体]{\label{fig:xuanzhuanfa}\includegraphics[scale=0.8]{xuanzhuanfa.png}}
@@ -117,7 +117,7 @@ AutoCAD启动后默认的视图方向是俯视图方向，而杯零件的特征�
 }
 \end{floatrow}
 \end{figure}
-\subsubsection{直线命令使用技巧}
+直线命令的注意事项和技巧:
 
 \begin{tips}
 \item 输入坐标点时，坐标数字和逗号必须是半角状态的数字和逗号。如果为全角状态将出现错误。
@@ -252,7 +252,7 @@ AutoCAD启动后默认的视图方向是俯视图方向，而杯零件的特征�
 \end{figure}
 \end{procedure}
 
-偏移命令和修剪命令的使用技巧有：
+偏移命令和修剪命令的注意事项和技巧：
 \begin{tips}
 \item 【偏移】操作过程中，如果多次偏移的距离相同则可以多次选择对象并执行偏移。
 \item 【修剪】操作的关键是修剪边的选择，若要剪去某线段之外的图线，则应选择该线段作为修剪边；若要剪去某两条线段之间的图线则要选择该两条线段，否则不能够实现操作目的。
@@ -329,5 +329,12 @@ AutoCAD启动后默认的视图方向是俯视图方向，而杯零件的特征�
 |选择对象:|
 \end{lstlisting}
 图\ref{fig:bei5}为差集操作后的结果，也图\ref{fig:bettezheng}的结果是一致的。由此可见在AutoCAD中完成同样的图形绘制可能采取不同的方法和策略。
+
 \end{procedure}
+
+集合法绘制图形的注意事项和技巧：
+\begin{tips}
+\item 用于集合运算的对象必须是面域对象或者实体。
+\item 尽管矩形、圆、正多边是封闭线框，但不是面域对象，因此需要先进行面域操作后，才能够进行并、差、交等集合操作。
+\end{tips}
 \endinput
