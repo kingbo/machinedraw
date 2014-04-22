@@ -31,9 +31,10 @@ AutoCAD软件的界面与Word字处理软件的界面非常相似，也是由标
 
 AutoCAD启动后默认的视图方向是俯视图方向，而杯零件的特征图位于左视图方向，为了方便使用旋转法进行杯零件的三维建模，需要将AutoCAD的视图方向切换为左视图方向。实现左视图切换的方法有：
 \begin{itemize}
-\item 键盘输入-VIME或-V,选择【正交】选项中的【左视】项。
+\item 键盘输入-VIME\index{-view} 或-V,选择【正交】选项中的【左视】项。
+\item 键盘输入-VIME，并输入left。
 \item 【视图】$\rightarrow$【三维视图】$\rightarrow$【左视图】。
-\item 【视图】$\mapsto$【左视】图标\includegraphics[scale=0.6]{toptool.png}。
+\item 【视图】$\triangleright$【左视】图标\includegraphics[scale=0.6]{toptool.png}。
 \end{itemize}
 同理，如果要将视图切换为其它视图方向，其操作方法与切换左视图的方法是一致的，只是需要将“左视”换成其它视图方向即可。例如要将视图方向切换为俯视图方向则将上述方法中的【左视】改为【俯视】。
 
@@ -43,7 +44,7 @@ AutoCAD启动后默认的视图方向是俯视图方向，而杯零件的特征�
 \begin{itemize}
 \item 键盘输入line\index{line} 或L。
 \item 【绘图】$\rightarrow$【直线】。
-\item 【绘图】$\mapsto$【直线】图标\includegraphics[scale=0.6]{linetool.png}。
+\item 【绘图】$\triangleright$【直线】图标\includegraphics[scale=0.6]{linetool.png}。
 \end{itemize}
 在命令窗口中输入Line并按回车键或者空格键来启动命令。
 \begin{lstlisting}
@@ -153,9 +154,9 @@ AutoCAD启动后默认的视图方向是俯视图方向，而杯零件的特征�
 \end{lstlisting}
 \item 用偏移产生符合尺寸距离的水平线。启动【偏移】命令的方法有：
 \begin{itemize}
-\item 键盘输入OFFSET或O。
+\item 键盘输入OFFSET\index{offset}或O。
 \item 【修改】$\rightarrow$【偏移】。
-\item 【修改】$\mapsto$【偏移】图标\includegraphics[scale=0.6]{offsettool.png}。
+\item 【修改】$\triangleright$【偏移】图标\includegraphics[scale=0.6]{offsettool.png}。
 \end{itemize}
 启动【偏移】命令后，AutoCAD要求指定图形的偏移距离。
 \begin{lstlisting}
@@ -202,6 +203,7 @@ AutoCAD启动后默认的视图方向是俯视图方向，而杯零件的特征�
 |选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
 \end{lstlisting}
 \begin{figure}[htbp]
+\centering
 \subfloat[]{\label{fig:trimmotherd}\includegraphics[scale=0.4]{trimmotherd1.png}}\hspace{20pt}
 \subfloat[]{\label{fig:offsetselect}\includegraphics[scale=0.4]{offsetselect.png}}\hspace{20pt}
 \subfloat[]{\label{fig:offsetresult}\includegraphics[scale=0.5]{offsetresult.png}}
@@ -211,9 +213,9 @@ AutoCAD启动后默认的视图方向是俯视图方向，而杯零件的特征�
 
 图\ref{fig:offsetresult}为完成偏移操作后的结果，需要用【修剪】命令修剪掉多余的线段，以获得最终图形。【修剪】命令的启动方法有：
 \begin{itemize}
-\item 解盘输入TRIM或TR。
+\item 解盘输入TRIM\index{trim} 或TR。
 \item 【修改】$\rightarrow$【修剪】。
-\item 【修改】$\mapsto$【修剪】图标\includegraphics[scale=0.6]{trimtool.png}。
+\item 【修改】$\triangleright$【修剪】图标\includegraphics[scale=0.6]{trimtool.png}。
 \end{itemize}
 启动修剪命令后要求指定用于修剪的边，其命令提示为：
 \begin{lstlisting}
@@ -241,6 +243,7 @@ AutoCAD启动后默认的视图方向是俯视图方向，而杯零件的特征�
 |[栏选(F)/窗交(C)/投影(P)/边(E)/删除(R)/放弃(U)]:|
 \end{lstlisting}
 \begin{figure}[htbp]
+\centering
 \subfloat[]{\label{fig:trimegeselect}\includegraphics[scale=0.3]{trimegeselect.png}}\hspace{20pt}
 \subfloat[]{\label{fig:trimselectresult}\includegraphics[scale=0.3]{trimselectresult.png}}\hspace{20pt}
 \subfloat[]{\label{fig:trimedselect}\includegraphics[scale=0.3]{trimedselect.png}}\hspace{20pt}
@@ -260,8 +263,71 @@ AutoCAD启动后默认的视图方向是俯视图方向，而杯零件的特征�
 所谓集合法就是通过绘制简单的封闭图形（如矩形、圆）；然后将利用这些封闭图形生成面域；最后利用简单图形面域之间的并集、差集和交集关系来获得图形的方法。所谓面域是具有物理特性（例如，质心）的二维封闭区域。图\ref{fig:bettezheng}所示的杯零件特征图能够看作是用一个大的矩形面域减去一个小的矩形面域。
 \begin{procedure}
 \item 绘制大矩形。
-\item 绘制小矩形。
+
+启动绘制矩形命令的方法有：
+\begin{itemize}
+\item 键盘输入RECTANGLE\index{rectangle}或REC
+\item 【绘图】$\rightarrow$【矩形】。
+\item 【绘图】$\triangleright$【矩形】图标\includegraphics[scale=0.6]{rectangletool.png}
+\end{itemize}
+\begin{lstlisting}
+|命令: rectang|
+|指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)/宽度(W)]: 0,0|
+|指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @15,15|
+\end{lstlisting}
+\item 绘制小矩形,结果如图\ref{fig:bei1}所示。
+\begin{lstlisting}
+|命令: rectang|
+|指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)|
+|/宽度(W)]:15,15|
+|指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @-10,-11|
+\end{lstlisting}
 \item 面域矩形矩形。
+
+启动【面域】命令的方法有：
+\begin{itemize}
+\item 解盘输入REGION\index{region}或REG。
+\item 【绘图】$\rightarrow$【面域】。
+\item 【绘图】$\triangleright$【面域】图标\includegraphics[scale=0.6]{regiontool.png}。
+\end{itemize}
+以框选的方式选择两个要面域的矩形，选中后两个矩形均以虚线的形式表示，结果如图\ref{fig:bei2}所示。
+\begin{lstlisting}
+|命令：REGION|
+|选择对象: 指定对角点: 找到 2 个|
+|选择对象:|
+|已提取 2 个环。|
+|已创建 2 个面域。|
+\end{lstlisting}
+正确执行面域命令后，AutoCAD会提示该命令提取了几个封闭环，创建了几个面域。
+\begin{figure}[htbp]
+\centering
+\subfloat[绘制矩形结果]{\label{fig:bei1}\includegraphics[scale=0.7]{bei1.png}}\hspace{20pt}
+\subfloat[面域选择]{\label{fig:bei2}\includegraphics[scale=0.7]{bei2.png}}\hspace{20pt}
+\subfloat[选择被减对象]{\label{fig:bei3}\includegraphics[scale=0.7]{bei3.png}}\\
+\subfloat[选择减对象]{\label{fig:bei4}\includegraphics[scale=0.7]{bei4.png}}\hspace{20pt}
+\subfloat[差集结果]{\label{fig:bei5}\includegraphics[scale=0.7]{bei5.png}}
+\caption{集合法}
+\end{figure}
 \item 进行差集操作。
+
+要实现从大矩形中减去小矩形，需要用到实体编辑中的【差集】命令，其启动方法有：
+\begin{itemize}
+\item 键盘输入SUBTRACT\index{subtract}或SU。
+\item 【修改】$\rightarrow$【实体编辑】$\rightarrow$【差集】。
+\item 【实体编辑】$\triangleright$【差集】图标\includegraphics[scale=0.7]{subtracttool.png}。
+\end{itemize}
+选择大矩形作为被减对象，被选中的矩形以虚线形式表示，结果如图\ref{fig:bei3}所示。
+\begin{lstlisting}
+|命令: SUBTRACT|
+|选择要从中减去的实体、曲面和面域...|
+|选择对象: 找到 1 个|
+\end{lstlisting}
+选择小矩形作为减去对象，被选中的矩形以虚线形式表示，结果如图\ref{fig:bei4}所示。
+\begin{lstlisting}
+|选择对象:  选择要减去的实体、曲面和面域...|
+|选择对象: 找到 1 个|
+|选择对象:|
+\end{lstlisting}
+图\ref{fig:bei5}为差集操作后的结果，也图\ref{fig:bettezheng}的结果是一致的。由此可见在AutoCAD中完成同样的图形绘制可能采取不同的方法和策略。
 \end{procedure}
 \endinput
