@@ -6,8 +6,6 @@
 建立“中心线”和“实线”两个图层，分别用于管理中心线和实线两类图形，并将图层设置为“中心线”层。
 \item 切换视图为左视图。
 
-【视图】菜单中【三维视图】子菜单中的【左视图】。
-
 \item 绘制左视图中心线。
 
 绘制两条相互垂直的构造线型中心作为绘图参考线
@@ -27,11 +25,11 @@
 |指定要偏移的那一侧上的点，或 [退出(E)/多个(M)/放弃(U)] $<$退出$>$:|
 |选择要偏移的对象，或 [退出(E)/放弃(U)] $<$退出$>$:|
 \end{lstlisting}
-\item 将图层切换为实线图层，并绘忽略连接圆弧的特征图，其结果如图\ref{fig:duanguaitezhengtu}所示。
+\item 将图层切换为实线图层，绘制忽略连接圆弧的特征图，其结果如图\ref{fig:duanguaitezhengtu}所示。
 \begin{figure}[htbp]
 \centering
-\subfloat[]{\label{fig:duanguaitezhengtu}\includegraphics[scale=0.5]{duanguaitezhengtu.png}}\hspace{30pt}
-\subfloat[]{\label{fig:duanguaitezhengtu1}\includegraphics[scale=0.65]{duanguaitezhengtu1.png}}
+\subfloat[]{\label{fig:duanguaitezhengtu}\includegraphics[scale=0.62]{duanguaitezhengtu.png}}\hspace{30pt}
+\subfloat[]{\label{fig:duanguaitezhengtu1}\includegraphics[scale=0.75]{duanguaitezhengtu1.png}}
 \caption{端盖左视特征图绘制过程}
 \end{figure}
 绘主特征图。
@@ -59,11 +57,11 @@
 
 绘制圆弧外连接的通常使用圆角命令。启动圆角命令的方法有：
 \begin{itemize}
-\item 键盘输入FILLET或F。
-\item 点击【修改】菜单中的【圆角】项。
-\item 点击【修改】工具栏中的【圆角】图标\includegraphics[scale=0.6]{fillet.png}。
+\item 键盘输入FILLET\index{fillet}或F。
+\item 【修改】$\rightarrow$【圆角】。
+\item 【修改】$\triangleright$【圆角】图标\includegraphics[scale=0.6]{fillet.png}。
 \end{itemize}
-启动圆角命令后，要求选择对象。但是通常第一次启动圆角命令，其半径是零。因此需要使用【半径(R)】选项先设置半径。
+启动圆角命令后，要求选择对象。通常情况下，第一次启动圆角命令，其半径值为零。因此需要使用【半径(R)】选项先设置半径。
 \begin{lstlisting}
 |命令: fillet|
 |当前设置: 模式 = 修剪，半径 = 0.0000|
@@ -96,12 +94,15 @@
 |选择对象:|
 \end{lstlisting}
 \end{procedure}
-
+圆角命令的注意事项和技巧：
+\begin{tips}
+\item 如果圆角半径值为零，则不会生成圆角。
+\item 圆角命令用于绘制三段圆弧内连接不是很方便，建立用使用圆或者圆弧命令，通过捕捉切点来完成。
+\end{tips}
 \subsection{旋转法构建端盖三维模型}
 \begin{procedure}
 \item 切换西南等轴测图
 
-【视图】菜单中的【三维视图】子菜单中的【西南等轴测图】
 \item 旋转构建端盖三维模型
 旋转产生$\phi 9$圆柱体。
 \begin{lstlisting}

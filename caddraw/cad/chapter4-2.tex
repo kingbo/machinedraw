@@ -1,11 +1,10 @@
 \section{实体建模法}
 \begin{procedure}
-\item 设置图层
+\item 设置图层。
 
 建立“中心线”和“实线”两个图层，并将中心线图层设置为当前图层。
-\item 切换视图为前视图
+\item 切换视图方向为前视图。
 
-【视图】菜单中【三维视图】子菜单中的【左视图】。
 \item 绘制主视图中心线。
 
 绘制$\phi 104$圆的中心线。
@@ -22,19 +21,17 @@
 |指定圆的圆心或 [三点(3P)/两点(2P)/切点、切点、半径(T)]: 52,52|
 |指定圆的半径或 [直径(D)]: 42|
 \end{lstlisting}
-\item 切换视图为西南等轴测
-
-【视图】菜单中【三维视图】子菜单中的【西南等轴测】。
-\item 将图层切换为实线层，并绘制圆柱体
+\item 切换视图为西南等轴测。
+\item 将图层切换为实线层，并绘制圆柱体。
 
 以对称中心线的交叉点为圆心，绘制$\phi 24$圆柱体,结果如图\ref{fig:duangaisolid1}所示。
 \begin{figure}[htbp]
 \centering
-\subfloat[]{\label{fig:duangaisolid1}\includegraphics[scale=0.5]{duangaisolid1.png}}\hspace{30pt}
-\subfloat[]{\label{fig:duangaisolid2}\includegraphics[scale=0.5]{duangaisolid2.png}}
-\hspace{30pt}
-\subfloat[]{\label{fig:duangaisolid3}\includegraphics[scale=0.4]{duangaisolid3.png}}
-\caption{端盖实体建模过程1}
+\begin{floatrow}[3]
+\ffigbox{\caption{绘$\phi 24$圆柱体}\label{fig:duangaisolid1}}{\includegraphics[scale=0.5]{duangaisolid1.png}}
+\ffigbox{\caption{绘$\phi 24$圆柱体}\label{fig:duangaisolid2}}{\includegraphics[scale=0.5]{duangaisolid2.png}}
+\ffigbox{\caption{绘$\phi 42$圆柱体}\label{fig:duangaisolid3}}{\includegraphics[scale=0.4]{duangaisolid3.png}}
+\end{floatrow}
 \end{figure}
 \begin{lstlisting}
 |命令: cylinder|
@@ -51,7 +48,7 @@
 |指定底面半径或 [直径(D)]$<$12.0000$>$: 22|
 |指定高度或 [两点(2P)/轴端点(A)]$<$5.0000$>$: 4|
 \end{lstlisting}
-以$\phi 44$圆柱体顶圆圆心为圆心绘制$\phi 42$圆柱体,结果如图\ref{fig:duangaisolid3}所示。。
+以$\phi 44$圆柱体顶圆圆心为圆心绘制$\phi 42$圆柱体,结果如图\ref{fig:duangaisolid3}所示。
 \begin{lstlisting}
 |命令: cylinder|
 |指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭|
@@ -62,11 +59,11 @@
 以$\phi 42$圆柱体顶圆圆心为圆心绘制$\phi 62$圆柱体,结果如图\ref{fig:duangaisolid4}所示。
 \begin{figure}[htbp]
 \centering
-\subfloat[]{\label{fig:duangaisolid4}\includegraphics[scale=0.4]{duangaisolid4.png}}\hspace{30pt}
-\subfloat[]{\label{fig:duangaisolid5}\includegraphics[scale=0.4]{duangaisolid5.png}}
-\hspace{30pt}
-\subfloat[]{\label{fig:duangaisolid6}\includegraphics[scale=0.3]{duangaisolid6.png}}
-\caption{端盖实体建模过程1}
+\begin{floatrow}[3]
+\ffigbox{\caption{绘$\phi 62$圆柱体}\label{fig:duangaisolid4}}{\includegraphics[scale=0.4]{duangaisolid4.png}}
+\ffigbox{\caption{绘$\phi 9$圆柱体}\label{fig:duangaisolid5}}{\includegraphics[scale=0.4]{duangaisolid5.png}}
+\ffigbox{\caption{绘$\phi 104$圆柱体}\label{fig:duangaisolid6}}{\includegraphics[scale=0.3]{duangaisolid6.png}}
+\end{floatrow}
 \end{figure}
 \begin{lstlisting}
 |命令: cylinder|
@@ -91,7 +88,7 @@
 |指定底面半径或 [直径(D)]$<$31.0000$>$: 52|
 |指定高度或 [两点(2P)/轴端点(A)]$<$10.0000$>$: |
 \end{lstlisting}
-\item 合并实体
+\item 合并实体。
 
 将$\phi 104$圆柱体和$\phi 62$圆柱体合并为一个实体。
 \begin{lstlisting}
@@ -121,13 +118,13 @@
 |选择对象: 指定对角点: 找到 9 个|
 |选择对象:|
 \end{lstlisting}
-\item 建立三维圆角
+\item 建立三维圆角。
 
 建立三维圆角，既可使用二维【圆角】命令，也可以使用三维的【圆角边】命令。启动【圆角边】命令的方法有：
 \begin{itemize}
-\item 键盘输入FILLETEDGE。
-\item 点击【修改】菜单中的【实体编辑】子菜单中的【圆角边】项。
-\item 点击【实体编辑】工具栏中的【圆角边】图标\includegraphics[scale=0.6]{filletedge.png}。
+\item 键盘输入FILLETEDGE\index{filletedge}。
+\item 【修改】$\rightarrow$【实体编辑】$\rightarrow$【圆角边】。
+\item 【实体编辑】$\triangleright$【圆角边】图标\includegraphics[scale=0.6]{filletedge.png}。
 \end{itemize} 
 
 \newpage

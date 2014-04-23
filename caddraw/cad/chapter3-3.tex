@@ -2,6 +2,14 @@
 \begin{procedure}
 \item 切换视图方向为西南等轴测图。
 \item 拉伸构建$\phi 5$圆柱，其结果如图\ref{fig:fagai9}所示。
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:fagai9}\includegraphics[scale=0.4]{fagai9.png}}\hspace{30pt}
+\subfloat[]{\label{fig:fagai10}\includegraphics[scale=0.4]{fagai10.png}}\\
+\subfloat[]{\label{fig:fagai11}\includegraphics[scale=0.4]{fagai11.png}}\hspace{30pt}
+\subfloat[]{\label{fig:fagai12}\includegraphics[scale=0.4]{fagai12.png}}\\
+\caption{阀盖拉伸过程}
+\end{figure}
 \begin{lstlisting}
 |命令: EXTRUDE|
 |当前线框密度:  ISOLINES=4，闭合轮廓创建模式 = 实体|
@@ -12,14 +20,7 @@
 |选择要拉伸的对象或 [模式(MO)]:|
 |指定拉伸的高度或 [方向(D)/路径(P)/倾斜角(T)/表达式(E)]: 5|
 \end{lstlisting}
-\begin{figure}[htbp]
-\centering
-\subfloat[]{\label{fig:fagai9}\includegraphics[scale=0.55]{fagai9.png}}\hspace{30pt}
-\subfloat[]{\label{fig:fagai10}\includegraphics[scale=0.55]{fagai10.png}}\\
-\subfloat[]{\label{fig:fagai11}\includegraphics[scale=0.55]{fagai11.png}}\hspace{30pt}
-\subfloat[]{\label{fig:fagai12}\includegraphics[scale=0.55]{fagai12.png}}\\
-\caption{阀盖拉伸过程}
-\end{figure}
+
 \item 拉伸构建$\phi 22$圆柱，其结果如图\ref{fig:fagai10}所示。
 \begin{lstlisting}
 |命令:EXTRUDE|
@@ -52,7 +53,7 @@
 \end{lstlisting}
 \item 进行差集操作。
 
-从$\phi 50$圆中减去四个$\phi 5$的圆和一个$\phi 22$的圆
+从$\phi 50$圆中减去四个$\phi 5$的圆和一个$\phi 22$的圆。
 \begin{lstlisting}
 |命令: subtract |
 |选择要从中减去的实体、曲面和面域...|
@@ -69,9 +70,9 @@
 
 合并实体需要用到AutoCAD中的并集命令，启动实体【并集】命令的方法有：
 \begin{itemize}
-\item 键盘输入UNION或UNI。
-\item 点击【修改】菜单中【实体编辑】子菜单中【并集】项。
-\item 点击【实体编辑】工具栏中的【并集】图标\includegraphics[scale=0.7]{union.png}。
+\item 键盘输入UNION\index{union}或UNI。
+\item 【修改】$\rightarrow$【实体编辑】$\rightarrow$【并集】。
+\item 【实体编辑】$\triangleright$【并集】图标\includegraphics[scale=0.7]{union.png}。
 \end{itemize}
 \begin{lstlisting}
 |命令: UNION|
@@ -82,7 +83,7 @@
 \item 将端盖模型保存为“调压阀阀盖立体图.dwg”。
 \end{procedure}
 \begin{figure}[htbp]
-\includegraphics[scale=1]{fagailititu.png}
+\includegraphics[scale=0.6]{fagailititu.png}
 \caption{阀盖三维模型}\label{fig:fagailititu}
 \end{figure}
 \endinput
