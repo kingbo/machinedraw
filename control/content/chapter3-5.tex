@@ -1,0 +1,205 @@
+%%%%%%%%%%%%%%教案头%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<article>{
+
+\begin{longtable}{|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{28mm}|}
+\caption*{\huge 教案头}\\
+\hline
+\endfirsthead
+\multicolumn{6}{l}{(续表)}\\
+\hline
+\endhead
+\hline
+\multicolumn{6}{l}{\itshape 接下一页表格.......}\\ [2ex]
+\endfoot
+\hline
+\endlastfoot
+\centering{授课单元}&\multicolumn{3}{m{60mm}|}{\centering 3.5描述函数法}&\centering{授课日期}&2014年05月19日 \\
+\hline
+\centering 授课地点 & \multicolumn{3}{m{60mm}|}{B6-204}&\centering 授课学时 & 2 \\
+\hline
+& \multicolumn{2}{m{40mm}|}{能力目标} & \multicolumn{2}{m{40mm}|}{知识目标}&素质目标 \\
+\cline{2-6}
+\centering 教学目标&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item  能够进行建立非线性控制系统的描述函数
+\item  能够用描述函数法分析非线性系统的稳定性
+\end{enumerate} }&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item 了解描述函数法的基本概念
+\item 了解典型非线性环节的描述函数
+\item 了解非线性系统的稳定性分析
+\end{enumerate}} & {\qquad}\\
+\hline
+\centering 能力训练任务或案例 &\multicolumn{5}{m{108mm}|}{ }\\
+\hline
+\centering 教学重点 & \multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 典型非线性环节的描述函数
+\end{enumerate}}\\
+\hline
+\centering 教学难点与解决办法 &\multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 难点：用描述函数法分析非线性系统的稳定性
+\item 解决方法：实例讲解
+\end{enumerate}}\\
+\hline
+\centering 德育内容 &\multicolumn{5}{m{108mm}|}{无}\\
+\hline
+ &教材 & \multicolumn{4}{m{88mm}|}{计算机控制原理与应用}\\
+\cline{2-6}& 教学资源 &\multicolumn{4}{m{88mm}|}{PPT}\\
+\cline{2-6}\centering 使用的教学材料& 主要教学仪器设备和工具等 &\multicolumn{4}{m{88mm}|}{投影机、MATLAB}\\
+\cline{2-6}& 主要耗材 &\multicolumn{4}{m{88mm}|}{无}\\
+\hline
+\centering 教学模式 &\multicolumn{2}{m{40mm}|}{知识讲授}&\centering 教学手段 &\multicolumn{2}{m{48mm}|}{多媒体教学}\\
+\hline
+\centering 学生成果与过程考核方式 &\multicolumn{5}{m{108mm}|}{无}
+\end{longtable}
+\clearpage
+
+%%%%%%%%%%%%%%%教学实施过程%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{landscape}
+
+\begin{longtable}{|m{10mm}|m{50mm}|m{50mm}|m{50mm}|m{15mm}|}
+\caption*{\huge 教学组织与实施}\\
+\hline
+\endfirsthead
+\multicolumn{5}{l}{\small 接上页}\\
+\hline
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\
+\hline
+\endhead
+
+\multicolumn{5}{r}{\small 接下页}\\
+\endfoot
+\hline
+\endlastfoot
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\\hline
+讲解&\begin{enumerate}
+\item 描述函数法的基本概念
+\end{enumerate} &\begin{enumerate}
+\item 讲解描述函数法的基本概念
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &20\\\hline
+讲解&\begin{enumerate}
+\item 典型非线性环节的描述函数
+\end{enumerate}
+ &\begin{enumerate}
+\item 讲解典型非线性环节的描述函数
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &25 \\\hline
+讲解&\begin{enumerate}
+\item 用描述函数法分析非线性系统的稳定性
+\end{enumerate}
+&\begin{enumerate}
+\item 讲解用描述函数法分析非线性系统的稳定性
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &40 \\\hline
+
+\centering 本次课总结(评价)&总结本课程内容 &进行知识总结 &学生倾听 &5 \\\hline
+\centering 学生学习笔记或工单等检查情况&\multicolumn{4}{m{165mm}|}{\quad}\\\hline
+\centering 课后作业&\multicolumn{4}{m{165mm}|}{2-28，2-29}\\\hline
+\centering 教学体会&\multicolumn{4}{m{165mm}|}{\quad}\\
+\end{longtable}
+
+\end{landscape}
+\clearpage
+%%%%%%%%%%%%%%%%%%%%板书设计%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+{\huge 板书设计}
+\end{center}
+}
+
+ \begin{frame}{描述函数法的基本概念} 
+ \begin{block}{应用函数描述法的基本条件}
+非线性系统经过变换其结构可简化为只有一个非线性环节N和一个线性环节G(s)。
+ \end{block}
+ \begin{block}{输入信号}
+ \[x(t)=X\sin \omega t\]
+ \end{block}
+ \end{frame}
+ 
+ \begin{frame}
+ \begin{block}{输出信号的傅里叶展开}
+\begin{eqnarray*}
+y(t)=A_0+\sum\limits_{n=1}^\infty(A_n\cos n\omega t+B_n\sin n\omega t)\\
+A_n=\frac{1}{\pi}\int\limits_0^{2\pi}y(t)\cos n\omega t d(\omega t)\\
+B_n=\frac{1}{\pi}\int\limits_0^{2\pi}y(t)\sin n\omega t d(\omega t)
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{}
+若非线性特性是中心对称的，则$A_0$=0;
+
+若线性部分具有低通滤波特性，可用基波进行近似。
+\[y(t)\approx y_1(t)=A_1\cos\omega t+B_1\sin\omega t\]
+\[=Y_1\sin (\omega t+\varphi_1)\]
+非线性环节的近似等效频率特性称为描述函数，即
+\[N(X)=\frac{Y_1}{X}e^{j\varphi}=\frac{B_1}{X}+j\frac{A_1}{X}\]
+\end{block}
+\end{frame}
+
+\begin{frame}{典型非线性环节的描述函数}
+\begin{block}{饱和限幅特性的描述函数}
+\begin{equation*}
+y=\begin{cases}
+kX\sin \omega t & 0\leq\omega t\leq \alpha\\
+ka & \varphi\leq\omega t\leq \frac{\pi}{2}
+\end{cases}
+\end{equation*}
+\end{block}
+\begin{block}{输出具有奇对称性，只求$B_1$}
+\begin{eqnarray*}
+B_1=\frac{1}{\pi}\int_{0}^{2\pi}y(t)\sin \omega td(\omega t)\\
+=\frac{2kX}{\pi}\left[\arcsin\frac{a}{X}+\frac{a}{X}\sqrt{1-(\frac{a}{X})^2}\right]
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{饱和百线性的描述函数}
+\begin{equation*}
+N(x)=\frac{B_1}{X}=\frac{2k}{\pi}\left[\arcsin\frac{a}{X}+\frac{a}{X}\sqrt{1-(\frac{a}{X})^2}\right]
+\end{equation*}
+\end{block}
+\end{frame}
+
+\begin{frame}{继电器非线性特性}
+\begin{block}{理想二位继电器}
+\begin{equation*}
+y=\begin{cases}
++M & 0\leq\omega t\leq \pi\\
+-M & \pi\leq\omega t\leq 2\pi
+\end{cases}
+\end{equation*}
+\end{block}
+\begin{block}{输出具有奇对称性，只求$B_1$}
+\begin{eqnarray*}
+B_1=\frac{1}{\pi}\int_{0}^{2\pi}y(t)\sin \omega td(\omega t)\\
+=\frac{4M}{\pi}
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}{用描述函数法分析非线性系统的稳定性}
+\begin{block}{闭环系统的频率特性}
+\begin{equation*}
+\phi(j\omega)=\frac{C(j\omega)}{R(j\omega)}=\frac{N(X)G(j\omega)}{1+N(X)G(j\omega)}
+\end{equation*}
+\end{block}
+\begin{block}{特征方程}
+\begin{equation*}
+1+N(X)G(j\omega)=0
+\end{equation*} 
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{稳定性判定}
+\begin{itemize}
+\item $G(j\omega)$曲线不包围$\frac{-1}{N(X)}$曲线时，闭环系统稳定
+\item $G(j\omega)$曲线包围$\frac{-1}{N(X)}$曲线时，闭环系统不稳定
+\item $G(j\omega)$曲线与$\frac{-1}{N(X)}$曲线相交，闭环系统临界稳定
+\end{itemize}
+\end{block}
+\end{frame}
