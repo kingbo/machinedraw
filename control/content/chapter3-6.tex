@@ -1,0 +1,168 @@
+%%%%%%%%%%%%%%教案头%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<article>{
+
+\begin{longtable}{|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{28mm}|}
+\caption*{\huge 教案头}\\
+\hline
+\endfirsthead
+\multicolumn{6}{l}{(续表)}\\
+\hline
+\endhead
+\hline
+\multicolumn{6}{l}{\itshape 接下一页表格.......}\\ [2ex]
+\endfoot
+\hline
+\endlastfoot
+\centering{授课单元}&\multicolumn{3}{m{60mm}|}{\centering 3.5描述函数法}&\centering{授课日期}&2014年05月23日 \\
+\hline
+\centering 授课地点 & \multicolumn{3}{m{60mm}|}{B6-204}&\centering 授课学时 & 2 \\
+\hline
+& \multicolumn{2}{m{40mm}|}{能力目标} & \multicolumn{2}{m{40mm}|}{知识目标}&素质目标 \\
+\cline{2-6}
+\centering 教学目标&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item  能够进行相轨迹图的绘制
+\item  能够用MatLab分析非线性系统
+\end{enumerate} }&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item 了解相平面法的基本概念
+\item 了解相轨图的绘制
+\item 了解用MatLab分析非线性系统
+\end{enumerate}} & {\qquad}\\
+\hline
+\centering 能力训练任务或案例 &\multicolumn{5}{m{108mm}|}{ }\\
+\hline
+\centering 教学重点 & \multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 用MatLab分析非线性系统
+\end{enumerate}}\\
+\hline
+\centering 教学难点与解决办法 &\multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 难点：相平面法的基本概念
+\item 解决方法：实例讲解
+\end{enumerate}}\\
+\hline
+\centering 德育内容 &\multicolumn{5}{m{108mm}|}{无}\\
+\hline
+ &教材 & \multicolumn{4}{m{88mm}|}{计算机控制原理与应用}\\
+\cline{2-6}& 教学资源 &\multicolumn{4}{m{88mm}|}{PPT}\\
+\cline{2-6}\centering 使用的教学材料& 主要教学仪器设备和工具等 &\multicolumn{4}{m{88mm}|}{投影机、MATLAB}\\
+\cline{2-6}& 主要耗材 &\multicolumn{4}{m{88mm}|}{无}\\
+\hline
+\centering 教学模式 &\multicolumn{2}{m{40mm}|}{知识讲授}&\centering 教学手段 &\multicolumn{2}{m{48mm}|}{多媒体教学}\\
+\hline
+\centering 学生成果与过程考核方式 &\multicolumn{5}{m{108mm}|}{无}
+\end{longtable}
+\clearpage
+
+%%%%%%%%%%%%%%%教学实施过程%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{landscape}
+
+\begin{longtable}{|m{10mm}|m{50mm}|m{50mm}|m{50mm}|m{15mm}|}
+\caption*{\huge 教学组织与实施}\\
+\hline
+\endfirsthead
+\multicolumn{5}{l}{\small 接上页}\\
+\hline
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\
+\hline
+\endhead
+
+\multicolumn{5}{r}{\small 接下页}\\
+\endfoot
+\hline
+\endlastfoot
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\\hline
+讲解&\begin{enumerate}
+\item 相平面法的基本概念
+\end{enumerate} &\begin{enumerate}
+\item 讲解检点平面法的基本概念
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &20\\\hline
+讲解&\begin{enumerate}
+\item 相轨迹图的绘制
+\end{enumerate}
+ &\begin{enumerate}
+\item 讲解相轨迹图的绘制
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &25 \\\hline
+讲解&\begin{enumerate}
+\item 用MatLab分析非线性系统
+\end{enumerate}
+&\begin{enumerate}
+\item 讲解用MatLab分析非线性系统
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &40 \\\hline
+
+\centering 本次课总结(评价)&总结本课程内容 &进行知识总结 &学生倾听 &5 \\\hline
+\centering 学生学习笔记或工单等检查情况&\multicolumn{4}{m{165mm}|}{\quad}\\\hline
+\centering 课后作业&\multicolumn{4}{m{165mm}|}{2-28，2-29}\\\hline
+\centering 教学体会&\multicolumn{4}{m{165mm}|}{\quad}\\
+\end{longtable}
+
+\end{landscape}
+\clearpage
+%%%%%%%%%%%%%%%%%%%%板书设计%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+{\huge 板书设计}
+\end{center}
+}
+
+ \begin{frame}{相平面法的基本概念} 
+ \begin{block}{二阶时不变系统的常微分方程}
+ \[\ddot{x}+f(x,\dot{x})=0\]
+ \end{block}
+ \begin{block}{相平面}
+ 由$x$和$\dot{x}$组成的平面称为相平面。
+ \end{block}
+ \begin{block}{相轨迹}
+ 当$t$变化时，在相平面给的出关系曲线称为相轨迹。
+ \end{block}
+ \end{frame}
+ 
+ \begin{frame}
+ \begin{block}{相平面图}
+ 不同的初如条件，对应的一簇相轨迹所组成的图像
+ \end{block}
+ \begin{block}{相平面法}
+ 利用相平面分析系统的方法
+ \end{block}
+ \end{frame}
+
+\begin{frame}{相轨迹的性质}
+\begin{block}{相轨迹的斜率}
+由二阶微分式：
+\[\frac{d\dot{x}}{dt}=-f(x,\dot{x})\]
+
+两边同除$\frac{dx}{dt}$
+\[\frac{d\dot{x}}{dx}=-\frac{f(x,\dot{x}}{\dot{x}}\]
+
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{}
+相平面的横坐标为$x$，纵坐标为$\dot{x}$,则$\frac{d\dot{x}}{dx}$表示在$(x,\dot{x})$点上的根轨迹斜率。
+\end{block}
+\begin{block}{根轨迹对称条件}
+\begin{itemize}
+\item $x$轴对称：$f(x,\dot{x})=f(x,-\dot{x})$
+\item $\dot{x}$轴对称：$f(x,\dot{x})=-f(-x,\dot{x})$
+\item 原点对称:$f(x,\dot{x}=-f(-x,-\dot{x})$
+\end{itemize}
+\end{block}
+\begin{block}{相平面上的奇点}
+如果同时满足$\dot{x}=0$和$f(x,\dot{x})=0$的点
+\end{block}
+\end{frame}
+
+\begin{frame}{相轨迹图的绘制}
+\begin{block}{绘制方法}
+\begin{itemize}
+\item 解析法
+\item 等倾线法
+\item 用计算机绘制相轨迹图
+\end{itemize}
+\end{block}
+\end{frame}
+
