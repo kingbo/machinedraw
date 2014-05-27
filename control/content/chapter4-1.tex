@@ -1,0 +1,238 @@
+%%%%%%%%%%%%%%教案头%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<article>{
+
+\begin{longtable}{|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{28mm}|}
+\caption*{\huge 教案头}\\
+\hline
+\endfirsthead
+\multicolumn{6}{l}{(续表)}\\
+\hline
+\endhead
+\hline
+\multicolumn{6}{l}{\itshape 接下一页表格.......}\\ [2ex]
+\endfoot
+\hline
+\endlastfoot
+\centering{授课单元}&\multicolumn{3}{m{60mm}|}{\centering 4.1引言4.2差分方程}&\centering{授课日期}&2014年05月26日 \\
+\hline
+\centering 授课地点 & \multicolumn{3}{m{60mm}|}{B6-204}&\centering 授课学时 & 2 \\
+\hline
+& \multicolumn{2}{m{40mm}|}{能力目标} & \multicolumn{2}{m{40mm}|}{知识目标}&素质目标 \\
+\cline{2-6}
+\centering 教学目标&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item  能够建立差分方程
+\end{enumerate} }&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item 了解离散时间系统的基本概念
+\item 了解差分方程的基本概念
+\end{enumerate}} & {\qquad}\\
+\hline
+\centering 能力训练任务或案例 &\multicolumn{5}{m{108mm}|}{ }\\
+\hline
+\centering 教学重点 & \multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 差分方程
+\end{enumerate}}\\
+\hline
+\centering 教学难点与解决办法 &\multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 难点：差分方程 
+\item 解决方法：实例讲解
+\end{enumerate}}\\
+\hline
+\centering 德育内容 &\multicolumn{5}{m{108mm}|}{无}\\
+\hline
+ &教材 & \multicolumn{4}{m{88mm}|}{计算机控制原理与应用}\\
+\cline{2-6}& 教学资源 &\multicolumn{4}{m{88mm}|}{PPT}\\
+\cline{2-6}\centering 使用的教学材料& 主要教学仪器设备和工具等 &\multicolumn{4}{m{88mm}|}{投影机、MATLAB}\\
+\cline{2-6}& 主要耗材 &\multicolumn{4}{m{88mm}|}{无}\\
+\hline
+\centering 教学模式 &\multicolumn{2}{m{40mm}|}{知识讲授}&\centering 教学手段 &\multicolumn{2}{m{48mm}|}{多媒体教学}\\
+\hline
+\centering 学生成果与过程考核方式 &\multicolumn{5}{m{108mm}|}{无}
+\end{longtable}
+\clearpage
+
+%%%%%%%%%%%%%%%教学实施过程%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{landscape}
+
+\begin{longtable}{|m{10mm}|m{50mm}|m{50mm}|m{50mm}|m{15mm}|}
+\caption*{\huge 教学组织与实施}\\
+\hline
+\endfirsthead
+\multicolumn{5}{l}{\small 接上页}\\
+\hline
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\
+\hline
+\endhead
+
+\multicolumn{5}{r}{\small 接下页}\\
+\endfoot
+\hline
+\endlastfoot
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\\hline
+讲解&\begin{enumerate}
+\item 离散时间系统的基本概念
+\end{enumerate} &\begin{enumerate}
+\item 讲解离散时间系统的基本概念
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &45\\\hline
+讲解&\begin{enumerate}
+\item 差分方程
+\end{enumerate}
+ &\begin{enumerate}
+\item 讲解差分方程的建立
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &40 \\\hline
+
+\centering 本次课总结(评价)&总结本课程内容 &进行知识总结 &学生倾听 &5 \\\hline
+\centering 学生学习笔记或工单等检查情况&\multicolumn{4}{m{165mm}|}{\quad}\\\hline
+\centering 课后作业&\multicolumn{4}{m{165mm}|}{2-28，2-29}\\\hline
+\centering 教学体会&\multicolumn{4}{m{165mm}|}{\quad}\\
+\end{longtable}
+
+\end{landscape}
+\clearpage
+%%%%%%%%%%%%%%%%%%%%板书设计%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+{\huge 板书设计}
+\end{center}
+}
+
+ \begin{frame}{第四章线性离散时间系统} 
+ \begin{block}{离散时间信号}
+ 在时间上是离散的信号
+ \end{block}
+ \begin{block}{采样瞬时}
+ 离散信号只在某些不连续的瞬时给出函数值，其他时间没有定义
+ \end{block}
+ \begin{block}{数字信号}
+ 若离散信号在每个采样瞬时，仅是任一个有限的数字
+ \end{block}
+ \end{frame}
+ 
+ \begin{frame}
+ \begin{block}{采样数据信号}
+ 若离散信号在每个采样瞬间，取连续敬意中的任意一个值
+ \end{block}
+ \begin{block}{离散时间系统}
+输入信号和输出信号都是离散的系统
+ \end{block}
+ \begin{block}{离散时间系统的函数表示} 
+ \[y(k)=P[x(k)]\]
+ P为变换算子。
+ \end{block}
+ \end{frame}
+
+\begin{frame}{}
+\begin{block}{线性离散系统}
+变换算子是线性的
+\end{block}
+\begin{block}{非线性离散系统}
+变换算子是非线性的
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{线性离散系统满足叠加原理}
+若：
+\begin{eqnarray*}
+y_1(k)=P[x_1(k)]\\
+y_2(k)=P[x_2(k)]
+\end{eqnarray*}
+当输入为：
+\[x(k)=ax_1(k)+bx_2(k)\]
+\end{block}
+\end{frame}
+
+\begin{frame}{}
+\begin{block}{}
+输出为：
+\begin{eqnarray*}
+y(k)&=&P[x(k)]\\
+&=&P[ax_1(k)+bx_2(k)]\\
+&=&aP[x_1(k)]+bP[x_2(k)]
+\end{eqnarray*}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{线性定常离散系统}
+系统的输出与输入关系不随时间而改变，对时间移位输入信号的响应是时间移位输出信息号的线性系统。满足：
+\[y(k-m)=P[x(k-m)]\] 
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{离散单位阶跃函数}
+\begin{equation*}
+u(kT)=u(k)=\begin{cases}
+1,k\geq 0\\
+0,k<0
+\end{cases}
+\end{equation*}
+\end{block}
+\begin{block}{离散延迟单位阶跃函数}
+\begin{equation*}
+u(k-j)=\begin{cases}
+1,k\geq j\\
+0,k<j
+\end{cases}
+\end{equation*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{离散单位脉冲函数}
+\begin{equation*}
+\delta(kT)=\delta(k)=\begin{cases}
+1,k= 0\\
+0,k\neq 0
+\end{cases}
+\end{equation*}
+\end{block}
+\begin{block}{离散延迟单位脉冲函数}
+\begin{equation*}
+\delta(k-j)=\begin{cases}
+1,k= j\\
+0,k\neq j
+\end{cases}
+\end{equation*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{离散单位斜坡函数}
+\begin{equation*}
+f(kT)=f(k)=\begin{cases}
+k,k\geq 0\\
+0,k<0
+\end{cases}
+\end{equation*}
+\[f(k)=ku(k)\]
+\end{block}
+\begin{block}{离散延迟单位斜坡函数}
+\begin{equation*}
+f(k)=(k-j)u(k-j)
+\end{equation*}
+\end{block}
+\end{frame}
+
+\begin{frame}{4.2差分方程}
+\begin{block}{}
+\begin{itemize}
+\item 微分方程表示连续输入与连续输出函数之间的关系。
+\item 差分方程表示离散输入 与离散输出函数之间的关系。
+\end{itemize}
+\end{block}
+\begin{block}{前向差分模型}
+\begin{equation*}
+y(k+n)=\sum\limits _{i=0}^nb_ix(k+n-i)-\sum\limits_{i=1}^na_i(k+n-i)
+\end{equation*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{后向差分模型}
+\begin{equation*}
+y(k)=\sum\limits _{i=0}^nb_ix(k-i)-\sum\limits_{i=1}^na_i(k-i)
+\end{equation*}
+\end{block}
+\end{frame}
