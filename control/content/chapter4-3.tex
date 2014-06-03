@@ -1,0 +1,235 @@
+%%%%%%%%%%%%%%教案头%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<article>{
+
+\begin{longtable}{|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{28mm}|}
+\caption*{\huge 教案头}\\
+\hline
+\endfirsthead
+\multicolumn{6}{l}{(续表)}\\
+\hline
+\endhead
+\hline
+\multicolumn{6}{l}{\itshape 接下一页表格.......}\\ [2ex]
+\endfoot
+\hline
+\endlastfoot
+\centering{授课单元}&\multicolumn{3}{m{60mm}|}{\centering 4.3采样定理}&\centering{授课日期}&2014年05月30日 \\
+\hline
+\centering 授课地点 & \multicolumn{3}{m{60mm}|}{B6-204}&\centering 授课学时 & 2 \\
+\hline
+& \multicolumn{2}{m{40mm}|}{能力目标} & \multicolumn{2}{m{40mm}|}{知识目标}&素质目标 \\
+\cline{2-6}
+\centering 教学目标&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item  能理解采样信号的频谱
+\item  能理解零阶保持器
+\end{enumerate} }&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item 了解采样过程及采样信号的频谱
+\item 了解香农采样定理
+\item 了解零阶保持器
+\end{enumerate}} & {\qquad}\\
+\hline
+\centering 能力训练任务或案例 &\multicolumn{5}{m{108mm}|}{ }\\
+\hline
+\centering 教学重点 & \multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 采样过程及采样信号的频谱
+\item 零阶保持器
+\end{enumerate}}\\
+\hline
+\centering 教学难点与解决办法 &\multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 难点：采样过程及采样信号的频谱
+\item 解决方法：实例讲解
+\end{enumerate}}\\
+\hline
+\centering 德育内容 &\multicolumn{5}{m{108mm}|}{无}\\
+\hline
+ &教材 & \multicolumn{4}{m{88mm}|}{计算机控制原理与应用}\\
+\cline{2-6}& 教学资源 &\multicolumn{4}{m{88mm}|}{PPT}\\
+\cline{2-6}\centering 使用的教学材料& 主要教学仪器设备和工具等 &\multicolumn{4}{m{88mm}|}{投影机、MATLAB}\\
+\cline{2-6}& 主要耗材 &\multicolumn{4}{m{88mm}|}{无}\\
+\hline
+\centering 教学模式 &\multicolumn{2}{m{40mm}|}{知识讲授}&\centering 教学手段 &\multicolumn{2}{m{48mm}|}{多媒体教学}\\
+\hline
+\centering 学生成果与过程考核方式 &\multicolumn{5}{m{108mm}|}{无}
+\end{longtable}
+\clearpage
+
+%%%%%%%%%%%%%%%教学实施过程%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{landscape}
+
+\begin{longtable}{|m{10mm}|m{50mm}|m{50mm}|m{50mm}|m{15mm}|}
+\caption*{\huge 教学组织与实施}\\
+\hline
+\endfirsthead
+\multicolumn{5}{l}{\small 接上页}\\
+\hline
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\
+\hline
+\endhead
+
+\multicolumn{5}{r}{\small 接下页}\\
+\endfoot
+\hline
+\endlastfoot
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\\hline
+讲解&\begin{enumerate}
+\item 采样过程及采样信号的频谱
+\end{enumerate} &\begin{enumerate}
+\item 讲解采样过程及采样信号的频谱
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &35\\\hline
+讲解&\begin{enumerate}
+\item 香农采样定理
+\end{enumerate}
+ &\begin{enumerate}
+\item 讲解得农采样定理
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &10 \\\hline
+讲解&\begin{enumerate}
+\item 零阶保持器
+\end{enumerate}
+&\begin{enumerate}
+\item 讲解零阶保持器
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &40 \\\hline
+
+\centering 本次课总结(评价)&总结本课程内容 &进行知识总结 &学生倾听 &5 \\\hline
+\centering 学生学习笔记或工单等检查情况&\multicolumn{4}{m{165mm}|}{\quad}\\\hline
+\centering 课后作业&\multicolumn{4}{m{165mm}|}{2-28，2-29}\\\hline
+\centering 教学体会&\multicolumn{4}{m{165mm}|}{\quad}\\
+\end{longtable}
+
+\end{landscape}
+\clearpage
+%%%%%%%%%%%%%%%%%%%%板书设计%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+{\huge 板书设计}
+\end{center}
+}
+
+ \begin{frame}{采样过程及采样信号的频谱} 
+ \begin{block}{采样数学表达式}
+\[x^*(t)=x(t)p(t)\]
+ \end{block}
+ \begin{block}{单位脉冲序列}
+ \[p(t)=\delta_T(t)=\sum\limits_{k=0}^\infty\delta(t-kT)\]
+ \end{block}
+ \end{frame}
+ 
+ \begin{frame}
+ \begin{block}{}
+\begin{eqnarray*}
+x*(t)=x(t)\delta_T(t)=x(t)\sum\limits_{k=0}^\infty\delta(t-kT)\\
+=\sum\limits_{k=0}^\infty x(kT)\delta(t-kT)
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{作拉氏变换}
+\[X^*(s)=L[x^*(t)]=\sum\limits_{k=0}^\infty x(kT)\int\limits_0^\infty\delta(t-kT)e^{-st}\]
+
+\[X^*(s)=\sum\limits_{k=0}^\infty x(kT)e^{-kTs}\]
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{$\delta_T(t)$傅里叶级数展}
+若采样周其为$T$,采样频率为$\omega_s$,则
+\[\omega_s=\frac{2\pi}{T}\]
+傅里叶级数展开：
+\begin{equation*}
+\delta_T(t)=\sum\limits_{k=0}^\infty\delta(t-kT)=\sum\limits_{k=-\infty}^\infty C_k e^{-jkw_st}
+\end{equation*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{}
+\begin{eqnarray*}
+C_k=\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}\delta_T(t)e^{-jk\omega_st}dt\\
+=\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}}\sum\limits_{k=0}^\infty\delta(t-kT)e^{-jk\omega_st}dt\\
+=\frac{1}{T}\int_{0^-}^{0^+}\delta(t)e^{-jk\omega_st}dt=\frac{1}{T}
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{}
+\begin{eqnarray*}
+\delta_T=\frac{1}{T}\sum\limits_{k=-\infty}^\infty e^{jk\omega_st}\\
+x^*(t)=x(t)\frac{1}{T}\sum\limits_{k=-\infty}^\infty e^{jk\omega_st}=\frac{1}{T}\sum\limits_{k=-\infty}^\infty x(t)e^{jk\omega_st}
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{}
+\begin{eqnarray*}
+X^*(s)=L[\frac{1}{T}\sum\limits_{k=-\infty}^\infty x(\zeta)e^{jk\omega_st}]\\
+=\frac{1}{T}\sum\limits_{k=-\infty}^\infty X(s-jk\omega_s)\\
+x^*(j\omega)=\frac{1}{T}\sum\limits_{k=-\infty}^\infty X[j(\omega+k\omega_s)]
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}{香农采样定理}
+\begin{block}{}
+要示采样速率$\omega_s$至少是信号$x(t)$最高频率分量$\omega_h$的两倍。
+\[\omega_s\geq 2\omega_h\]
+\end{block}
+\end{frame}
+\begin{frame}{零阶保持器}
+\begin{block}{解码}
+根据DAC（数模变换器）采用的解码规则，将数字变成相对应的电压或电流。
+\end{block}
+\begin{block}{保持}
+解决相邻采样时刻之间的插值。
+\end{block}
+\begin{block}{保持器}
+实现保持功能的装置
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{保持器外推公式}
+\[x(kT+\Delta t)=a_0+a_1\Delta t+a_2\Delta t^2\cdots+a_n\Delta t^n\]
+\end{block}
+\begin{block}{当$n=0$时}
+\[x(kT+\Delta t)=a_0\]
+\end{block}
+
+\begin{block}{当$\Delta t=0$时}
+\[x(kT)=a_0\]
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{零阶保持器的数学描述}
+\begin{equation*}
+m(t)=\sum\limits_{k=0}^\infty x(kT)\{u(t-kT)-u[t-(k+1)T]\}
+\end{equation*}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{求拉氏变换}
+\begin{eqnarray*}
+&&M(s)=L[m(t)]\\
+&&=\int_0^\infty\sum\limits_{k=0}^\infty x(kT)\{u(t-kT)\\
+&&-u[t-(k+1)T]\}e^{-st}dt\\
+&&=\sum\limits_{k=0}^\infty x(kT)\left[\frac{e^{-ksT}-e^{-(k+1)sT}}{s}\right]
+\end{eqnarray*}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{}
+\begin{eqnarray*}
+&=&\left[\frac{1-e^{-sT}}{s}\right]\sum\limits_{k=0}^\infty x(kT)e^{-skT}\\
+&=&\left[\frac{1-e^{-sT}}{s}\right]X^*(s)
+\end{eqnarray*}
+\end{block}
+\begin{block}{零阶保持器的传递函数}
+\[G_h(s)=\frac{M(s)}{X^*(s)}=\frac{1-e^{-sT}}{s}\]
+\end{block}
+\end{frame}
