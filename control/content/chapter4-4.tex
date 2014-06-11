@@ -1,0 +1,228 @@
+%%%%%%%%%%%%%%教案头%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<article>{
+
+\begin{longtable}{|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{28mm}|}
+\caption*{\huge 教案头}\\
+\hline
+\endfirsthead
+\multicolumn{6}{l}{(续表)}\\
+\hline
+\endhead
+\hline
+\multicolumn{6}{l}{\itshape 接下一页表格.......}\\ [2ex]
+\endfoot
+\hline
+\endlastfoot
+\centering{授课单元}&\multicolumn{3}{m{60mm}|}{\centering 4.4z变换}&\centering{授课日期}&2014年06月4日 \\
+\hline
+\centering 授课地点 & \multicolumn{3}{m{60mm}|}{B6-204}&\centering 授课学时 & 2 \\
+\hline
+& \multicolumn{2}{m{40mm}|}{能力目标} & \multicolumn{2}{m{40mm}|}{知识目标}&素质目标 \\
+\cline{2-6}
+\centering 教学目标&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item  能够进行离散信号的Z变换
+\end{enumerate} }&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item 了解Z变换的定义
+\item 了解Z变换的求解方法
+\item 了解Z变换的逆变换
+\end{enumerate}} & {\qquad}\\
+\hline
+\centering 能力训练任务或案例 &\multicolumn{5}{m{108mm}|}{ }\\
+\hline
+\centering 教学重点 & \multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item Z变换
+\item Z变换的逆变换
+\end{enumerate}}\\
+\hline
+\centering 教学难点与解决办法 &\multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 难点：Z变换的逆变换
+\item 解决方法：实例讲解
+\end{enumerate}}\\
+\hline
+\centering 德育内容 &\multicolumn{5}{m{108mm}|}{无}\\
+\hline
+ &教材 & \multicolumn{4}{m{88mm}|}{计算机控制原理与应用}\\
+\cline{2-6}& 教学资源 &\multicolumn{4}{m{88mm}|}{PPT}\\
+\cline{2-6}\centering 使用的教学材料& 主要教学仪器设备和工具等 &\multicolumn{4}{m{88mm}|}{投影机、MATLAB}\\
+\cline{2-6}& 主要耗材 &\multicolumn{4}{m{88mm}|}{无}\\
+\hline
+\centering 教学模式 &\multicolumn{2}{m{40mm}|}{知识讲授}&\centering 教学手段 &\multicolumn{2}{m{48mm}|}{多媒体教学}\\
+\hline
+\centering 学生成果与过程考核方式 &\multicolumn{5}{m{108mm}|}{无}
+\end{longtable}
+\clearpage
+
+%%%%%%%%%%%%%%%教学实施过程%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{landscape}
+
+\begin{longtable}{|m{10mm}|m{50mm}|m{50mm}|m{50mm}|m{15mm}|}
+\caption*{\huge 教学组织与实施}\\
+\hline
+\endfirsthead
+\multicolumn{5}{l}{\small 接上页}\\
+\hline
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\
+\hline
+\endhead
+
+\multicolumn{5}{r}{\small 接下页}\\
+\endfoot
+\hline
+\endlastfoot
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\\hline
+讲解&\begin{enumerate}
+\item Z变换的定义
+\end{enumerate} &\begin{enumerate}
+\item 讲解Z变换的定义
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &25\\\hline
+讲解&\begin{enumerate}
+\item Z变换的实例
+\end{enumerate}
+ &\begin{enumerate}
+\item 讲解Z变换的例子
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &20 \\\hline
+讲解&\begin{enumerate}
+\item Z变换定理
+\end{enumerate}
+&\begin{enumerate}
+\item 讲解Z变换定理
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &40 \\\hline
+
+\centering 本次课总结(评价)&总结本课程内容 &进行知识总结 &学生倾听 &5 \\\hline
+\centering 学生学习笔记或工单等检查情况&\multicolumn{4}{m{165mm}|}{\quad}\\\hline
+\centering 课后作业&\multicolumn{4}{m{165mm}|}{2-28，2-29}\\\hline
+\centering 教学体会&\multicolumn{4}{m{165mm}|}{\quad}\\
+\end{longtable}
+
+\end{landscape}
+\clearpage
+%%%%%%%%%%%%%%%%%%%%板书设计%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+{\huge 板书设计}
+\end{center}
+}
+
+ \begin{frame}{4.4Z变换} 
+ \begin{block}{}
+\[f^*(t)=\sum\limits_{k=0}^\infty f(kT)\delta(t-kT)\]
+ \end{block}
+ \begin{block}{拉氏变换得}
+ \[F^*(s)=\sum\limits_{k=0}^\infty f(kT)e^{-kTs}\]
+ \end{block}
+ \end{frame}
+ 
+ \begin{frame}
+ \begin{block}{引入复变量Z}
+\begin{eqnarray*}
+z=e^{sT}\\
+s=\frac{1}{T}\ln z
+\end{eqnarray*}
+\end{block}
+\begin{block}{Z变换定义为}
+\[F(z)=\sum\limits_{k=0}^\infty f(kT)z^{-k}\]
+\end{block}
+\end{frame}
+
+\begin{frame}{Z变换定理}
+\begin{block}{线性定理}
+\[\pounds[af_1(t)+bf_2(t)]=aF_1(z)+bF_2(z)\]
+\end{block}
+\begin{block}{超前定理}
+\[\pounds[f(t+nT)]=z^n\left[F(z)-\sum\limits_{q=0}^{n-1}f(qT)z^{-q}\right]\]
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\begin{block}{滞后定理}
+\begin{equation*}
+\pounds[f(t-nT)u(t-nT)]=z^{-n}F(z)
+\end{equation*}
+\end{block}
+\begin{block}{有限和定理}
+\begin{equation*}
+\pounds\left[\sum\limits_{k=0}^nf(kT)\right]=\frac{F(z)}{1-z^{-1}}
+\end{equation*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{阻尼定理}
+\begin{eqnarray*}
+\pounds[e^{at}f(t)]=F(e^{-aT}z)
+\end{eqnarray*}
+\end{block}
+\begin{block}{复微分定理}
+\begin{eqnarray*}
+\pounds[tf(t)]=-Tz\frac{d}{dz}F(z)
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{初值定理}
+\begin{eqnarray*}
+f(0)=\lim_{k\to 0}f(kT)=\lim_{z\to\infty}F(z)
+\end{eqnarray*}
+\end{block}
+\begin{block}{终值定理}
+\begin{eqnarray*}
+f(\infty)=\lim_{k\to\infty}f(kT)=\lim_{z\to 1}(z-1)F(z)
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}{Z逆变换}
+\begin{block}{长除法}
+先将$F(z)$展开为无穷幂级数，再逐项求$Z$逆变换，实际中只计算几项就够了。
+\end{block}
+\begin{block}{部分展开法}
+若$F(z)$为有理函数，先将其展开，再逐项求$Z$逆变换。
+\end{block}
+\end{frame}
+\begin{frame}{}
+\begin{block}{留数法}
+是一种公式法
+\begin{eqnarray*}
+f(kT)=\pounds^{-1}[F(z)]=\frac{1}{2\pi j}\oint_{\Gamma}F(z)z^{k-1}dz
+\end{eqnarray*}
+\end{block}
+\begin{block}{由留数定理得}
+\begin{eqnarray*}
+f(kT)=f(k)=f_1+f_2+\cdots +f_n\\
+\sum\limits_{k=1}^nRes[F(z)z^{k-1}]|_{z=p_i}
+\end{eqnarray*}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{当$p_i$为非重极点时}
+\[Res[F(z)z^{k-1}]|_{z=p_i}=\lim_{z\to p_i}(z-p_i)F(z)z^{k-1}\]
+则
+\[f(kT)=\sum\limits_{i=1}^n\lim_{z\to p_i}(z-p_i)F(z)z^{k-1}\]
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{有m重极点时}
+\begin{eqnarray*}
+&&Res[F(z)z^{k-1}]=\\
+&&\frac{1}{(m-1)!}\lim_{z\to p_j}\left\lbrace\frac{d^{m-1}}{dz^{m-1}}[(z-p_j)^mF(z)z^{k-1}]\right\rbrace\\
+&&f(kT)=\sum\limits_{i=1}^{n-m}\lim_{z\to p_i}[(z-p_i)F(z)z^{k-1}+\\
+&&\lim_{z\to p_j}\frac{1}{(m-1)!}\left\lbrace\frac{d^{m-1}}{dz^{m-1}}[(z-p_j)^mF(z)z^{k-1}]\right\rbrace
+\end{eqnarray*}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{计算法}
+\begin{itemize}
+\item Matlab法
+\item 差分方程法
+\end{itemize}
+\end{block}
+\end{frame}
