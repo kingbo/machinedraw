@@ -1,0 +1,58 @@
+\documentclass[a4paper,twoside]{book}
+%%%%%%%%%%导入相关宏包%%%%%%%%%%%%%%%%%%%%%%
+\input{format/packages}
+
+\makeindex%生成建立索引
+%%%%%%%%%%%%%%%%%%%%导入中文环境%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\AtBeginDocument{\begin{CJK*}{UTF8}{song} % 不计中文的空格 
+\CJKindent                           % 首行缩进两个汉字 
+\sloppy\CJKspace                     % 中英文混排的断行 
+\CJKtilde                            % 重新定义~，用~隔开中英文 
+%\CJKcaption{GB}                      % 章节标题的中文化 
+} 
+\AtEndDocument{\end{CJK*}} 
+
+\begin{document}
+\input{format/formats}
+\title{\Huge 工程制图与CAD讲义}
+\author{\Large 金波}
+\date{\today}
+\maketitle
+\CJKtilde
+\frontmatter
+\tableofcontents
+\chapter*{前言}
+\mainmatter
+\graphicspath{{pdf/}{png/}}
+\part{小轮组三维建模}
+\include{content/xiaoluntaotong}
+\include{content/xiaolunlunzhou}
+\include{content/xiaolunlianjiegan}
+\include{content/xiaolunlunzhi}
+\include{content/xiaolunzhijia}
+\include{content/xiaolunzuangpei}
+\part{台虎钳三维建模}
+\include{content/taihuqiankou}
+\include{content/taihuluomu}
+\include{content/taihuyuanluoshiding}
+\include{content/taihushigan}
+\include{content/taihuhuakuai}
+\include{content/taihudongzhang}
+\include{content/taihudizuo}
+\include{content/taihuzuangpei}
+\part{航模发动机三维建模}
+\include{content/hangmoganggai}
+\include{content/hangmozhuzou}
+\include{content/hangmoqudonghe}
+\include{content/hangmoranliaoruguan}
+\include{content/hangmoqihuaqi}
+\include{content/hangmohuoshai}
+\include{content/hangmogangtao}
+\include{content/hangmoshangduangai}
+\include{content/hangmojixia}
+\backmatter
+\appendix
+\chapter{图纸集}
+\printindex
+
+\end{document}

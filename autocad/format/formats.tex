@@ -1,0 +1,76 @@
+%%%%%%%%%% 一些新定义 %%%%%%%%%% 
+\newcommand{\song}{\CJKfamily{song}} % 宋体 
+\newcommand{\hei}{\CJKfamily{hei}}   % 黑体 
+\newcommand{\fs}{\CJKfamily{fs}}     % 仿宋 
+\newcommand{\kai}{\CJKfamily{kai}}   % 楷体 
+ 
+%%%%%%%%%% 定理类环境的定义 %%%%%%%%%% 
+%% 必须在导入中文环境之后 
+\newtheorem{example}{例}             % 整体编号 
+\newtheorem{algorithm}{算法} 
+\newtheorem{theorem}{定理}[section]  % 按 section 编号 
+\newtheorem{definition}{定义} 
+\newtheorem{axiom}{公理} 
+\newtheorem{property}{性质} 
+\newtheorem{proposition}{命题} 
+\newtheorem{lemma}{引理} 
+\newtheorem{corollary}{推论} 
+\newtheorem{remark}{注解} 
+\newtheorem{condition}{条件} 
+\newtheorem{conclusion}{结论} 
+\newtheorem{assumption}{假设} 
+ 
+%%%%%%%%%% 一些重定义 %%%%%%%%%% 
+%% 必须在导入中文环境之后 
+\renewcommand{\contentsname}{目\quad 录}% 将 Contents 改为目录 
+%\renewcommand{\abstractname}{摘\ \ 要} % 将 Abstract 改为摘要 
+\renewcommand{\bibname}{参考文献}      % 将 References 改为参考文献 
+\renewcommand{\indexname}{索\quad 引} %将Idex 改为索引
+\renewcommand{\figurename}{图} 
+\renewcommand{\tablename}{表} 
+\renewcommand{\appendixname}{附\quad 录} 
+\renewcommand{\proofname}{\hei 证明} 
+\renewcommand{\algorithm}{\hei 算法} 
+ 
+%%%%%%%%%% 重定义字号命令 %%%%%%%%%% 
+
+\newcommand{\yihao}{\fontsize{26pt}{36pt}\selectfont}%一号, 1.4 倍行距 
+\newcommand{\erhao}{\fontsize{22pt}{28pt}\selectfont}%二号, 1.25 倍行距 
+\newcommand{\xiaoer}{\fontsize{18pt}{18pt}\selectfont}%小二, 单倍行距 
+\newcommand{\sanhao}{\fontsize{16pt}{24pt}\selectfont}%三号, 1.5 倍行距
+\newcommand{\xiaosan}{\fontsize{15pt}{22pt}\selectfont}%小三, 1.5 倍行距 
+\newcommand{\sihao}{\fontsize{14pt}{21pt}\selectfont}%四号, 1.5 倍行距 
+\newcommand{\bansi}{\fontsize{13pt}{19.5pt}\selectfont}%半四, 1.5 倍行距 
+\newcommand{\xiaosi}{\fontsize{12pt}{18pt}\selectfont}% 小四, 1.5 倍行距 
+\newcommand{\dawu}{\fontsize{11pt}{11pt}\selectfont} % 大五, 单倍行距 
+\newcommand{\wuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}%五号, 单倍行距
+
+%%%%%%%%%%%%%重定义章节的格式%%%%%%%%%%%%%%%%%%%
+
+\titlecontents{chapter}[1em]{\vspace{.5\baselineskip}\bfseries}
+{第\CJKnumber{\thecontentslabel}章\quad}{}
+{\hspace{.5em}\titlerule*[10pt]{$\cdot$}\contentspage}
+\renewcommand{\chaptername}{第\,\CJKnumber{\thechapter}\,章}
+\titleformat{\chapter}[hang]{\centering\huge\bfseries}{\chaptername}{1em}{}
+\titlespacing{\chapter}{0pt}{*0}{*4}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+
+%%%%%%%%%%%%定义页眉而脚%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\fancyhead[ER]{\leftmark}
+\fancyhead[OL]{\rightmark}
+\fancyhead[EL,OR]{$\cdot$\ \thepage\ $\cdot$}
+\renewcommand{\headrulewidth}{0.4pt}
+
+%%%%%%%%%%%%%设置列表格式%%%%%%%%%%%%%%%%
+
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+
+\endinput
