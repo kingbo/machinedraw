@@ -14,8 +14,12 @@ left=21mm,vmarginratio=1:1]{geometry}%页面尺寸控制
 \usepackage{cite}%支持引用
 \usepackage{color,xcolor}%支持彩色文本、底色、文本框等
 \usepackage{listings}%粘贴源代码
-\lstloadlanguages{}                  % 所要粘贴代码的编程语言 
-\lstset{language=,tabsize=4, keepspaces=true, 
+\lstdefinelanguage{autocad}{
+morekeywords={line, circle,xline},
+sensitive=true,
+}
+\lstloadlanguages{autocad}                  % 所要粘贴代码的编程语言 
+\lstset{language=autocad,tabsize=4, keepspaces=true, 
     xleftmargin=2em,xrightmargin=2em, aboveskip=1em, 
     backgroundcolor=\color{lightgray},    % 定义背景颜色 
     frame=none,                      % 表示不要边框 
