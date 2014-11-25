@@ -1,24 +1,19 @@
-\documentclass[a4paper,twoside]{book}
+%!Tex Program=xelatex
+\documentclass[12pt,a4paper,twoside]{book}
+
 %%%%%%%%%%导入相关宏包%%%%%%%%%%%%%%%%%%%%%%
+
 \input{format/packages}
 
 \makeindex%生成建立索引
-%%%%%%%%%%%%%%%%%%%%导入中文环境%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\AtBeginDocument{\begin{CJK*}{UTF8}{song} % 不计中文的空格 
-\CJKindent                           % 首行缩进两个汉字 
-\sloppy\CJKspace                     % 中英文混排的断行 
-\CJKtilde                            % 重新定义~，用~隔开中英文 
-%\CJKcaption{GB}                      % 章节标题的中文化 
-} 
-\AtEndDocument{\end{CJK*}} 
 
 \begin{document}
 \input{format/formats}
-\title{\Huge 工程制图与CAD讲义}
-\author{\Large 金波}
+\title{\hei{\yihao{ 工程制图与CAD讲义}}}
+\author{\sanhao{金波}}
 \date{\today}
 \maketitle
-\CJKtilde
+%\CJKtilde
 \frontmatter
 \tableofcontents
 \chapter*{前言}
