@@ -1,9 +1,15 @@
-%%%%%%%%%% 一些新定义 %%%%%%%%%% 
-\newcommand{\song}{\CJKfamily{song}} % 宋体 
-\newcommand{\hei}{\CJKfamily{hei}}   % 黑体 
-\newcommand{\fs}{\CJKfamily{fs}}     % 仿宋 
-\newcommand{\kai}{\CJKfamily{kai}}   % 楷体 
- 
+%%%%%%%%%% 中文字体设置  %%%%%%%%%% 
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt minus 0.1pt
+\newfontfamily\song{SimSun} %设置宋体字
+\newfontfamily\hei{SimHei} %设置黑体字
+\newfontfamily\kai{KaiTi} %设置楷体字
+\newfontfamily\lishu{LiSu} %设置隶书字体
+\newfontfamily\fangsong{FangSong} %设置仿宋字体
+\newfontfamily\tnroman{Times New Roman}
+%\setCJKmainfont{SimSun}%设置默认中文字体
+%\setCJKmonofont{SimSun}%设置等宽字体
+\setmainfont{SimSun}%设置默认英文字体
 %%%%%%%%%% 定理类环境的定义 %%%%%%%%%% 
 %% 必须在导入中文环境之后 
 \newtheorem{example}{例}             % 整体编号 
@@ -21,6 +27,7 @@
 \newtheorem{assumption}{假设} 
  
 %%%%%%%%%% 一些重定义 %%%%%%%%%% 
+
 %% 必须在导入中文环境之后 
 \renewcommand{\contentsname}{目\quad 录}% 将 Contents 改为目录 
 %\renewcommand{\abstractname}{摘\ \ 要} % 将 Abstract 改为摘要 
