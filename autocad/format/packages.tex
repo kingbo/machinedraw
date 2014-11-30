@@ -61,7 +61,18 @@ left=21mm,vmarginratio=1:1]{geometry}%页面尺寸控制
    \usepackage{graphicx}
    %\usepackage[unicode={true},colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}
 \fi
-
+%%%%%%%%%% 中文字体设置  %%%%%%%%%% 
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip=0pt plus 1pt minus 0.1pt
+\newfontfamily\song{SimSun} %设置宋体字
+\newfontfamily\hei{SimHei} %设置黑体字
+\newfontfamily\kai{KaiTi} %设置楷体字
+\newfontfamily\lishu{LiSu} %设置隶书字体
+\newfontfamily\fangsong{FangSong} %设置仿宋字体
+\newfontfamily\tnroman{Times New Roman}
+\setmainfont{Times New Roman}%设置默认英文字体
+\setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi}]{SimSun}%设置默认中文字体
+\setCJKmonofont{SimSun}%设置等宽字体
 %%%%%%%%%% 一些距离设置 %%%%%%%%%%% 
 \setlength{\floatsep}{10pt plus 3pt minus 2pt} % 图形之间或图形与正文之间的距离 
 \setlength{\abovecaptionskip}{2pt plus 1pt minus 1pt}% 图形中的图与标题之间的距离 
