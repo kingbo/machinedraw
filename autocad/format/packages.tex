@@ -7,7 +7,7 @@ left=21mm,vmarginratio=1:1]{geometry}%页面尺寸控制
 \usepackage{titletoc}%控制目录
 \usepackage{fancyhdr}%控制页眉页脚
 \usepackage{type1cm}%控制字体大小
-%\usepackage{indentfirst}%首行缩进
+\usepackage{indentfirst}%首行缩进
 \usepackage{makeidx}%建立索引
 \usepackage{textcomp}%千分号等特殊符号
 \usepackage{layouts}%打印当前页面格式
@@ -76,7 +76,7 @@ sensitive=true,
 \newfontfamily\tnroman{Times New Roman}
 \setmainfont{Times New Roman}%设置默认英文字体
 \setCJKmainfont[BoldFont={SimHei},ItalicFont={KaiTi}]{SimSun}%设置默认中文字体
-\setCJKmonofont{SimSun}%设置等宽字体
+\setCJKmonofont[BoldFont={SimHei},ItalicFont={KaiTi}]{SimSun}%设置等宽字体
 %%%%%%%%%% 一些距离设置 %%%%%%%%%%% 
 \setlength{\floatsep}{10pt plus 3pt minus 2pt} % 图形之间或图形与正文之间的距离 
 \setlength{\abovecaptionskip}{2pt plus 1pt minus 1pt}% 图形中的图与标题之间的距离 
