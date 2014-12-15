@@ -43,9 +43,9 @@
 %%%%%%%%%%%%%重定义章节的格式%%%%%%%%%%%%%%%%%%%
 
 \titlecontents{chapter}[1em]{\vspace{.5\baselineskip}\bfseries}
-{第\CJKnumber{\thecontentslabel}章\quad}{}
+{第\thecontentslabel 章\quad}{}
 {\hspace{.5em}\titlerule*[10pt]{$\cdot$}\contentspage}
-\renewcommand{\chaptername}{第\,\CJKnumber{\thechapter}\,章}
+\renewcommand{\chaptername}{第\,\thechapter \,章}
 \titleformat{\chapter}[hang]{\centering\huge\bfseries}{\chaptername}{1em}{}
 \titlespacing{\chapter}{0pt}{*0}{*4}
 \pagestyle{fancy}
