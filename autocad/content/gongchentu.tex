@@ -16,14 +16,21 @@
 \caption{零件图组成部分}\label{fig:xiaoluntaotong2}
 \end{figure}
 图\ref{fig:xiaoluntaotong2}对图\ref{fig:xiaoluntaotong}所示零件图的各个组成部分进行了标注。
-\section{理解视图}
-图\ref{fig:xiaoluntaotong}所示零件图中的视图既然是用于表达零件的内外形状的，那么它的立体形状是怎样的呢，如保用AutoCAD构建出它的三维模型呢？要解决这个问题，我们先将图\ref{fig:xiaoluntaotong}所示零件图进行简化，忽略其内部及细微的局部，只研究其中$\phi 14$所对应的部分，如图\ref{fig:yuanzhuti}所示。
+\section{圆柱体视图}
+图\ref{fig:xiaoluntaotong}所示零件图中的视图既然是用于表达零件的内外形状的，那么它的立体形状是怎样的呢，如保用AutoCAD构建出它的三维模型呢？要解决这个问题，我们先将图\ref{fig:xiaoluntaotong}所示零件图进行简化，忽略其内部及细微的局部，只研究其中$\phi 14$所对应的部分，简化后的结果如图\ref{fig:yuanzhuti}所示。
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=0.6]{yuanzhuti.pdf}
+\includegraphics[scale=0.55]{yuanzhuti.pdf}
 \caption{套筒外圆柱视图}\label{fig:yuanzhuti}
 \end{figure}
-\subsection{标题栏}
-\subsection{尺寸}
+
+那么图\ref{fig:yuanzhuti}所表达的又是什么物体呢？要回答这个问题，我们先将一个圆柱体放置于图\ref{fig:sanweizuobiao}所示的三个相互垂直的三面投影之中，然后从三个方向将圆柱体投影到投影面上，即可得到圆柱体的三面投影，如图\ref{fig:yuanzhutouyin}所示。从圆柱体的三面投影可以看出其中两投影的大小和形状是一样的，均为矩形，仅有一个投影为圆。
+\begin{figure}[htbp]
+\centering
+\subfloat[三维投影面]{\label{fig:sanweizuobiao}\includegraphics[scale=0.4]{sanweizuobiao.png}}\hspace{30pt}
+\subfloat[圆柱体三面投影]{\label{fig:yuanzhutouyin}\includegraphics[scale=0.3]{yuanzhutouyin.png}}
+\end{figure}
+
+由此可以看出图\ref{fig:yuanzhuti}所示的视图表达的是一个直径为$\phi 14$，长为28的圆柱体，其中符号$\phi$用于表示后面所标注的尺寸是直径。
 
 \endinput

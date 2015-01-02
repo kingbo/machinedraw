@@ -67,4 +67,19 @@
 
 \setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
 
+%%%%%%%%%%%定义过程列表%%%%%%%%%%%%%%%%%
+
+\newcommand{\gorectangle}[1]{
+\tikz\node[text=white,font=\sffamily\bfseries,inner sep=0.3mm,draw,rounded corners,fill=black]{\small #1};}
+\newcounter{procedurecounter}
+\newenvironment{procedure}{
+\begin{list}{\gorectangle{Step\,\arabic{procedurecounter}}}{
+\setlength{\parsep}{\parskip}
+\setlength{\itemsep}{0ex plus 0.1ex}
+\setlength{\labelwidth}{4em}
+\setlength{\labelsep}{0.2em}
+\setlength{\leftmargin}{6.2em}
+\usecounter{procedurecounter}
+\setcounter{procedurecounter}{0}}}
+{\end{list}}
 \endinput

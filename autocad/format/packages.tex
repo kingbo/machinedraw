@@ -13,6 +13,7 @@ left=21mm,vmarginratio=1:1]{geometry}%页面尺寸控制
 \usepackage{layouts}%打印当前页面格式
 %\usepackage{bbding}%一些特殊符号
 \usepackage{cite}%支持引用
+\usepackage{tikz}
 \usepackage{color,xcolor}%支持彩色文本、底色、文本框等
 \usepackage{listings}%粘贴源代码
 \lstdefinelanguage{autocad}{
@@ -24,8 +25,7 @@ sensitive=true,
     xleftmargin=2em,xrightmargin=2em, aboveskip=1em, 
     backgroundcolor=\color{lightgray},    % 定义背景颜色 
     frame=none,                      % 表示不要边框 
-    keywordstyle=\color{blue}\bfseries,     breakindent=22pt, 
-    numbers=left,stepnumber=1,numberstyle=\tiny, 
+    keywordstyle=\color{blue}\bfseries,     breakindent=22pt,stepnumber=1,numberstyle=\tiny, 
     basicstyle=\footnotesize, 
     showspaces=false, 
     flexiblecolumns=true, 

@@ -34,6 +34,7 @@
 !caddraw/cad/pdf/*.pdf
 !autocad/pdf/*.pdf
 !autocad/png/
+!autocad/dwg/
 *.asy
 *.pre
 build/
