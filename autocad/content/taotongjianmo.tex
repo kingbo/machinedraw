@@ -21,7 +21,7 @@ AutoCAD软件的界面与Word字处理软件的界面非常相似，也是由标
 
 AutoCAD启动后默认的视图方向是俯视图方向，而套筒零件的特征图位于左视图方向，为使套筒零件的三维模型与纸方向一致，需要将AutoCAD的视图方向切换为左视图方向。实现左视图切换的方法有：
 \begin{itemize}
-\item 键盘输入-VIME\index{-view} 或-V,选择【正交】选项中的【左视】项。
+\item 键盘输入-VIME\index{-view,视图} 或-V,选择【正交】选项中的【左视】项。
 \item 键盘输入-VIME，并输入left。
 \item 【视图】$\rightarrow$【三维视图】$\rightarrow$【左视图】。
 \item 【视图】$\triangleright$【左视】图标\includegraphics[scale=0.6]{lefttool.png}。
@@ -31,7 +31,7 @@ AutoCAD启动后默认的视图方向是俯视图方向，而套筒零件的特�
 \item 构建外圆柱
 在AutoCAD中，创建圆柱体需要用到圆柱体命令，通常启动【圆柱体】命令的方法有：
 \begin{itemize}
-\item 键盘输入\lstinline$_CYLINDER$\index{\lstinline$_cylinder$}或\lstinline$_CYL$。
+\item 键盘输入CYLINDER\index{cylinder,圆柱体}或CYL。
 \item 【绘图】$\rightarrow$【建模】$\rightarrow$【圆柱体】。
 \item 【建模】$\triangleright$【圆柱体】图标\includegraphics[scale=0.6]{cylinder.png}。
 \end{itemize}
@@ -87,14 +87,84 @@ AutoCAD启动后默认的视图方向是俯视图方向，而套筒零件的特�
 
 由于前面构建的是两个实体的圆柱体，因此并没有真构成套筒零件所需要的孔，而实现孔的构建则需要从$\phi 14$的圆柱体中去除一个$\phi 8$的圆柱体，要实现这一目标，需要用到实体编辑中的【差集】命令，其启动方法有：
 \begin{itemize}
-\item 键盘输入SUBTRACT\index{subtract}或SU。
+\item 键盘输入SUBTRACT\index{subtract,差集}或SU。
 \item 【修改】$\rightarrow$【实体编辑】$\rightarrow$【差集】。
 \item 【实体编辑】$\triangleright$【差集】图标\includegraphics[scale=0.7]{subtracttool.png}。
 \end{itemize}
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:subtractselect}\includegraphics[scale=0.3]{subtractselect.png}}\hspace{40pt}
+\subfloat[]{\label{fig:subtractselect1}\includegraphics[scale=0.3]{subtractselect1.png}}
+\caption{差集操作}
+\end{figure}
+\begin{lstlisting}
+命令: SUBTRACT
+选择要从中减去的实体、曲面和面域...
+\end{lstlisting}
+输入SUBTACT命令后，提示选择要从中减去的实体，同时绘图区的鼠标形状变为矩形小方框“\includegraphics[scale=0.8]{selectobject.png}”，表示进入选择对象状态，此时按照图\ref{fig:subtractselect}所示选择$\phi 14$的圆柱体作为要从中减去的对象，并按回车或空格键结束选择。
+\begin{lstlisting}
+选择对象: 找到 1 个
+选择对象:  选择要减去的实体、曲面和面域...
+\end{lstlisting}
+结束从中减去实体选择后，命令提示选择要减去的实体，此时按照图\ref{fig:subtractselect1}所示选择$\phi 8$圆柱体作为要选择的实体，并按驾车可空格键结束选择。
+\begin{lstlisting}
+选择对象: 找到 1 个
+选择对象:
+\end{lstlisting}
 \item 进行倒角操作
+至此，已经完成了套筒的整体部分的构建，还剩下两个倒角没有完成，在AutoCAD中完成三维立体倒角边构建的命令是“倒角边”，其启动方法有：
+\begin{itemize}
+\item 键盘输入CHAMFEREDGE\index{charmferedge,倒角边}。
+\item 【修改】$\rightarrow$【实体编辑】$\rightarrow$【倒角边】。
+\item 【实体编辑】$\triangleright$【倒角边】图标\includegraphics[scale=0.6]{chamferedge.png}。
+\end{itemize}
+
+\begin{lstlisting}
+命令: CHAMFEREDGE
+距离 1 = 1.0000，距离 2 = 1.0000
+\end{lstlisting}
+启动完倒角边命令后，命令会提示当前的倒角边距离的默认值，并提示选择要倒角的边，此时按照图\ref{fig:chamferedgeselect}所示选择要倒角的一条边，选择完成后会自动生成倒角预览。
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:chamferedgeselect}\includegraphics[scale=0.3]{chamferedgeselect.png}}\hspace{20pt}
+\subfloat[]{\label{fig:chamferedgeselect1}\includegraphics[scale=0.3]{chamferedgeselect1.png}}
+\hspace{20pt}
+\subfloat[]{\label{fig:chamferedgeresult}\includegraphics[scale=0.3]{chamferedgeresult.png}}
+\caption{倒角边操作}
+\end{figure}
+\begin{lstlisting}
+选择一条边或 [环(L)/距离(D)]:
+\end{lstlisting}
+接下来，按照图\ref{fig:chamferedgeselect1}所示，选择另一条要倒角的边。
+\begin{lstlisting}
+选择同一个面上的其他边或 [环(L)/距离(D)]:
+\end{lstlisting}
+套筒零件只有两个倒角边，因此选择倒角边至此结束，但是系统默认值并不是需要的倒距离，故需要选择距离(d)进行修改。
+\begin{lstlisting}
+选择同一个面上的其他边或 [环(L)/距离(D)]:d
+\end{lstlisting}
+最后将两个倒角距离均设置成为0.5，并用回车键接受,其结果如图\ref{fig:chamferedgeresult}所示。
+\begin{lstlisting}
+指定基面倒角距离或 [表达式(E)] <1.0000>: 0.5
+指定其他曲面倒角距离或 [表达式(E)] <1.0000>: 0.5
+按 Enter 键接受倒角或 [距离(D)]:
+\end{lstlisting}
 \item 进行着色
+最后，将完成套筒三维模型以灰度方式的视觉样式进行着色，以使得三维模型看起更加真实。启动灰度视觉样式的方法有：
+\begin{itemize}
+\item 键盘输入 VSCURRENT\index{vscurrent,视觉样式}或VS，并输入G选项。
+\item 【视图】$\rightarrow$【视觉样式】$\rightarrow$【灰度】。
+\end{itemize}
+\begin{lstlisting}
+命令: vscurrent
+输入选项 [二维线框(2)/线框(W)/隐藏(H)/真实(R)/概念(C)/着色(S)/带边缘着色(E)/灰度(G)/勾画(SK)/X 射线(X)/其他(O)] <二维线框>: G
+\end{lstlisting}
+完成灰度视觉样式切换后，其结果如图\ref{fig:taotonglititu}所示。
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.6]{taotonglititu.png}
+\caption{套筒三维模型}\label{fig:taotonglititu}
+\end{figure}
 \end{procedure}
-\subsection{标题栏}
-\subsection{尺寸}
 
 \endinput
