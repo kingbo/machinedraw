@@ -70,7 +70,7 @@
 %%%%%%%%%%%定义过程列表%%%%%%%%%%%%%%%%%
 
 \newcommand{\gorectangle}[1]{
-\tikz\node[text=white,font=\sffamily\bfseries,inner sep=0.3mm,draw,rounded corners,fill=black]{\small #1};}
+\tikz\node[text=white,font=\sffamily\bfseries,inner sep=0.5mm,draw,rounded corners,fill=black]{\small #1};}
 \newcounter{procedurecounter}
 \newenvironment{procedure}{
 \begin{list}{\gorectangle{Step\,\arabic{procedurecounter}}}{
@@ -82,4 +82,21 @@
 \usecounter{procedurecounter}
 \setcounter{procedurecounter}{0}}}
 {\end{list}}
+
+\newcounter{yaodiancounter}
+\tikzstyle{mybox} = [draw=black, fill=gray!20, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=20pt]
+\tikzstyle{fancytitle} =[fill=gray, text=white]
+\newcommand{\yaodian}[1]{
+\addtocounter{yaodiancounter}{1}
+\begin{tikzpicture}
+\node [mybox] (box){%
+    \begin{minipage}{0.75\textwidth}
+       \lishu{#1}
+    \end{minipage}
+};
+\node[fancytitle, right=10pt] at (box.north west) {\hei{要点\arabic{yaodiancounter}}};
+\end{tikzpicture}
+}
+
 \endinput

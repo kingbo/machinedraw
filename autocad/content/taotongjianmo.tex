@@ -1,4 +1,4 @@
-\section{套筒三维模型构建}
+\section{套筒三维模型构建}\label{sec:taotongjianmo}
 基于上面的认识和理解，现在可以用AutoCAD来构建套筒的三维模型，具体构建方法是：
 \begin{procedure}
 
@@ -28,6 +28,13 @@ AutoCAD启动后默认的视图方向是俯视图方向，而套筒零件的特�
 \end{itemize}
 同理，如果要将视图切换为其它视图方向，其操作方法与切换左视图的方法是一致的，只是需要将“左视”换成其它视图方向即可。例如要将视图方向切换为俯视图方向则将上述方法中的【左视】改为【俯视】。
 
+\begin{lstlisting}
+命令: -VIEW
+输入选项 [?/删除(D)/正交(O)/恢复(R)/保存(S)/设置(E)/窗口(W)]: left
+\end{lstlisting}
+
+\yaodian{结合能够显著表达物体特征的视图选择AutoCAD的三维视图方向，将有助于三维模型的构建。}
+
 \item 构建外圆柱
 在AutoCAD中，创建圆柱体需要用到圆柱体命令，通常启动【圆柱体】命令的方法有：
 \begin{itemize}
@@ -41,6 +48,8 @@ AutoCAD启动后默认的视图方向是俯视图方向，而套筒零件的特�
 \includegraphics[scale=0.35]{commandline.png}
 \caption{AutoCAD命令行}\label{fig:commandline}
 \end{figure}
+
+\yaodian{AutoCAD命令行是重要的信息窗口，是正确绘图的关键。初学者应多关注命令行的提示。}
 \begin{lstlisting}
 命令: _CYLINDER
 \end{lstlisting}
@@ -83,6 +92,9 @@ AutoCAD启动后默认的视图方向是俯视图方向，而套筒零件的特�
 指定底面半径或 [直径(D)] <7.0000>: 4
 指定高度或 [两点(2P)/轴端点(A)] <28.0000>:
 \end{lstlisting}
+
+\yaodian{合理使用捕捉是实现精确绘图和快速绘图的重要方法之一。}
+
 \item 进行差集操作，制作内孔
 
 由于前面构建的是两个实体的圆柱体，因此并没有真构成套筒零件所需要的孔，而实现孔的构建则需要从$\phi 14$的圆柱体中去除一个$\phi 8$的圆柱体，要实现这一目标，需要用到实体编辑中的【差集】命令，其启动方法有：
@@ -150,6 +162,11 @@ AutoCAD启动后默认的视图方向是俯视图方向，而套筒零件的特�
 按 Enter 键接受倒角或 [距离(D)]:
 \end{lstlisting}
 \item 进行着色
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.6]{taotonglititu.png}
+\caption{套筒三维模型}\label{fig:taotonglititu}
+\end{figure}
 最后，将完成套筒三维模型以灰度方式的视觉样式进行着色，以使得三维模型看起更加真实。启动灰度视觉样式的方法有：
 \begin{itemize}
 \item 键盘输入 VSCURRENT\index{vscurrent,视觉样式}或VS，并输入G选项。
@@ -160,11 +177,7 @@ AutoCAD启动后默认的视图方向是俯视图方向，而套筒零件的特�
 输入选项 [二维线框(2)/线框(W)/隐藏(H)/真实(R)/概念(C)/着色(S)/带边缘着色(E)/灰度(G)/勾画(SK)/X 射线(X)/其他(O)] <二维线框>: G
 \end{lstlisting}
 完成灰度视觉样式切换后，其结果如图\ref{fig:taotonglititu}所示。
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=0.6]{taotonglititu.png}
-\caption{套筒三维模型}\label{fig:taotonglititu}
-\end{figure}
+
 \end{procedure}
 
 \endinput
