@@ -13,13 +13,13 @@ left=21mm,vmarginratio=1:1]{geometry}%页面尺寸控制
 \usepackage{layouts}%打印当前页面格式
 %\usepackage{bbding}%一些特殊符号
 \usepackage{cite}%支持引用
-\usepackage{tikz}
+\usepackage{tikz}%绘图宏包
 \usetikzlibrary{shapes,snakes}
 \usepackage{color,xcolor}%支持彩色文本、底色、文本框等
 \usepackage{listings}%粘贴源代码
 \lstdefinelanguage{autocad}{
-morekeywords={line, circle,xline},
-sensitive=true,
+morekeywords={line, circle,xline,view,subtract,cylinder,vscurrent,chamferedge,save,saveas},
+sensitive=false,
 }
 \lstloadlanguages{autocad}                  % 所要粘贴代码的编程语言 
 \lstset{language=autocad,tabsize=4, keepspaces=true, 
@@ -33,7 +33,7 @@ sensitive=true,
     breaklines=true, breakautoindent=true,breakindent=4em, 
     escapeinside={/*@}{@*/} 
 } 
-%\usepackage{CJK,CJKnumb,CJKulem}%中文支持
+\usepackage{CJK,CJKnumb,CJKulem}%中文支持
 \usepackage{times}%包括Times Roman +Helvetica +Courier
 \usepackage{latexsym}
 \usepackage{amsmath}%AMS LaTeX 宏包
@@ -53,20 +53,10 @@ sensitive=true,
 \usepackage{subfig}
 \usepackage[toc,page,title,titletoc,header]{appendix}
 \usepackage{fontspec,xunicode,xltxtra}%XeLaTeX 相关字体库
-\newif\ifpdf
-\ifx\pdfoutput\undefined
-   \pdffalse
-\else
-   \pdfoutput=1
-   \pdftrue
-\fi
-\ifpdf
-   \usepackage[pdftex]{graphicx}
-   %\usepackage[pdftex,unicode=true,colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}
-\else
-   \usepackage{graphicx}
-   %\usepackage[unicode={true},colorlinks,linkcolor=red,anchorcolor=blue,citecolor=green]{hyperref}
-\fi
+\defaultfontfeatures{Mapping=tex-text} %如果没有它，会有一些 tex 特殊字符无法正常使用，比如连字符。
+\usepackage[unicode={true},colorlinks,linkcolor=black]{hyperref}
+\usepackage{graphicx}
+
 %%%%%%%%%% 中文字体设置  %%%%%%%%%% 
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip=0pt plus 1pt minus 0.1pt

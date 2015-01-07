@@ -51,7 +51,7 @@ AutoCAD启动后默认的视图方向是俯视图方向，而套筒零件的特�
 
 \yaodian{AutoCAD命令行是重要的信息窗口，是正确绘图的关键。初学者应多关注命令行的提示。}
 \begin{lstlisting}
-命令: _CYLINDER
+命令:CYLINDER
 \end{lstlisting}
 接下来命令提示行中会提示，指定圆柱体的底面中心点或者绘图选项。
 \begin{lstlisting}
@@ -84,7 +84,7 @@ AutoCAD启动后默认的视图方向是俯视图方向，而套筒零件的特�
 
 \item 构建内圆柱
 \begin{lstlisting}
-命令: _CYLINDER
+命令: CYLINDER
 指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭圆(E)]:
 \end{lstlisting}
 当命令提示指定底面圆心时，为保证我们所绘制的$\phi 8$圆柱与$\phi 14$圆上下端面对齐并且同轴，需要应用AutoCAD的对象后捕捉方式来选取$\phi 14$圆底端面的圆心作为$\phi 8$圆柱底端面的圆心。其具体操作方法是：将鼠标移至图\ref{fig:centerselect}所示的位置，直到出现图示的圆心标记和提示，然后单击鼠标左键确定圆柱体的圆心，并按下面的提示完$\phi 8$圆柱体的构建。
@@ -173,7 +173,7 @@ AutoCAD启动后默认的视图方向是俯视图方向，而套筒零件的特�
 \item 【视图】$\rightarrow$【视觉样式】$\rightarrow$【灰度】。
 \end{itemize}
 \begin{lstlisting}
-命令: vscurrent
+命令: VSCURRENT
 输入选项 [二维线框(2)/线框(W)/隐藏(H)/真实(R)/概念(C)/着色(S)/带边缘着色(E)/灰度(G)/勾画(SK)/X 射线(X)/其他(O)] <二维线框>: G
 \end{lstlisting}
 完成灰度视觉样式切换后，其结果如图\ref{fig:taotonglititu}所示。
