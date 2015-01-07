@@ -98,5 +98,21 @@
 \node[fancytitle, right=10pt] at (box.north west) {\hei{要点\arabic{yaodiancounter}}};
 \end{tikzpicture}
 }
-
+%源代码格式设置
+\lstdefinelanguage{autocad}{
+morekeywords={line, circle,xline,view,subtract,cylinder,vscurrent,union,chamferedge,save,saveas},
+sensitive=false,
+}
+\lstloadlanguages{autocad}                  % 所要粘贴代码的编程语言 
+\lstset{language=autocad,tabsize=4, keepspaces=true, 
+    xleftmargin=2em,xrightmargin=2em, aboveskip=1em, 
+    backgroundcolor=\color{lightgray},    % 定义背景颜色 
+    frame=none,                      % 表示不要边框 
+    keywordstyle=\color{blue}\bfseries,     breakindent=22pt,stepnumber=1,numberstyle=\tiny, 
+    basicstyle=\footnotesize, 
+    showspaces=false, 
+    flexiblecolumns=true, 
+    breaklines=true, breakautoindent=true,breakindent=4em, 
+    escapeinside={/*@}{@*/} 
+} 
 \endinput

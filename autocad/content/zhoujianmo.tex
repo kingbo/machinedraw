@@ -1,3 +1,64 @@
 \section{轴三维模型构建}
 
+\begin{lstlisting}
+命令: -VIEW
+输入选项 [?/删除(D)/正交(O)/恢复(R)/保存(S)/设置(E)/窗口(W)]: left
+\end{lstlisting}
+
+\begin{lstlisting}
+命令: -VIEW
+输入选项 [?/删除(D)/正交(O)/恢复(R)/保存(S)/设置(E)/窗口(W)]: swiso
+\end{lstlisting}
+
+\begin{lstlisting}
+命令: CYLINDER
+指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭圆(E)]:
+指定底面半径或 [直径(D)]: 8
+指定高度或 [两点(2P)/轴端点(A)]: 2
+\end{lstlisting}
+
+\begin{lstlisting}
+命令: CYLINDER
+指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭圆(E)]:
+指定底面半径或 [直径(D)] <8.0000>: 4
+指定高度或 [两点(2P)/轴端点(A)] <2.0000>: 35
+\end{lstlisting}
+
+\begin{lstlisting}
+命令: CYLINDER
+指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭圆(E)]:
+指定底面半径或 [直径(D)] <4.0000>: 3
+指定高度或 [两点(2P)/轴端点(A)] <35.0000>: 3
+\end{lstlisting}
+
+\begin{lstlisting}
+命令:  UNION
+选择对象: 指定对角点: 找到 3 个
+选择对象:
+\end{lstlisting}
+
+\begin{lstlisting}
+命令: CHAMFEREDGE
+距离 1 = 1.0000，距离 2 = 1.0000
+选择一条边或 [环(L)/距离(D)]: d
+指定距离 1 或 [表达式(E)] <1.0000>: 0.5
+指定距离 2 或 [表达式(E)] <1.0000>: 0.5
+选择一条边或 [环(L)/距离(D)]:
+选择同一个面上的其他边或 [环(L)/距离(D)]:
+按 Enter 键接受倒角或 [距离(D)]:
+\end{lstlisting}
+
+\begin{lstlisting}
+命令: CHAMFEREDGE
+距离 1 = 0.5000，距离 2 = 0.5000
+选择一条边或 [环(L)/距离(D)]:
+选择同一个面上的其他边或 [环(L)/距离(D)]:
+按 Enter 键接受倒角或 [距离(D)]:
+\end{lstlisting}
+
+\begin{lstlisting}
+命令: VSCURRENT
+输入选项 [二维线框(2)/线框(W)/隐藏(H)/真实(R)/概念(C)/着色(S)/带边缘着色(E)/灰度(G)/勾画(SK)/X 射线(X)/其他(O)] <二维线框>: g
+\end{lstlisting}
+
 \endinput

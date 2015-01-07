@@ -17,22 +17,6 @@ left=21mm,vmarginratio=1:1]{geometry}%页面尺寸控制
 \usetikzlibrary{shapes,snakes}
 \usepackage{color,xcolor}%支持彩色文本、底色、文本框等
 \usepackage{listings}%粘贴源代码
-\lstdefinelanguage{autocad}{
-morekeywords={line, circle,xline,view,subtract,cylinder,vscurrent,chamferedge,save,saveas},
-sensitive=false,
-}
-\lstloadlanguages{autocad}                  % 所要粘贴代码的编程语言 
-\lstset{language=autocad,tabsize=4, keepspaces=true, 
-    xleftmargin=2em,xrightmargin=2em, aboveskip=1em, 
-    backgroundcolor=\color{lightgray},    % 定义背景颜色 
-    frame=none,                      % 表示不要边框 
-    keywordstyle=\color{blue}\bfseries,     breakindent=22pt,stepnumber=1,numberstyle=\tiny, 
-    basicstyle=\footnotesize, 
-    showspaces=false, 
-    flexiblecolumns=true, 
-    breaklines=true, breakautoindent=true,breakindent=4em, 
-    escapeinside={/*@}{@*/} 
-} 
 \usepackage{CJK,CJKnumb,CJKulem}%中文支持
 \usepackage{times}%包括Times Roman +Helvetica +Courier
 \usepackage{latexsym}
