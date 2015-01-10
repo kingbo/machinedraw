@@ -133,7 +133,7 @@ AutoCAD默认开始工作的空间是模型空间。模型空间是一个无限�
 
 \item 修改图层设置
 
-所谓图层就是将属性相同的对象绘制在一张类似于透明的纸上，将不同属性的对象绘制在不同的透明纸上，以实现图形对象的分类管理，最后将所有的透明纸叠加在一起就构成了整个图形。修改【图层】设置的方法有：
+经过前面的操作，已经完成了轴主视图的制作，但由于生成的视图与实体都被显示出来了，因而结果与图\ref{fig:xiaolunzhou}的结果存在着一些差异。要实现只显示与视图相关的内容，就需要修改AutoCAD的图层属性。 所谓图层就是将属性相同的对象绘制在一张类似于透明的纸上，将不同属性的对象绘制在不同的透明纸上，以实现图形对象的分类管理，最后将所有的透明纸叠加在一起就构成了整个图形。修改【图层】设置的方法有：
 \begin{itemize}
 \item 键盘输入LAYER\index{layer,图层}或LA。
 \item 【格式】$\rightarrow$【图层】。
@@ -142,8 +142,35 @@ AutoCAD默认开始工作的空间是模型空间。模型空间是一个无限�
 \begin{lstlisting}
 命令：layer
 \end{lstlisting}
-\item 退出视口模型空间
+图层命令调用后会弹出图\ref{fig:layerdialog}所示的图层对话框。整个图层对话框分为三个部分，分别是工具区、过滤器和图层列表。首先，在图层列表中选中以PV开头的图层，并单击\includegraphics[scale=0.6]{setcurrentlayer.png}图标，将其设置为当前图层。然后单击该图层中线宽\includegraphics[scale=0.6]{linewidthselect.png} 图标，弹出图\ref{fig:linewidthset}对话框，选中0.50mm的线宽，点击确定，即可完成图层线宽的设置。最后点击0图层的\includegraphics[scale=0.6]{layeronoffset.png}图标，使之切换为\includegraphics[scale=0.6]{layeroffstatus.png}状态，实现对0图层的关闭。最终的图层设置结果如图所示
 
+\begin{figure}[htbp]
+\centering
+\begin{floatrow}[2]
+\ffigbox{\caption{图层对话框}\label{fig:layerdialog}}{\includegraphics[scale=0.5]{layerdialog.png}}
+\ffigbox{\caption{线宽设置对话框}\label{fig:linewidthset}}{\includegraphics[scale=0.55]{linewidthset.png}}
+\end{floatrow}
+\end{figure}
+\begin{figure}[htbp]
+\centering
+\begin{floatrow}[2]
+\ffigbox{\caption{图层设置结果}\label{fig:layersetresult}}{\includegraphics[scale=0.45]{layersetresult.png}}
+\ffigbox{\caption{轴主视图}\label{fig:zhoushituresult}}{\includegraphics[scale=0.35]{zhoushituresult.png}}
+\end{floatrow}
+\end{figure}
+
+\yaodian{处于关闭状态的图层，不会显示。但关闭图层的内容仍然存在。}
+
+\item 返回图纸空间
+至此，我们已经完成了轴主视图生成的所有操作，为了停止在视口模型空间中做缩放操作导致视图比例改变，因此需要返回图图纸空间。AutoCAD中返回图纸空间的方法有：
+\begin{itemize}
+\item 键盘输入 PSPACE\index{pspace,图纸空间}或PS。
+\item 用鼠标双击视口以外的空白区域
+\end{itemize}
+\begin{lstlisting}
+命令：pspace
+\end{lstlisting}
+返回图纸空间后，其结果如图 所示。从图中，可知生成的轴主视图与图\ref{fig:xiaolunzhou}的主视图是一致的。
 
 \end{procedure}
 
