@@ -31,16 +31,18 @@ left=21mm,vmarginratio=1:1]{geometry}%页面尺寸控制
 \usepackage{relsize}% 调整公式字体大小：
 %\mathsmaller, \mathlarger 
 \usepackage{enumitem}
-\usepackage{caption}% 浮动图形和表格标题样式 
 \usepackage{multirow}
 \usepackage{floatrow}
 \usepackage{subfig}
+%\usepackage{float}
+\usepackage{caption}% 浮动图形和表格标题样式 
 \usepackage[toc,page,title,titletoc,header]{appendix}
 \usepackage{fontspec,xunicode,xltxtra}%XeLaTeX 相关字体库
 \defaultfontfeatures{Mapping=tex-text} %如果没有它，会有一些 tex 特殊字符无法正常使用，比如连字符。
 \usepackage[unicode={true},colorlinks,linkcolor=black]{hyperref}
 \usepackage{graphicx}
-
+%\usepackage{booktabs}
+\usepackage{tabu}
 %%%%%%%%%% 中文字体设置  %%%%%%%%%% 
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip=0pt plus 1pt minus 0.1pt
@@ -57,5 +59,8 @@ left=21mm,vmarginratio=1:1]{geometry}%页面尺寸控制
 \setlength{\floatsep}{10pt plus 3pt minus 2pt} % 图形之间或图形与正文之间的距离 
 \setlength{\abovecaptionskip}{2pt plus 1pt minus 1pt}% 图形中的图与标题之间的距离 
 \setlength{\belowcaptionskip}{3pt plus 1pt minus 2pt}% 表格中的表与标题之间的距 
-
+%%%%%%%去掉图表标题中的冒号
+\DeclareCaptionLabelSeparator{twospace}{\ ~}
+\captionsetup{labelsep=twospace} 
+\floatsetup[table]{style=Plaintop}%设置表格标题位于表格上方
 \endinput
