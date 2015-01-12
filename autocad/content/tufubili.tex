@@ -23,7 +23,7 @@ $a$&\multicolumn{5}{c}{25}\\
 
 \begin{figure}[htbp]
 \centering
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.9]
 \draw[line width=0.7mm] (0,0)node[left]{0}--(0,1cm)node[left]{210}--(0,2cm)node[left]{420}--(0,3cm)node[left]{630}--(0,4cm)node[left]{841};
 \draw[dashed](0,4cm)--(0,5cm)node[left]{1051}--(1.5cm,5cm)node[below left]{$A4\times 5$}--(1.5cm,2cm);
 \draw[line width=0.7mm](0,1cm)--(1.5cm,1cm)node[below left]{A4}(0,2cm)--(1.5cm,2cm)node[below left]{A3}--(1.5cm,0)node[below]{297};
@@ -33,14 +33,18 @@ $a$&\multicolumn{5}{c}{25}\\
 \draw[dashed](3cm,2cm)--(4.5cm,2cm)node[below left]{$A3\times 3$}--(6cm,2cm)node[below left]{$A3\times 4$}(4.5cm,2cm)--(4.5cm,0)node[below]{891};
 \draw[dashed](1.5cm,4cm)node[below left]{$A4\times 4$};
 \draw[dashed](0,4cm)rectangle (3cm,6cm)node[below left]{$A2\times 3$};
-\draw[dashed](6cm,0)rectangle (9cm,2cm)node[below left]{$A2\times 3$};
-\draw[dashed](0,4cm)rectangle (3cm,8cm)node[below left]{$A2\times 4$,$A1\times 2$};
-\draw[dashed](6cm,0)rectangle (12cm,4cm)node[below left]{$A0\times 2$};
+%\draw[dashed](6cm,0)rectangle (9cm,2cm)node[below left]{$A2\times 3$};
+\draw[dashed](0,4cm)rectangle (6cm,8cm)node[below left]{$A0\times 2$};
+\draw[dashed](6cm,0)rectangle (9cm,4cm)node[below left]{$A1\times 3$};
 \end{tikzpicture}
 \caption{图纸幅面及加长边} \label{fig:tufujiachang}
 \end{figure}
-\subsubsection{图框}
 
+图纸幅面尺寸应用的是$L=\sqrt{2}B$的系列。A0幅面的面积是$1m^2$，A1幅面是A0幅面的对开，其它幅面依次类推。
+
+一般情况下，基本的幅面尺寸能够满足大多生产实际需要。但有时也需要增加图纸的幅面尺寸，以满足特殊需求。增加图纸幅面尺寸时应按其幅面短边尺寸整数倍增加后得出，如图\ref{fig:tufujiachang}所示。图中，粗实线为基本幅面，虚线表示加长后的图纸幅面。加长后幅面记作：基本幅面代号$\times $倍数。如$A3\times 3$，表示按A3图幅短边加长为297mm的3倍，即加长后图纸尺寸为$420mm\times 891mm$。
+\subsubsection{图框}
+图幅确定后，需要用粗实线画出图框，图样必须绘制在图框之内。其格式分为留装订边不留装订边种，如图\ref{fig:zhuangding}所示，其尺寸按照表\ref{tab:tuzhifumian}进行绘制。
 
 \tikzset{
 >=latex,
@@ -50,7 +54,7 @@ importance lines/.style={line width=1pt}
 \begin{figure}[htbp]
 \centering
 \subfloat[留装订边格式]{
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw(0,0)rectangle(4cm,5cm);
 \draw[line width=0.7mm](0.5cm,0.25cm)rectangle(3.75cm,4.75cm)(1.5cm,0.25cm)--(1.5cm,1cm)--(3.75cm,1cm)node[midway,below]{标题栏};
 \draw(-0.7cm,0)--(0,0)(-0.7cm,5cm)--(0cm,5cm);
@@ -89,7 +93,7 @@ importance lines/.style={line width=1pt}
 \end{tikzpicture}}
 
 \subfloat[不留装订边格式]{
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw(0,0)rectangle(4cm,5cm);
 \draw[line width=0.7mm](0.25cm,0.25cm)rectangle(3.75cm,4.75cm)(1.5cm,0.25cm)--(1.5cm,1cm)--(3.75cm,1cm)node[midway,below]{标题栏};
 \draw(-0.7cm,0)--(0,0)(-0.7cm,5cm)--(0cm,5cm);
