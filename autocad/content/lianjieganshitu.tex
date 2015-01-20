@@ -484,14 +484,219 @@ AutoCAD中标注文字需要用到文字命令，其调用方法有：
 \item 【样式】\includegraphics[scale=0.45]{styletools.png}工具栏中的【标注样式】\includegraphics[scale=0.45]{dimstyletool.png}图标
 \end{itemize}
 
+\begin{lstlisting}
+命令：dimstyle
+\end{lstlisting}
+命令调用后会弹出图\ref{fig:dimstyledialog.png} 所示的标注样式管理器，此对话框中列出了AutoCAD当前的所有样式、当前使用的样式及样式预览。为不改变AutoCAD的系统样式，我们需要新建与国标要求一致的标注样式。点击新建按钮弹出图\ref{fig:dimstylenew.png} 所示的新建标注样式对话框，选择ISO-25作为基础样式，并用于所用标注，建立名称为“GB标注样式”的新标注样式,完成后单击继续按钮，进入基础样式的设置。
+\begin{figure}[htbp]
+\centering
+\begin{floatrow}[2]
+\ffigbox{\caption{标注样式管理器}\label{fig:dimstyledialog.png}}{\includegraphics[scale=0.4]{dimstyledialog.png}}
+\ffigbox{\caption{新建标注样式对话框}\label{fig:dimstylenew.png}}{\includegraphics[scale=0.7]{dimstylenew.png}}
+\end{floatrow}
+\end{figure}
 \begin{enumerate}
 \item 设置基础标注样式
+
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:dimstylelineset.png}\includegraphics[scale=0.3]{dimstylelineset.png}}\hspace{20pt}
+\subfloat[]{\label{fig:dimstylearrowset.png}\includegraphics[scale=0.3]{dimstylearrowset.png}}\\
+\subfloat[]{\label{fig:dimstyletextset.png}\includegraphics[scale=0.3]{dimstyletextset.png}}\hspace{20pt}
+\subfloat[]{\label{fig:dimstyledanweiset.png}\includegraphics[scale=0.3]{dimstyledanweiset.png}}
+\caption{基础标注样式设置}
+\end{figure}
+
+\begin{itemize}
+\item 设置线
+
+完成基础样式名称设置后，会弹出样式设置对话框，并且“线”选项卡处于激活状态。此时，在线选项卡中，将尺寸线选项组中的基线间距设置为8；尺寸界线选项组中的超出尺寸线设置为2.5，起点偏移量设置为0。结果如图\ref{fig:dimstylelineset.png} 所示。
+
+\item 设置符号和箭头
+
+接下来设置符号和箭头选项卡，并按图\ref{fig:dimstylearrowset.png}所示结果，将箭头选项组中的引线设置为无，箭头大小设置为3.5；圆心标记选项组中的标记单选按钮置于选择状态，大小设置为2.5；弧长符号选项组设置为标注文字的上方。
+
+\item 设置文字
+
+接下来按图\ref{fig:dimstyletextset.png}所示设置文字选项卡，将文字外观选项组中的文字样式设置为GB，文字高度设置为5；文字位置选项组中的垂直设置为上，水平设置为居中，观察方向设置为从左到右，从尺寸线偏移设置为1.2；文字对齐设置为ISO标准。
+
+\item 设置主单位
+
+最后按图\ref{fig:dimstyledanweiset.png}所示设置主单位选项卡，将线性标注选项组中的精度设置为0.0000，小数分隔符设置为“.”句点，消零设置为后续；角度标注选项组精度设置为0.0，消零设置为后续。
+\end{itemize}
+
+设置完成后点击确定，返回标注样式管理器。基础标注样式设置完成后，标注样式还不能够达到国家标准的要求，还需要有针对性的设置基子样式。
 \item 设置线性子标注样式
+
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:subdimstylelinenew.png}\includegraphics[scale=0.55]{subdimstylelinenew.png}}\hspace{20pt}
+\subfloat[]{\label{fig:subdimstylelineadjust.png}\includegraphics[scale=0.25]{subdimstylelineadjust.png}}
+\caption{设置线性子标注样式}
+\end{figure}
+
+在标注样式管理器中，点击新建按钮弹出图\ref{fig:dimstylenew.png}所示的对话框，此时选择“GB标注样式”作为基础样式，并将用于“所有标注”修改为“线性标注”，结果如图\ref{fig:subdimstylelinenew.png} 所示,然后点击继续。
+
+接下来按图\ref{fig:subdimstylelineadjust.png}所示设置调整选项卡，将文字位置设置为“尺寸线上方，带指引线”。设置完成后点击确定返回标注样式管理器。
+
 \item 设置角度子标注样式
+
+在标注样式管理器中，点击新新建按钮，按图\ref{fig:subdimstyleanglenew.png}所示选择“GB标注样式”作为基础样式，并将用于“所有标注”修改为“角度标注”，点击继续按钮进行子标注样式设置。
+
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:subdimstyleanglenew.png}\includegraphics[scale=0.4]{subdimstyleanglenew.png}}\hspace{10pt}
+\subfloat[]{\label{fig:subdimstyleangletextset.png}\includegraphics[scale=0.25]{subdimstyleangletextset.png}}\hspace{10pt}
+\subfloat[]{\label{fig:subdimstyleangleadjustset.png}\includegraphics[scale=0.25]{subdimstyleangleadjustset.png}}
+\caption{设置角度子标注样式}
+\end{figure}
+
+接下来按图\ref{fig:subdimstyleangletextset.png}所示设置角度子标注样式的文字设置，将文字对齐设置为水平。
+
+最后按图\ref{fig:subdimstyleangleadjustset.png}所示设置角度子标注样式的调整设置，将文字位置设置为“尺寸线上方，带引线”，点击确定返回标注样式管理器。
 \item 设置半径子标注样式
+
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:subdimstylebanjinnew.png}\includegraphics[scale=0.55]{subdimstylebanjinnew.png}}\hspace{20pt}
+\subfloat[]{\label{fig:subdimstylebanjinadjustset.png}\includegraphics[scale=0.25]{subdimstylebanjinadjustset.png}}
+\caption{设置半径子标注样式}
+\end{figure}
+
+在标注样式管理器中，点击新新建按钮，按图\ref{fig:subdimstylebanjinnew.png}所示选择“GB标注样式”作为基础样式，并将用于“所有标注”修改为“半径标注”，点击继续按钮进行子标注样式设置。
+
+按图\ref{fig:subdimstylebanjinadjustset.png}所示设置半径子标注样式的调整设置，将文字位置设置为“尺寸线旁边”，优化选项组中增加“手动放置文字”项，点击确定返回标注样式管理器。
+
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:subdimstylezhijinnew.png}\includegraphics[scale=0.55]{subdimstylezhijinnew.png}}\hspace{20pt}
+\subfloat[]{\label{fig:subdimstylezhijinadjustset.png}\includegraphics[scale=0.25]{subdimstylezhijinadjustset.png}}
+\caption{设置直径子标注样式}
+\end{figure}
+
 \item 设置直径子标注样式
+
+在标注样式管理器中，点击新新建按钮，按图\ref{fig:subdimstylezhijinnew.png}所示选择“GB标注样式”作为基础样式，并将用于“所有标注”修改为“半径标注”，点击继续按钮进行子标注样式设置。
+
+按图\ref{fig:subdimstylezhijinadjustset.png}所示设置直径子标注样式的调整设置，将文字位置设置为“尺寸线旁边”，优化选项组中增加“手动放置文字”项，点击确定返回标注样式管理器。
 \end{enumerate}
+
+整个标注样式设置完成后，结果如图\ref{fig:dimstyleresult.png} 所示。要应用新建的“GB标注样式”，需要选中“GB标注样式”，并点击置为当前按钮。
+
+当然也可以通过【样式】\includegraphics[scale=0.45]{styletools.png}工具栏中的标注样式控制列表框\includegraphics[scale=0.45]{dimstylelist.png}切换为“GB标注样式”\includegraphics[scale=0.45]{dimstylelist2.png}。
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.45]{dimstyleresult.png}
+\caption{新建标注样式结果}\label{fig:dimstyleresult.png}
+\end{figure}
 \item 标注尺寸
+
+由于连接杆所要标注的尺寸都是线性尺寸，因此可以用AutoCAD的线性尺寸标注来完成，其主要的调用方法有：
+\begin{itemize}
+\item 键盘输入DIMLINEAR\index{dimlinear,线性标注}或dimlin
+\item 【标注】$\rightarrow $【线性】
+\item 【标注】\includegraphics[scale=0.45]{dimtoolsbar.png}工具栏中的【线性】\includegraphics[scale=0.45]{dimlinear.png}图标
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:dimlinearfirstnode.png}\includegraphics[scale=0.4]{dimlinearfirstnode.png}}\hspace{10pt}
+\subfloat[]{\label{fig:dimlinearsecondtnode.png}\includegraphics[scale=0.4]{dimlinearsecondtnode.png}}\hspace{10pt}
+\subfloat[]{\label{fig:dimlinearpositionset.png}\includegraphics[scale=0.4]{dimlinearpositionset.png}}\hspace{10pt}
+\subfloat[]{\label{fig:dimlinearresult.png}\includegraphics[scale=0.4]{dimlinearresult.png}}
+\caption{线性标注过程}
+\end{figure}
+
+\begin{lstlisting}
+命令: dimlinear
+指定第一个尺寸界线原点或 <选择对象>:
+\end{lstlisting}
+
+线性标注命令调用后，按图\ref{fig:dimlinearfirstnode.png}所示指定端点作为第一个尺寸界线的原点。
+\begin{lstlisting}
+指定第二条尺寸界线原点:
+\end{lstlisting}
+接下来按图\ref{fig:dimlinearsecondtnode.png}所示，指定端点作为第二条尺寸界线的原点。
+\begin{lstlisting}
+指定尺寸线位置或
+[多行文字(M)/文字(T)/角度(A)/水平(H)/垂直(V)/旋转(R)]:
+标注文字 = 6
+\end{lstlisting}
+最后，按图\ref{fig:dimlinearpositionset.png}所示，用鼠标指定尺寸线的位置，即可完成一个线性尺寸的标。图\ref{fig:dimlinearresult.png}所示的结果为一水平线性尺寸。
+
+通过观察可知，连接杆的水平尺寸是连续进行标注的，因此用AutoCAD的连续标注命令来完成更为简便快捷，其调用的方式有：
+\begin{itemize}
+\item 键盘输入dimcontinue\index{dimcontinue,连续标注}或dimcont
+\item 【标注】$\rightarrow $【连续】
+\item 【标注】\includegraphics[scale=0.45]{dimtoolsbar.png}工具栏中的【连续】\includegraphics[scale=0.45]{dimcontinue.png}图标
+\end{itemize}
+\begin{lstlisting}
+命令: DIMCONTINUE
+指定第二条尺寸界线原点或 [放弃(U)/选择(S)] <选择>:
+标注文字 = 3
+\end{lstlisting}
+连续命令启动后，会自动以上次非连续标注尺寸的第二条尺寸界线的原点为起点，并提示指定第二条尺寸界线的原点，此时按图\ref{fig:dimcontinuesecondnode.png}所示指定第二条尺寸界线的原点，即可完成一线性尺寸的标注。
+
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:dimcontinuesecondnode.png}\includegraphics[scale=0.6]{dimcontinuesecondnode.png}}\hspace{20pt}
+\subfloat[]{\label{fig:dimcontinueresult.png}\includegraphics[scale=0.6]{dimcontinueresult.png}}
+\caption{连续标注}
+\end{figure}
+
+接下来，可继续指定剩余的连续水平尺寸，结果如图\ref{fig:dimcontinueresult.png}所示。
+\begin{lstlisting}
+指定第二条尺寸界线原点或 [放弃(U)/选择(S)] <选择>:
+标注文字 = 27
+指定第二条尺寸界线原点或 [放弃(U)/选择(S)] <选择>:
+标注文字 = 4
+指定第二条尺寸界线原点或 [放弃(U)/选择(S)] <选择>:
+标注文字 = 9
+指定第二条尺寸界线原点或 [放弃(U)/选择(S)] <选择>:
+选择连续标注:
+\end{lstlisting}
+至此，已经完成了所用的水平线性尺寸的标注。接下来的垂直方向的线性尺寸标与水平方向的线性尺寸标是基本相同的，唯一的区别是垂直方向的线性尺寸需要标注直径符号。
+\begin{lstlisting}
+命令: dimlinear
+指定第一个尺寸界线原点或 <选择对象>:
+指定第二条尺寸界线原点:
+\end{lstlisting}
+垂直线性尺寸标注指定尺寸界线原点的方式与水平线性尺寸的方式一致，当命令提示指定尺寸线位置或选项时，选择【多行文字(M)】项，在弹出的对话框中，点击符号\includegraphics[scale=0.4]{symbletool.png}列表，并选择直径符号即可完成直径形式文字的输入。
+\begin{lstlisting}
+指定尺寸线位置或
+[多行文字(M)/文字(T)/角度(A)/水平(H)/垂直(V)/旋转(R)]: m
+\end{lstlisting}
+最后，用鼠标指定尺寸线的位置，即可完成重直线性尺寸的标注，结果如图\ref{fig:dimzhijinresult.png} 所示。
+\begin{lstlisting}
+指定尺寸线位置或
+[多行文字(M)/文字(T)/角度(A)/水平(H)/垂直(V)/旋转(R)]:
+标注文字 = 14
+\end{lstlisting}
+
+剩余的垂直线性尺寸标注过程与上述操作是一致的，因此不再重复，最终结果如图\ref{fig:dimresult.png} 所示。
+
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:dimzhijinresult.png}\includegraphics[scale=0.6]{dimzhijinresult.png}}\hspace{20pt}
+\subfloat[]{\label{fig:dimresult.png}\includegraphics[scale=0.6]{dimresult.png}}
+\caption{垂直尺寸标注}
+\end{figure}
 \item 标注技术要求
+
+由于连接杆的倒角尺寸未在图纸中予以标注，因此需要用文字在技术要求中注明未注倒角0.5的字样。此项操作可由多行文字命令完成。
+\begin{lstlisting}
+命令: MTEXT
+当前文字样式: "gb"  文字高度:  5  注释性:  否
+指定第一角点:
+指定对角点或 [高度(H)/对正(J)/行距(L)/旋转(R)/样式(S)/宽度(W)/栏(C)]:
+\end{lstlisting}
 \end{procedure}
+
+经过上述步骤的操作，最终完成的连接杆零件图如图\ref{fig:lianjieganbujuresult.png}所示。
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.4]{lianjieganbujuresult.png}
+\caption{连接杆布局结果}\label{fig:lianjieganbujuresult.png}
+\end{figure}
 \endinput
