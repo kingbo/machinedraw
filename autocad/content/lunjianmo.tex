@@ -1,0 +1,106 @@
+\section{轮三维建模}
+\begin{procedure}
+\item 切换视图方向为西南等轴测
+
+\begin{lstlisting}
+命令: -VIEW
+输入选项 [?/删除(D)/正交(O)/恢复(R)/保存(S)/设置(E)/窗口(W)]: swiso
+\end{lstlisting}
+
+\item 切换坐标系为左视图方向
+
+\begin{lstlisting}
+命令: UCS
+当前 UCS 名称: *世界*
+指定 UCS 的原点或 [面(F)/命名(NA)/对象(OB)/上一个(P)/视图(V)/世界(W)/X/Y/Z/Z 轴(ZA)] <世界>: za
+指定新原点或 [对象(O)] <0,0,0>:
+在正 Z 轴范围上指定点 <0.0000,0.0000,1.0000>: -1,0,0
+\end{lstlisting}
+
+\item 构建图\ref{fig:lunfenxi3.png}所示套筒
+
+\begin{lstlisting}
+命令: CYLINDER
+指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭圆(E)]:
+指定底面半径或 [直径(D)]: 50
+指定高度或 [两点(2P)/轴端点(A)]: 14
+\end{lstlisting}
+
+\begin{lstlisting}
+命令: CYLINDER
+指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭圆(E)]:
+指定底面半径或 [直径(D)] <50.0000>: 7
+指定高度或 [两点(2P)/轴端点(A)] <14.0000>:
+\end{lstlisting}
+
+\begin{lstlisting}
+命令: SUBTRACT
+选择要从中减去的实体、曲面和面域...
+选择对象: 找到 1 个
+选择对象:  选择要减去的实体、曲面和面域...
+选择对象: 找到 1 个
+选择对象:
+\end{lstlisting}
+
+\item 构建图\ref{fig:lunfenxi4.png}所示套筒
+
+\begin{lstlisting}
+命令: CYLINDER
+指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭圆(E)]:
+指定底面半径或 [直径(D)] <7.0000>: 35
+指定高度或 [两点(2P)/轴端点(A)] <14.0000>: -6
+\end{lstlisting}
+
+\begin{lstlisting}
+命令: CYLINDER
+指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭圆(E)]:
+指定底面半径或 [直径(D)] <35.0000>: 15
+指定高度或 [两点(2P)/轴端点(A)] <-6.0000>:
+\end{lstlisting}
+
+\begin{lstlisting}
+命令: SUBTRACT
+选择要从中减去的实体、曲面和面域...
+选择对象: 找到 1 个
+选择对象:  选择要减去的实体、曲面和面域...
+选择对象: 找到 1 个
+选择对象:
+\end{lstlisting}
+
+\item 组合构建图\ref{fig:lunfenxi5.png}所示模型
+
+\begin{lstlisting}
+命令: SUBTRACT
+选择要从中减去的实体、曲面和面域...
+选择对象: 找到 1 个
+选择对象:  选择要减去的实体、曲面和面域...
+选择对象: 找到 1 个
+选择对象:
+\end{lstlisting}
+
+\item 构建图\ref{fig:lunfenxi5.png}所示模型的镜像c
+
+\begin{lstlisting}
+命令: mirror3d
+选择对象: 找到 1 个
+选择对象:
+指定镜像平面 (三点) 的第一个点或
+  [对象(O)/最近的(L)/Z 轴(Z)/视图(V)/XY 平面(XY)/YZ 平面(YZ)/ZX 平面(ZX)/三点(3)] <三点>: xy
+指定 XY 平面上的点 <0,0,0>:
+是否删除源对象？[是(Y)/否(N)] <否>:
+\end{lstlisting}
+
+\item 合成轮零件三维模型
+
+\begin{lstlisting}
+命令: UNION
+选择对象: 指定对角点: 找到 2 个
+选择对象:
+\end{lstlisting}
+
+\item 切换视觉样式为灰度
+
+\item 保存在轮零件三维模型
+
+\end{procedure}
+\endinput
