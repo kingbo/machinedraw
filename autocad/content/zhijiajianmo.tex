@@ -1,3 +1,325 @@
 \section{支架三维建模}
 
+切割建模法和叠加建模法不仅适用于实体建模，也适用于采用旋转和拉伸方式构建三维模型。切割建模法和叠加建模法是通用性的方法。本节将采用叠加建模法来构建支架的三维模型。
+
+\subsection{构建顶板}
+\begin{procedure}
+\item 切换视图方向为西南等轴测
+
+\begin{lstlisting}
+命令: -VIEW
+输入选项 [?/删除(D)/正交(O)/恢复(R)/保存(S)/设置(E)/窗口(W)]: swiso
+\end{lstlisting}
+
+\item 构建顶板基础
+
+顶板在忽略倒角后其整个立体是长方体，因此可以以长方体作为顶板建模的基础。在AutoCAD中，调用绘制长方体命令的方法有：
+\begin{itemize}
+\item 键盘输入box\index{box,长方体}
+\item 【绘图】$\rightarrow $【建模】$\rightarrow $【长方体】
+\item 【实体】\includegraphics[scale=0.45]{solidtoolbar}工具栏中的【长方体】\includegraphics[scale=0.45]{boxtool}图标
+\end{itemize}
+
+调用长方体命令后，命令提示指定第一外角点，此时用鼠标在三维空间中任意指定一点。
+\begin{lstlisting}
+命令: BOX
+指定第一个角点或 [中心(C)]:
+\end{lstlisting}
+
+接下来，参照支架零件图中的尺寸以相对坐指定另一个角点。
+\begin{lstlisting}
+指定其他角点或 [立方体(C)/长度(L)]: @44,36
+\end{lstlisting}
+然后，依据零件图中的尺寸指定支架顶板的高度，结果如图\ref{fig:zhijiajianmo1}所示。
+
+\begin{lstlisting}
+指定高度或 [两点(2P)]: 2
+\end{lstlisting}
+
+\begin{figure}[htbp]
+\centering
+\begin{floatrow}[2]
+\ffigbox{\caption{顶板基础}\label{fig:zhijiajianmo1}}{\includegraphics[scale=0.7]{zhijiajianmo1}}
+\ffigbox{\caption{三点创建UCS}}{
+\subfloat[]{\label{fig:ucsselectnode1}\includegraphics[scale=0.3]{ucsselectnode1}}\hspace{20pt}
+\subfloat[]{\label{fig:ucsselectnode2}\includegraphics[scale=0.3]{ucsselectnode2}}\\
+\subfloat[]{\label{fig:ucsselectnode3}\includegraphics[scale=0.3]{ucsselectnode3}}\hspace{20pt}
+\subfloat[]{\label{fig:zhijiajianmo2}\includegraphics[scale=0.3]{zhijiajianmo2}}
+}
+\end{floatrow}
+\end{figure}
+
+\item 制作顶板孔
+
+\begin{enumerate}
+\item 切换用户坐标系
+
+为方便制作支架顶板上的孔，我们将用户坐标系定义到顶板的角点上，其操作方法是采用默认的三点方式，即按图\ref{fig:ucsselectnode1}的方式指定原点，按图\ref{fig:ucsselectnode2}的方式指定$x$轴上的点，按图\ref{fig:ucsselectnode3}的方式指定$y$轴上的点，最终的坐标系效果如图\ref{fig:zhijiajianmo2}所示。从图中可以看出，$z$轴的正方向是指向俯视投影面的。
+
+
+\begin{lstlisting}
+命令: UCS
+当前 UCS 名称: *世界*
+指定 UCS 的原点或 [面(F)/命名(NA)/对象(OB)/上一个(P)/视图(V)/世界(W)/X/Y/Z/Z 轴(ZA)] <世界>:
+指定 X 轴上的点或 <接受>:
+指定 XY 平面上的点或 <接受>:
+\end{lstlisting}
+
+
+\item 绘制孔圆柱体
+
+由于用户坐标系已经移动到长方体的角点之上，因此可根据支架零件图中的定圆心定位尺寸用绝对坐标来指定圆柱体的底圆圆心。
+
+\begin{lstlisting}
+命令: CYLINDER
+指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭圆(E)]: 20,18
+指定底面半径或 [直径(D)]: 7
+指定高度或 [两点(2P)/轴端点(A)] <2.0000>: 2
+\end{lstlisting}
+
+\yaodian{适时的切换用户坐标系能够利用更方便的定位。}
+
+\item 做差集
+
+完成差集操作后，顶板孔的效果如图\ref{fig:zhijiajianmo3}所示。
+\begin{lstlisting}
+命令: SUBTRACT 
+选择要从中减去的实体、曲面和面域...
+选择对象: 找到 1 个
+选择对象:  选择要减去的实体、曲面和面域...
+选择对象: 找到 1 个
+选择对象:
+\end{lstlisting}
+
+\end{enumerate}
+
+\begin{figure}[htbp]
+\centering
+\begin{floatrow}[2]
+\ffigbox{\caption{制作顶板孔}\label{fig:zhijiajianmo3}}{\includegraphics[scale=0.7]{zhijiajianmo3}}
+\ffigbox{\caption{制作倒角边}\label{fig:zhijiajianmo4}}{\includegraphics[scale=0.7]{zhijiajianmo4}}
+\end{floatrow}
+\end{figure}
+\item 倒角边
+
+根据支架零件图可知顶板的上的倒角边是整个面斜斜22度，由于倒角边命令不具备指定角度的功能。因此需要通过三角函数计算另一边的长度才能够准确地倒出22度的倒角边。直接用计算器计算出准确的值后输入的方法虽然能够完成，但这样做并不可取。主要是因为AutoCAD本身就具备计算功能，可以轻松地完成此类计算，故选择[表达式(E)]选项，并输入正确的计算表达式。顶板倒角边后的效果如图\ref{fig:zhijiajianmo4}所示。
+
+
+\begin{lstlisting}
+命令: CHAMFEREDGE
+距离 1 = 1.0000，距离 2 = 1.0000
+选择一条边或 [环(L)/距离(D)]: d
+指定距离 1 或 [表达式(E)] <1.0000>: 2
+指定距离 2 或 [表达式(E)] <1.0000>: e
+输入表达式: 2*tan(22)
+选择一条边或 [环(L)/距离(D)]:
+选择同一个面上的其他边或 [环(L)/距离(D)]:
+按 Enter 键接受倒角或 [距离(D)]:
+\end{lstlisting}
+
+\end{procedure}
+
+\subsection{构建支耳}
+\begin{procedure}
+\item 制作支耳基础楔体
+
+支架支耳忽略倒圆角后可以简化为一个基本的楔体。在AutoCAD中构建楔体命令的调用方法有：
+\begin{itemize}
+\item 键盘输入wedge\index{wedge,楔体}
+\item 【绘图】$\rightarrow $【建模】$\rightarrow $【楔体】
+\item 【实体】\includegraphics[scale=0.45]{solidtoolbar} 工具栏中的【楔体】\includegraphics[scale=0.45]{wedgetool}图标
+\end{itemize}
+
+楔体命令调用后以需要指定两个对角点来绘制底面，此操作与长方体定义底面的操作是一致的。此时在顶板的旁边任意点取一点来指定第一个角点，然后根据尺寸用相对坐标指定第二个角点。
+
+\begin{lstlisting}
+命令: wedge
+指定第一个角点或 [中心(C)]:
+指定其他角点或 [立方体(C)/长度(L)]: @44,3
+\end{lstlisting}
+
+接下来需要指定楔体的高度，由于无法从零件图中直接获取高度尺寸，因此也需要通过计算来获取高度值。但是楔体命令没有表达式选项，如何才能够使用AutoCAD的计算功能呢？其方法是调用计算器命令，即在命令行中输入\lstinline{'cal} \index{cal,计算器}来临时调用计算器，然后输入表达式进行计算。最终结果如图\ref{fig:zhijiajianmo5}所示。
+\begin{lstlisting}
+指定高度或 [两点(2P)] <2.0000>: 'cal
+>>>> 表达式: 44/tang(22)
+正在恢复执行 WEDGE 命令。
+指定高度或 [两点(2P)] <2.0000>: 108.90382155032
+\end{lstlisting}
+
+\begin{figure}[htbp]
+\centering
+\begin{floatrow}[3]
+\ffigbox{\caption{支耳基础楔体}\label{fig:zhijiajianmo5}}{\includegraphics[scale=0.4]{zhijiajianmo5}}
+\ffigbox{\caption{楔体倒圆角}\label{fig:zhijiajianmo6}}{\includegraphics[scale=0.6]{zhijiajianmo6}}
+\ffigbox{\caption{构建支耳孔}\label{fig:zhijiajianmo7}}{\includegraphics[scale=0.6]{zhijiajianmo7}}
+\end{floatrow}
+\end{figure}
+\item 倒支耳圆角边
+
+接下来，用圆角边命令制作$R10$的圆角边，效果如图\ref{fig:zhijiajianmo6}所示。
+
+\begin{lstlisting}
+命令: FILLETEDGE
+半径 = 1.0000
+选择边或 [链(C)/环(L)/半径(R)]: r
+输入圆角半径或 [表达式(E)] <1.0000>: 10
+选择边或 [链(C)/环(L)/半径(R)]:
+选择边或 [链(C)/环(L)/半径(R)]:
+已选定 1 个边用于圆角。
+按 Enter 键接受圆角或 [半径(R)]:
+\end{lstlisting}
+
+\item 制作孔
+
+\begin{enumerate}
+\item 切换用户坐标系
+
+由于AutoCAD中圆柱体底面是与$XY$平面平行的，而支耳中的圆柱孔的底面是与主视图平行的，因此需要切换用用户坐标系，使用户坐标系中的$XY$平面与主视图平行。
+
+\begin{lstlisting}
+命令: UCS
+当前 UCS 名称: *没有名称*
+指定 UCS 的原点或 [面(F)/命名(NA)/对象(OB)/上一个(P)/视图(V)/世界(W)/X/Y/Z/Z 轴(ZA)] <世界>:
+指定 X 轴上的点或 <接受>:
+指定 XY 平面上的点或 <接受>:
+\end{lstlisting}
+
+\yaodian{理解AutoCAD基本实体与$XY$平面之间的关系，能够有助于建立更有针对性的用户坐标系。}
+
+\item 构建孔圆柱体
+
+以支耳的圆角边的前圆心做为孔圆柱体的底圆圆心来构建孔圆柱体。
+\begin{lstlisting}
+命令: CYLINDER
+指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭圆(E)]:
+指定底面半径或 [直径(D)] <7.0000>: 4
+指定高度或 [两点(2P)/轴端点(A)] <108.9038>: 3
+\end{lstlisting}
+
+\item 做差集
+
+然后，从支耳中去除孔的圆柱体便可得到支耳的孔，效果如图\ref{fig:zhijiajianmo7} 所示。
+\begin{lstlisting}
+命令: SUBTRACT 
+选择要从中减去的实体、曲面和面域...
+选择对象: 找到 1 个
+选择对象:  选择要减去的实体、曲面和面域...
+选择对象: 找到 1 个
+选择对象:
+\end{lstlisting}
+
+\end{enumerate}
+\end{procedure}
+
+\subsection{组合构建支架}
+\begin{procedure}
+\item 叠加支耳
+
+由于顶板和支耳是分别制作的，故需要将两者组合起来构成一个整个。因此需要将支耳叠加到顶板之上；当然也可以将顶板叠加在支耳之上，两者效果是一样的。在AutoCAD中实现两对象叠加命令有移动和三维对齐。移命令只能用于已经建立的模型组件与实际需要方向一致的情况，三维对齐命令不仅能够适用于方向一致的情况，也适用于不一致的情况。当模型组件与实际方向一致时，使用移动命令则最为简便。AutoCAD中调用移动命令的方法有：
+\begin{itemize}
+\item 键盘输入move\index{move，移动}或M
+\item 【修改】$\rightarrow $【移动】
+\item 【修改】\includegraphics[scale=0.45]{edittools}工具栏中的【移动】\includegraphics[scale=0.45]{movetool}图标
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:moveselectobj}\includegraphics[scale=0.5]{moveselectobj}}\hspace{20pt}
+\subfloat[]{\label{fig:moveselectbase}\includegraphics[scale=0.5]{moveselectbase}}\hspace{20pt}
+\subfloat[]{\label{fig:moveselectsec}\includegraphics[scale=0.5]{moveselectsec}}\hspace{20pt}
+\subfloat[]{\label{fig:moveresult}\includegraphics[scale=0.5]{moveresult}}
+\caption{移动操作过程}
+\end{figure}
+
+调用移动命令后，会提示选择要移动的对象，此时用鼠标选择支耳作为要移动的对象，选择后会以虚线形式显示，效果如图\ref{fig:moveselectobj}所示。
+
+\begin{lstlisting}
+命令: MOVE
+选择对象: 找到 1 个
+选择对象:
+\end{lstlisting}
+
+接下来选择图\ref{fig:moveselectbase}所示的点作为基点。
+
+\begin{lstlisting}
+指定基点或 [位移(D)] <位移>:
+\end{lstlisting}
+
+最后选择图\ref{fig:moveselectsec}所示的点作为第二点，操作完成后即可支耳移动到顶板之上，效果如图\ref{fig:moveresult}所示。
+
+\begin{lstlisting}
+指定第二个点或 <使用第一个点作为位移>:
+\end{lstlisting}
+
+\item 制作支耳镜像
+
+支架具有两个支耳，因此需要使用镜像的方法直接生成另一个支耳，在本例中将使用三点方式来指定镜像面。即选择图\ref{fig:mirror3dselectnode1}所示中点作为镜像平面上的第一点，选择图\ref{fig:mirror3dselectnode2}所示中点作为镜像平面上的第二点，选择图\ref{fig:mirror3dselectnode3}所示中点作为镜像平面上的第三点。完成后效果如图\ref{fig:zhijiajianmo8}所示。
+
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:mirror3dselectnode1}\includegraphics[scale=0.5]{mirror3dselectnode1}}\hspace{20pt}
+\subfloat[]{\label{fig:mirror3dselectnode2}\includegraphics[scale=0.5]{mirror3dselectnode2}}\hspace{20pt}
+\subfloat[]{\label{fig:mirror3dselectnode3}\includegraphics[scale=0.5]{mirror3dselectnode3}}\hspace{20pt}
+\subfloat[]{\label{fig:zhijiajianmo8}\includegraphics[scale=0.5]{zhijiajianmo8}}
+\end{figure}
+
+\begin{lstlisting}
+命令: MIRROR3D
+选择对象: 找到 1 个
+选择对象:
+指定镜像平面 (三点) 的第一个点或
+  [对象(O)/最近的(L)/Z 轴(Z)/视图(V)/XY 平面(XY)/YZ 平面(YZ)/ZX 平面(ZX)/三点(3)] <三点>: 
+  在镜像平面上指定第二点: 
+  在镜像平面上指定第三点:
+是否删除源对象？[是(Y)/否(N)] <否>:
+\end{lstlisting}
+
+\item 合并实体
+
+接下来将顶板和两个支耳组合在一起，形成一个整个体，为另外两圆边创造条件。
+
+\begin{lstlisting}
+命令: UNION
+选择对象: 指定对角点: 找到 3 个
+选择对象:
+\end{lstlisting}
+
+\item 倒圆角边
+
+完成合并操作后，需要构建支架中两个$R2$圆角边的才能够最终完成支架的建模，完成后效果如图\ref{fig:zhijiajianmo9}所示。
+
+\begin{lstlisting}
+命令: FILLETEDGE
+半径 = 10.0000
+选择边或 [链(C)/环(L)/半径(R)]: r
+输入圆角半径或 [表达式(E)] <10.0000>: 2
+选择边或 [链(C)/环(L)/半径(R)]:
+选择边或 [链(C)/环(L)/半径(R)]:
+选择边或 [链(C)/环(L)/半径(R)]:
+已选定 2 个边用于圆角。
+按 Enter 键接受圆角或 [半径(R)]:
+\end{lstlisting}
+
+\begin{figure}[htbp]
+\centering
+\begin{floatrow}[2]
+\ffigbox{\caption{支架倒圆角}\label{fig:zhijiajianmo9}}{\includegraphics[scale=0.5]{zhijiajianmo9}}
+\ffigbox{\caption{支架三维模型}\label{fig:zhijiajianmo10}}{\includegraphics[scale=0.5]{zhijiajianmo10}}
+\end{floatrow}
+\end{figure}
+\item 切换视觉样式为灰度
+
+
+\begin{lstlisting}
+命令: VSCURRENT
+输入选项 [二维线框(2)/线框(W)/隐藏(H)/真实(R)/概念(C)/着色(S)/带边缘着色(E)/灰度(G)/勾画(SK)/X 射线(X)/其他(O)] <二维线框>: g
+\end{lstlisting}
+
+将视觉样式切换为灰度后，最终的支架三维模型效果如图\ref{fig:zhijiajianmo10}所示。
+\item 保存支架模型
+
+最后将建立的支架三维模型以“支架.dwg”的文件名予以保存。
+
+\end{procedure}
+
 \endinput
