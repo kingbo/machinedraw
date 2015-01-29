@@ -40,6 +40,9 @@
 \newcommand{\dawu}{\fontsize{11pt}{11pt}\selectfont} % 大五, 单倍行距 
 \newcommand{\wuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}%五号, 单倍行距
 
+\setcounter{secnumdepth}{4}%设置编号深度
+%\setcounter{tocdepth}{4}%设置目录深度
+
 %%%%%%%%%%%%%重定义章节的格式%%%%%%%%%%%%%%%%%%%
 
 \titlecontents{chapter}[1em]{\vspace{.5\baselineskip}\bfseries}
@@ -104,12 +107,12 @@ morekeywords={
 arc, arraypolay, arrayrect,
 block, break, blend, box, 
 circle, chamfer, chamferedge, cylinder, copy,
-dimcontinue,  dimlinear, dimstyle, dimcont, dimlin, dimradius, dimdiameter, 
+dimcontinue,  dimlinear, dimstyle, dimcont, dimlin, dimradius, dimdiameter, dimangular, 
 erase, ellipse, explode, extend,  
 fillet, filletedge, 
 hatch, hatchedit,
 insert, join, 
-line,  layer, 
+line,  layer, layoutwizard, linetype, 
 move, mirror, mtext, mspace, mirror3d, 
 offset, 
 pagesetup, pspace, polygon, pline, pan, point,
@@ -124,16 +127,26 @@ zoom,
 }, 
 sensitive=false, 
 }
-\lstloadlanguages{autocad}                  % 所要粘贴代码的编程语言 
-\lstset{language=autocad,tabsize=4, keepspaces=true, 
-    xleftmargin=2em,xrightmargin=2em, aboveskip=1em, 
-    backgroundcolor=\color{lightgray},    % 定义背景颜色 
+\lstloadlanguages{autocad}     % 所要粘贴代码的编程语言 
+\lstset{
+	language=autocad,
+	tabsize=4, 
+	keepspaces=true, 
+    xleftmargin=2em,
+    xrightmargin=2em, 
+    aboveskip=1em, 
+    backgroundcolor=\color{lightgray},  % 定义背景颜色 
     frame=none,                      % 表示不要边框 
-    keywordstyle=\color{blue}\bfseries,     breakindent=22pt,stepnumber=1,numberstyle=\tiny, 
+    keywordstyle=\color{blue}\bfseries,    
+    breakindent=22pt,
+    stepnumber=1,
+    numberstyle=\tiny, 
     basicstyle=\footnotesize, 
     showspaces=false, 
     flexiblecolumns=true, 
-    breaklines=true, breakautoindent=true,breakindent=4em, 
+    breaklines=true, 
+    breakautoindent=true,
+    breakindent=4em, 
     escapeinside={/*@}{@*/} 
 } 
 \endinput
