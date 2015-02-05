@@ -44,12 +44,14 @@
 %\setcounter{tocdepth}{4}%设置目录深度
 
 %%%%%%%%%%%%%重定义章节的格式%%%%%%%%%%%%%%%%%%%
+\renewcommand{\partname}{} 
+\renewcommand{\thepart}{第\,\Roman{part}\,部分} 
 
 \titlecontents{chapter}[1em]{\vspace{.5\baselineskip}\bfseries}
 {第\thecontentslabel 章\quad}{}
 {\hspace{.5em}\titlerule*[10pt]{$\cdot$}\contentspage}
 \renewcommand{\chaptername}{第\,\thechapter \,章}
-\titleformat{\chapter}[hang]{\centering\huge\bfseries}{\chaptername}{1em}{}
+%\titleformat{\chapter}[hang]{\centering\huge\bfseries}{\chaptername}{1em}{}
 \titlespacing{\chapter}{0pt}{*0}{*4}
 \pagestyle{fancy}
 \fancyhf{}
@@ -104,9 +106,10 @@
 %源代码格式设置
 \lstdefinelanguage{autocad}{
 morekeywords={
-arc, arraypolay, arrayrect,
+3dalign, 
+arc, arraypolay, arrayrect, align, 
 block, break, blend, box, 
-circle, chamfer, chamferedge, cylinder, copy,
+circle, chamfer, chamferedge, cylinder, copy, copyclip, 
 dimcontinue,  dimlinear, dimstyle, dimcont, dimlin, dimradius, dimdiameter, dimangular, 
 erase, ellipse, explode, extend,  
 fillet, filletedge, 
@@ -114,8 +117,9 @@ hatch, hatchedit,
 insert, join, 
 line,  layer, layoutwizard, linetype, 
 move, mirror, mtext, mspace, mirror3d, 
+new, 
 offset, 
-pagesetup, pspace, polygon, pline, pan, point,
+pagesetup, pspace, polygon, pline, pan, point, pasteclip, 
 rectang, region, revolve, rotate,  
 subtract, save, saveas, solprof,  soldraw, solview, scale, style, stretch, 
 trim, text, 
