@@ -1,5 +1,7 @@
 \section{轴三维模型构建}\label{sec:zhoujianmo}
+
 在\ref{sec:zhoufengxi}节中提出了叠加建模和运用包含关建模两种方式构建轴零件的三维模型。两种方试对于图\ref{fig:xiaolunzhou}所示的轴零件而言，其建模过程都很简单，其差别主要是选择的组合点不一样。本节主以叠加建模法介绍轴零件的建模过程，读者可若有兴趣可自行实践运用包含关系建模法。
+
 \begin{procedure}
 \item 将视图方向切换为左视图
 
@@ -49,6 +51,7 @@
 指定高度或 [两点(2P)/轴端点(A)] <2.0000>: 35
 \end{lstlisting}
 \item 构建$\phi 6$圆柱体
+
 接下来，按照图\ref{fig:zhousecondselect}所示位置选择$\phi 8$圆柱体的圆心做为$\phi 6$圆柱体的底圆圆心，并以此构建$\phi 6$圆柱体，其结果如图\ref{fig:zhouthree.}所示。
 
 \begin{figure}[htbp]
@@ -65,12 +68,14 @@
 指定高度或 [两点(2P)/轴端点(A)] <35.0000>: 3
 \end{lstlisting}
 \item 合并实体
+
 致此，我们已经分段构建了轴零件的三维模型，但是这些实体然是独立存在的，并没构成一个整体，因此需要将其合并为一个实体。在AutoCAD中，将多个实体合并的一个实体的命令是并集命令，其启动方法有：
 \begin{itemize}
 \item 键盘输入UNION\index{union,并集}或UNI。
 \item 【修改】$\rightarrow$【实体编辑】$\rightarrow$【并集】。
 \item 【实体编辑】$\triangleright$【并集】图标\includegraphics[scale=0.7]{union.png}。
 \end{itemize}
+
 启动命令后，按照图\ref{fig:unionselect}所示方式框选轴的3个组成部分，选择完后会以图\ref{fig:unionselectreult}所示的虚线形式表示被选中的对象。结束命令后，3个实体合并为一个整体，结果如图\ref{fig:unionresult}所示。
 \begin{lstlisting}
 命令:  UNION
@@ -86,6 +91,7 @@
 \end{figure}
 
 \item 轴倒角
+
 由于被倒角的两个位置，并不位于现一个平面之内，因此需要分两次进行，首先倒图\ref{fig:zhouchamferedge1}所示$\phi 6$圆柱体的角。
 \begin{lstlisting}
 命令: CHAMFEREDGE

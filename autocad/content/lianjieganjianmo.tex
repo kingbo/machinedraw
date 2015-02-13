@@ -9,6 +9,7 @@
 \end{lstlisting}
 
 \item 绘制特征面构成矩形
+
 由\ref{sec:lianjieganfenxi}节的图\ref{fig:lianjieganfenxi2}可知，要构成连接轴的特征面需要绘制5个尺寸不相同的矩形。在AutoCAD中绘制矩形需要用到矩形命令，其调用方法有：
 \begin{itemize}
 \item 键盘输入RECTANG\index{rectang,矩形}或REC
@@ -21,10 +22,12 @@ AutoCAD的矩形命令是通过矩形中的两个对角点来构造矩形的，�
 命令: RECTANG
 指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)/宽度(W)]:
 \end{lstlisting}
+
 命令提示指定第一个角点时，由于此时刚开始绘图，所以只需要用鼠标在绘图区中任意点一点即可。接下来命令提示指定第二个点，根据图形我们可以看出最左边矩形的右上对角点的坐标相对于左下角点，其增量关系是$x$轴方向上增加了9mm，$y$轴方向上增加了7mm，为表达($\Delta x,\Delta y$)这种相对的坐标关系，AutoCAD采用在坐标增量前添加@符号来表示该坐标点为相对坐标。因此，我们在指定另一个角点的提示后面输入(@9,7)来表示第二个角点的坐标位置。
 \begin{lstlisting}
 指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @9,7
 \end{lstlisting}
+
 完成输入后，可以得到图\ref{fig:lianjiezhou1}所示的矩形。
 
 \begin{figure}[htbp]
@@ -49,18 +52,21 @@ AutoCAD的矩形命令是通过矩形中的两个对角点来构造矩形的，�
 \subfloat[]{\label{fig:lianjiezhou4}\includegraphics[scale=0.4]{lianjiezhou4.png}}
 \caption{构成矩形绘制过程二}
 \end{figure}
+
 第三个矩形以第二个矩形为基础，其操作与第二矩形的操作是一致的，仅仅是对角点的坐标为(@27，7)，结果如图\ref{fig:lianjiezhou3}所示。
 \begin{lstlisting}
 命令: RECTANG
 指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)/宽度(W)]:
 指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @27,7
 \end{lstlisting}
+
 第四个矩形以第三个矩形为基础，其对角点坐标为(@3,9)，结果如图\ref{fig:lianjiezhou4}所示。
 \begin{lstlisting}
 命令: RECTANG
 指定第一个角点或 [倒角(C)/标高(E)/圆角(F)/厚度(T)/宽度(W)]:
 指定另一个角点或 [面积(A)/尺寸(D)/旋转(R)]: @3,9
 \end{lstlisting}
+
 第五个矩形以第四个矩形为基础，其对角点坐标为(@6,7)，结果如图\ref{fig:lianjiezhou5}所示。
 \begin{lstlisting}
 命令: RECTANG
@@ -83,11 +89,13 @@ AutoCAD的矩形命令是通过矩形中的两个对角点来构造矩形的，�
 \ffigbox{\caption{面域选择结果}\label{fig:lianjiezhou6}}{\includegraphics[scale=0.4]{lianjiezhou6.png}}
 \end{floatrow}
 \end{figure}
+
 面域命令提示选择对象时，用鼠标框选绘制的5个矩形，选择后所有的矩形会以虚线形式显示，结果如图\ref{fig:lianjiezhou6}所示。
 \begin{lstlisting}
 命令: region
 选择对象: 指定对角点: 找到 5 个
 \end{lstlisting}
+
 结束选择后，命令会提示面域操作的结果。若结果为0，通常表示面域失败经。引起失败的主要原因是选择的线框是非封闭的，或者是重复进行操作。实际中，线框不封闭是导致面域失败的主要原因。
 \begin{lstlisting}
 选择对象:
@@ -133,18 +141,22 @@ AutoCAD的矩形命令是通过矩形中的两个对角点来构造矩形的，�
 \subfloat[]{\label{fig:revolvecenter2}\includegraphics[scale=0.4]{revolvecenter2.png}}
 \caption{定义旋转轴}
 \end{figure}
+
 选择完旋转对象后，按照图\ref{fig:revolvecenter1}所示方式，用端点捕足选择旋转轴的起点。
 \begin{lstlisting}
 指定轴起点或根据以下选项之一定义轴 [对象(O)/X/Y/Z] <对象>:
 \end{lstlisting}
+
 接下来，以图\ref{fig:revolvecenter2}的方式，选择轴端点。
 \begin{lstlisting}
 指定轴端点:
 \end{lstlisting}
+
 最后，指定旋转角度，默认为360度。
 \begin{lstlisting}
 指定旋转角度或 [起点角度(ST)/反转(R)/表达式(EX)] <360>:
 \end{lstlisting}
+
 旋转完成后，结果如图\ref{fig:revolveresult}所示。
 \item 切换视图方向致西南等轴测
 
@@ -174,6 +186,7 @@ AutoCAD的矩形命令是通过矩形中的两个对角点来构造矩形的，�
 选择同一个面上的其他边或 [环(L)/距离(D)]:
 按 Enter 键接受倒角或 [距离(D)]:
 \end{lstlisting}
+
 再完成$\phi 14$长6mm圆柱体的倒角。
 \begin{lstlisting}
 命令:  CHAMFEREDGE

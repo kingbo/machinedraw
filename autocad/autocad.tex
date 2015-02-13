@@ -1,5 +1,5 @@
 %!Tex Program=xelatex
-\documentclass[a4paper,twoside]{book}
+\documentclass[12pt,a4paper,twoside,openany]{book}
 
 %%%%%%%%%%导入相关宏包%%%%%%%%%%%%%%%%%%%%%%
 
@@ -20,22 +20,55 @@
 \mainmatter
 \graphicspath{{pdf/}{png/}}
 \part{小轮组三维建模}
-\include{content/xiaoluntaotong}
-\include{content/xiaolunlunzhou}
-\include{content/xiaolunlianjiegan}
-\include{content/xiaolunlunzhi}
-\include{content/xiaolunzhijia}
-\include{content/xiaolunzuangpei}
-\part{台虎钳三维建模}
-\include{content/taihuqiankou}
-\include{content/taihuluomu}
-\include{content/taihuyuanluoshiding}
-\include{content/taihushigan}
-\include{content/taihuhuakuai}
-\include{content/taihudongzhang}
-\include{content/taihudizuo}
-\include{content/taihuzuangpei}
-\part{航模发动机三维建模}
+作为本书的第一部分，我们将构建小轮组组成零件的三维模型和小轮组装配三维模型。通过完成小轮组三维建模任务，让读者对应用AutoCAD进行三维建模的特点具有初步的认识和了解，掌握和理解以下几个方面的内容：
+\begin{itemize}
+\item 零件图和三维模型之间的对应关系
+\item AutoCAD基本的三维建模命令
+\item 三视图规律
+\item 相关的国家制图标准
+\item AutoCAD生成基本视图的方法
+\end{itemize} 
+%%%%%%%%%%%%%第一章%%%%%%%%%%%%%%%%%%%%%%%
+\input{content/xiaoluntaotong}
+\input{content/gongchentu}
+\input{content/taotongjianmo}
+\input{content/lijieshitu}
+\input{content/jianyantaotong}
+\input{content/taotongxiaojie}
+\input{content/taotongexam}
+%%%%%%%%%%%%%第二章%%%%%%%%%%%%%%%%%%%%%%%
+\input{content/xiaolunlunzhou}
+\input{content/zhoufengxi}
+\input{content/zhoujianmo}
+\input{content/zhouzhushitu}
+\input{content/tufubili}
+\input{content/zhouxiaojie}
+\input{content/zhouexam}
+%%%%%%%%%%%%%第三章%%%%%%%%%%%%%%%%%%%%%%%
+\input{content/xiaolunlianjiegan}
+\input{content/lianjieganfenxi}
+\input{content/lianjieganjianmo}
+\input{content/lianjieganshitu}
+%%%%%%%%%%%%%第四章%%%%%%%%%%%%%%%%%%%%%%%
+\input{content/xiaolunlunzhi}
+\input{content/lunfenxi}
+\input{content/lunjianmo}
+\input{content/lunshitu}
+%%%%%%%%%%%%%第五章%%%%%%%%%%%%%%%%%%%%%%%
+\input{content/xiaolunzhijia}
+\input{content/zhijianfenxi}
+\input{content/zhijiajianmo}
+\input{content/zhijiashitu}
+\input{content/jibengjiheti}
+%%%%%%%%%%%%%第六章%%%%%%%%%%%%%%%%%%%%%%%
+\input{content/xiaolunzuangpei}
+\input{content/dingzhimoban}
+\input{content/xiaolunzujianmo}
+\input{content/xiaolunzungpeitu}
+\part{零件三维建模实例}
+\include{content/taihuqian}
+
+%\part{航模发动机三维建模}
 \include{content/hangmoganggai}
 \include{content/hangmozhuzou}
 \include{content/hangmoqudonghe}

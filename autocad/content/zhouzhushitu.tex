@@ -83,6 +83,7 @@ AutoCAD默认开始工作的空间是模型空间。模型空间是一个无限�
 
 切换完成后，其结果如图\ref{fig:bujuforntview}所示。
 \item 设置视口显示比例
+
 为使生成的视图以国家标准规定的比例显示，我们需要在视口比例文本框\includegraphics[scale=0.5]{shikoutools.png}  中将比例设置为5:1\includegraphics[scale=0.5]{shikoutools2.png}。
 
 通常情况下，AutoCAD经典模式的视口工具栏默认是不显示的，需要在AutoCAD工具栏的空白处右击，弹出图\ref{fig:toolsset}所示的菜单，勾选视口，即可弹出视口工具栏\includegraphics[scale=0.5]{shikoutools.png}。
@@ -98,6 +99,7 @@ AutoCAD默认开始工作的空间是模型空间。模型空间是一个无限�
 选择对象: 找到 1 个
 选择对象:
 \end{lstlisting}
+
 命令调用后，提示选择对象，此时按照图\ref{fig:lunkuoselect}的方式选择轴对象。选择完成后轴对象会以图\ref{fig:lunkuoselectresult}所示的虚线方式予以标识。
 \begin{figure}[htbp]
 \centering
@@ -111,10 +113,12 @@ AutoCAD默认开始工作的空间是模型空间。模型空间是一个无限�
 \begin{lstlisting}
 是否在单独的图层中显示隐藏的轮廓线？[是(Y)/否(N)] <是>:
 \end{lstlisting}
+
 接下来提示是否将轮廓线投影到平面，其默认值是“是”，也直接以空格键确认。
 \begin{lstlisting}
 是否将轮廓线投影到平面？[是(Y)/否(N)] <是>:
 \end{lstlisting}
+
 最后提示是否删除相切的边，根据我们的制图标准相切边是不用表示的，故选择删除相切边。
 \begin{lstlisting}
 是否删除相切的边? [是(Y)/否(N)] <是>:
@@ -142,6 +146,7 @@ AutoCAD默认开始工作的空间是模型空间。模型空间是一个无限�
 \begin{lstlisting}
 命令：layer
 \end{lstlisting}
+
 图层命令调用后会弹出图\ref{fig:layerdialog}所示的图层对话框。整个图层对话框分为三个部分，分别是工具区、过滤器和图层列表。首先，在图层列表中选中以PV开头的图层，并单击\includegraphics[scale=0.6]{setcurrentlayer.png}图标，将其设置为当前图层。然后单击该图层中线宽\includegraphics[scale=0.6]{linewidthselect.png} 图标，弹出图\ref{fig:linewidthset}对话框，选中0.50mm的线宽，点击确定，即可完成图层线宽的设置。最后点击0图层的\includegraphics[scale=0.6]{layeronoffset.png}图标，使之切换为\includegraphics[scale=0.6]{layeroffstatus.png}状态，实现对0图层的关闭。最终的图层设置结果如图所示
 
 \begin{figure}[htbp]
@@ -162,6 +167,7 @@ AutoCAD默认开始工作的空间是模型空间。模型空间是一个无限�
 \yaodian{处于关闭状态的图层，不会显示。但关闭图层的内容仍然存在。}
 
 \item 返回图纸空间
+
 至此，我们已经完成了轴主视图生成的所有操作，为了停止在视口模型空间中做缩放操作导致视图比例改变，因此需要返回图图纸空间。AutoCAD中返回图纸空间的方法有：
 \begin{itemize}
 \item 键盘输入 PSPACE\index{pspace,图纸空间}或PS。
@@ -170,6 +176,7 @@ AutoCAD默认开始工作的空间是模型空间。模型空间是一个无限�
 \begin{lstlisting}
 命令：pspace
 \end{lstlisting}
+
 返回图纸空间后，其结果如图 所示。从图中，可知生成的轴主视图与图\ref{fig:xiaolunzhou}的主视图是一致的。
 
 \end{procedure}

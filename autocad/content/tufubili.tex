@@ -1,8 +1,4 @@
 \section{图幅与比例}
-在\ref{sec:zhoushitu}节中，我们将图纸尺寸设置为ISO A4(210.00x297.00毫米)，视口的显示比例设置成了5:1。之所以这样设置，其目的是确保使用的图纸和比例都符合国家制定的制图标准。因此本节将介绍图纸幅面和比例相关的国家标准。
-\subsection{图纸幅面与格式}
-\subsubsection{图纸幅面}
-图纸幅面是指整张图纸的尺寸大小。工程中为了便于图纸的装订、保管及合理利用图纸，要求图纸幅面大小要符合表\ref{tab:tuzhifumian}的规定。
 \begin{table}[htbp]
 \caption{图纸幅面}\label{tab:tuzhifumian}
 \begin{tabu}to \linewidth {X[cm]*5{|X[cm]}}
@@ -21,9 +17,15 @@ $a$&\multicolumn{5}{c}{25}\\
 \end{tabu}
 \end{table}
 
+在\ref{sec:zhoushitu}节中，我们将图纸尺寸设置为ISO A4(210.00x297.00毫米)，视口的显示比例设置成了5:1。之所以这样设置，其目的是确保使用的图纸和比例都符合国家制定的制图标准。因此本节将介绍图纸幅面和比例相关的国家标准。
+\subsection{图纸幅面与格式}
+\subsubsection{图纸幅面}
+图纸幅面是指整张图纸的尺寸大小。工程中为了便于图纸的装订、保管及合理利用图纸，要求图纸幅面大小要符合表\ref{tab:tuzhifumian}的规定。
+
+
 \begin{figure}[htbp]
 \centering
-\begin{tikzpicture}[scale=0.9]
+\begin{tikzpicture}[scale=1.2]
 \draw[line width=0.7mm] (0,0)node[left]{0}--(0,1cm)node[left]{210}--(0,2cm)node[left]{420}--(0,3cm)node[left]{630}--(0,4cm)node[left]{841};
 \draw[dashed](0,4cm)--(0,5cm)node[left]{1051}--(1.5cm,5cm)node[below left]{$A4\times 5$}--(1.5cm,2cm);
 \draw[line width=0.7mm](0,1cm)--(1.5cm,1cm)node[below left]{A4}(0,2cm)--(1.5cm,2cm)node[below left]{A3}--(1.5cm,0)node[below]{297};

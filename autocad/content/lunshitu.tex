@@ -33,6 +33,7 @@
 \end{lstlisting}
 
 \item 插入标题栏
+
 我们在\ref{sec:lianjieganshitu}节中制作了标题栏块并保为可以共享的文件，因此在本节中可以直接插入标题块来完成标题的制作。首先先将图层切换为“标题栏”图层，然后调用AutoCAD的块插入命令，其方法有：
 \begin{itemize}
 \item 键盘输入insert\index{insert,块插入}或I
@@ -110,6 +111,7 @@
 命令: -VPORTS
 指定视口的角点或 [开(ON)/关(OFF)/布满(F)/着色打印(S)/锁定(L)/对象(O)/多边形(P)/恢复(R)/图层(LA)/2/3/4] <布满>:
 \end{lstlisting}
+
 接下来，按图\ref{fig:vportssecondnode}所示位置指定对角点，完成后结果如图\ref{fig:vportsresult}所示。
 \begin{lstlisting}
 指定对角点:
@@ -169,6 +171,7 @@
 \begin{lstlisting}
 指定剪切平面的第一个点:
 \end{lstlisting}
+
 接下来，以图\ref{fig:solviewsecondnode}所示的方式指定剪切平面的第二个点，完成后的效果如图\ref{fig:solview1}所示。
 \begin{lstlisting}
 指定剪切平面的第二个点:
@@ -280,6 +283,16 @@
 
 \end{procedure}
 \subsection{标注尺寸}
+
+\begin{figure}[htbp]
+\centering
+\subfloat[]{\label{fig:lunshitu6}\includegraphics[scale=0.3]{lunshitu6}}\hspace{20pt}
+\subfloat[]{\label{fig:lunshitu7}\includegraphics[scale=0.3]{lunshitu7}}\\
+\subfloat[]{\label{fig:lunshitu8}\includegraphics[scale=0.3]{lunshitu8}}\hspace{20pt}
+\subfloat[]{\label{fig:lunshitu9}\includegraphics[scale=0.3]{lunshitu9}}
+\caption{尺寸标注}
+
+\end{figure}
 \begin{procedure}
 \item 设置标注样式
 
@@ -289,14 +302,7 @@
 
 按\ref{sec:lianjieganshitu}节的步骤进行线性尺寸的标注，结果如图\ref{fig:lunshitu6} 所示。
 
-\begin{figure}[htbp]
-\centering
-\subfloat[]{\label{fig:lunshitu6}\includegraphics[scale=0.3]{lunshitu6}}\hspace{20pt}
-\subfloat[]{\label{fig:lunshitu7}\includegraphics[scale=0.3]{lunshitu7}}\\
-\subfloat[]{\label{fig:lunshitu8}\includegraphics[scale=0.3]{lunshitu8}}\hspace{20pt}
-\subfloat[]{\label{fig:lunshitu9}\includegraphics[scale=0.3]{lunshitu9}}
-\caption{尺寸标注}
-\end{figure}
+
 \item 标注半径尺寸
 
 圆弧的尺寸必须要使用半径方式进行标注。AutoCAD中标注半径需要调用半径标注命令，其调用方法有：

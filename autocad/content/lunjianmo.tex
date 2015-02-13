@@ -25,10 +25,12 @@
 当前 UCS 名称: *世界*
 指定 UCS 的原点或 [面(F)/命名(NA)/对象(OB)/上一个(P)/视图(V)/世界(W)/X/Y/Z/Z 轴(ZA)] <世界>: za
 \end{lstlisting}
+
 选择ZA选项后，会提示指定新点，当前默认是(0,0,0)，因此直接接受即可。
 \begin{lstlisting}
 指定新原点或 [对象(O)] <0,0,0>:
 \end{lstlisting}
+
 接下来，要求输入在正Z轴范围上指定点，此时需要将$z$轴置于水平面内因此，将$x$轴上的值设置为1，即输入(-1,0,0)。完成后系统的三维坐标系会由\includegraphics[scale=0.15]{hthreeaxis.png}状态改变为\includegraphics[scale=0.15]{wthreeaxis.png}状态。可以看出此时的$x$轴和$y$轴位于三维坐标平面中的$W$平面之中。
 \begin{lstlisting}
 在正 Z 轴范围上指定点 <0.0000,0.0000,1.0000>: -1,0,0
@@ -161,6 +163,7 @@
 选择边或 [链(C)/环(L)/半径(R)]: r
 输入圆角半径或 [表达式(E)] <1.0000>: 4
 \end{lstlisting}
+
 完成圆角半径设置后，按图\ref{fig:lunjianmo10.png}所示选择要倒角的边，选择完成后会生成\ref{fig:lunjianmo11}所示的圆角边预览结果。
 \begin{lstlisting}
 选择边或 [链(C)/环(L)/半径(R)]:
@@ -213,6 +216,7 @@
 \subfloat[]{\label{fig:lunjianmo17}\includegraphics[scale=0.6]{lunjianmo17}}
 \caption{三维镜像过程}
 \end{figure}
+
 接下来，命令要求以三点方式指定镜像平面，经过观察可知图\ref{fig:lunjianmo15}所示模型的镜像平面位于右端面，并助该镜像平面与$xy$平面平行，因此应该选择【XY平面（XY）】选项。
 \begin{lstlisting}
 指定镜像平面 (三点) 的第一个点或
@@ -223,6 +227,7 @@
 \begin{lstlisting}
 指定 XY 平面上的点 <0,0,0>:
 \end{lstlisting}
+
 最后命令示确认是否删除源对象，默认是否，故直接确认。完成后结果如图\ref{fig:lunjianmo17}所示。
 \begin{lstlisting}
 是否删除源对象？[是(Y)/否(N)] <否>:

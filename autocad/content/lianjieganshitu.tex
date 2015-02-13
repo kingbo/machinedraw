@@ -38,6 +38,7 @@
 命令: -VIEW
 输入选项 [?/删除(D)/正交(O)/恢复(R)/保存(S)/设置(E)/窗口(W)]: front
 \end{lstlisting}
+
 最后，将视口的显示比例设置为2:1，结果如图\ref{fig:lianjiegantuzhi1}所示。
 \begin{figure}[htbp]
 \centering
@@ -55,6 +56,7 @@
 是否将轮廓线投影到平面？[是(Y)/否(N)] <是>:
 是否删除相切的边? [是(Y)/否(N)] <是>:
 \end{lstlisting}
+
 接下来，退出视口模型空间
 \begin{lstlisting}
 命令: PSPACE
@@ -107,19 +109,23 @@
 命令: line
 指定第一个点:
 \end{lstlisting}
+
 调用直线命令后，命令示示指定第一个点，此时为保证中心线正好绘制在视图的中心，故采用对象捕捉追踪功能来完成第一点的指定，即先用鼠标捕捉到左端线的中心点，然后向左水平移动一小段距离单击鼠标左键指定第一点，如图\ref{fig:centerlinedraw1}所示。
 \begin{lstlisting}
 指定下一点或 [放弃(U)]:
 \end{lstlisting}
+
 命令提示指定下一点时，以指定第一点相同的方式绘定第二点，如图\ref{fig:centerlinedraw2}所示。
 \begin{lstlisting}
 指定下一点或 [放弃(U)]:
 \end{lstlisting}
+
 由于直线命令可以绘制多段直线，因此会继续提示指定下一点，此时用回车键结束命令，结果如图\ref{fig:centerlinedraw3}所示。
 \end{procedure}
 \subsection{制作图幅}
 \begin{procedure}
 \item 将当前图层设置为图框
+
 切换图层除了用图层设置管理器，还可以用图层管理工具栏。其方法是点击图层管理工具栏\includegraphics[scale=0.45]{changelayertools.png}中的图层下拉列表框\includegraphics[scale=0.5]{changelayers.png}，弹出图\ref{fig:changelayers1}的图层列表，并选中图框图层，即可将图框图层设置为当前图层。
 \begin{figure}[htbp]
 \centering
@@ -241,6 +247,7 @@ importance lines/.style={line width=1pt}
 \item 【绘图】$\rightarrow$【点】$\rightarrow$【单点】
 \item 【绘图】$\triangleright$【点】图标\includegraphics[scale=0.6]{point.png}
 \end{itemize}
+
 绘制命令启动后，按照图\ref{fig:pointdraw}所示位置捕捉端点。
 \begin{figure}[htbp]
 \centering
@@ -263,6 +270,7 @@ importance lines/.style={line width=1pt}
 指定下一点或 [放弃(U)]: @80,0
 指定下一点或 [放弃(U)]:
 \end{lstlisting}
+
 以上一条直线的结束点为参考，分两段绘制一条56mm高的垂直线，结果如图\ref{fig:biaotilan2}所示。
 \begin{lstlisting}
 命令: LINE
@@ -290,6 +298,7 @@ importance lines/.style={line width=1pt}
 指定下一点或 [闭合(C)/放弃(U)]: @0,-9
 指定下一点或 [闭合(C)/放弃(U)]:
 \end{lstlisting}
+
 以上一条重直线的结束点为参考，绘制第二条水平线，结果如图\ref{fig:biaotilan4.png}所示。
 \begin{lstlisting}
 命令: LINE
@@ -297,6 +306,7 @@ importance lines/.style={line width=1pt}
 指定下一点或 [放弃(U)]: @-50,0
 指定下一点或 [放弃(U)]:
 \end{lstlisting}
+
 以第二条水平线的结束点为参考，绘制第三水平线，结果如图\ref{fig:biaotilan5.png}所示。
 \begin{lstlisting}
 命令: LINE
@@ -312,12 +322,14 @@ importance lines/.style={line width=1pt}
 \item 【修改】$\rightarrow$【偏移】。
 \item 【修改】$\triangleright$【偏移】图标\includegraphics[scale=0.6]{offsettool.png}。
 \end{itemize}
-调用偏移命令后，会提示指定领衔距离，此时输入7并回车。
+
+调用偏移命令后，会提示指定偏移距离，此时输入7并回车。
 \begin{lstlisting}
 命令: OFFSET
 当前设置: 删除源=否  图层=源  OFFSETGAPTYPE=0
 指定偏移距离或 [通过(T)/删除(E)/图层(L)] <通过>: 7
 \end{lstlisting}
+
 接下来命令提示选择要偏移的对象，此时按图\ref{fig:offsetselect.png}所示方式选择水平线作为偏移对象。
 \begin{figure}[htbp]
 \centering
@@ -329,7 +341,9 @@ importance lines/.style={line width=1pt}
 \begin{lstlisting}
 选择要偏移的对象，或 [退出(E)/放弃(U)] <退出>:
 \end{lstlisting}
+
 选择完成后，会以图\ref{fig:offsetselect1.png}的虚线方式显示被选择的对象。接下来命令会提示指定要偏移的方向，此时将鼠移向虚线的上方，绘出现图\ref{fig:offsetselect2.png}所示的图线，单击鼠标左键即可完成偏移对象绘制。
+
 接下来以继选择偏移对象，完成剩余的6条线的绘制，结果如图\ref{fig:offsetresult.png} 所示。
 \begin{lstlisting}
 指定要偏移的那一侧上的点，或 [退出(E)/多个(M)/放弃(U)] <退出>:
@@ -368,6 +382,7 @@ importance lines/.style={line width=1pt}
 \begin{lstlisting}
 命令：STYLE
 \end{lstlisting}
+
 命令调用后，会弹出图\ref{fig:textstyledialog.png}所示的文字样式对话框。此时，点击新建按钮，建立名称为“GB”的文字样式，然后将SHX字体设置为gbeitc.shx，大字体设置为gbcbig.shx，并“使用大字体”为选中状态，将“宽度因子”设置为0.76，点击应用按钮，使用GB文字样式置为当前，结果如图\ref{fig:textstyledialog2.png}所示。完成设置后，点击关闭按钮返回。
 \begin{figure}[htbp]
 \centering
@@ -400,15 +415,18 @@ AutoCAD中标注文字需要用到文字命令，其调用方法有：
 指定对角点或 [高度(H)/对正(J)/行距(L)/旋转(R)/样式(S)/宽度(W)/栏(C)]: h
 指定高度 <13.8924>: 5
 \end{lstlisting}
+
 完成第一角点指定后，提示指定对角点或选项，为使文字的字号符合国标的字高要求，因此输入【高度(H)】选项，并指定高度为5mm。
 \begin{lstlisting}
 指定对角点或 [高度(H)/对正(J)/行距(L)/旋转(R)/样式(S)/宽度(W)/栏(C)]: j
 输入对正方式 [左上(TL)/中上(TC)/右上(TR)/左中(ML)/正中(MC)/右中(MR)/左下(BL)/中下(BC)/右下(BR)] <左上(TL)>: mc
 \end{lstlisting}
+
 完成文字高度设置后，为使文字能够位于表格的正中位置，故使用【对正(J)】选项，并选择【正中(MC)】位置。
 \begin{lstlisting}
 指定对角点或 [高度(H)/对正(J)/行距(L)/旋转(R)/样式(S)/宽度(W)/栏(C)]:
 \end{lstlisting}
+
 完成对正设置后，以图\ref{fig:textedit2.png}方式指定对角点，弹出图\ref{fig:textedit3.png}所示的文字输入对话框，并输入“工艺”后确定，结果如图\ref{fig:texteditresult1.png}所示。
 \begin{figure}[htbp]
 \centering
@@ -431,6 +449,7 @@ AutoCAD中标注文字需要用到文字命令，其调用方法有：
 \item 【绘图】$\rightarrow$【块】$\rightarrow$【创建】
 \item 【绘图】\includegraphics[scale=0.45]{drawtools.png}工具栏中【创建块】\includegraphics[scale=0.45]{blocktool.png}图标
 \end{itemize}
+
 创建块命令调用后，会弹出图\ref{fig:blockcondection1.png} 所示的块定义对话框。此时在对话框的名称文本框中输入“GB标题栏”，点击\includegraphics[scale=0.45]{selectpoint.png}图标，返回绘图区，以图\ref{fig:basepointselect.png} 所示的方式选择标题栏的右下角点做为基点,系统会自动获取选择点的坐标，若不指定则默认为坐标原点(0,0,0)点。然后，再点击\includegraphics[scale=0.45]{blockobjselect.png}图标，以图\ref{fig:blockselect.png} 所示的方式选择整个标题栏做为定义块的对象，结果如图\ref{fig:blockset.png} 所示。完成操作后，点击确定即可完成块的定义。
 \begin{figure}[htbp]
 \centering
@@ -440,6 +459,7 @@ AutoCAD中标注文字需要用到文字命令，其调用方法有：
 \subfloat[]{\label{fig:blockset.png}\includegraphics[scale=0.25]{blockset.png}}
 \caption{块定义过程}
 \end{figure}
+
 完成块定义后，只能实现文件内多次使用用，如果要实现与其它文件共享，需要有块写命令将块保存为文件，以便在其它文件中调入。调用块定命令的方式主要是用键盘输入WBLOCK\index{wblock,块写}或W。调用命令后，会弹出图\ref{fig:wblockdialog.png}所示的块写对话框。此时使块前的单选按钮处于选中状态，然后选择“GB标题栏”，最后选择适当的保存路径并点击确定，即可完成块写操作，实现文件间的共享。
 \begin{figure}[htbp]
 \centering
@@ -487,6 +507,7 @@ AutoCAD中标注文字需要用到文字命令，其调用方法有：
 \begin{lstlisting}
 命令：dimstyle
 \end{lstlisting}
+
 命令调用后会弹出图\ref{fig:dimstyledialog.png} 所示的标注样式管理器，此对话框中列出了AutoCAD当前的所有样式、当前使用的样式及样式预览。为不改变AutoCAD的系统样式，我们需要新建与国标要求一致的标注样式。点击新建按钮弹出图\ref{fig:dimstylenew.png} 所示的新建标注样式对话框，选择ISO-25作为基础样式，并用于所用标注，建立名称为“GB标注样式”的新标注样式,完成后单击继续按钮，进入基础样式的设置。
 \begin{figure}[htbp]
 \centering
@@ -617,12 +638,14 @@ AutoCAD中标注文字需要用到文字命令，其调用方法有：
 \begin{lstlisting}
 指定第二条尺寸界线原点:
 \end{lstlisting}
+
 接下来按图\ref{fig:dimlinearsecondtnode.png}所示，指定端点作为第二条尺寸界线的原点。
 \begin{lstlisting}
 指定尺寸线位置或
 [多行文字(M)/文字(T)/角度(A)/水平(H)/垂直(V)/旋转(R)]:
 标注文字 = 6
 \end{lstlisting}
+
 最后，按图\ref{fig:dimlinearpositionset.png}所示，用鼠标指定尺寸线的位置，即可完成一个线性尺寸的标。图\ref{fig:dimlinearresult.png}所示的结果为一水平线性尺寸。
 
 通过观察可知，连接杆的水平尺寸是连续进行标注的，因此用AutoCAD的连续标注命令来完成更为简便快捷，其调用的方式有：
@@ -636,6 +659,7 @@ AutoCAD中标注文字需要用到文字命令，其调用方法有：
 指定第二条尺寸界线原点或 [放弃(U)/选择(S)] <选择>:
 标注文字 = 3
 \end{lstlisting}
+
 连续命令启动后，会自动以上次非连续标注尺寸的第二条尺寸界线的原点为起点，并提示指定第二条尺寸界线的原点，此时按图\ref{fig:dimcontinuesecondnode.png}所示指定第二条尺寸界线的原点，即可完成一线性尺寸的标注。
 
 \begin{figure}[htbp]
@@ -656,17 +680,20 @@ AutoCAD中标注文字需要用到文字命令，其调用方法有：
 指定第二条尺寸界线原点或 [放弃(U)/选择(S)] <选择>:
 选择连续标注:
 \end{lstlisting}
+
 至此，已经完成了所用的水平线性尺寸的标注。接下来的垂直方向的线性尺寸标与水平方向的线性尺寸标是基本相同的，唯一的区别是垂直方向的线性尺寸需要标注直径符号。
 \begin{lstlisting}
 命令: dimlinear
 指定第一个尺寸界线原点或 <选择对象>:
 指定第二条尺寸界线原点:
 \end{lstlisting}
+
 垂直线性尺寸标注指定尺寸界线原点的方式与水平线性尺寸的方式一致，当命令提示指定尺寸线位置或选项时，选择【多行文字(M)】项，在弹出的对话框中，点击符号\includegraphics[scale=0.4]{symbletool.png}列表，并选择直径符号即可完成直径形式文字的输入。
 \begin{lstlisting}
 指定尺寸线位置或
 [多行文字(M)/文字(T)/角度(A)/水平(H)/垂直(V)/旋转(R)]: m
 \end{lstlisting}
+
 最后，用鼠标指定尺寸线的位置，即可完成重直线性尺寸的标注，结果如图\ref{fig:dimzhijinresult.png} 所示。
 \begin{lstlisting}
 指定尺寸线位置或

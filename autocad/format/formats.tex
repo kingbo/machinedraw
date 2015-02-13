@@ -13,7 +13,8 @@
 \newtheorem{condition}{条件} 
 \newtheorem{conclusion}{结论} 
 \newtheorem{assumption}{假设} 
- 
+%\newtheorem{exercise}{\hspace{2em}习题}[chapter]
+
 %%%%%%%%%% 一些重定义 %%%%%%%%%% 
 
 %% 必须在导入中文环境之后 
@@ -51,19 +52,144 @@
 {第\thecontentslabel 章\quad}{}
 {\hspace{.5em}\titlerule*[10pt]{$\cdot$}\contentspage}
 \renewcommand{\chaptername}{第\,\thechapter \,章}
+
+%%%%%%%%%%%%%%%设置章节样式%%%%%%%%%%%%%%%
+\titleformat{\chapter}[block]
+  {\normalfont\huge\bfseries}
+  {\tikz\node[
+      font=\huge\bfseries\color{white},
+      fill=gray!50,
+      rounded corners=20pt,
+      minimum height=1.6cm,
+      text width=3em,
+      align=center,
+      inner xsep=0pt] {\parbox{1.5em}{\thechapter\hfill}};%
+  }
+  {-1em}
+  {\tikz\node[
+      fill=gray,
+      font=\LARGE\sffamily\color{white},
+      minimum height=1.6cm,
+      text width=\the\dimexpr\textwidth-2em\relax,
+      align=center,inner xsep=0pt] {#1};%
+  }
+\titleformat{name=\chapter,numberless}[block]
+  {\normalfont\huge\bfseries}
+  {\tikz\node[
+      font=\huge\bfseries\color{white},
+      fill=gray!50,
+      rounded corners=20pt,
+      minimum height=1.6cm,
+      text width=3em,
+      align=center,
+      inner xsep=0pt] {\parbox{1.5em}{\mbox{}\hfill}};%
+  }
+  {-1em}
+  {\tikz\node[
+      fill=gray,
+      font=\LARGE\sffamily\color{white},
+      minimum height=1.6cm,
+      text width=\the\dimexpr\textwidth-2em\relax,
+      align=center,
+      inner xsep=0pt] {#1};%
+  }
+  
 %\titleformat{\chapter}[hang]{\centering\huge\bfseries}{\chaptername}{1em}{}
 \titlespacing{\chapter}{0pt}{*0}{*4}
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+
+\titleformat{\section}[block]%              
+    {\normalfont\Large\bfseries}%  
+    { \tikz\node[
+      font=\large\bfseries\color{white},
+      fill=gray,
+      rounded corners=1.5ex,
+      minimum height=.9cm,
+      text width=3em,
+      align=center,
+      inner xsep=0pt] {\parbox{1.5em}{\thesection\hfill}};}%                   
+    {-.6em}%
+    {\tikz\node[
+      fill=gray!50,
+      font=\large\sffamily\color{white},
+      minimum height=.9cm,
+      text width=\the\dimexpr\textwidth-3.5em\relax,
+      %align=center,
+      inner xsep=4pt] {#1};%
+      }
+
+\titleformat{name=\section,numberless}[block]%              
+    {\normalfont\Large\bfseries}%  
+    { \tikz\node[
+      font=\large\bfseries\color{white},
+      fill=gray,
+      rounded corners=1.5ex,
+      minimum height=.9cm,
+      text width=3em,
+      align=center,
+      inner xsep=0pt] {\parbox{1.5em}{\mbox{}\hfill}};}%                   
+    {-.6em}%
+    {\tikz\node[
+      fill=gray!50,
+      font=\large\sffamily\color{white},
+      minimum height=.9cm,
+      text width=\the\dimexpr\textwidth-3.5em\relax,
+      %align=center,
+      inner xsep=4pt] {#1};%
+      }
+
+\titleformat{\subsection}[block]%              
+    {\normalfont\large\bfseries}%  
+    { \tikz\node[
+      font=\normalsize\bfseries\color{white},
+      fill=gray!50,
+      rounded corners=1.5ex,
+      minimum height=.75cm,
+      text width=3.5em,
+      %align=center,
+      inner xsep=.8em] {\parbox{1.5em}{\thesubsection\hfill}};}%                   
+    {-2em}%
+    {\tikz\node[
+      fill=gray,
+      font=\normalsize\sffamily\color{white},
+      minimum height=.75cm,
+      text width=\the\dimexpr\textwidth-4.5em\relax,
+      %align=center,
+      inner xsep=4pt] {#1};%
+      }
+
+\titleformat{name=\subsection,numberless}[block]%              
+    {\normalfont\large\bfseries}%  
+    { \tikz\node[
+      font=\normalsize\bfseries\color{white},
+      fill=gray!50,
+      rounded corners=1.5ex,
+      minimum height=.75cm,
+      text width=3.2em,
+      align=center,
+      inner xsep=0pt] {\parbox{1.5em}{\mbox{}\hfill}};}%                   
+    {-2em}%
+    {\tikz\node[
+      fill=gray,
+      font=\normalsize\sffamily\color{white},
+      minimum height=.75cm,
+      text width=\the\dimexpr\textwidth-4.5em\relax,
+      %align=center,
+      inner xsep=4pt] {#1};%
+      }
 %%%%%%%%%%%%定义页眉而脚%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \fancyhead[ER]{\leftmark}
 \fancyhead[OL]{\rightmark}
 \fancyhead[EL,OR]{$\cdot$\ \thepage\ $\cdot$}
 \renewcommand{\headrulewidth}{0.4pt}
-
+%=================== Enumerates Environment Settings==============================%
+%=================================================================================%
+%\setenumerate{label={\rm \arabic*.},leftmargin=0pt,labelindent=\parindent,labelsep=*,itemindent=1.75\parindent,itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+%\setitemize{leftmargin=0pt,labelindent=\parindent,labelsep=*,itemindent=1.5\parindent,itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
 %%%%%%%%%%%%%设置列表格式%%%%%%%%%%%%%%%%
 
 \setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
@@ -81,9 +207,13 @@
 \begin{list}{\gorectangle{Step\,\arabic{procedurecounter}}}{
 \setlength{\parsep}{\parskip}
 \setlength{\itemsep}{0ex plus 0.1ex}
-\setlength{\labelwidth}{4em}
-\setlength{\labelsep}{0.2em}
-\setlength{\leftmargin}{6.2em}
+\setlength{\labelwidth}{2em}
+\setlength{\labelsep}{.5em}
+\setlength{\topsep}{0pt}
+\setlength{\partopsep}{0pt}
+\setlength{\leftmargin}{0pt}
+\setlength{\listparindent}{2em}
+\setlength{\itemindent}{2em}
 \usecounter{procedurecounter}
 \setcounter{procedurecounter}{0}}}
 {\end{list}}

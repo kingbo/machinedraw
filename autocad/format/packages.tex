@@ -3,9 +3,9 @@
 left=21mm,vmarginratio=1:1]{geometry}%页面尺寸控制
 %\usepackage[a4,cam,center,noinfo,graphics]{crop}
 \usepackage[perpage,symbol]{footmisc}%脚注控制
-\usepackage[sf]{titlesec}%控制标题
+\usepackage[sf,newparttoc,explicit]{titlesec}%控制标题
 \usepackage{stdclsdv}
-\usepackage[Bjornstrup]{fncychap}
+%\usepackage[Bjornstrup]{fncychap}
 \usepackage{titletoc}%控制目录
 \usepackage{fancyhdr}%控制页眉页脚
 \usepackage{type1cm}%控制字体大小
@@ -45,6 +45,9 @@ left=21mm,vmarginratio=1:1]{geometry}%页面尺寸控制
 \usepackage{graphicx}
 %\usepackage{booktabs}
 \usepackage{tabu}
+\usepackage{exsheets}%习题宏包
+
+\NewCounterPattern{testa}{ta}
 %%%%%%%%%% 中文字体设置  %%%%%%%%%% 
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip=0pt plus 1pt minus 0.1pt
@@ -65,4 +68,28 @@ left=21mm,vmarginratio=1:1]{geometry}%页面尺寸控制
 \DeclareCaptionLabelSeparator{twospace}{\ ~}
 \captionsetup{labelsep=twospace} 
 \floatsetup[table]{style=Plaintop}%设置表格标题位于表格上方
+
+%%%%%%%%%%%%选择题格式设置%%%%%%%%%%%%
+\SetupExSheets{
+  question/type=exam ,
+  headings=plain
+}
+
+% The following declares an empty question heading. If you don't
+% want that leave the code alone and load one of the other heading
+% styles provided by exsheets in the options above.
+\DeclareInstance{exsheets-heading}{plain}{default}
+  {
+    runin = true ,
+    number-post-code = \space ,
+    attach = { main[l,vc]points[l,vc](\linewidth+\marginparsep,0pt) }
+}
+
+% The following declares an environment `choices' similar to list but
+% instead of \item you use \choice
+\NewTasks[
+  counter-format = (tsk[A]) ,
+  label-width = 2em
+]{choices}[\choice]
+
 \endinput
