@@ -201,7 +201,7 @@
 %%%%%%%%%%%定义过程列表%%%%%%%%%%%%%%%%%
 
 \newcommand{\gorectangle}[1]{
-\tikz\node[text=white,font=\sffamily\bfseries,inner sep=0.5mm,draw,rounded corners,fill=black]{\small #1};}
+\tikz\node[text width=3em,text=white,font=\sffamily\bfseries,inner sep=0.5mm,draw,rounded corners,fill=gray]{\small #1};}
 \newcounter{procedurecounter}
 \newenvironment{procedure}{
 \begin{list}{\gorectangle{Step\,\arabic{procedurecounter}}}{
@@ -239,7 +239,7 @@ morekeywords={
 3dalign, 
 arc, arraypolay, arrayrect, align, 
 block, break, blend, box, 
-circle, chamfer, chamferedge, cylinder, copy, copyclip, 
+circle, chamfer, chamferedge, cylinder, copy, copyclip, cone, 
 dimcontinue,  dimlinear, dimstyle, dimcont, dimlin, dimradius, dimdiameter, dimangular, 
 erase, ellipse, explode, extend,  
 fillet, filletedge, 
