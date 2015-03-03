@@ -38,4 +38,6 @@
 !autocad/dwg/
 *.asy
 *.pre
+*.tcp
+*.tps
 build/
