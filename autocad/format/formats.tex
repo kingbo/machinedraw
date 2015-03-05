@@ -44,16 +44,80 @@
 \setcounter{secnumdepth}{4}%设置编号深度
 %\setcounter{tocdepth}{4}%设置目录深度
 
-%%%%%%%%%%%%%重定义章节的格式%%%%%%%%%%%%%%%%%%%
-\renewcommand{\partname}{} 
-\renewcommand{\thepart}{第\,\Roman{part}\,部分} 
+%%%%%%%%%%%%%重定义部章节的格式%%%%%%%%%%%%%%%%%%%
+
+
+%\renewcommand{\partname}{} 
+%\renewcommand{\thepart}{第\,\Roman{part}\,部分} 
+\renewcommand{\partname}{第\,\Roman{\thepart}\,部分}
+\titlecontents{part}[-0.5em]{\vspace{.5\baselineskip}\bfseries}
+{第\thecontentslabel 部分\quad}{}
+{\hspace{.5em}\titlerule*[10pt]{$\quad$}\contentspage}
 
 \titlecontents{chapter}[1em]{\vspace{.5\baselineskip}\bfseries}
 {第\thecontentslabel 章\quad}{}
 {\hspace{.5em}\titlerule*[10pt]{$\cdot$}\contentspage}
 \renewcommand{\chaptername}{第\,\thechapter \,章}
 
-%%%%%%%%%%%%%%%设置章节样式%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%设置部样式%%%%%%%%%%%%%%%
+%\tikzstyle{every picture}+=[remember picture, overlay]
+\makeatletter
+\newcommand{\partabstractfp}[1]{\gdef\@partabstractfp{#1}}%the first paragraph of abstract
+\newcommand{\partabstractrp}[1]{\gdef\@partabstractrp{#1}}%the rest paragraphs of abstract
+\definecolor{doc}{RGB}{42,168,7}
+\newcommand{\fontsizec}[1]{\fontsize{#1}{\baselineskip}\selectfont}
+%odd page
+\newcommand\partformatodd[1]{%
+    \thispagestyle{empty}
+    %\AddToShipoutPictureBG*{%background
+    \hbox{
+    \begin{tikzpicture}%
+		\filldraw[fill=black!10,draw=black!10] (0,1.5cm) rectangle (\textwidth,-1.5cm);
+    \pgftext[right,base,x=14.5cm,y=0.5cm]{\color{black}\Huge\bfseries 第\thepart 部分};
+		\filldraw[fill=black!70,draw=black!70] (0,0) rectangle (\textwidth,-1.5cm);
+    \pgftext[right,base,x=14.5cm,y=-1.2cm]{\hei\color{white}\fontsizec{1.3cm} #1};
+    \pgftext[left,top,x=0cm,y=-2cm]{
+    \parbox[t]{\textwidth}{\parindent=2em
+    \normalsize
+    \@partabstractfp
+    \par
+    \@partabstractrp
+    }
+    };
+    \end{tikzpicture}
+    }%}
+}
+
+%even page
+\newcommand\partformateven[1]{%
+    \thispagestyle{empty}
+    %\AddToShipoutPictureBG*{%background
+    %\kern 13.47cm
+		\hbox{
+    \begin{tikzpicture}%
+		\filldraw[fill=black!10,draw=black!10] (0,1.5cm) rectangle (\textwidth,-1.5cm);
+		\pgftext[left,base,x=0.5cm,y=0.5cm]{\color{black}\Huge\bfseries 第\thepart 部分};
+		\filldraw[fill=black!70,draw=black!70] (0,0) rectangle (\textwidth,-1.5cm);
+    \pgftext[left,base,x=0cm,y=-1.2cm]{\hei\color{white}\fontsizec{1.3cm} #1};
+    \pgftext[left,top,x=0cm,y=-2cm]{
+    \parbox[t]{\textwidth}{\parindent=2em
+    \normalsize
+    \@partabstractfp
+    \par
+    \@partabstractrp
+    }
+    };
+    \end{tikzpicture}
+    }%}
+}
+
+\newcommand\partformat[1]{\ifthenelse{\isodd{\value{page}}}{\partformatodd{#1}}{\partformateven{#1}}}
+
+\makeatother
+
+\titleformat{name=\part}[block]
+{\normalfont}{}{0pt}{\partformat{#1}}
+%%%%%%%%%%%%%%%设置章样式%%%%%%%%%%%%%%%
 \titleformat{\chapter}[block]
   {\normalfont\huge\bfseries}
   {\tikz\node[
@@ -101,6 +165,7 @@
 \renewcommand{\chaptermark}[1]{\markboth{第\,\thechapter\,章\ #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
 
+%%%%%%%%%%%%%%%设置节样式%%%%%%%%%%%%%%%
 \titleformat{\section}[block]%              
     {\normalfont\Large\bfseries}%  
     { \tikz\node[
@@ -141,6 +206,7 @@
       inner xsep=4pt] {#1};%
       }
 
+%%%%%%%%%%%%%%%设置子节样式%%%%%%%%%%%%%%%
 \titleformat{\subsection}[block]%              
     {\normalfont\large\bfseries}%  
     { \tikz\node[

@@ -23,6 +23,7 @@
 *.synctex
 *.toc
 *.vrb
+*.ptc
 *.maf
 *.mtc
 *.mtc0

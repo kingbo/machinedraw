@@ -4,11 +4,12 @@
 %%%%%%%%%%导入相关宏包%%%%%%%%%%%%%%%%%%%%%%
 
 \input{format/packages}
-
+%%%%%%%%%%导入自定义格式%%%%%%%%%%%%%%%%%%%%%%
+\input{format/formats}
 \makeindex%生成建立索引
 
 \begin{document}
-\input{format/formats}
+
 \title{\hei{\yihao{ 工程制图与CAD讲义}}}
 \author{\sanhao{金波}}
 \date{\today}
@@ -19,15 +20,23 @@
 \tableofcontents
 \mainmatter
 \graphicspath{{pdf/}{png/}}
-\part{小轮组三维建模}
+
+\partabstractfp{
 作为本书的第一部分，我们将构建小轮组组成零件的三维模型和小轮组装配三维模型。通过完成小轮组三维建模任务，让读者对应用AutoCAD进行三维建模的特点具有初步的认识和了解，掌握和理解以下几个方面的内容：
-\begin{itemize}
-\item 零件图和三维模型之间的对应关系
-\item AutoCAD基本的三维建模命令
-\item 三视图规律
-\item 相关的国家制图标准
-\item AutoCAD生成基本视图的方法
-\end{itemize} 
+%\begin{itemize}
+%\item 零件图和三维模型之间的对应关系
+%\item AutoCAD基本的三维建模命令
+%\item 三视图规律
+%\item AutoCAD生成基本视图的方法
+%\end{itemize} 
+}
+\partabstractrp{
+test
+
+}
+\part{小轮组三维建模}
+
+
 %%%%%%%%%%%%%第一章%%%%%%%%%%%%%%%%%%%%%%%
 \input{content/xiaoluntaotong}
 \input{content/gongchentu}
@@ -65,6 +74,12 @@
 \input{content/dingzhimoban}
 \input{content/xiaolunzujianmo}
 \input{content/xiaolunzungpeitu}
+
+\partabstractfp{test}
+\partabstractrp{
+test
+
+}
 \part{零件三维建模实例}
 \input{content/taihuqian}
 \input{content/taihuqiankou}
