@@ -1,0 +1,186 @@
+%%%%%%%%%%%%%%教案头%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<article>{
+
+\begin{longtable}{|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{20mm}|m{28mm}|}
+\caption*{\huge 教案头}\\
+\hline
+\endfirsthead
+\multicolumn{6}{l}{(续表)}\\
+\hline
+\endhead
+\hline
+\multicolumn{6}{l}{\itshape 接下一页表格.......}\\ [2ex]
+\endfoot
+\hline
+\endlastfoot
+\centering{授课单元}&\multicolumn{3}{m{60mm}|}{\centering 4.5.6离散系统的稳态误差4.6离散系统的极点、零点和稳定性}&\centering{授课日期}&2014年06月16日 \\
+\hline
+\centering 授课地点 & \multicolumn{3}{m{60mm}|}{B6-204}&\centering 授课学时 & 2 \\
+\hline
+& \multicolumn{2}{m{40mm}|}{能力目标} & \multicolumn{2}{m{40mm}|}{知识目标}&素质目标 \\
+\cline{2-6}
+\centering 教学目标&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item  能够分析离散系统的稳态误差
+\item  能够分析离散的系统的稳定性
+\end{enumerate} }&\multicolumn{2}{m{40mm}|}{\begin{enumerate}
+\item 了解离散系统的稳态误差
+\item 掌握离散系统的稳定性分析
+\end{enumerate}} & {\qquad}\\
+\hline
+\centering 能力训练任务或案例 &\multicolumn{5}{m{108mm}|}{ }\\
+\hline
+\centering 教学重点 & \multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 离散系统的稳态误差
+\item 离散系统的稳定性分析
+\end{enumerate}}\\
+\hline
+\centering 教学难点与解决办法 &\multicolumn{5}{m{108mm}|}{\begin{enumerate}
+\item 难点：离散系统的稳定性分析
+\item 解决方法：实例讲解
+\end{enumerate}}\\
+\hline
+\centering 德育内容 &\multicolumn{5}{m{108mm}|}{无}\\
+\hline
+ &教材 & \multicolumn{4}{m{88mm}|}{计算机控制原理与应用}\\
+\cline{2-6}& 教学资源 &\multicolumn{4}{m{88mm}|}{PPT}\\
+\cline{2-6}\centering 使用的教学材料& 主要教学仪器设备和工具等 &\multicolumn{4}{m{88mm}|}{投影机、MATLAB}\\
+\cline{2-6}& 主要耗材 &\multicolumn{4}{m{88mm}|}{无}\\
+\hline
+\centering 教学模式 &\multicolumn{2}{m{40mm}|}{知识讲授}&\centering 教学手段 &\multicolumn{2}{m{48mm}|}{多媒体教学}\\
+\hline
+\centering 学生成果与过程考核方式 &\multicolumn{5}{m{108mm}|}{无}
+\end{longtable}
+\clearpage
+
+%%%%%%%%%%%%%%%教学实施过程%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{landscape}
+
+\begin{longtable}{|m{10mm}|m{50mm}|m{50mm}|m{50mm}|m{15mm}|}
+\caption*{\huge 教学组织与实施}\\
+\hline
+\endfirsthead
+\multicolumn{5}{l}{\small 接上页}\\
+\hline
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\
+\hline
+\endhead
+
+\multicolumn{5}{r}{\small 接下页}\\
+\endfoot
+\hline
+\endlastfoot
+\multicolumn{1}{|c|}{步骤}&\multicolumn{1}{c|}{教学内容}&\multicolumn{1}{c|}{教师活动}&\multicolumn{1}{c|}{学生活动}&\multicolumn{1}{c|}{时间}\\\hline
+讲解&\begin{enumerate}
+\item 离散系统的稳态误差
+\end{enumerate} &\begin{enumerate}
+\item 讲解离散系统的稳态误差
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &25\\\hline
+讲解&\begin{enumerate}
+\item 离散系统的稳定性
+\end{enumerate}
+ &\begin{enumerate}
+\item 讲解离散系统的稳定性
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &20 \\\hline
+讲解&\begin{enumerate}
+\item 劳斯稳定性判据
+\end{enumerate}
+&\begin{enumerate}
+\item 讲解劳斯稳定性判据
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &20 \\\hline
+讲解&\begin{enumerate}
+\item 朱利稳定性判据
+\end{enumerate}
+&\begin{enumerate}
+\item 讲解朱利稳定性判据
+\end{enumerate} &\begin{enumerate}
+\item 学生倾听并记录
+\end{enumerate} &20 \\\hline
+\centering 本次课总结(评价)&总结本课程内容 &进行知识总结 &学生倾听 &5 \\\hline
+\centering 学生学习笔记或工单等检查情况&\multicolumn{4}{m{165mm}|}{\quad}\\\hline
+\centering 课后作业&\multicolumn{4}{m{165mm}|}{2-28，2-29}\\\hline
+\centering 教学体会&\multicolumn{4}{m{165mm}|}{\quad}\\
+\end{longtable}
+
+\end{landscape}
+\clearpage
+%%%%%%%%%%%%%%%%%%%%板书设计%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+{\huge 板书设计}
+\end{center}
+}
+
+ \begin{frame}{4.5.4离散系统的稳态误差} 
+ \begin{block}{数学模型}
+ \begin{eqnarray*}
+&& G(z)=\frac{Y(z)}{X(z)}\\
+ &&=\frac{b_0+b_1z^{-1}+\cdots +b_mz^{-m}}{1+a_1z^{-1}+\cdots +a_nz^{-n}}
+ \end{eqnarray*}
+ \end{block}
+ \end{frame}
+ 
+ \begin{frame}
+ \begin{block}{差分方程}
+ 令$m=n$
+\begin{eqnarray*}
+y(k)+a_1y(k-1)+\cdots +a_ny(k-n)\\
+=b_0x(k)+b_1x(k-1)+\cdots +b_nx(k-n)
+\end{eqnarray*}
+\end{block}
+\begin{block}{采样数据系统的Z传递函数}
+\begin{eqnarray*}
+G(s)=G_h(s)G_p(s)\\
+G_h(s)=\frac{1-e^{-Ts}}{s}
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{系统的输出序列}
+\[y(kT)=g(kT)*x(kT)=\sum_{j=0}^kg(jT)x(kT-jT)\]
+由卷积定理得：
+\[Y(z)=G(Z)X(Z)\]
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{可将$X^*$从离散符号中提出来}
+\begin{equation*}
+[G(s)X^*(s)]^*=G^*(s)X^*(s)
+\end{equation*}
+\end{block}
+\begin{block}{若$G(s)=G_1(s)G_2(s)$}
+\begin{equation*}
+[G_1(s)G_2(s)X^*(s)]^*=[G_1(s)G_2(s)]^*X^*(s)
+\end{equation*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+\begin{block}{求Z传递函数的一般步骤}
+\begin{itemize}
+\item 求出连续部分的传递函数$G(s)$
+\item 求出它的单位脉冲响应函数$g(t)=L^{-1}[G(s)]$
+\item 求出单位脉冲函数$g(t)$的采样函数$g^*(t)$或$g(kT)$的z变换。
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{4.5.2开环z传递函数}
+\begin{block}{串联环节的z传递函数}
+\begin{eqnarray*}
+G(z)=\pounds[G_1(s)G_2(s)]=G_1(z)G_2(s)
+\end{eqnarray*}
+\end{block}
+\begin{block}{并联环节的z传递函数}
+\begin{eqnarray*}
+G(z)=\pounds[G_1(s)]+\pounds[G_2(s)]=G_1(z)+G_2(z)
+\end{eqnarray*}
+\end{block}
+\end{frame}
+
