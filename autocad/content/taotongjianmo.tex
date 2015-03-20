@@ -7,7 +7,7 @@
 启动AutoCAD软件的方法通常有：
 \begin{itemize}
 \item 双击桌面图标\includegraphics[scale=0.2]{cadicon.png}。
-\item \menu[,]{开始,所有程序,Autodesk,AutoCAD 2014 ,AutoCAD 2014}
+\item 【开始】$\rightarrow$【所有程序】$\rightarrow$【Autodesk】$\rightarrow$【AutoCAD 2014】$\rightarrow$【AutoCAD 2014】
 \end{itemize}
 
 AutoCAD软件启动完成后，将出现图\ref{fig:cadui}所示的软件界面。
@@ -25,7 +25,7 @@ AutoCAD启动后默认的视图方向是俯视图方向，而套筒零件的特�
 \begin{itemize}
 \item 键盘输入-VIME\index{-view,视图} 或-V,选择【正交】选项中的【左视】项。
 \item 键盘输入-VIME，并输入left。
-\item \menu[,]{视图,三维视图,左视图}
+\item 【视图】$\rightarrow$【三维视图】$\rightarrow$【左视图】
 \item 【视图】$\triangleright$【左视】图标\includegraphics[scale=0.6]{lefttool.png}。
 \end{itemize}
 
@@ -43,7 +43,7 @@ AutoCAD启动后默认的视图方向是俯视图方向，而套筒零件的特�
 在AutoCAD中，创建圆柱体需要用到圆柱体命令，通常启动【圆柱体】命令的方法有：
 \begin{itemize}
 \item 键盘输入CYLINDER\index{cylinder,圆柱体}或CYL。
-\item 【绘图】$\rightarrow$【建模】$\rightarrow$【圆柱体】。
+\item 【绘图】$\rightarrow$【建模】,圆柱体】
 \item 【建模】$\triangleright$【圆柱体】图标\includegraphics[scale=0.6]{cylinder.png}。
 \end{itemize}
 
@@ -111,7 +111,7 @@ AutoCAD启动后默认的视图方向是俯视图方向，而套筒零件的特�
 由于前面构建的是两个实体的圆柱体，因此并没有真构成套筒零件所需要的孔，而实现孔的构建则需要从$\phi 14$的圆柱体中去除一个$\phi 8$的圆柱体，要实现这一目标，需要用到实体编辑中的【差集】命令，其启动方法有：
 \begin{itemize}
 \item 键盘输入SUBTRACT\index{subtract,差集}或SU。
-\item \menu[,]{修改,实体编辑,差集}
+\item 【修改】$\rightarrow$【实体编辑】$\rightarrow$【差集】
 \item 【实体编辑】$\triangleright$【差集】图标\includegraphics[scale=0.7]{subtracttool.png}。
 \end{itemize}
 \begin{figure}[htbp]
@@ -141,7 +141,7 @@ AutoCAD启动后默认的视图方向是俯视图方向，而套筒零件的特�
 至此，已经完成了套筒的整体部分的构建，还剩下两个倒角没有完成，在AutoCAD中完成三维立体倒角边构建的命令是“倒角边”，其启动方法有：
 \begin{itemize}
 \item 键盘输入CHAMFEREDGE\index{charmferedge,倒角边}。
-\item \menu[,]{修改,实体编辑,倒角边}
+\item 【修改】$\rightarrow$【实体编辑】$\rightarrow$【倒角边】
 \item 【实体编辑】$\triangleright$【倒角边】图标\includegraphics[scale=0.6]{chamferedge.png}。
 \end{itemize}
 
@@ -189,7 +189,7 @@ AutoCAD启动后默认的视图方向是俯视图方向，而套筒零件的特�
 最后，将完成套筒三维模型以灰度方式的视觉样式进行着色，以使得三维模型看起更加真实。启动灰度视觉样式的方法有：
 \begin{itemize}
 \item 键盘输入 VSCURRENT\index{vscurrent,视觉样式}或VS，并输入G选项。
-\item \menu[,]{视图,视觉样式,灰度}
+\item 【视图】$\rightarrow$【视觉样式】$\rightarrow$【灰度】
 \end{itemize}
 \begin{lstlisting}
 命令: VSCURRENT
@@ -203,8 +203,8 @@ AutoCAD启动后默认的视图方向是俯视图方向，而套筒零件的特�
 将建立好的套筒三维模型保存为“小轮组套筒.dwg”，AutoCAD中保存文件的方法有：
 \begin{itemize}
 \item 键盘输入SAVE\index{save,保存}或SAVEAS\index{saveas,另存为}。
-\item 键盘输入\keys{\ctrl+S}。
-\item \menu[,]{文件,{保存,另存为}}
+\item \includegraphics[scale=0.3]{keyctrl.png}+\includegraphics[scale=0.3]{keys.png}。
+\item 【文件】$\rightarrow$【保存】或【另存为】
 \item 【工具栏】$\triangleright$【保存】图标\includegraphics[scale=0.6]{savetool.png}。
 \end{itemize}
 
