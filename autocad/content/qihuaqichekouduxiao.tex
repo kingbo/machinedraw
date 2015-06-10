@@ -83,8 +83,8 @@
 
 \begin{itemize}
 	\item 键盘输入捕捉命令
-	\item \includegraphics[scale=0.3]{keyctrl.png} + 鼠标右键，弹出图所示的对象捕捉菜单，选择相应的捕捉
-	\item 【工具】$\rightarrow$【绘图设置】中的对象捕捉选项卡中设置相应的捕捉，如图所示。
+	\item \includegraphics[scale=0.3]{keyctrl.png} + 鼠标右键，弹出图\ref{fig:buzhuomun}所示的对象捕捉菜单，选择相应的捕捉
+	\item 【工具】$\rightarrow$【绘图设置】中的对象捕捉选项卡中设置相应的捕捉，如图\ref{fig:desettings}所示。
 \end{itemize}
 
 \begin{figure}[htbp]%
@@ -132,7 +132,7 @@
 \begin{itemize}
 \item 键盘输入offset\index{offset,偏移} 或o。
 \item 【修改】$\rightarrow$【偏移】
-\item 【修改】\includegraphics[scale=0.5]{edittools.png}工具栏中的【直线】图标\includegraphics[scale=0.5]{offsettool.png}。
+\item 【修改】\includegraphics[scale=0.5]{edittools.png}工具栏中的【偏移】图标\includegraphics[scale=0.5]{offsettool.png}。
 \end{itemize}
 
 \begin{figure}[htbp]%
@@ -151,6 +151,26 @@
 指定要偏移的那一侧上的点，或 [退出(E)/多个(M)/放弃(U)] <退出>:
 选择要偏移的对象，或 [退出(E)/放弃(U)] <退出>:
 \end{lstlisting}
+
+完成基础圆柱体的轴心辅助线偏移后，需要将切除圆柱体定位到偏移所得的辅助线上。此时，可以调用AutoCAD中的行移动命令来实现，其常用的调用方法有：
+
+\begin{itemize}
+	\item 键盘输入move\index{move,移动} 或m。
+  \item 【修改】$\rightarrow$【移动】
+  \item 【修改】\includegraphics[scale=0.5]{edittools.png}工具栏中的【移动】图标\includegraphics[scale=0.5]{movetool.png}。
+\end{itemize}
+
+\begin{figure}[htbp]%
+\centering
+\subfloat[]{\label{fig:moveselect1}\includegraphics[width=0.2\textwidth]{moveselect1.png}}\hspace{10pt}
+\subfloat[]{\label{fig:moveselect2}\includegraphics[width=0.2\textwidth]{moveselect2.png}}\hspace{10pt}
+\subfloat[]{\label{fig:moveselect3}\includegraphics[width=0.2\textwidth]{moveselect3.png}}\hspace{10pt}
+\subfloat[]{\label{fig:chechukouduxiaojianmo7}\includegraphics[width=0.2\textwidth]{chechukouduxiaojianmo7.png}}
+\caption{移动操作}
+\end{figure}
+
+移动命令调用后，选择切除圆柱体作为移动对象，选择后会以虚线方式显示，结果如图\ref{fig:moveselect1}所示。接下来以图\ref{fig:moveselect2}所示方式捕捉切除圆柱体轴心辅助线的中点作为移动基点。最后以图\ref{fig:moveselect3}所示方式捕捉偏移辅助线的中点作为移动的目标点，即可完成切除圆柱体的准确定位，结果如图\ref{fig:chechukouduxiaojianmo7}所示。
+
 \begin{lstlisting}
 命令: move
 选择对象: 找到 1 个
@@ -158,7 +178,51 @@
 指定基点或 [位移(D)] <位移>:
 指定第二个点或 <使用第一个点作为位移>:
 \end{lstlisting}
+
+完成切除圆柱体后，需要用切除圆柱从基础圆柱体中切出切口。在AutoCAD中实现这目的的命令是差集命令，其常用的调用方法有：
+
+\begin{itemize}
+\item 键盘输入SUBTRACT\index{subtract,差集}或SU。
+\item 【修改】$\rightarrow$【实体编辑】$\rightarrow$【差集】
+\item 【实体编辑】\includegraphics[scale=0.5]{solidedittools.png}【差集】图标\includegraphics[scale=0.7]{subtracttool.png}。
+\end{itemize}
+
+调用差集命令后，以图\ref{fig:chechukouduxiaojianmo8}所示的基础圆柱体作为要从中切除的实体并确认，然后再选择图\ref{fig:chechukouduxiaojianmo9}所示的切除圆柱体作为要减去的实体并确认，最终结果如图\ref{fig:chechukouduxiaojianmo10}所示。
+
+\begin{lstlisting}
+命令: SUBTRACT
+选择要从中减去的实体、曲面和面域...
+选择对象: 找到 1 个
+选择对象:  选择要减去的实体、曲面和面域...
+\end{lstlisting}
+
+\begin{figure}[htbp]%
+\centering
+\subfloat[]{\label{fig:chechukouduxiaojianmo8}\includegraphics[width=0.3\textwidth]{chechukouduxiaojianmo8.png}}\hspace{10pt}
+\subfloat[]{\label{fig:chechukouduxiaojianmo9}\includegraphics[width=0.3\textwidth]{chechukouduxiaojianmo9.png}}\hspace{10pt}
+\subfloat[]{\label{fig:chechukouduxiaojianmo10}\includegraphics[width=0.3\textwidth]{chechukouduxiaojianmo10.png}}
+\caption{差集操作}
+\end{figure}
+
 \item 删除辅助线
+
+完成切口的建模后，辅助线的使命就已经结束了，因此需要将其从模型中删除。AutoCAD中实现图形对象删除的命令是删除，其调用方法有：
+
+\begin{itemize}
+\item 键盘输入eraset\index{erase,删除}或者delete\index{delete,删除} 或E。
+\item 【修改】$\rightarrow$【删除】
+\item 【修改】\includegraphics[scale=0.5]{edittools.png}工具栏中的【删除】图标\includegraphics[scale=0.5]{erase.png}。
+\end{itemize}
+
+\begin{figure}[htbp]%
+\centering
+\subfloat[]{\label{fig:chechukouduxiaojianmo11}\includegraphics[width=0.4\textwidth]{chechukouduxiaojianmo11.png}}\hspace{20pt}
+\subfloat[]{\label{fig:chechukouduxiaojianmo12}\includegraphics[width=0.3\textwidth]{chechukouduxiaojianmo12.png}}
+\caption{删除操作}
+\end{figure}
+
+调用删除命令后，按图\ref{fig:chechukouduxiaojianmo11}方式选择三条辅助线作为删除对像并确认。删除辅助线后的结果如图\ref{fig:chechukouduxiaojianmo12}所示。
+
 \begin{lstlisting}
 命令: erase
 选择对象: 找到 1 个
@@ -166,7 +230,11 @@
 选择对象: 找到 1 个，总计 3 个
 选择对象:
 \end{lstlisting}
+
 \item 构建倒角边
+
+然后，应用AutoCAD中的倒角边命令完成两个倒角的构建，结果如图\ref{fig:chechukouduxiaojianmo13}所示。
+
 \begin{lstlisting}
 命令:  CHAMFEREDGE
 距离 1 = 1.0000，距离 2 = 1.0000
@@ -178,12 +246,25 @@
 选择同一个面上的其他边或 [环(L)/距离(D)]:
 按 Enter 键接受倒角或 [距离(D)]:
 \end{lstlisting}
+
+\begin{figure}[htbp]%
+\centering
+\begin{floatrow}[2]
+\ffigbox{\caption{倒角边}\label{fig:chechukouduxiaojianmo13}}{\includegraphics[scale=0.6]{chechukouduxiaojianmo13.png}}
+\ffigbox{\caption{汽化器侧出口堵销模型}\label{fig:chechukouduxiaojianmo14}}{\includegraphics[scale=0.6]{chechukouduxiaojianmo14.png}}
+\end{floatrow}
+\end{figure}
+
 \item 切换视觉样式
+
+接下来，将模型空间的视觉样式切换为灰度，结果如图\ref{fig:chechukouduxiaojianmo14}所示。
 \begin{lstlisting}
 命令: vscurrent
 输入选项 [二维线框(2)/线框(W)/隐藏(H)/真实(R)/概念(C)/着色(S)/带边缘着色(E)/灰度(G)/勾画(SK)/X 射线(X)/其他(O)] <二维线框>: g
 \end{lstlisting}
 
 \item 保存模型
+
+最后，将建模完成的三维模型以“汽化器侧出口堵销.dwg”的名称予以保存。
 \end{procedure}
 \endinput
