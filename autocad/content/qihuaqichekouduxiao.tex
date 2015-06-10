@@ -14,16 +14,32 @@
 \begin{procedure}
 \item 切换视图方向
 
+通过观察\ref{fig:chechukouxiao}可知汽化器侧出口堵销零件的表达视图有主视图和俯视图，基于连杆转销的三维建模经验，可知尺寸$\phi 14$清晰地表明了汽化器侧出口堵销零件是轴类零件，其表达其回转体特征的左视图被省略。为例构建的三维模型与主视图方面一致，需要先将视图切换至左视图。
+
 \begin{lstlisting}
 命令: -view 
 输入选项 [?/删除(D)/正交(O)/恢复(R)/保存(S)/设置(E)/窗口(W)]:left
 \end{lstlisting}
 
+完成左视图切换后，$x-y$坐标系已经与左视图投影面平行，为便于观察三维模型的构建过程，需要现次运用视图切换命令将视图切换为西南等轴测，进入三维视图模式。
+
 \begin{lstlisting}
 命令: -view 
 输入选项 [?/删除(D)/正交(O)/恢复(R)/保存(S)/设置(E)/窗口(W)]:swiso 
 \end{lstlisting}
+
 \item 构建堵销基础圆柱体
+
+完成视图切换后，忽略汽化器侧出口堵销零件上的缺口和倒角等细节后，可知视图表达的是一圆柱体，因此调用AutoCAD中的圆柱体命令来构建基础圆柱体。建模结果如图\ref{fig:chechukouduxiaojianmo1}所示。
+
+\begin{figure}[htbp]%
+\centering
+\begin{floatrow}[2]
+\ffigbox{\caption{构建基础圆柱体}\label{fig:chechukouduxiaojianmo1}}{\includegraphics[scale=0.6]{chechukouduxiaojianmo1.png}}
+\ffigbox{\caption{添加切除圆柱体}\label{fig:chechukouduxiaojianmo2}}{\includegraphics[scale=0.6]{chechukouduxiaojianmo2.png}}
+\end{floatrow}
+\end{figure}
+
 \begin{lstlisting}
 命令: cylinder
 指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭圆(E)]:
@@ -33,36 +49,100 @@
 
 \item 构建切除圆柱体
 
+接下来，我们需要在基础柱体完成切口的构建。观察主俯视图可知切口的形状是一圆柱面。因此需要构建一个与基础圆柱体中心轴线相垂直的，用于切除的圆柱体。为此需要先将视图切换为俯视图，以使$x-y$坐标平面与俯视图投影面平行。
 \begin{lstlisting}
 命令: -view 
 输入选项 [?/删除(D)/正交(O)/恢复(R)/保存(S)/设置(E)/窗口(W)]:top
 \end{lstlisting}
 
+完成后再次将视图方向切换为西南等轴测。
 \begin{lstlisting}
 命令: -view 
 输入选项 [?/删除(D)/正交(O)/恢复(R)/保存(S)/设置(E)/窗口(W)]:swiso 
 \end{lstlisting}
 
+接下来，再次调用圆柱体命令，在任意位置构建一个半径为R12，高度为14的圆柱体，结果如图\ref{fig:chechukouduxiaojianmo2}所示。之所以，取高度为14是因为基础圆柱体的直径是$\phi 14$,这样便能够保证完整地在基础圆柱体上切出想要的切口。
 \begin{lstlisting}
 命令: CYLINDER
 指定底面的中心点或 [三点(3P)/两点(2P)/切点、切点、半径(T)/椭圆(E)]:
 指定底面半径或 [直径(D)] <7.0000>: 12
 指定高度或 [两点(2P)/轴端点(A)] <38.0000>: 14
 \end{lstlisting}
+
 \item 绘制辅助线
+
+为方便进行实体定位，我们需要绘基础圆柱体和切除圆柱绘制用于定位的辅助线。在AutoCAD中可能用直线命令来完成辅助线的绘制，其调用方法有：
+
+\begin{itemize}
+\item 键盘输入line\index{line,直线} 或L。
+\item 【绘图】$\rightarrow$【直线】
+\item 【绘图】\includegraphics[scale=0.5]{drawtools.png}工具栏中的【直线】图标\includegraphics[scale=0.5]{linetool.png}。
+\end{itemize}
+
+调用直线命令后需要指定两个具体的点，由于要绘制的辅助线是圆柱体的轴心线，因此需要指定圆柱体上顶圆和下底圆的圆位置作为直线的起点和终点。在此例中，我们并不知识具体的圆心坐标，因此需要应用AutoCAD中的捕捉功能来获取圆柱体圆心的位置。在AutoCAD中开启捕捉功能的方法有：
+
+\begin{itemize}
+	\item 键盘输入捕捉命令
+	\item \includegraphics[scale=0.3]{keyctrl.png} + 鼠标右键，弹出图所示的对象捕捉菜单，选择相应的捕捉
+	\item 【工具】$\rightarrow$【绘图设置】中的对象捕捉选项卡中设置相应的捕捉，如图所示。
+\end{itemize}
+
+\begin{figure}[htbp]%
+\centering
+\begin{floatrow}[2]
+\ffigbox{\caption{对象捕捉菜单}\label{fig:buzhuomun}}{\includegraphics[scale=0.4]{buzhuomun.png}}
+\ffigbox{\caption{对象捕捉设置}\label{fig:desettings}}{\includegraphics[scale=0.45]{desettings.png}}
+\end{floatrow}
+\end{figure}
+
+捕捉设置完成后，即可用直线命令绘制基础圆柱体的中心轴线，首先用鼠标捕捉图\ref{fig:linedraw1}所示圆心作为直线的起点，捕捉图\ref{fig:linedraw2}所示圆心作为直线的终点，最终结果如图\ref{fig:chechukouduxiaojianmo3}所示。
 \begin{lstlisting}
 命令: line
 指定第一个点:
 指定下一点或 [放弃(U)]: 
 指定下一点或 [放弃(U)]:
 \end{lstlisting}
+
+\begin{figure}[htbp]%
+\centering
+\subfloat[]{\label{fig:linedraw1}\includegraphics[width=0.4\textwidth]{linedraw1.png}}\hspace{20pt}
+\subfloat[]{\label{fig:linedraw2}\includegraphics[width=0.4\textwidth]{linedraw2.png}}
+\caption{直线绘制过程}
+\end{figure}
+
+用相同的方法绘制切除圆柱体的中心轴线，结果如图\ref{fig:chechukouduxiaojianmo4}所示。
 \begin{lstlisting}
 命令: line
 指定第一个点:
 指定下一点或 [放弃(U)]:
 指定下一点或 [放弃(U)]:
 \end{lstlisting}
+
+\begin{figure}[htbp]%
+\centering
+\subfloat[]{\label{fig:chechukouduxiaojianmo3}\includegraphics[width=0.4\textwidth]{chechukouduxiaojianmo3.png}}\hspace{20pt}
+\subfloat[]{\label{fig:chechukouduxiaojianmo4}\includegraphics[width=0.4\textwidth]{chechukouduxiaojianmo4.png}}
+\caption{辅助线绘制结果}
+\end{figure}
+
 \item 构建切口
+
+从汽化器侧出口堵销零件的主视图中可知，切除圆柱体的轴心线与基础圆柱体的轴心线之间的垂直距离为17，为实现切除圆柱体轴线位置的准确定位，需要应用AutoCAD中的偏移命令将基础圆柱体的轴心辅助线向外偏移17。AutoCAD中调用偏移命令的方法有：
+
+\begin{itemize}
+\item 键盘输入offset\index{offset,偏移} 或o。
+\item 【修改】$\rightarrow$【偏移】
+\item 【修改】\includegraphics[scale=0.5]{edittools.png}工具栏中的【直线】图标\includegraphics[scale=0.5]{offsettool.png}。
+\end{itemize}
+
+\begin{figure}[htbp]%
+\centering
+\subfloat[]{\label{fig:chechukouduxiaojianmo5}\includegraphics[width=0.4\textwidth]{chechukouduxiaojianmo5.png}}\hspace{20pt}
+\subfloat[]{\label{fig:chechukouduxiaojianmo6}\includegraphics[width=0.4\textwidth]{chechukouduxiaojianmo6.png}}
+\caption{偏移操作}
+\end{figure}
+
+调用偏移命令后，首先将偏移距离设置为17，接下来 选择基础圆柱体的轴心辅助线作为偏移对象；选择完成后，基础圆柱的轴心辅助线会以虚线的形式显示；然后来将鼠标偏向所选择对象的右侧，AutoCAD会显示偏移对象的位置，结果如图\ref{fig:chechukouduxiaojianmo5}所示。最后，单击鼠标左键确定偏移位置，最终结果如图\ref{fig:chechukouduxiaojianmo6}所示。
 \begin{lstlisting}
 命令: offset
 当前设置: 删除源=否  图层=源  OFFSETGAPTYPE=0
